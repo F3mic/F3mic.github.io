@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic building blocks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h3>Basic building blocks</h3>
+
+        <br>
+
+            <div id="scr"><h4>Script</h4></div>
+            <p>A script is a container that contains the source code of the Fallout scripting language. 
+            Any object in the game can have a script so that it can be interacted with.</p>
+            
+            <br>
+            
+            <div id="profu"><h4>Procedure/Function</h4></div>
+                <div class="codebox">
+                    <blockquote>
+                            <span style="color: #4368FF;">procedure</span> start <span style="color: #4368FF;">begin</span> 
+                        <br>
+                            <span style="color: #4368FF;">end</span> 
+                    </blockquote>
+                </div>
+
+            <br>
+
+            <div id="var"><h4>Variable</h4></div>
+            The variable <strong>Only_Once</strong> is defined outside the procedure and assigned the value <span style="color: #E55451;">0</span>. 
+            This variable can be used in every procedure inside the script. This variable will not be saved when changing the map.
+                <div class="codebox">
+                    <blockquote>
+                            <span style="color: #4368FF;">variable</span> Only_Once := <span style="color: #E55451;">0</span>;
+                        <br>
+                        <br>
+                            <span style="color: #4368FF;">procedure</span> <span style="color: #F5DEB3;">map_enter_p_proc</span> <span style="color: #4368FF;">begin</span>
+                        <br>
+                            <span class="indent">Only_Once := <span style="color: #E55451;">0</span>;
+                    </blockquote>
+                </div>
+                <br>
+                The variable item is defined inside the procedure <span style="color: #F5DEB3;">combat_p_proc</span>.
+                This variable can only be used inside the procedure. This variable will not be saved when changing the map.
+                <div class="codebox">
+                    <blockquote>
+                        <span style="color: #4368FF;">procedure</span><span style="color: #F5DEB3;">combat_p_proc</span> <span style="color: #4368FF;">begin</span>
+                        <br>
+                        <span style="color: #4368FF;">variable</span> item;
+                        <br>
+                        <br>
+                        item := <span style="color: #FFD700;">create_object</span>(PID_HEALING_POWDER),<span style="color: #E55451;">0</span>,<span style="color: #E55451;">0</span>);
+                        <br>
+                        <span style="color: #FFA500;">use_obj_on_obj</span>(item,<span style="color: #FFA500;">self_obj</span>);
+                    </blockquote>
+                </div>
+                <br>
+                This variable is defined inside script ARCAVES.SSL. The keyword export ensures that the variable can be used in other scripts. 
+                The variable contains the last value that was assigned to it.
+                <div class="codebox">
+                    <blockquote>
+                        <span style="color: #4368FF;">export variable</span> temple_chest_prt;
+                    </blockquote>
+                </div>
+                <br>
+                The previously exported variable can now be used with the keyword import in the scripts AITEMCST.SSL and ACTEMVIL.SSL. 
+                The variable contains the value that was last assigned to it.
+                <div class="codebox">
+                    <blockquote>
+                        <span style="color: #4368FF;">import variable</span> temple_chest_prt;
+                    </blockquote>
+                </div>
+                <br>
+                This variable is of type Local variable (LVAR). This variable is saved during map change.
+                <div class="codebox">
+                    <blockquote>
+                        <span style="color: #E55451;">#define</span> LVAR_Gave_Xp; &emsp; &emsp; (<span style="color: #E55451;">0</span>)
+                    </blockquote>
+                </div>
+                <br>
+                This variable is of type Map variable (MVAR). This variable is saved during map change. MVARs are stored in the corresponding map script. 
+                In this case MVAR_Fixed_Well is stored in arvillag.H. With the include command the MVAR can be used in the script. 
+                Map variables need to be added to a file called mapName.gam which must be put in the data\maps directory.
+                <div class="codebox">
+                    <blockquote>
+                        <span style="color: #E55451;">#define</span> MVAR_Fixed_Well; &emsp; &emsp; (<span style="color: #E55451;">4</span>)
+                    </blockquote>
+                </div>
+                <br>
+                This variable is of type Global variable. They can be used in any script. To use these variables, only the file global.H must be included in the script. 
+                These variables are saved during the map change. Any global variables you #define and use must also be put into a file called VAULT13.gam which is found in the data\data directory. 
+                Global Vars will be stored in a header file called Global.h, located in the \Fallout2\Scripts\Headers\ directory. 
+                All global vars will be prepended with GVAR_ to differentiate them from all other variables.
+                <div class="codebox">
+                    <blockquote>
+                        <span style="color: #E55451;">#define</span> GVAR_DUMAR_STATUS; &emsp; &emsp; (<span style="color: #E55451;">369</span>)
+                    </blockquote>
+                </div>
+                
+            <br>
+
+            <div id="const"><h4>Constant</h4></div>
+            Constants are variables with one-time fixed unchangeable value. A good example is give_xp(EXP_FIX_WELL) because EXP_FIX_WELL is a constant which is defined in ExpPoint.H. 
+            If you use EXP_FIX_WELL in several scripts and you want to change the given experience from 100 to 200 you just need to change the value in on place, in ExpPoint.H.
+            <div class="codebox">
+                <blockquote>
+                    <span style="color: #E55451;">#define</span> EXP_FIX_WELL; &emsp; &emsp; (<span style="color: #E55451;">100</span>)
+                </blockquote>
+            </div>
+
+            <br>
+
+            <div id="macro"><h4>Macro</h4></div>
+            <p>Found in the file EXPPOINT.H give_xp(x) is a macro of a couple of functions like give_exp_points(x); display_msg[…] and message_str[…] combined.</p>
+
+            <br>
+
+            <div id="argpa"><h4>Argument/Parameter</h4></div>
+            <p>This give_xp(x) gives a certain amount of experience points to the player and displays a message to the player so he is informed how many exp points he received. 
+                The amount of the exp points given is defined with the symbol between the brackets, in this example (x). This is called an argument.</p>
+
+            <br>
+
+            <div id="oper"><h4>Operator</h4></div>
+            <p>:= (assign value - Assigns the value on the right side to the value on the left side.)</p>
+            <p>>  (greater than - Checks if the value on the left side is greater then the value on the right side.)</p>
+            <p><  (lesser than - Checks if the value on the left side is lesser then the value on the right side.)</p>
+            <p>>= (greater than or equal to - Checks if the value on the left side is greater then or equal to the value on the right side.)</p>
+            <p><= (lesser than or equal to - Checks if the value on the left side is lesser then or equal to the value on the right side.)</p>
+            <p>== (equals - Checks if the value on the left side is exactly the same as the value on the right side.)</p>
+            <p>!= (does not equal - Checks if the value on the left side is not exactly the same as the value on the right side.)</p>
+
+            <br>
+
+            <div id="head"><h4>Header Files</h4></div>
+            Header files are files that store information that is used repeatedly in every script. 
+            So, you don’t have to rewrite certain functions, arguments, variables every time you want to use them. 
+            Just include the header file you want to use inside your script and you’re good to go.
+            <div class="codebox">
+                <blockquote>
+                    <span style="color: #E55451;">#include</span> <span style="color: #6AC582;">"..\headers\command.h"</span>
+                </blockquote>
+            </div>
+            <br>
+            You must do this step so that the compiler is able to compile your script.
+            <div class="codebox">
+                <blockquote>
+                    <span style="color: #E55451;">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
+                </blockquote>
+            </div>
+            <br>
+            <div class="codebox">
+                <blockquote>
+                    <span style="color: #E55451;">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
+                </blockquote>
+                <div class="codepopup">
+                    <blockquote>
+                            <p>Define: SCRIPT_ASWELL
+                        <br>(217) //ASWell.int  :Arroyo Well. It's broken. Fix w/ Repair.</p>
+                            <p>Declare file: scripts.h</p>
+                    </blockquote>
+                </div>
+            </div>
+            <br>
+            The file scripts.H is located inside headers\scripts.H. 
+            <div class="codebox">
+                <blockquote>
+                    <span style="color: #E55451;">#define</span> SCRIPT_ASWELL &emsp; &emsp; (<span style="color: #E55451;">217</span>) &emsp; <span style="color: #7a7b7a;">// ASwell.int</span> &emsp; &emsp; <span style="color: #7a7b7a;">; Arroyo Well. It's broken. Fix w/ Repair.</span>
+                </blockquote>
+            </div>
+            <br>
+
+            <br>
+
+            <div id="stat"><h4>Statement</h4></div>
+            <p>if then else is a Statement.</p>
+
+            <br>
+            <br>
+
+    <footer>
+        <div class="symbol">
+            <a href="prep.html">&laquo; Previous</a>
+                <img src="E:\Fallout_Modding_Guide\images\Radioactive_symbol.png">	
+            <a href="index.html">Index</a>
+                <img src="E:\Fallout_Modding_Guide\images\Radioactive_symbol.png">
+            <a href="complex.html">Next &raquo;</a>	
+        </div>
+    </footer>
+    </div>
+</body>
+</html>

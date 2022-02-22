@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex procedures explained</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+		<h3>Complex procedures explained</h3>
+
+        <br>
+
+        <h4>Fix the well for Feargus - Arroyo</h4>
+        <p>At the center of the Arroyo village there is a well, and Feargus, the Chosen One's nephew, is standing next to it, 
+            whining because it is broken. Simply Repair the well. Even with a negative Repair skill, it can still be fixed.</p>
+        This procedure is executed when the player uses the repair skill on the well. After using the skill, a message appears, and the player is rewarded with experience points.
+        <div class="codebox">
+            <blockquote>
+                <span style="color: #4368FF;">procedure</span> <span style="color: #F5DEB3;">use_skill_on_p_proc</span> <span style="color: #4368FF;">begin</span>
+                <br><span class="indent" style="color: #4368FF;">if</span> ((<span style="color: #FFA500;">action_being_used</span> 
+                    <span style="color: #DAD181;">==</span> <span style="color: #7DE1E0;">SKILL_REPAIR</span>)
+                    <span style="color: #4368FF;">and</span> (<span style="color: #FFA500;">local_var</span>(LVAR_Gave_Xp) <span style="color: #DAD181;">==</span> 
+                    <span style="color: #E55451;">0</span>))
+                    <span style="color: #4368FF;">then begin</span>
+                <br><span class="indent80px" style="color: #FFA500;">script_overrides</span>;
+                <br><span class="indent80px" style="color: #FFA500;">display_msg</span>(<span style="color: #FFA500;">message_str</span>(SCRIPT_GENERIC,
+                    <span style="color: #E55451;">1005</span>));
+                <br><span class="indent80px" style="color: #A974BC;">give_xp</span>(EXP_FIX_WELL);
+                <br><span class="indent80px" style="color: #FFA500;">set_map_var</span>(MVAR_Fixed_Well,</span><span style="color: #E55451;">1</span>);
+                <br><span class="indent80px" style="color: #FFA500;">set_local_var</span>(LVAR_Gave_Xp,</span><span style="color: #E55451;">1</span>);
+                <br><span class="indent" style="color: #4368FF;">end</span>
+                <br><span style="color: #4368FF;">end</span>
+            </blockquote>
+        </div>
+
+        <br>
+
+        <h4>How does this work in detail? Let’s break it down.</h4> 
+        The procedures use_skill_on_p_proc is called.
+        <div class="codebox">
+            <blockquote>
+                <span style="color: #4368FF;">procedure</span> <span style="color: #F5DEB3;">use_skill_on_p_proc</span> <span style="color: #4368FF;">begin</span>
+            </blockquote>
+        </div>
+        <br>
+        The first function action_being_used checks if the repair skill, written as SKILL_REPAIR, is used on the well. 
+        The second one local_var checks if the local variable  LVAR_Gave_Xp is equal 0. 
+        If both conditions match the following code is executed, else the procedure ends without anything been done.
+        <div class="codebox">
+            <blockquote>
+                <span style="color: #4368FF;">if</span> ((<span style="color: #FFA500;">action_being_used</span> <span style="color: #DAD181;">==</span> 
+                <span style="color: #7DE1E0;">SKILL_REPAIR</span>)
+                <span style="color: #4368FF;">and</span> (<span style="color: #FFA500;">local_var</span>(LVAR_Gave_Xp) <span style="color: #DAD181;">==</span> 
+                <span style="color: #E55451;">0</span>))
+                <span style="color: #4368FF;">then begin</span>
+            </blockquote>
+        </div>
+        <br>
+        For certain procedures in the game there are default functions that are called when nothing is written inside these procedures. 
+        To prevent these default functions to happen when something is indeed written inside the procedures the function script_overrides is used.
+        <div class="codebox">
+            <blockquote>
+                <span style="color: #FFA500;">script_overrides</span>;
+            </blockquote>
+        </div>
+        <p>Show message line 1005 of file GENERIC.msg.</p>
+        The function display_msg invokes the functionality to display a message. The function message_str has two arguments in this case. 
+        SCRIPT_GENERIC is the message file (.msg) that contains all lines of text that should be used for generic purposes. 
+        This file is actually named GENERIC.msg and is located at \text\english\dialog\GENERIC.msg. 100 and 101 are the lines which are contained inside the file GENERIC.msg.
+        <div class="codebox">
+            <blockquote>
+                <span style="color: #FFA500;">display_msg</span>(<span style="color: #FFA500;">message_str</span>(SCRIPT_GENERIC,<span style="color: #E55451;">1005</span>));
+            </blockquote>
+        </div>
+        <br>
+        Inside EXPPOINT.H you’ll find the definition of the macro give_xp(x).
+        <div class="codebox">
+            <blockquote>
+                    <span style="color: #E55451;">#define</span> <span style="color: #A974BC;">give_xp</span>(x) &emsp; <span style="color: #FFA500;">give_exp_points</span>(x);
+                <br><span class="indent278px" style="color: #FFA500;">display_msg</span>(<span style="color: #FFA500;">message_str</span>(SCRIPT_GENERIC,
+                    <span style="color: #E55451;">100</span>)+x+<span style="color: #FFA500;">message_str</span>(SCRIPT_GENERIC,<span style="color: #E55451;">101</span>))
+            </blockquote>
+        </div>
+        <br>
+        You can also define the amount of given exp points in the file EXPPOINT.H. In this example it’s EXP_FIX_WELL. 100 means 100 exp points given.
+        <div class="codebox">
+            <blockquote>
+                <span style="color: #E55451;">#define</span> EXP_FIX_WELL &emsp; &emsp; &emsp; (<span style="color: #E55451;">100</span>)
+            </blockquote>
+        </div>
+        <br>
+        As you can see in the file ASWELL.SSL the macro give_xp is used with the defined argument EXP_FIX_WELL. 
+        So, if you want to change the amount of exp points given. You just must change the defined argument in the file EXPPOINT.H.
+        <div class="codebox">
+            <blockquote>
+                <span style="color: #A974BC;">give_xp</span>(EXP_FIX_WELL);
+            </blockquote>
+        </div>
+        <br>
+        The function set_map_var sets the map variable MVAR_Fixed_Well to 1. The game remembers that the well has been fixed even if you change the map. 
+        So, it’s not possible to trick the game and invoking this quest again.
+        <div class="codebox">
+            <blockquote>
+                <span style="color: #FFA500;">set_map_var</span>(MVAR_Fixed_Well,</span><span style="color: #E55451;">1</span>);
+            </blockquote>
+        </div>
+        <br>
+        The map variable MVAR_Fixed_Well is located in the ARVILLAG.H file inside the header folder.
+        <div class="codebox">
+            <blockquote>
+                <span style="color: #E55451;">#define</span> MVAR_Fixed_Well</span> &emsp; &emsp; &emsp; (<span style="color: #E55451;">4</span>)
+            </blockquote>
+        </div>
+        <br>
+        The set_local_var function sets the local variable LVAR_Gave_Xp to 1.
+        So, if the player tries to invoke the procedure use_skill_on_p_proc again on the well, nothing happens.
+        <div class="codebox">
+            <blockquote>
+                <span style="color: #FFA500;">set_local_var</span>(LVAR_Gave_Xp,</span><span style="color: #E55451;">1</span>);
+            </blockquote>
+        </div>
+        <br>
+        <br>
+        <br>
+
+    <footer>
+        <div class="symbol">
+            <a href="basic.html">&laquo; Previous</a>
+                <img src="E:\Fallout_Modding_Guide\images\Radioactive_symbol.png">
+            <a href="index.html">Index</a>
+                <img src="E:\Fallout_Modding_Guide\images\Radioactive_symbol.png">	
+            <a href="addendum.html">Next &raquo;</a>
+        </div>
+    </footer>    
+    </div>
+</body>
+</html>
