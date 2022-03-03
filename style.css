@@ -1,3 +1,4 @@
+/*
 @font-face {
     src: url('fonts/fallout-webfont.woff2') format('woff2'), url('fonts/fallout-webfont.woff') format('woff');
     font-family: 'gothic821_cn_btregular';
@@ -53,7 +54,7 @@ h5 {
 }
 
 .codebox {
-    background-color: #3A3B3C; /*3A3B3C*/
+    background-color: #3A3B3C;
     padding-top: 1px;
     padding-bottom: 1px;
     font-family: monospace;
@@ -64,32 +65,133 @@ h5 {
     margin-left: 350px;
     margin-right: 20%;
 }
+*/
 
-.indent {
-    margin-left: 42px;
+header {
+  text-align: center;
+  font-size: 94%;
 }
 
-.indent80px {
-    margin-left: 80px;
+h3 {
+  color: #bd9d30;
 }
 
-.indent278px {
-    margin-left: 305px;
+h4 {
+  color: #bd9d30;
+}
+
+h5 {
+  color: #bd9d30;
+}
+
+a:link {
+  color: #0cbe0c;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #447c44;
+}
+
+a:active {
+  color: #80ff00;
+}
+
+.TableOfContents {
+  text-align: center;
 }
 
 ol {
-    counter-reset: item;
+  counter-reset: item;
+  list-style-type: none;
+  padding-left: 5%;
 }
 
-ol > li {
-    counter-increment: item;
+li {
+  padding-left: 40%;
 }
 
-ol ol > li {
-    display: block;
+ol li::before {
+  counter-increment: item;
+  content: counters(item, ".") ". ";
 }
 
-ol ol > li:before {
-    content: counters(item, ".") ". ";
-    margin-left: -20px;
+body {
+  background-color: #1f1f1f;
+  color: white;
+  font-weight: normal;
+  font-size: 180%;
+  font-family: monospace;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+pre {
+  padding-top: 1%;
+  margin-left: -15%;
+}
+
+code {
+  background-color: #3a3b3c;
+  display: block;
+}
+
+.codepre {
+  white-space: pre-line;
+  margin-top: -5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: -2.5%;
+}
+
+.codepopup {
+  background-color: #474757;
+  margin-left: 37%;
+  margin-right: 10%;
+}
+
+.symbol img {
+  width: 1.2%;
+  height: auto;
+}
+
+.dyeoperator {
+  color: #dad181;
+}
+
+.dyedefine {
+  color: #e55451;
+}
+
+.dyestatement {
+  color: #4368ff;
+}
+
+.dyeprocedure {
+  color: #f5deb3;
+}
+
+.dyefunctionorange {
+  color: #ffa500;
+}
+
+.dyestandardmacro {
+  color: #ffd700;
+}
+
+.dyecomment {
+  color: #7a7b7a;
+}
+
+.dyeheader {
+  color: #6ac582;
+}
+
+.dyedevelopermacro {
+  color: #a974bc;
+}
+
+.dyehardcoded {
+  color: #7de1e0;
 }
