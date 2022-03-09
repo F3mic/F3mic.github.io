@@ -102,9 +102,9 @@ a:active {
 }
 
 ol {
+  padding-left: 5%;
   counter-reset: item;
   list-style-type: none;
-  padding-left: 5%;
 }
 
 li {
