@@ -67,6 +67,19 @@ h5 {
 }
 */
 
+div.sticky {
+  position: -webkit-sticky;
+  position: fixed;
+  top: 40%;
+  margin-left: -6%;
+}
+
+img.sticky {
+  width: 5%;
+  height: auto;
+  margin-left: 3%;
+}
+
 header {
   text-align: center;
   font-size: 120%;
@@ -108,7 +121,7 @@ ol {
 }
 
 li {
-  padding-left: 40%;
+  padding-left: 43%;
 }
 
 ol li::before {
@@ -149,11 +162,6 @@ code {
   background-color: #474757;
   margin-left: 26%;
   margin-right: 10%;
-}
-
-.symbol img {
-  width: 1.2%;
-  height: auto;
 }
 
 .dyeoperator {
