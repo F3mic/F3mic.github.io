@@ -15,9 +15,11 @@
 
         <div id="ssl"><h4>SSL - Star Trek scripting language</h4></div>
             <p> No, you have not misread, the scripting language used to script Fallout 2 is called Star Trek scripting language or in short SSL. 
+                SSL is a mix of pascal, or lua with C. Only the devs know what this abomination is.
                 Black Isle Studios created SSL for their Star Trek game that never came true. When they made Fallout 1 and 2 they simply used SSL to script them.
-                Some refer to it Fallout scripting language, some Star Trek scripting language and some just call it SSL but all mean the same.
+                Some refer to it as Fallout scripting language, some as Star Trek scripting language and some just call it SSL but all mean the same.
                 If you want to know more you can ask the community, they should know more about it.</p>
+                <!--Insert script of aswell.ssl to show a script.-->
         <br>
 
         <div id="script"><h4>Script</h4></div>
@@ -34,26 +36,59 @@
         <br>
 
         <div id="procedure"><h4>Procedure</h4></div>
-            <p> Procedures are just like small programs inside your script. They help to keep the script clear, organized and structured. Sometimes they are called sub-programs. 
-                They are an essential part of the program and help programmers to avoid repetitions since they promote code re-use. 
-                A procedure in Fallout scripting language starts with a begin and ends with an end statement. 
-                What a statement is will be discussed later.
-                It can also have its own variables called local variables. 
+            <p> Procedures are just like small programs inside your script. They are an essential part of the program and help programmers to keep the script clear, organized, structured and avoid repetitions since they promote code re-use. 
+                A procedure in Fallout scripting language starts with <span class="dyestatement">procedure </span> a name (<span class="dyeprocedure">start</span> in this case) <span class="dyestatement">begin</span>  
+                and ends with an <span class="dyestatement">end</span> statement.</p>
+                It usually looks like the example below:
+                <!-- The part below doesn't fit into here.-->
+                <!--It can also have its own variables called local variables. 
                 Local variables belonging to procedures cannot be used with the main-program. 
-                Variables declared in a program are called global variables.</p>
+                Variables declared in a program are called global variables.-->
                 <code>
                     <pre>
-                        <span class="dyestatement">procedure</span> start <span class="dyestatement">begin</span>
+                        <span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span> <span class="dyestatement">begin</span>
                         <span class="dyestatement">end</span>
                     </pre>
                 </code>
+            <p> The space between <span class="dyestatement">begin</span> and <span class="dyestatement">end</span> is called procedure body. Inside the body you write the stuff you want to be executed.
+                In the example above the body is empty. An empty procedure body cannot execute anything because there is nothing to execute. If you call an empty procedure, the procedure starts, sees there's nothing inside the body
+                and ends immediately.</p>
         <br>
 
         <div id="function"><h4>Function</h4></div>
+            <p> Functions are the commands of SSL. The stuff you write inside the procedure body. Functions are hardcoded commands. That means they are basis commands, they cannot be broken down further.</p>
+            <p> A simple function can look like this:</p>
+                <code>
+                    <pre>
+                        <span class="dyefunctionorange">display_msg</span>
+                    </pre>
+                </code>
+            <p> You can also write something more complex like this:</p>
+                <code>
+                    <pre>
+                        <span class="dyefunctionorange">display_msg</span>(<span class="dyefunctionorange">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
+                    </pre>
+                </code>
+            <p> As you can see there is a function inside a function. That's also possible. A function inside a function is called "nested" function. A function is always ended by a semicolon.
+                The semicolon signals the engine that the function is over.
+            </p>
+            
+        <br>
+
+        <div id="argument/parameter"><h4>Argument/Parameter</h4></div>
+            <p>But what's the stuff inside the parenthesis? It's called argument or parameter. I refer to them as argument inside this guide.</p>
+                <code>
+                    <pre>
+                        <span class="dyefunctionorange">display_msg</span>(<span class="dyefunctionorange">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
+                    </pre>
+                </code>
+            <p>Many functions need to pass something and what they pass is called an argument. If the concept of the arguments is not quite clear to you yet, don't worry, more about that later.</p>
+        <!--<p> This give_xp(x) gives a certain amount of experience points to the player and displays a message to the player so he is informed how many exp points he received. 
+                The amount of the exp points given is defined with the symbol between the brackets, in this example (x). This is called an argument or parameter.</p>-->
         <br>
 
         <div id="variable"><h4>Variable</h4></div>
-            <p>The variable <strong>Only_Once</strong> is defined outside the procedure and assigned the value <span class="dyedefine">0</span>. 
+            <p> The variable <strong>Only_Once</strong> is defined outside the procedure and assigned the value <span class="dyedefine">0</span>. 
                 This variable can be used in every procedure inside the script. This variable will not be saved when changing the map.</p>
                 <code>
                     <pre>
@@ -67,7 +102,7 @@
                 This variable can only be used inside the procedure. This variable will not be saved when changing the map.</p>
                 <code>
                     <pre>
-                        <span class="dyestatement">procedure</span><span class="dyeprocedure">combat_p_proc</span> <span class="dyestatement">begin</span>
+                        <span class="dyestatement">procedure</span><span class="dyeprocedure"> combat_p_proc</span> <span class="dyestatement">begin</span>
                             <span class="dyestatement">variable</span> item;
 
                                 item <span class="dyeoperator">:=</span> <span class="dyestandardmacro">create_object</span>(PID_HEALING_POWDER),<span class="dyedefine">0</span>,<span class="dyedefine">0</span>);
@@ -125,11 +160,6 @@
         
         <div id="macro"><h4>Macro</h4></div>
             <p>Found in the file EXPPOINT.H give_xp(x) is a macro of a couple of functions like give_exp_points(x); display_msg[…] and message_str[…] combined.</p>
-        <br>
-
-        <div id="parameter"><h4>Parameter</h4></div>
-            <p>This give_xp(x) gives a certain amount of experience points to the player and displays a message to the player so he is informed how many exp points he received. 
-                The amount of the exp points given is defined with the symbol between the brackets, in this example (x). This is called an argument.</p>
         <br>
 
         <div id="operator"><h4>Operator</h4></div>
