@@ -19,8 +19,7 @@
                 Black Isle Studios created SSL for their Star Trek game that never came true. When they made Fallout 1 and 2 they simply used SSL to script them.
                 Some refer to it as Fallout scripting language, some as Star Trek scripting language and some just call it SSL but all mean the same.
                 If you want to know more you can ask the community, they should know more about it.</p>
-                <!--Insert script of aswell.ssl to show a script.-->
-        <br>
+         <br>
 
         <div id="script"><h4>Script</h4></div>
             <p> A script is just a file that contains the source code of the Fallout scripting language. 
@@ -33,6 +32,59 @@
                 You could nevertheless interact with them but not that much.
                 What does it mean "not that much"?
                 Well, the game uses default scripts if you don't assign any like combat, push, look, description etc.</p>
+        
+            <p> Let’s see how a script can look like. The following is the script for the well found in Arroyo village.</p>   
+                <code>
+                    <pre>
+                        <span class="dyeheader">/* Include Files */</span> 
+                        <span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\define.h"</span>
+                        <span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\arvillag.h"</span>
+                        <span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\command.h"</span>
+                        
+                        <span class="dyedefine">#define</span> NAME                    SCRIPT_ASWELL
+                        
+                        <span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span>;
+                        <span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;
+                        <span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span>;
+                        <span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span>;
+                        
+                        <span class="dyedefine">#define</span> LVAR_Gave_Xp            (<span class="dyedefine">0</span>)
+                        
+                        <span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span> <span class="dyestatement">begin</span>
+                        <span class="dyestatement">end</span>
+                        
+                        <span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span> <span class="dyestatement">begin</span>
+                            <span class="dyecommand">script_overrides</span>;                                     
+                            <span class="dyestatement">if</span> (<span class="dyecommand">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>         
+                                <span class="dyecommand">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));                           
+                            <span class="dyestatement">end</span>
+                            <span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
+                                <span class="dyecommand">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));                           
+                            <span class="dyestatement">end</span>
+                        <span class="dyestatement">end</span>
+                        
+                        <span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
+                            <span class="dyecommand">script_overrides</span>;
+                            <span class="dyestatement">if</span> (<span class="dyecommand">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) then <span class="dyestatement">begin</span> 
+                                <span class="dyecommand">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));
+                            <span class="dyestatement">end</span>
+                            <span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
+                                <span class="dyecommand">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));
+                            <span class="dyestatement">end</span>
+                        <span class="dyestatement">end</span>
+                        
+                        <span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span> 
+                            <span class="dyestatement">if</span> ((<span class="dyecommand">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyecommand">local_var</span>(LVAR_Gave_Xp) == <span class="dyedefine">0</span>)) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>        
+                                <span class="dyecommand">script_overrides</span>;
+                                <span class="dyecommand">display_msg</span>(<span class="dyecommand">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));                                           
+                                <span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL);                                                                   
+                                <span class="dyecommand">set_map_var</span>(MVAR_Fixed_Well,<span class="dyedefine">1</span>);                                                          
+                                <span class="dyecommand">set_local_var</span>(LVAR_Gave_Xp,<span class="dyedefine">1</span>);                                                           
+                            <span class="dyestatement">end</span>
+                        <span class="dyestatement">end</span>
+                    </pre>
+                </code>
+            <p> At first glance it can look overwelming even intimidating. But fear not! We will go through this step by step. First of all we will look at the structure.</p>
         <br>
 
         <div id="procedure"><h4>Procedure</h4></div>
@@ -53,36 +105,37 @@
             <p> The space between <span class="dyestatement">begin</span> and <span class="dyestatement">end</span> is called procedure body. Inside the body you write the stuff you want to be executed.
                 In the example above the body is empty. An empty procedure body cannot execute anything because there is nothing to execute. If you call an empty procedure, the procedure starts, sees there's nothing inside the body
                 and ends immediately.</p>
+            <p> We have four procedures in this example. start; use_skill_on_p_proc; description_p_proc and look_at_p_proc. There are more but this scripts just uses these four. They are predefinied by the devs but you can also write your own procecures</p>
+            <p> The most important procedure of them all is the procedure called "start". The start procedure is the entry point of every script. Every script has it and every script needs it. If you don't have the start procedure inside you script, it won't work.</p>
         <br>
 
-        <div id="function"><h4>Function</h4></div>
-            <p> Functions are the commands of SSL. The stuff you write inside the procedure body. Functions are hardcoded commands. That means they are basis commands, they cannot be broken down further.</p>
-            <p> A simple function can look like this:</p>
+        <div id="command"><h4>Command</h4></div>
+            <p> These are the commands of SSL. The stuff you write inside the procedure body. These commands are hardcoded. That means they are basis commands, they cannot be broken down further.</p>
+            <p> A simple command can look like this:</p>
                 <code>
                     <pre>
-                        <span class="dyefunctionorange">display_msg</span>
+                        <span class="dyecommand">display_msg</span>
                     </pre>
                 </code>
+        <br>
+        <div id="function"><h4>Function</h4></div>
             <p> You can also write something more complex like this:</p>
                 <code>
                     <pre>
-                        <span class="dyefunctionorange">display_msg</span>(<span class="dyefunctionorange">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
+                        <span class="dyecommand">display_msg</span>(<span class="dyecommand">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
                     </pre>
                 </code>
-            <p> As you can see there is a function inside a function. That's also possible. A function inside a function is called "nested" function. A function is always ended by a semicolon.
-                The semicolon signals the engine that the function is over.
-            </p>
-            
+            <p> As you can see there is a command inside a command and some other stuff. That's also possible. So if you combine commands and other stuff together and it's becoming more complex we speak of functions.</p>
         <br>
 
-        <div id="argument/parameter"><h4>Argument/Parameter</h4></div>
+        <div id="argument/parameter"><h4>Argument</h4></div>
             <p>But what's the stuff inside the parenthesis? It's called argument or parameter. I refer to them as argument inside this guide.</p>
                 <code>
                     <pre>
-                        <span class="dyefunctionorange">display_msg</span>(<span class="dyefunctionorange">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
+                        <span class="dyecommand">display_msg</span>(<span class="dyecommand">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
                     </pre>
                 </code>
-            <p>Many functions need to pass something and what they pass is called an argument. If the concept of the arguments is not quite clear to you yet, don't worry, more about that later.</p>
+            <p>Many commands need to pass something and what they pass is called an argument. If the concept of the arguments is not quite clear to you yet, don't worry, more about that later.</p>
         <!--<p> This give_xp(x) gives a certain amount of experience points to the player and displays a message to the player so he is informed how many exp points he received. 
                 The amount of the exp points given is defined with the symbol between the brackets, in this example (x). This is called an argument or parameter.</p>-->
         <br>
@@ -106,7 +159,7 @@
                             <span class="dyestatement">variable</span> item;
 
                                 item <span class="dyeoperator">:=</span> <span class="dyestandardmacro">create_object</span>(PID_HEALING_POWDER),<span class="dyedefine">0</span>,<span class="dyedefine">0</span>);
-                                <span class="dyefunctionorange">use_obj_on_obj</span>(item,<span class="dyefunctionorange">self_obj</span>);
+                                <span class="dyecommand">use_obj_on_obj</span>(item,<span class="dyecommand">self_obj</span>);
                     </pre>
                 </code>
             <p>This variable is defined inside script ARCAVES.SSL. The keyword export ensures that the variable can be used in other scripts. 
