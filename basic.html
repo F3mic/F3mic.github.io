@@ -105,7 +105,7 @@
             <p> The space between <span class="dyestatement">begin</span> and <span class="dyestatement">end</span> is called procedure body. Inside the body you write the stuff you want to be executed.
                 In the example above the body is empty. An empty procedure body cannot execute anything because there is nothing to execute. If you call an empty procedure, the procedure starts, sees there's nothing inside the body
                 and ends immediately.</p>
-            <p> We have four procedures in this example. start; use_skill_on_p_proc; description_p_proc and look_at_p_proc. There are more but this scripts just uses these four. They are predefinied by the devs but you can also write your own procecures</p>
+            <p> We have four procedures in this example. start; use_skill_on_p_proc; description_p_proc and look_at_p_proc. There are more but this scripts just uses these four. They are predefinied by the devs but you can also write your own procecures.</p>
             <p> The most important procedure of them all is the procedure called "start". The start procedure is the entry point of every script. Every script has it and every script needs it. If you don't have the start procedure inside you script, it won't work.</p>
         <br>
 
@@ -141,6 +141,10 @@
         <br>
 
         <div id="variable"><h4>Variable</h4></div>
+            <p> A variable is like a temporary container. You can save things into it. For example strings, integers, booleans and the result of functions etc.</p>
+            <p> There are several types of variables. The ones which get into global namespace and the ones that don't. The global namespace is the place where variables are shared between scripts.
+                So every variable inside the global namespace needs to have a unique otherwise they engine gets confused and throws errors.</p>
+            <p> </p>
             <p> The variable <strong>Only_Once</strong> is defined outside the procedure and assigned the value <span class="dyedefine">0</span>. 
                 This variable can be used in every procedure inside the script. This variable will not be saved when changing the map.</p>
                 <code>
