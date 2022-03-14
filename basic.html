@@ -15,7 +15,7 @@
 
         <div id="ssl"><h4>SSL - Star Trek scripting language</h4></div>
             <p> No, you have not misread, the scripting language used to script Fallout 2 is called Star Trek scripting language or in short SSL. 
-                SSL is a mix of pascal, or lua with C. Only the devs know what this abomination is.
+                SSL is a mix of pascal or lua with C. Only the devs know what this abomination is.
                 Black Isle Studios created SSL for their Star Trek game that never came true. When they made Fallout 1 and 2 they simply used SSL to script them.
                 Some refer to it as Fallout scripting language, some as Star Trek scripting language and some just call it SSL but all mean the same.
                 If you want to know more you can ask the community, they should know more about it.</p>
@@ -84,58 +84,151 @@
                         <span class="dyestatement">end</span>
                     </pre>
                 </code>
-            <p> At first glance it can look overwelming even intimidating. But fear not! We will go through this step by step. First of all we will look at the structure.</p>
+            <p> At first glance it can look overwelming even intimidating. But fear not! We will go through this step by step. First of all we will look at the structure. We'll go more indepth later.</p>
+        <br>
+
+        <div id="header"><h4>Header File</h4></div>
+            <p> Header files are files that store information that is used repeatedly in every script. 
+                So, you don’t have to rewrite the same code over and over again in every script. 
+                Once written inside a header File and just included at the top of a script where you want to use the code and you’re good to go.</p>
+                <code>
+                    <pre>
+                        <span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\define.h"</span>
+                        <span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\arvillag.h"</span>
+                        <span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\command.h"</span>
+                    </pre>
+                </code>
+            <p> As you can see the suffix of header files is .h.</p>
+            <p> They are located inside the folder "\HEADERS".</p>
+        <br>
+
+        <div id="define"><h4>Define</h4></div>
+            <p> With #define it is possible to specify strings that will be exchanged for another string before the program is translated. 
+                Again, the # character causes the preprocessor to do its work first before the nascent program is translated by the compiler into machine language.</p>
+            <p> We have two #defines in this example.</p> 
+                <code>
+                    <pre>
+                        <span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
+                    </pre>
+                </code>
+            <p> and</p>
+                <code>
+                    <pre>
+                        <span class="dyedefine">#define</span> LVAR_Gave_Xp            (<span class="dyedefine">0</span>)
+                    </pre>
+                </code>
+            <p> In the #define below NAME is SCRIPT_ASWELL. This means if you want to refer to SCRIPT_ASWELL inside your script you simply can write NAME.</p>
+                <code>
+                    <pre>
+                        <span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
+                    </pre>
+                </code>
+            <p> If you hover over SCRIPT_ASWELL with your cursor you'll see the description inside the bluegreyish box.</p>
+                <code>
+                    <pre>
+                        <span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
+                        <div class="codepopup" >
+                            <div class="codepre">
+                                Define: SCRIPT_ASWELL
+                                (217) //ASWell.int  :Arroyo Well. It's broken. Fix w/ Repair.
+                                
+                                Declare file: scripts.h
+                            </div>
+                        </div>
+                    </pre>
+                </code>
+            <p>The file SCRIPTS.H is located inside HEADERS\SCRIPTS.H. We'll talk about this later.</p>
+                <code>
+                    <pre>
+                        <span class="dyedefine">#define</span> SCRIPT_ASWELL &emsp; &emsp; (<span class="dyedefine">217</span>) &emsp; <span class="dyecomment">// ASwell.int</span> &emsp; &emsp; <span class="dyecomment">; Arroyo Well. It's broken. Fix w/ Repair.</span>
+                    </pre>
+                </code>
         <br>
 
         <div id="procedure"><h4>Procedure</h4></div>
             <p> Procedures are just like small programs inside your script. They are an essential part of the program and help programmers to keep the script clear, organized, structured and avoid repetitions since they promote code re-use. 
                 A procedure in Fallout scripting language starts with <span class="dyestatement">procedure </span> a name (<span class="dyeprocedure">start</span> in this case) <span class="dyestatement">begin</span>  
                 and ends with an <span class="dyestatement">end</span> statement.</p>
-                It usually looks like the example below:
+            <p> We have four procedures in this example. start; use_skill_on_p_proc; description_p_proc and look_at_p_proc. There are more but this scripts just uses these four. They are predefinied by the devs but you can also write your own procecures.</p>
+                Every procedure you use inside your script needs to be declared at the top of the script like seen below.
                 <!-- The part below doesn't fit into here.-->
                 <!--It can also have its own variables called local variables. 
                 Local variables belonging to procedures cannot be used with the main-program. 
                 Variables declared in a program are called global variables.-->
                 <code>
                     <pre>
+                        <span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span>;
+                        <span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;
+                        <span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span>;
+                        <span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span>;
+                    </pre>
+                </code>  
+            <p> The space between <span class="dyestatement">begin</span> and <span class="dyestatement">end</span> is called procedure body. Inside the body you write the stuff you want to be executed.
+                In the example below the body is empty. An empty procedure body cannot execute anything because there is nothing to execute. 
+                If you call an empty procedure, the procedure starts, sees there's nothing inside the body and ends immediately.</p>
+            <p> The most important procedure of them all is the procedure called "start". The start procedure is the entry point of scripts.
+                Every script has it and every script needs it. If you don't have the start procedure inside you script, it won't work.</p>
+                <code>
+                    <pre>
                         <span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span> <span class="dyestatement">begin</span>
                         <span class="dyestatement">end</span>
                     </pre>
                 </code>
-            <p> The space between <span class="dyestatement">begin</span> and <span class="dyestatement">end</span> is called procedure body. Inside the body you write the stuff you want to be executed.
-                In the example above the body is empty. An empty procedure body cannot execute anything because there is nothing to execute. If you call an empty procedure, the procedure starts, sees there's nothing inside the body
-                and ends immediately.</p>
-            <p> We have four procedures in this example. start; use_skill_on_p_proc; description_p_proc and look_at_p_proc. There are more but this scripts just uses these four. They are predefinied by the devs but you can also write your own procecures.</p>
-            <p> The most important procedure of them all is the procedure called "start". The start procedure is the entry point of every script. Every script has it and every script needs it. If you don't have the start procedure inside you script, it won't work.</p>
+            <p> The other three procedures inside the example script are these.</p>
+                <code>
+                    <pre>
+                        <span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span> <span class="dyestatement">begin</span>
+                        [...]
+                        <span class="dyestatement">end</span>
+                    </pre>
+                </code>
+                <code>
+                    <pre>
+                        <span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
+                        [...]
+                        <span class="dyestatement">end</span>
+                    </pre>
+                </code>
+                <code>
+                    <pre>
+                        <span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span> 
+                        [...]
+                        <span class="dyestatement">end</span>
+                    </pre>
+                </code>
+                <p> You can call procedures from every corner of your script like this.</p>
+                <code>
+                    <pre>
+                        <span class="dyestatement">call</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;
+                    </pre>
+                </code>
         <br>
 
-        <div id="command"><h4>Command</h4></div>
-            <p> These are the commands of SSL. The stuff you write inside the procedure body. These commands are hardcoded. That means they are basis commands, they cannot be broken down further.</p>
-            <p> A simple command can look like this:</p>
+        <div id="function"><h4>Function</h4></div>
+            <p> Simple hardcoded commands of SSL are called functions. The stuff you write inside the procedure body. That means they are basis commands, and cannot be broken down further.</p>
+            <p> A simple function can look like this:</p>
                 <code>
                     <pre>
                         <span class="dyecommand">display_msg</span>
                     </pre>
                 </code>
-        <br>
-        <div id="function"><h4>Function</h4></div>
             <p> You can also write something more complex like this:</p>
                 <code>
                     <pre>
                         <span class="dyecommand">display_msg</span>(<span class="dyecommand">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
                     </pre>
                 </code>
-            <p> As you can see there is a command inside a command and some other stuff. That's also possible. So if you combine commands and other stuff together and it's becoming more complex we speak of functions.</p>
+            <p> As you can see there is a function inside a function and some other stuff. That's also possible.</p>
         <br>
 
         <div id="argument/parameter"><h4>Argument</h4></div>
-            <p>But what's the stuff inside the parenthesis? It's called argument or parameter. I refer to them as argument inside this guide.</p>
+            <p>But what's the stuff inside the parenthesis? It's called argument.</p>
                 <code>
                     <pre>
                         <span class="dyecommand">display_msg</span>(<span class="dyecommand">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
                     </pre>
                 </code>
-            <p>Many commands need to pass something and what they pass is called an argument. If the concept of the arguments is not quite clear to you yet, don't worry, more about that later.</p>
+            <p>Many functions need to pass something and what they pass is called an argument.</p>
         <!--<p> This give_xp(x) gives a certain amount of experience points to the player and displays a message to the player so he is informed how many exp points he received. 
                 The amount of the exp points given is defined with the symbol between the brackets, in this example (x). This is called an argument or parameter.</p>-->
         <br>
@@ -229,45 +322,11 @@
             <p><span class="dyeoperator">!=</span> (does not equal - Checks if the value on the left side is not exactly the same as the value on the right side.)</p>
         <br>
 
-        <div id="header"><h4>Header File</h4></div>
-            <p>Header files are files that store information that is used repeatedly in every script. 
-                So, you don’t have to rewrite certain functions, arguments, variables every time you want to use them. 
-                Just include the header file you want to use inside your script and you’re good to go.</p>
-                <code>
-                    <pre>
-                        <span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\command.h"</span>
-                    </pre>
-                </code>
-            <p>You must do this step so that the compiler is able to compile your script.</p>
-                <code>
-                    <pre>
-                        <span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
-                    </pre>
-                </code>
-                <code>
-                    <pre>
-                        <span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
-                        <div class="codepopup" >
-                            <div class="codepre">
-                                Define: SCRIPT_ASWELL
-                                (217) //ASWell.int  :Arroyo Well. It's broken. Fix w/ Repair.
-                                
-                                Declare file: scripts.h
-                            </div>
-                        </div>
-                    </pre>
-                </code>
-            <p>The file scripts.H is located inside headers\scripts.H. </p>
-                <code>
-                    <pre>
-                        <span class="dyedefine">#define</span> SCRIPT_ASWELL &emsp; &emsp; (<span class="dyedefine">217</span>) &emsp; <span class="dyecomment">// ASwell.int</span> &emsp; &emsp; <span class="dyecomment">; Arroyo Well. It's broken. Fix w/ Repair.</span>
-                    </pre>
-                </code>
-        <br>
-
         <div id="statement"><h4>Statement</h4></div>
             <p>if then else is a Statement.</p>
         <br>
+
+        <div id="semicolon"><h4>Semicolon</h4></div>
         <br>
 
     <div class="sticky">
