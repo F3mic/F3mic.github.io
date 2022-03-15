@@ -54,32 +54,32 @@
                         <span class="dyestatement">end</span>
                         
                         <span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span> <span class="dyestatement">begin</span>
-                            <span class="dyecommand">script_overrides</span>;                                     
-                            <span class="dyestatement">if</span> (<span class="dyecommand">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>         
-                                <span class="dyecommand">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));                           
+                            <span class="dyefunction">script_overrides</span>;                                     
+                            <span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>         
+                                <span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));                           
                             <span class="dyestatement">end</span>
                             <span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
-                                <span class="dyecommand">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));                           
+                                <span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));                           
                             <span class="dyestatement">end</span>
                         <span class="dyestatement">end</span>
                         
                         <span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
-                            <span class="dyecommand">script_overrides</span>;
-                            <span class="dyestatement">if</span> (<span class="dyecommand">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) then <span class="dyestatement">begin</span> 
-                                <span class="dyecommand">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));
+                            <span class="dyefunction">script_overrides</span>;
+                            <span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) then <span class="dyestatement">begin</span> 
+                                <span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));
                             <span class="dyestatement">end</span>
                             <span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
-                                <span class="dyecommand">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));
+                                <span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));
                             <span class="dyestatement">end</span>
                         <span class="dyestatement">end</span>
                         
                         <span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span> 
-                            <span class="dyestatement">if</span> ((<span class="dyecommand">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyecommand">local_var</span>(LVAR_Gave_Xp) == <span class="dyedefine">0</span>)) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>        
-                                <span class="dyecommand">script_overrides</span>;
-                                <span class="dyecommand">display_msg</span>(<span class="dyecommand">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));                                           
+                            <span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) == <span class="dyedefine">0</span>)) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>        
+                                <span class="dyefunction">script_overrides</span>;
+                                <span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));                                           
                                 <span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL);                                                                   
-                                <span class="dyecommand">set_map_var</span>(MVAR_Fixed_Well,<span class="dyedefine">1</span>);                                                          
-                                <span class="dyecommand">set_local_var</span>(LVAR_Gave_Xp,<span class="dyedefine">1</span>);                                                           
+                                <span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,<span class="dyedefine">1</span>);                                                          
+                                <span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,<span class="dyedefine">1</span>);                                                           
                             <span class="dyestatement">end</span>
                         <span class="dyestatement">end</span>
                     </pre>
@@ -209,23 +209,29 @@
             <p> A simple function can look like this:</p>
                 <code>
                     <pre>
-                        <span class="dyecommand">display_msg</span>
+                        <span class="dyefunction">display_msg</span>
                     </pre>
                 </code>
             <p> You can also write something more complex like this:</p>
                 <code>
                     <pre>
-                        <span class="dyecommand">display_msg</span>(<span class="dyecommand">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
+                        <span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
                     </pre>
                 </code>
             <p> As you can see there is a function inside a function and some other stuff. That's also possible.</p>
         <br>
 
         <div id="argument/parameter"><h4>Argument</h4></div>
-            <p>But what's the stuff inside the parenthesis? It's called argument.</p>
+            <p>The stuff inside the parenthesis is called argument.</p>
                 <code>
                     <pre>
-                        <span class="dyecommand">display_msg</span>(<span class="dyecommand">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
+                        <span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
+                    </pre>
+                </code>
+                <p> An argument is also passed here.</p>
+                <code>
+                    <pre>
+                        <span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL); 
                     </pre>
                 </code>
             <p>Many functions need to pass something and what they pass is called an argument.</p>
@@ -234,11 +240,50 @@
         <br>
 
         <div id="variable"><h4>Variable</h4></div>
-            <p> A variable is like a temporary container. You can save things into it. For example strings, integers, booleans and the result of functions etc.</p>
-            <p> There are several types of variables. The ones which get into global namespace and the ones that don't. The global namespace is the place where variables are shared between scripts.
-                So every variable inside the global namespace needs to have a unique otherwise they engine gets confused and throws errors.</p>
-            <p> </p>
-            <p> The variable <strong>Only_Once</strong> is defined outside the procedure and assigned the value <span class="dyedefine">0</span>. 
+            <p>A variable is like a temporary container. You can save things into it. For example strings, integers, booleans and the result of functions etc.</p>
+            <p>There are several types of variables. The ones which get into global namespace and the ones that don't. The global namespace is the place where variables are shared between scripts.
+                So every variable inside the global namespace needs to have a unique name otherwise the engine gets confused and throws errors. 
+                This also means variables that are inside the global namespace are saved and remembered on map change or game load. 
+                The other variables that are not inside the global namespace just run while the script they are defined in is running. They will be forgotten on map change or game load. </p>
+        <br>
+            <p>Let's take a look at the different types of variables.</p>
+            <p>Variables getting into global namespace are:</p>
+            <p>LVAR; MVAR and GVAR.</p>            
+        <br>
+            <p>This variable is of type Local variable (LVAR). It is saved during map change. LVARs are used for circumstances that aren't that significant e.g. have experience points been given to the player?
+                All LVARs will be prepended with LVAR_.</p>
+                <code>
+                    <pre>
+                        <span class="dyedefine">#define</span> LVAR_Gave_Xp; &emsp; &emsp; (<span class="dyedefine">0</span>)
+                    </pre>
+                </code>
+            <p>This variable is of type Map variable (MVAR). It is saved during map change. MVARs are stored in the corresponding map script. 
+                In this case MVAR_Fixed_Well is stored inside arvillag.H. With the include command the MVAR can be used in the script. 
+                Map variables need to be added to a file called mapName.gam which must be put in the data\maps directory.
+                MVARs are used for circumstances that are significant for a specific map like has the well been fixed?
+                All MVARs will be prepended with MVAR_.</p>
+                <code>
+                    <pre>
+                        <span class="dyedefine">#define</span> MVAR_Fixed_Well; &emsp; &emsp; (<span class="dyedefine">4</span>)
+                    </pre>
+                </code>
+            <p>This variable is of type Global variable. It can be used in any script. To use this type of variable, only the file global.H must be included into the script. 
+                It is saved during the map change. Any global variables you #define and use must also be put into a file called VAULT13.gam which is found inside the data\data directory. 
+                GVARs will be stored in a header file called Global.h, located in the \Fallout2\Scripts\Headers\ directory. 
+                All GVARs will be prepended with GVAR_.</p>
+                <code>
+                    <pre>
+                        <span class="dyedefine">#define</span> GVAR_DUMAR_STATUS; &emsp; &emsp; (<span class="dyedefine">369</span>)
+                    </pre>
+                </code>
+            <p>The number inside the parenthesis of all three global namespace variables is no value. It serves as a placeholder for the engine. As soon as the script is executed, 
+                the engine replaces the names of the global namespace variables with the number assigned to it.</p>
+            <p>These three variable types must always be defined at the top of the script like in the sample script.</p>
+        <br>
+            <p>Variables not getting into global namespace are:</p>
+            <p>variable and export/import variable.</p>
+        <br>
+            <p> The variable Only_Once is defined outside the procedure and assigned the value <span class="dyedefine">0</span>. 
                 This variable can be used in every procedure inside the script. This variable will not be saved when changing the map.</p>
                 <code>
                     <pre>
@@ -256,7 +301,7 @@
                             <span class="dyestatement">variable</span> item;
 
                                 item <span class="dyeoperator">:=</span> <span class="dyestandardmacro">create_object</span>(PID_HEALING_POWDER),<span class="dyedefine">0</span>,<span class="dyedefine">0</span>);
-                                <span class="dyecommand">use_obj_on_obj</span>(item,<span class="dyecommand">self_obj</span>);
+                                <span class="dyefunction">use_obj_on_obj</span>(item,<span class="dyefunction">self_obj</span>);
                     </pre>
                 </code>
             <p>This variable is defined inside script ARCAVES.SSL. The keyword export ensures that the variable can be used in other scripts. 
@@ -266,34 +311,11 @@
                         <span class="dyestatement">export variable</span> temple_chest_prt;
                     </pre>
                 </code>
-            <p>The previously exported variable can now be used with the keyword import in the scripts AITEMCST.SSL and ACTEMVIL.SSL. 
+            <p>The previously exported variable can now be used with the keyword import inside the scripts AITEMCST.SSL and ACTEMVIL.SSL. 
                 The variable contains the value that was last assigned to it.</p>
                 <code>
                     <pre>
                         <span class="dyestatement">import variable</span> temple_chest_prt;
-                    </pre>
-                </code>
-            <p>This variable is of type Local variable (LVAR). This variable is saved during map change.</p>
-                <code>
-                    <pre>
-                        <span class="dyedefine">#define</span> LVAR_Gave_Xp; &emsp; &emsp; (<span class="dyedefine">0</span>)
-                    </pre>
-                </code>
-            <p>This variable is of type Map variable (MVAR). This variable is saved during map change. MVARs are stored in the corresponding map script. 
-                In this case MVAR_Fixed_Well is stored in arvillag.H. With the include command the MVAR can be used in the script. 
-                Map variables need to be added to a file called mapName.gam which must be put in the data\maps directory.</p>
-                <code>
-                    <pre>
-                        <span class="dyedefine">#define</span> MVAR_Fixed_Well; &emsp; &emsp; (<span class="dyedefine">4</span>)
-                    </pre>
-                </code>
-            <p>This variable is of type Global variable. They can be used in any script. To use these variables, only the file global.H must be included in the script. 
-                These variables are saved during the map change. Any global variables you #define and use must also be put into a file called VAULT13.gam which is found in the data\data directory. 
-                Global Vars will be stored in a header file called Global.h, located in the \Fallout2\Scripts\Headers\ directory. 
-                All global vars will be prepended with GVAR_ to differentiate them from all other variables.</p>
-                <code>
-                    <pre>
-                        <span class="dyedefine">#define</span> GVAR_DUMAR_STATUS; &emsp; &emsp; (<span class="dyedefine">369</span>)
                     </pre>
                 </code>
         <br>
@@ -309,11 +331,25 @@
         <br>
         
         <div id="macro"><h4>Macro</h4></div>
-            <p>Found in the file EXPPOINT.H give_xp(x) is a macro of a couple of functions like give_exp_points(x); display_msg[…] and message_str[…] combined.</p>
+            <p>A macro is a collection of functions. Functions can easily get huge and messy.</p>
+            <p>Let's look at an example.</p>
+                <code>
+                    <pre>
+                        <span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL); 
+                    </pre>
+                </code>
+            <p>The macro give_xp(x) is located inside the file EXPPOINT.H.</p>
+            <p>Behind give_xp(x) actually hides:</p>  
+                <code>
+                    <pre>
+                       <span class="dyefunction">give_exp_points</span>(x);
+                       <span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">100</span>)<span class="dyeoperator">+</span>x<span class="dyeoperator">+</span><span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">101</span>))
+                    </pre>
+                </code>
         <br>
 
         <div id="operator"><h4>Operator</h4></div>
-            <p><span class="dyeoperator">:=</span>(assign value - Assigns the value on the right side to the value on the left side.)</p>
+            <p><span class="dyeoperator">:=</span> (assign value - Assigns the value on the right side to the value on the left side.)</p>
             <p><span class="dyeoperator">></span> (greater than - Checks if the value on the left side is greater then the value on the right side.)</p>
             <p><span class="dyeoperator"><</span> (lesser than - Checks if the value on the left side is lesser then the value on the right side.)</p>
             <p><span class="dyeoperator">>=</span> (greater than or equal to - Checks if the value on the left side is greater then or equal to the value on the right side.)</p>
