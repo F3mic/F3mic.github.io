@@ -14,7 +14,7 @@
     <br>
 
         <div id="ssl"><h4>SSL - Star Trek scripting language</h4></div>
-            <p> No, you have not misread, the scripting language used to script Fallout 2 is called Star Trek scripting language or in short SSL. 
+            <p>No, you have not misread, the scripting language used to script Fallout 2 is called Star Trek scripting language or in short SSL. 
                 SSL is a mix of pascal or lua with C. Only the devs know what this abomination is.
                 Black Isle Studios created SSL for their Star Trek game that never came true. When they made Fallout 1 and 2 they simply used SSL to script them.
                 Some refer to it as Fallout scripting language, some as Star Trek scripting language and some just call it SSL but all mean the same.
@@ -22,7 +22,7 @@
          <br>
 
         <div id="script"><h4>Script</h4></div>
-            <p> A script is just a file that contains the source code of the Fallout scripting language. 
+            <p>A script is just a file that contains the source code of the Fallout scripting language. 
                 Any object in the game can have a script. 
                 Scripts are needed to assign a certain behavior to an object (critter, scenery, items etc.), 
                 so that it can be interacted with. They breathe life into the game world and its inhabitants.
@@ -33,7 +33,7 @@
                 What does it mean "not that much"?
                 Well, the game uses default scripts if you don't assign any like combat, push, look, description etc.</p>
         
-            <p> Let’s see how a script can look like. The following is the script for the well found in Arroyo village.</p>   
+            <p>Let’s see how a script can look like. The following is the script for the well found in Arroyo village.</p>   
                 <code>
                     <pre>
                         <span class="dyeheader">/* Include Files */</span> 
@@ -84,11 +84,11 @@
                         <span class="dyestatement">end</span>
                     </pre>
                 </code>
-            <p> At first glance it can look overwelming even intimidating. But fear not! We will go through this step by step. First of all we will look at the structure. We'll go more indepth later.</p>
+            <p>At first glance it can look overwelming even intimidating. But fear not! We will go through this step by step. First of all we will look at the structure. We'll go more indepth later.</p>
         <br>
 
         <div id="header"><h4>Header File</h4></div>
-            <p> Header files are files that store information that is used repeatedly in every script. 
+            <p>Header files are files that store information that is used repeatedly in every script. 
                 So, you don’t have to rewrite the same code over and over again in every script. 
                 Once written inside a header File and just included at the top of a script where you want to use the code and you’re good to go.</p>
                 <code>
@@ -103,27 +103,27 @@
         <br>
 
         <div id="define"><h4>Define</h4></div>
-            <p> With #define it is possible to specify strings that will be exchanged for another string before the program is translated. 
+            <p>With #define it is possible to specify strings that will be exchanged for another string before the program is translated. 
                 Again, the # character causes the preprocessor to do its work first before the nascent program is translated by the compiler into machine language.</p>
-            <p> We have two #defines in this example.</p> 
+            <p>We have two #defines in this example.</p> 
                 <code>
                     <pre>
                         <span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
                     </pre>
                 </code>
-            <p> and</p>
+            <p>and</p>
                 <code>
                     <pre>
                         <span class="dyedefine">#define</span> LVAR_Gave_Xp            (<span class="dyedefine">0</span>)
                     </pre>
                 </code>
-            <p> In the #define below NAME is SCRIPT_ASWELL. This means if you want to refer to SCRIPT_ASWELL inside your script you simply can write NAME.</p>
+            <p>In the #define below NAME is SCRIPT_ASWELL. This means if you want to refer to SCRIPT_ASWELL inside your script you simply can write NAME.</p>
                 <code>
                     <pre>
                         <span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
                     </pre>
                 </code>
-            <p> If you hover over SCRIPT_ASWELL with your cursor you'll see the description inside the bluegreyish box.</p>
+            <p>If you hover over SCRIPT_ASWELL with your cursor you'll see the description inside the bluegreyish box.</p>
                 <code>
                     <pre>
                         <span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
@@ -146,15 +146,11 @@
         <br>
 
         <div id="procedure"><h4>Procedure</h4></div>
-            <p> Procedures are just like small programs inside your script. They are an essential part of the program and help programmers to keep the script clear, organized, structured and avoid repetitions since they promote code re-use. 
+            <p>Procedures are just like small programs inside your script. They are an essential part of the program and help programmers to keep the script clear, organized, structured and avoid repetitions since they promote code re-use. 
                 A procedure in Fallout scripting language starts with <span class="dyestatement">procedure </span> a name (<span class="dyeprocedure">start</span> in this case) <span class="dyestatement">begin</span>  
                 and ends with an <span class="dyestatement">end</span> statement.</p>
-            <p> We have four procedures in this example. start; use_skill_on_p_proc; description_p_proc and look_at_p_proc. There are more but this scripts just uses these four. They are predefinied by the devs but you can also write your own procecures.</p>
+            <p>We have four procedures in this example. start; use_skill_on_p_proc; description_p_proc and look_at_p_proc. There are more but this scripts just uses these four. They are predefinied by the devs but you can also write your own procecures.</p>
                 Every procedure you use inside your script needs to be declared at the top of the script like seen below.
-                <!-- The part below doesn't fit into here.-->
-                <!--It can also have its own variables called local variables. 
-                Local variables belonging to procedures cannot be used with the main-program. 
-                Variables declared in a program are called global variables.-->
                 <code>
                     <pre>
                         <span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span>;
@@ -163,10 +159,10 @@
                         <span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span>;
                     </pre>
                 </code>  
-            <p> The space between <span class="dyestatement">begin</span> and <span class="dyestatement">end</span> is called procedure body. Inside the body you write the stuff you want to be executed.
+            <p>The space between <span class="dyestatement">begin</span> and <span class="dyestatement">end</span> is called procedure body. Inside the body you write the stuff you want to be executed.
                 In the example below the body is empty. An empty procedure body cannot execute anything because there is nothing to execute. 
                 If you call an empty procedure, the procedure starts, sees there's nothing inside the body and ends immediately.</p>
-            <p> The most important procedure of them all is the procedure called "start". The start procedure is the entry point of scripts.
+            <p>The most important procedure of them all is the procedure called "start". The start procedure is the entry point of scripts.
                 Every script has it and every script needs it. If you don't have the start procedure inside you script, it won't work.</p>
                 <code>
                     <pre>
@@ -174,7 +170,7 @@
                         <span class="dyestatement">end</span>
                     </pre>
                 </code>
-            <p> The other three procedures inside the example script are these.</p>
+            <p>The other three procedures inside the example script are these.</p>
                 <code>
                     <pre>
                         <span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span> <span class="dyestatement">begin</span>
@@ -202,41 +198,40 @@
                         <span class="dyestatement">call</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;
                     </pre>
                 </code>
+            <p>You can also export/import procedures.</p>
         <br>
 
         <div id="function"><h4>Function</h4></div>
-            <p> Simple hardcoded commands of SSL are called functions. The stuff you write inside the procedure body. That means they are basis commands, and cannot be broken down further.</p>
-            <p> A simple function can look like this:</p>
+            <p>Simple hardcoded commands of SSL are called functions. The stuff you write inside the procedure body. That means they are basis commands, and cannot be broken down further.</p>
+            <p>A simple function can look like this:</p>
                 <code>
                     <pre>
                         <span class="dyefunction">display_msg</span>
                     </pre>
                 </code>
-            <p> You can also write something more complex like this:</p>
+            <p>You can also write something more complex like this:</p>
                 <code>
                     <pre>
                         <span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
                     </pre>
                 </code>
-            <p> As you can see there is a function inside a function and some other stuff. That's also possible.</p>
+            <p>As you can see there is a function inside a function and some other stuff. That's also possible.</p>
         <br>
 
-        <div id="argument/parameter"><h4>Argument</h4></div>
+        <div id="argument"><h4>Argument</h4></div>
             <p>The stuff inside the parenthesis is called argument.</p>
                 <code>
                     <pre>
                         <span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
                     </pre>
                 </code>
-                <p> An argument is also passed here.</p>
+            <p>An argument is also passed here.</p>
                 <code>
                     <pre>
                         <span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL); 
                     </pre>
                 </code>
-            <p>Many functions need to pass something and what they pass is called an argument.</p>
-        <!--<p> This give_xp(x) gives a certain amount of experience points to the player and displays a message to the player so he is informed how many exp points he received. 
-                The amount of the exp points given is defined with the symbol between the brackets, in this example (x). This is called an argument or parameter.</p>-->
+            <p>Many functions need to pass a value of some kind. Just hover over the function to know how many arguments and of what kind wants to be passed.</p>
         <br>
 
         <div id="variable"><h4>Variable</h4></div>
@@ -245,6 +240,12 @@
                 So every variable inside the global namespace needs to have a unique name otherwise the engine gets confused and throws errors. 
                 This also means variables that are inside the global namespace are saved and remembered on map change or game load. 
                 The other variables that are not inside the global namespace just run while the script they are defined in is running. They will be forgotten on map change or game load. </p>
+            <p>The image below is intended to illustrate the global namespace. The green circles are scripts with variables. The blue circle is the global namespace. 
+                The scripts that are partially in the blue circle have local variables that are not in the global namespace. 
+                The scripts which are fully in the blue circle have global variables which are in the global namespace and therefore must be unique. 
+                As you can see, the global variable MVAR_1 exists twice, which must not occur in the global namespace.</p>
+            <img src="images\Global_namespace_image.jpg" alt="Please stand by">
+        <br>
         <br>
             <p>Let's take a look at the different types of variables.</p>
             <p>Variables getting into global namespace are:</p>
@@ -321,7 +322,7 @@
         <br>
 
         <div id="constant"><h4>Constant</h4></div>
-            <p>Constants are variables with one-time fixed unchangeable value. A good example is give_xp(EXP_FIX_WELL) because EXP_FIX_WELL is a constant which is defined in ExpPoint.H. 
+            <p>Constants are variables with fixed unchangeable value (You can change them but you don't want to, thats the reason using constants :P). A good example is give_xp(EXP_FIX_WELL) because EXP_FIX_WELL is a constant which is defined in ExpPoint.H. 
                 If you use EXP_FIX_WELL in several scripts and you want to change the given experience from 100 to 200 you just need to change the value in on place, in ExpPoint.H.</p>
                 <code>
                     <pre>
@@ -331,7 +332,7 @@
         <br>
         
         <div id="macro"><h4>Macro</h4></div>
-            <p>A macro is a collection of functions. Functions can easily get huge and messy.</p>
+            <p>A macro is a collection of functions. Functions can easily get huge and messy. Macros are shorter and therefore better to read.</p>
             <p>Let's look at an example.</p>
                 <code>
                     <pre>
@@ -342,13 +343,15 @@
             <p>Behind give_xp(x) actually hides:</p>  
                 <code>
                     <pre>
-                       <span class="dyefunction">give_exp_points</span>(x);
-                       <span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">100</span>)<span class="dyeoperator">+</span>x<span class="dyeoperator">+</span><span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">101</span>))
+                        <span class="dyefunction">give_exp_points</span>(x);
+                        <span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">100</span>)<span class="dyeoperator">+</span>x<span class="dyeoperator">+</span><span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">101</span>))
                     </pre>
                 </code>
         <br>
 
         <div id="operator"><h4>Operator</h4></div>
+            <p>An operator is a symbol that tells the compiler to perform specific mathematical, relational or logical operation and produce final result. </p>
+        <br>
             <p><span class="dyeoperator">:=</span> (assign value - Assigns the value on the right side to the value on the left side.)</p>
             <p><span class="dyeoperator">></span> (greater than - Checks if the value on the left side is greater then the value on the right side.)</p>
             <p><span class="dyeoperator"><</span> (lesser than - Checks if the value on the left side is lesser then the value on the right side.)</p>
@@ -359,10 +362,39 @@
         <br>
 
         <div id="statement"><h4>Statement</h4></div>
-            <p>if then else is a Statement.</p>
+            <p>Statements are used to build and subdivide blocks of logic.</p>
+            <p>For example:</p>
+                <code>
+                    <pre>
+                        <span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
+                            <span class="dyefunction">script_overrides</span>;
+                            <span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>
+                                <span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));
+                            <span class="dyestatement">end</span>
+                            <span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
+                                <span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));
+                            <span class="dyestatement">end</span>
+                        <span class="dyestatement">end</span>
+                    </pre>
+                </code>
+            <p>The above example simply says:</p>
+                <code>
+                    <pre>
+                        "BEGIN with PROCEDURE look_at_p_proc and"
+                            "check IF the map variable MVAR_Fixed_well is equal to 0 if that's the case THEN BEGIN and"
+                                "display message line 100"
+                            "END first branch of the PROCEDURE"
+                            "ELSE BEGIN and"
+                                "display message line 101 and"
+                            "END second branch of the PROCEDURE"
+                        "END of PROCEDURE reached so terminate the PROCEDURE itself" 
+                    </pre>
+                </code>
+             <p>There is no need to write the related statements on the same column but it helps alot.</p>
         <br>
 
         <div id="semicolon"><h4>Semicolon</h4></div>
+            <p>The semicolon symbol ; is used to tell the compiler where a function ends.</p>
         <br>
 
     <div class="sticky">
@@ -377,14 +409,5 @@
         <a href="complex.html">Next &raquo;</a>
     </div>
 
-    <!--<footer>
-        <div class="symbol">
-            <a href="prep.html">&laquo; Previous</a>
-                <img src="images\Radioactive_symbol.png">	
-            <a href="index.html">Index</a>
-                <img src="images\Radioactive_symbol.png">
-            <a href="complex.html">Next &raquo;</a>	
-        </div>
-    </footer>-->
 </body>
 </html>
