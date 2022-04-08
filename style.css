@@ -5,67 +5,12 @@
     font-weight: normal;
     font-style: normal;
 }
-
-body {
-    background-color: #1f1f1f;
-    color: white;
-    font-weight: normal;
-    font-size: 180%;
-    font-family: monospace;
-}
-
-a:link {
-    color: #0cbe0c;
-}
-
-a:visited {
-    color: #447c44;
-}
-
-a:active {
-    color: #80ff00;
-}
-
-header {
-    text-align: center;
-}
-
-h3 {
-    color: #BD9D30;
-}
-
-h4 {
-    color: #BD9D30;
-}
-
-h5 {
-    color: #BD9D30;
-}
-
-.container {
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.symbol img {
-    width: 1.2%;
-    height: auto;
-}
-
-.codebox {
-    background-color: #3A3B3C;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    font-family: monospace;
-}
-
-.codepopup {
-    background-color: #474757;
-    margin-left: 350px;
-    margin-right: 20%;
-}
 */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 div.sticky {
   position: -webkit-sticky;

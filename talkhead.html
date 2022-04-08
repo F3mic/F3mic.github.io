@@ -197,11 +197,11 @@
             <p>Save the image as an 8bit BMP this is the image format the Fallout 2 engine uses.</p>
             <p>Do the same process for all the images.</p>
             <br>
-            <p>Tips:</p>
-            <p>-Make sure you use a uniform color as the background for your images (the transparent part of PNG images turn white which is ideal) as the program to create FRMs (which we will see in the next step) 
+            <h5>Tips</h5>
+            <p>* Make sure you use a uniform color as the background for your images (the transparent part of PNG images turn white which is ideal) as the program to create FRMs (which we will see in the next step) 
                 will cut the background color, for this reason try not have that same one on the character of the program will cut sections of the it that uses the same color.</p>    
-            <p>-Use shortcut keys to make the workflow faster on Photoshop you can go to Edit -> Keyboard Shortcuts to make your own.</p>    
-            <p>-You don't have to use Photoshop, Gimp is a good free alternative. </p>    
+            <p>* Use shortcut keys to make the workflow faster on Photoshop you can go to Edit -> Keyboard Shortcuts to make your own.</p>    
+            <p>* You don't have to use Photoshop, Gimp is a good free alternative. </p>    
         <br>
 
         <h4>How the animations work</h4>
@@ -222,7 +222,7 @@
                 </code>
         <br>
 
-            <p>Examples:</p>
+            <h5>Examples</h5>
             <p>If you want to create an animation for Vic where he is blinking and in a neutral mood you must name it:</p>
                 <code>
                     <pre>
@@ -344,7 +344,7 @@
                 </code>
         <br>
         
-            <p>Talking Animations:</p>
+            <h4>Talking Animations</h4>
             <p>All talking animations (NP,GP,BP) must have 9 frames, each one representing a different viseme (the shape the mouth makes when saying a letter).</p>
             <img src="images\Creating FRMs 5.png" alt="">
             <p>I'm not 100% sure of the exact order but I think it is:</p>
@@ -363,8 +363,8 @@
                 </code>
         <br>
 
-            <p>Animation Tips:</p>
-            <p>-The bare minimum amount of animations for a Talking Head to be functional is this:</p>
+            <h5>Animation Tips</h5>
+            <p>* The bare minimum amount of animations for a Talking Head to be functional is this:</p>
                 <code>
                     <pre>
                         [name]Nf1,
@@ -379,15 +379,15 @@
                         [name]GP
                     </pre>
                 </code>
-            <p>-If use want to make a static image as a Talking Head instead of an animated one, simply make a FRM of each animation (mentioned in the previous tip) with that single image. </p>
-            <p>-Try to make the animations loop so in game the Heads will look fluid, make sure the last frame links to the first one.</p>
-            <p>-The first frame of Nf1,Bf1 and Gf1 (specially Nf1) is arguably the most important as the Head freezes on it before randomly choosing one of the Fidgets (f1,f2,f3), so make sure it looks cool! </p>
+            <p>* If use want to make a static image as a Talking Head instead of an animated one, simply make a FRM of each animation (mentioned in the previous tip) with that single image. </p>
+            <p>* Try to make the animations loop so in game the Heads will look fluid, make sure the last frame links to the first one.</p>
+            <p>* The first frame of Nf1,Bf1 and Gf1 (specially Nf1) is arguably the most important as the Head freezes on it before randomly choosing one of the Fidgets (f1,f2,f3), so make sure it looks cool! </p>
         <br>
 
         <h4>Adding our head into the game</h4>
             <p>For this section we will need the Sfall Script editor and "Dat Explorer" by Dims.</p>
         <br>
-            <p>Creating a Patch:</p>
+            <h4>Creating a Patch</h4>
             <p>Go into your main Fallout 2 directory and create a folder called "patch001.dat" 
                 (if you already have a "patch001" folder or .dat file name it "patch002"), open it and create two new folder named "art" and "scripts" respectively.</p>
             <img src="images\Patch 1.png" alt="">
