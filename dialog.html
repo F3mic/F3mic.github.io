@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dialog</title>
+    <title>Scripting (Advanced) - Dialog</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -33,7 +33,7 @@
                         <span class="dyestatement">procedure</span> <span class="dyeprocedure">talk_p_proc</span> <span class="dyestatement">begin</span>
                             [...]
                             <span class="dyestatement">if</span> ((<span class="dyefunction">obj_art_fid</span>(<span class="dyefunction">dude_obj</span>) <span class="dyeoperator">==</span> FID_HMWARR) <span class="dyestatement">or</span> (<span class="dyefunction">obj_art_fid</span>(<span class="dyefunction">dude_obj</span>) <span class="dyeoperator">==</span> FID_HFPRIM)) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>
-                            <span class="dyefunction">start_gdialog</span>(NAME,<span class="dyefunction">self_obj</span>,<span class="dyedefine">4</span>,<span class="dyedefine">-1</span>,<span class="dyedefine">-1</span>);
+                                <span class="dyefunction">start_gdialog</span>(NAME,<span class="dyefunction">self_obj</span>,<span class="dyedefine">4</span>,<span class="dyedefine">-1</span>,<span class="dyedefine">-1</span>);
                                 <span class="dyefunction">gSay_Start</span>;
                                     <span class="dyestatement">call</span> <span class="dyeprocedure">Node001</span>;
                                 <span class="dyefunction">gSay_End</span>;
@@ -102,6 +102,9 @@
             <p>Every piece of text related to Klint. As you can see lines 121 and 123 are located inside this message file. So, when dialog jumps to Node006 and lines 121 and 123 are requested, 
                 the engine looks inside ACKLINT.MSG finds and returns the necessary text lines.</p>
             <p>You might have noticed that line 100, 101 and 102 contain descriptive text. They are used by the procedures look_at_p_proc and description_p_proc.</p>
+            <p>left: look_at_p_proc; right: description_p_proc</p>
+            <img src="images\look_at_p_proc.png" alt="">
+            <img src="images\description_p_proc.png" alt="">
             <br>
 
             <h4>Message files basic framework</h4>
