@@ -9,6 +9,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<div class="sticky">
+	<ol>
+		<li><a href="index.html#intro">Introduction</a></li>
+		<li><a href="index.html#prep">Preparations</a></li>
+		<li><a href="index.html#basic">Scripting (Basics)</a></li>
+	<ol class="second">
+		<li><a href="index.html#ssl">Scripting language</a></li>
+		<li><a href="index.html#script">Script</a></li>
+		<li><a href="index.html#header">Header File</a></li>
+		<li><a href="index.html#define">Define</a></li>
+		<li><a href="index.html#procedure">Procedure</a></li>
+		<li><a href="index.html#function">Function</a></li>
+		<li><a href="index.html#argument">Argument</a></li>
+		<li><a href="index.html#variable">Variable</a></li>
+		<li><a href="index.html#constant">Constant</a></li>
+		<li><a href="index.html#macro">Macro</a></li>
+		<li><a href="index.html#operator">Operator</a></li>
+		<li><a href="index.html#statement">Statement</a></li>
+		<li><a href="index.html#semicolon">Semicolon</a></li>
+	</ol>
+		<li><a href="index.html#advanced">Scripting (Advanced)</a></li>
+	<ol class="third">
+		<li><a href="index.html#compiling">Compiling</a></li>
+		<li><a href="index.html#scripts.lst">SCRIPTS.LST</a></li>
+		<li><a href="index.html#dialog">Dialog</a></li>
+	</ol>
+		<!--<li><a href="">Scripting (SFall)</a></li>--> 
+		<li><a href="index.html#complex">Scripting (Complex)</a></li>
+		<!--<li><a href="">Mapping</a></li>-->
+		<!--<li><a href="">Art</a></li>-->
+	<ol class="fourth">
+		<li><a href="index.html#talkhead">Talking Heads</a></li>
+	</ol>
+		<!--<li><a href="">Summary</a></li>-->
+		<li><a href="index.html#addendum">Addendum</a></li>
+	</ol>
+</div>
+
 <body>
 	<header>
 		<h1>Fallout 2 Modding Guide</h1>
@@ -16,51 +54,1341 @@
 			<p>Written by Femic</p>
 			<img src="images\Please_stand_by_Fallout.jpg" alt="Please stand by">
 			<p><em>Shot a child in the face after he pickpocketed me. Turned the whole town hostile. Ran away to New Reno. Became a Pornstar.
-		<br>
-			Fallout 2 in a nutshell.
-		<br>
-			11/10</em></p>
+			<br>Fallout 2 in a nutshell.
+			<br>11/10</em></p>
 			--Rat Prik (Steam review)
-		<br>
-		<br>
 	</header>
-		<hr>
+	<br>
+	<hr>
 
-	<h3 class="TableOfContents">Table of contents</h3>
-			<ol>
-				<li><a href="intro.html">Introduction</a><br></li>
-				<li><a href="prep.html">Preparations</a><br></li>
-				<li><a href="basic.html">Scripting (Basics)</a><br></li>
-					<ol>
-						<li><a href="basic.html#ssl">Scripting language</a><br></li>
-						<li><a href="basic.html#script">Script</a><br></li>
-						<li><a href="basic.html#header">Header File</a><br></li>
-						<li><a href="basic.html#define">Define</a><br></li>
-						<li><a href="basic.html#procedure">Procedure</a><br></li>
-						<li><a href="basic.html#function">Function</a><br></li>
-						<li><a href="basic.html#argument">Argument</a><br></li>
-						<li><a href="basic.html#variable">Variable</a><br></li>
-						<li><a href="basic.html#constant">Constant</a><br></li>
-						<li><a href="basic.html#macro">Macro</a><br></li>
-						<li><a href="basic.html#operator">Operator</a><br></li>
-						<li><a href="basic.html#statement">Statement</a><br></li>
-						<li><a href="basic.html#semicolon">Semicolon</a><br></li>
-					</ol>
-				<li><a href="advanced.html">Scripting (Advanced)</a><br></li>
-					<ol>
-						<li><a href="advanced.html#compiling">Compiling</a><br></li>
-						<li><a href="">SCRIPTS.H/SCRIPTS.LST</a><br></li>
-						<li><a href="dialog.html">Dialog</a><br></li>
-					</ol>
-				<li><a href="">Scripting (SFall)</a><br></li>
-				<li><a href="complex.html">Scripting (Complex procedures)</a><br></li>
-				<li><a href="">Mapping</a><br></li>
-				<li><a href="">Art</a><br></li>
-					<ol>
-						<li><a href="talkhead.html">Talking Heads</a></li>
-					</ol>
-				<li><a href="">Summary</a><br></li>
-				<li><a href="addendum.html">Addendum</a></li>
-			</ol>
+	<div id="intro"><h3>Introduction</h3></div>
+	<br>
+		<p>Welcome to my <em>Fallout 2</em> modding guide.</p> 
+		<p>You might ask why I created this guide and still work on it because there already are tutorials out there. I just could go and play Fallout instead of wasting my time.
+		<br>Your question is absolutely justified.</p>
+		<p>This guide exists because I realized that if I want the kind of complete <em>Fallout 2</em> modding guide that I envisioned, it pretty much meant writing it myself.
+			There are already some tutorials and knowledge all over the internet regarding Fallout 2 modding but these tutorials are almost ancient and the knowledge is fragmented. 
+			I'm not going to ignore the older tutorials or knowledge instead I'll incorporate them into this guide.
+			My goal is to create a coherent modding guide that covers every corner of Fallout 2 modding.</p>
+		<p>That turned out to be quite an undertaking, but on the other hand, as far as I'm concerned <em>Fallout 2</em> is the best computer game ever made.</p>
+	<br>
+	<hr>
+			
+	<div id="prep"><h3>Preparations</h3></div>
+	<br>
+		<h4>Tools</h4>
+			<iframe width="480" height="320" src="https://www.youtube-nocookie.com/embed/vCPc1gxPtKk" title="YouTube video player" frameborder="0" 
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<p>What do you need for modding Fallout 2 you ask? Well let's begin with scripting. 
+				You can take a simple text editor like notepad or notepad++ with or without
+				<a href="https://nma-fallout.com/threads/vscode-ssl-support.217033/">Burns VScode SSL support</a> to write scripts. 
+				But we take a more dedicated tool for this task. The tool we're going to use is called SFall Script Editor by Mr. Stalin.
+				This <a href="https://www.nma-fallout.com/resources/sfall-script-editor.77/">tool</a> is gold and will save us a lot of work.</p>
+			<iframe width="480" height="320" src="https://www.youtube-nocookie.com/embed/JRZb8ZGrHuw" title="YouTube video player" frameborder="0" 
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<p>If you want to just write scripts and hope they'll work you'll be fine. 
+				But if you want to be sure your scripts work you can do this in severals ways.
+				How you do test your scripts will be discussed at a later time.
+				The maybe quickest way is following tool.
+				It's the good old <a href="https://www.nma-fallout.com/resources/bis-mapper.55/">Black Isle Studio (BIS) Mapper</a>.
+				Inside the BIS Mappers folder you'll find decompiled (human readable) scripts from Fallout 2.
+				Keep these decompiled scripts save and untouched. Make a copy of them because we're going to work and manipulate alot with these files.</p>
+		<br>
+
+		<h4>Mapping</h4>
+			<iframe width="480" height="320" src="https://www.youtube-nocookie.com/embed/UWRrtQgsaYU" title="YouTube video player" frameborder="0" 
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<p>If you want to map you'd use the before mentioned BIS Mapper. You can also use 
+				<a href="https://www.nuclear-city.com/index.php/topic/1054-%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%BE%D1%80-%D0%BA%D0%B0%D1%80%D1%82-bis-%D0%B8-dims-fallout-1-2/">
+				Dims Mapper (russian speaking site)</a> as complentary. You'll also find a modified version of BIS Mapper under the russian link.</p>
+	<br>
+	<hr>
+
+	<div id="basic"><h3>Scripting (Basics)</h3></div>
+	<br>
+
+		<div id="ssl"><h4>SSL - Star Trek scripting language</h4></div>
+			<p>No, you have not misread, the scripting language used to script Fallout 2 is called Star Trek scripting language or in short SSL. 
+				SSL is a mix of pascal or lua with C. Only the devs know what this abomination is.
+				Black Isle Studios created SSL for their Star Trek game that never came true. When they made Fallout 1 and 2 they simply used SSL to script them.
+				Some refer to it as Fallout scripting language, some as Star Trek scripting language and some just call it SSL but all mean the same.
+				If you want to know more you can ask the community, they should know more about it.</p>
+		<br>
+
+		<div id="script"><h4>Script</h4></div>
+			<p>A script is just a file that contains the source code of the Fallout scripting language. 
+				Any object in the game can have a script. 
+				Scripts are needed to assign a certain behavior to an object (critter, scenery, items etc.), 
+				so that it can be interacted with. They breathe life into the game world and its inhabitants.
+				Not only the player can interact with scripts,
+				but even scripts can interact with eachother. 
+				You could also build a map and place critters, scenery and stuff without assigning scripts to them.
+				You could nevertheless interact with them but not that much.
+				What does it mean "not that much"?
+				Well, the game uses default scripts if you don't assign any like combat, push, look, description etc.</p>
+			<p>Let’s see how a script can look like. The following is the script for the well found in Arroyo village.</p>   
+				<code>
+					<pre>
+						<span class="dyeheader">/* Include Files */</span> 
+						<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\define.h"</span>
+						<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\arvillag.h"</span>
+						<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\command.h"</span>
+						
+						<span class="dyedefine">#define</span> NAME                    SCRIPT_ASWELL
+						
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span>;
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span>;
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span>;
+						
+						<span class="dyedefine">#define</span> LVAR_Gave_Xp            (<span class="dyedefine">0</span>)
+						
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span> <span class="dyestatement">begin</span>
+						<span class="dyestatement">end</span>
+						
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span> <span class="dyestatement">begin</span>
+							<span class="dyefunction">script_overrides</span>;                                     
+							<span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>         
+								<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));                           
+							<span class="dyestatement">end</span>
+							<span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
+								<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));                           
+							<span class="dyestatement">end</span>
+						<span class="dyestatement">end</span>
+						
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
+							<span class="dyefunction">script_overrides</span>;
+							<span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) then <span class="dyestatement">begin</span> 
+								<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));
+							<span class="dyestatement">end</span>
+							<span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
+								<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));
+							<span class="dyestatement">end</span>
+						<span class="dyestatement">end</span>
+						
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span> 
+							<span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) == <span class="dyedefine">0</span>)) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>        
+								<span class="dyefunction">script_overrides</span>;
+								<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));                                           
+								<span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL);                                                                   
+								<span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,<span class="dyedefine">1</span>);                                                          
+								<span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,<span class="dyedefine">1</span>);                                                           
+							<span class="dyestatement">end</span>
+						<span class="dyestatement">end</span>
+					</pre>
+				</code>
+			<p>At first glance it can look overwhelming even intimidating. But fear not! We will go through this step by step. First of all we will look at the structure. We'll go more indepth later.</p>
+			<br>
+
+		<div id="header"><h4>Header File</h4></div>
+			<p>Header files are files that store information that is used repeatedly in every script. 
+				So, you don’t have to rewrite the same code over and over again in every script. 
+				Once written inside a header File and just included at the top of a script where you want to use the code and you’re good to go.</p>
+				<code>
+					<pre>
+						<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\define.h"</span>
+						<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\arvillag.h"</span>
+						<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\command.h"</span>
+					</pre>
+				</code>
+			<p>As you can see the suffix of header files is .h.</p>
+			<p>They are located inside the folder "\HEADERS".</p>
+			<br>
+
+		<div id="define"><h4>Define</h4></div>
+			<p>With #define it is possible to specify strings that will be exchanged for another string before the program is translated. 
+				Again, the # character causes the preprocessor to do its work first before the nascent program is translated by the compiler into machine language.</p>
+			<p>We have two #defines in this example.</p> 
+				<code>
+					<pre>
+						<span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
+					</pre>
+				</code>
+			<p>and</p>
+				<code>
+					<pre>
+						<span class="dyedefine">#define</span> LVAR_Gave_Xp            (<span class="dyedefine">0</span>)
+					</pre>
+				</code>
+			<p>In the #define below NAME is SCRIPT_ASWELL. This means if you want to refer to SCRIPT_ASWELL inside your script you simply can write NAME.</p>
+				<code>
+					<pre>
+						<span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
+					</pre>
+				</code>
+			<p>If you hover over SCRIPT_ASWELL with your cursor you'll see the description inside the bluegreyish box.</p>
+				<code>
+					<pre>
+						<span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
+						<div class="codepopup" >
+							<div class="codepre">
+								Define: SCRIPT_ASWELL
+								(217) //ASWell.int  :Arroyo Well. It's broken. Fix w/ Repair.
+								
+								Declare file: scripts.h
+							</div>
+						</div>
+					</pre>
+				</code>
+			<p>The file SCRIPTS.H is located inside HEADERS\SCRIPTS.H. We'll talk about this later.</p>
+				<code>
+					<pre>
+						<span class="dyedefine">#define</span> SCRIPT_ASWELL &emsp; &emsp; (<span class="dyedefine">217</span>) &emsp; <span class="dyecomment">// ASwell.int</span> &emsp; &emsp; <span class="dyecomment">; Arroyo Well. It's broken. Fix w/ Repair.</span>
+					</pre>
+				</code>
+			<br>
+
+		<div id="procedure"><h4>Procedure</h4></div>
+			<p>Procedures are just like small programs inside your script. They are an essential part of the program and help programmers to keep the script clear, organized, structured and avoid repetitions since they promote code re-use. 
+				A procedure in Fallout scripting language starts with <span class="dyestatement">procedure </span> a name (<span class="dyeprocedure">start</span> in this case) <span class="dyestatement">begin</span>  
+				and ends with an <span class="dyestatement">end</span> statement.</p>
+			<p>We have four procedures in this example. start; use_skill_on_p_proc; description_p_proc and look_at_p_proc. There are more but this scripts just uses these four. They are predefinied by the devs but you can also write your own procecures.</p>
+				Every procedure you use inside your script needs to be declared at the top of the script like seen below.
+				<code>
+					<pre>
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span>;
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span>;
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span>;
+					</pre>
+				</code>  
+			<p>The space between <span class="dyestatement">begin</span> and <span class="dyestatement">end</span> is called procedure body. Inside the body you write the stuff you want to be executed.
+				In the example below the body is empty. An empty procedure body cannot execute anything because there is nothing to execute. 
+				If you call an empty procedure, the procedure starts, sees there's nothing inside the body and ends immediately.</p>
+			<p>The most important procedure of them all is the procedure called "start". The start procedure is the entry point of scripts.
+				Every script has it and every script needs it. If you don't have the start procedure inside you script, it won't work.</p>
+				<code>
+					<pre>
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span> <span class="dyestatement">begin</span>
+						<span class="dyestatement">end</span>
+					</pre>
+				</code>
+			<p>The other three procedures inside the example script are these.</p>
+				<code>
+					<pre>
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span> <span class="dyestatement">begin</span>
+						[...]
+						<span class="dyestatement">end</span>
+					</pre>
+				</code>
+				<code>
+					<pre>
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
+						[...]
+						<span class="dyestatement">end</span>
+					</pre>
+				</code>
+				<code>
+					<pre>
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span> 
+						[...]
+						<span class="dyestatement">end</span>
+					</pre>
+				</code>
+				<p> You can call procedures from every corner of your script like this.</p>
+				<code>
+					<pre>
+						<span class="dyestatement">call</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;
+					</pre>
+				</code>
+			<p>You can also export/import procedures.</p>
+			<br>
+
+		<div id="function"><h4>Function</h4></div>
+			<p>Simple hardcoded commands of SSL are called functions. The stuff you write inside the procedure body. That means they are basis commands, and cannot be broken down further.</p>
+			<p>A simple function can look like this:</p>
+				<code>
+					<pre>
+						<span class="dyefunction">display_msg</span>
+					</pre>
+				</code>
+			<p>You can also write something more complex like this:</p>
+				<code>
+					<pre>
+						<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
+					</pre>
+				</code>
+			<p>As you can see there is a function inside a function and some other stuff. That's also possible.</p>
+			<br>
+
+		<div id="argument"><h4>Argument</h4></div>
+			<p>The stuff inside the parenthesis is called argument.</p>
+				<code>
+					<pre>
+						<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
+					</pre>
+				</code>
+			<p>An argument is also passed here.</p>
+				<code>
+					<pre>
+						<span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL); 
+					</pre>
+				</code>
+			<p>Many functions need to pass a value of some kind. Just hover over the function to know how many arguments and of what kind wants to be passed.</p>
+			<br>
+
+		<div id="variable"><h4>Variable</h4></div>
+			<p>A variable is like a temporary container. You can save things into it. For example strings, integers, booleans and the result of functions etc.</p>
+			<p>There are several types of variables. The ones which get into global namespace and the ones that don't. The global namespace is the place where variables are shared between scripts.
+				So every variable inside the global namespace needs to have a unique name otherwise the engine gets confused and throws errors. 
+				This also means variables that are inside the global namespace are saved and remembered on map change or game load. 
+				The other variables that are not inside the global namespace just run while the script they are defined in is running. They will be forgotten on map change or game load. </p>
+			<p>The image below is intended to illustrate the global namespace. The green circles are scripts with variables. The blue circle is the global namespace. 
+				The scripts that are partially in the blue circle have local variables that are not in the global namespace. 
+				The scripts which are fully in the blue circle have global variables which are in the global namespace and therefore must be unique. 
+				As you can see, the global variable MVAR_1 exists twice, which must not occur in the global namespace.</p>
+			<img src="images\Global_namespace_image.jpg" alt="Please stand by">
+			<br>
+			<br>
+			<p>Let's take a look at the different types of variables.</p>
+			<p>Variables getting into global namespace are:</p>
+			<p>LVAR; MVAR and GVAR.</p>            
+			<br>
+			<p>This variable is of type Local variable (LVAR). It is saved during map change. LVARs are used for circumstances that aren't that significant e.g. have experience points been given to the player?
+				All LVARs will be prepended with LVAR_.</p>
+				<code>
+					<pre>
+						<span class="dyedefine">#define</span> LVAR_Gave_Xp; &emsp; &emsp; (<span class="dyedefine">0</span>)
+					</pre>
+				</code>
+			<p>This variable is of type Map variable (MVAR). It is saved during map change. MVARs are stored in the corresponding map script. 
+				In this case MVAR_Fixed_Well is stored inside arvillag.H. With the include command the MVAR can be used in the script. 
+				Map variables need to be added to a file called mapName.gam which must be put in the data\maps directory.
+				MVARs are used for circumstances that are significant for a specific map like has the well been fixed?
+				All MVARs will be prepended with MVAR_.</p>
+				<code>
+					<pre>
+						<span class="dyedefine">#define</span> MVAR_Fixed_Well; &emsp; &emsp; (<span class="dyedefine">4</span>)
+					</pre>
+				</code>
+			<p>This variable is of type Global variable. It can be used in any script. To use this type of variable, only the file global.H must be included into the script. 
+				It is saved during the map change. Any global variables you #define and use must also be put into a file called VAULT13.gam which is found inside the data\data directory. 
+				GVARs will be stored in a header file called Global.h, located in the \Fallout2\Scripts\Headers\ directory. 
+				All GVARs will be prepended with GVAR_.</p>
+				<code>
+					<pre>
+						<span class="dyedefine">#define</span> GVAR_DUMAR_STATUS; &emsp; &emsp; (<span class="dyedefine">369</span>)
+					</pre>
+				</code>
+			<p>The number inside the parenthesis of all three global namespace variables is no value. It serves as a placeholder for the engine. As soon as the script is executed, 
+				the engine replaces the names of the global namespace variables with the number assigned to it.</p>
+			<p>These three variable types must always be defined at the top of the script like in the sample script.</p>
+			<br>
+			<p>Variables not getting into global namespace are:</p>
+			<p>variable and export/import variable.</p>
+			<br>
+			<p> The variable Only_Once is defined outside the procedure and assigned the value <span class="dyedefine">0</span>. 
+				This variable can be used in every procedure inside the script. This variable will not be saved when changing the map.</p>
+				<code>
+					<pre>
+						<span class="dyestatement">variable</span> Only_Once <span class="dyeoperator">:=</span> <span class="dyedefine">0</span>;
+
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">map_enter_p_proc</span> <span class="dyestatement">begin</span>
+							Only_Once <span class="dyeoperator">:=</span> <span class="dyedefine">0</span>;
+					</pre>
+				</code>
+			<p>The variable item is defined inside the procedure <span class="dyeprocedure">combat_p_proc</span>.
+				This variable can only be used inside the procedure. This variable will not be saved when changing the map.</p>
+				<code>
+					<pre>
+						<span class="dyestatement">procedure</span><span class="dyeprocedure"> combat_p_proc</span> <span class="dyestatement">begin</span>
+							<span class="dyestatement">variable</span> item;
+
+								item <span class="dyeoperator">:=</span> <span class="dyestandardmacro">create_object</span>(PID_HEALING_POWDER),<span class="dyedefine">0</span>,<span class="dyedefine">0</span>);
+								<span class="dyefunction">use_obj_on_obj</span>(item,<span class="dyefunction">self_obj</span>);
+					</pre>
+				</code>
+			<p>This variable is defined inside script ARCAVES.SSL. The keyword export ensures that the variable can be used in other scripts. 
+				The variable contains the last value that was assigned to it.</p>
+				<code>
+					<pre>
+						<span class="dyestatement">export variable</span> temple_chest_prt;
+					</pre>
+				</code>
+			<p>The previously exported variable can now be used with the keyword import inside the scripts AITEMCST.SSL and ACTEMVIL.SSL. 
+				The variable contains the value that was last assigned to it.</p>
+				<code>
+					<pre>
+						<span class="dyestatement">import variable</span> temple_chest_prt;
+					</pre>
+				</code>
+			<br>
+
+		<div id="constant"><h4>Constant</h4></div>
+			<p>Constants are variables with fixed unchangeable value (You can change them but you don't want to, thats the reason using constants :P). A good example is give_xp(EXP_FIX_WELL) because EXP_FIX_WELL is a constant which is defined in ExpPoint.H. 
+				If you use EXP_FIX_WELL in several scripts and you want to change the given experience from 100 to 200 you just need to change the value in on place, in ExpPoint.H.</p>
+				<code>
+					<pre>
+						<span class="dyedefine">#define</span> EXP_FIX_WELL; &emsp; &emsp; (<span class="dyedefine">100</span>)
+					</pre>
+				</code>
+			<br>
+		
+		<div id="macro"><h4>Macro</h4></div>
+			<p>A macro is a collection of functions. Functions can easily get huge and messy. Macros are shorter and therefore better to read.</p>
+			<p>Let's look at an example.</p>
+				<code>
+					<pre>
+						<span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL); 
+					</pre>
+				</code>
+			<p>The macro give_xp(x) is located inside the file EXPPOINT.H.</p>
+			<p>Behind give_xp(x) actually hides:</p>  
+				<code>
+					<pre>
+						<span class="dyefunction">give_exp_points</span>(x);
+						<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">100</span>)<span class="dyeoperator">+</span>x<span class="dyeoperator">+</span><span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">101</span>))
+					</pre>
+				</code>
+		<br>
+
+		<div id="operator"><h4>Operator</h4></div>
+			<p>An operator is a symbol that tells the compiler to perform specific mathematical, relational or logical operation and produce final result. </p>
+		<br>
+			<p><span class="dyeoperator">:=</span> (assign value - Assigns the value on the right side to the value on the left side.)</p>
+			<p><span class="dyeoperator">></span> (greater than - Checks if the value on the left side is greater then the value on the right side.)</p>
+			<p><span class="dyeoperator"><</span> (lesser than - Checks if the value on the left side is lesser then the value on the right side.)</p>
+			<p><span class="dyeoperator">>=</span> (greater than or equal to - Checks if the value on the left side is greater then or equal to the value on the right side.)</p>
+			<p><span class="dyeoperator"><=</span> (lesser than or equal to - Checks if the value on the left side is lesser then or equal to the value on the right side.)</p>
+			<p><span class="dyeoperator">==</span> (equals - Checks if the value on the left side is exactly the same as the value on the right side.)</p>
+			<p><span class="dyeoperator">!=</span> (does not equal - Checks if the value on the left side is not exactly the same as the value on the right side.)</p>
+		<br>
+
+		<div id="statement"><h4>Statement</h4></div>
+			<p>Statements are used to build and subdivide blocks of logic.</p>
+			<p>For example:</p>
+				<code>
+					<pre>
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
+							<span class="dyefunction">script_overrides</span>;
+							<span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>
+								<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));
+							<span class="dyestatement">end</span>
+							<span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
+								<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));
+							<span class="dyestatement">end</span>
+						<span class="dyestatement">end</span>
+					</pre>
+				</code>
+			<p>The above example simply says:</p>
+				<code>
+					<pre>
+						"BEGIN with PROCEDURE look_at_p_proc and"
+							"check IF the map variable MVAR_Fixed_well is equal to 0 if that's the case THEN BEGIN and"
+								"display message line 100"
+							"END first branch of the PROCEDURE"
+							"ELSE BEGIN and"
+								"display message line 101 and"
+							"END second branch of the PROCEDURE"
+						"END of PROCEDURE reached so terminate the PROCEDURE itself" 
+					</pre>
+				</code>
+			<p>There is no need to write the related statements on the same column but it helps alot.</p>
+		<br>
+
+		<div id="semicolon"><h4>Semicolon</h4></div>
+			<p>The semicolon symbol ; is used to tell the compiler where a function ends.</p>
+	<br>
+	<hr>
+
+	<div id="advanced"><h3>Scripting (Advanced)</h3></div>
+    <br>
+
+		<div id="compiling"><h4>Compiling</h4></div>
+			<p>As you have probably already noticed, the suffix of your script or any script in general is .ssl. For example ASWELL.ssl. 
+				However, this suffix is the raw state of a script. To be able to use your script inside the game you need to compile it. What does that mean? 
+				It means the script needs to be translated from human readable code into machine readable code.
+				Decompiled (human readable) scripts have the suffix .ssl, compiled ones (machine readable) have the suffix .int.
+				So the engine knows what to do with the scripts content.</p>
+			<p>But how exactly do we compile scripts? With Sfall script editor this is child's play.
+			<br>Just look at the top center of the Sfall script editor. There you'll find this button.</p>
+			<br>
+			<img src="images\compile_button.png" alt="">
+			<p>Press it. Come on, do it! Press it! Or F8...</p>
+			<img src="images\Compiling_failed_bottom.png" alt="">
+			<br>
+			<img src="images\Compiling_failed_top.png" alt="">
+			<p>ヾ( ๑´д`๑)ﾂ oh noez! What happened? It didn't compile... You get some unique and some cryptic error messages. But all in all it didn't compile. But how do we get our script correctly compiled?
+				I'm glad you ask. Maybe you noticed some little detail inside ASWELL.SSL.</p>
+				<code>
+					<pre>
+						<span class="dyedefine">#define</span> NAME                    SCRIPT_ASWELL
+					</pre>
+				</code>
+			<p>In order to compile your script correctly, it must be listed inside SCRIPTS.H. Let's take a look at SCRIPTS.H located here:</p>
+				<code>
+					<pre>
+						X:\...\...\BIS mapper patched (+complementary ressources)\BIS mapper\scripts\HEADERS
+					</pre>
+				</code>
+				<code>
+					<pre>
+						/*
+							Copyright 1998-2003 Interplay Entertainment Corp.  All rights reserved.
+						*/
+
+						#ifndef SCRIPTS_H
+						#define SCRIPTS_H
+
+						/******************************************************************
+						File Name: Scripts.h
+
+						Purpose: This file contains defines for all of the scripts in
+									scripts.lst. This is an ordered list and needs to
+									conform exactly to scripts list. All defines in here
+									need to be prepended with SCRIPT_ as a naming
+									convention.
+
+						Created: October 06, 1997
+						******************************************************************/
+
+						#define SCRIPT_OBJ_DUDE         (1)     // obj_dude.int    ; Player script.
+						#define SCRIPT_TEST0            (2)     // Test0.int       ; Used to Test Scripts
+						#define SCRIPT_TEST1            (3)     // Test1.int       ; Used to Test Scripts
+						#define SCRIPT_TEST2            (4)     // Test2.int       ; Used to Test Scripts
+						#define SCRIPT_TEST3            (5)     // Test3.int       ; Used to Test Scripts
+						#define SCRIPT_TEST4            (6)     // Test4.int       ; Used to Test Scripts
+						#define SCRIPT_TEST5            (7)     // Test5.int       ; Used to Test Scripts
+						#define SCRIPT_ACWARIOR         (8)     // ACWarior.int    ; Generic Warrior in Arroyo
+						#define SCRIPT_ACVILLGR         (9)     // ACVillgr.int    ; Generic Villager of Arroyo
+						[...]
+					</pre>
+				</code>
+			<p>What the heck is this?! You might ask. This is SCRIPTS.H or a itsy bitsy tiny part of it (I shorted it because of reasons ;-)). Ok, let's take a look at the framework of this file.</p>
+			<p>#define SCRIPT_... looks familiar. So there needs to be something like #define SCRIPT_ASWELL inside SCRIPTS.H. Let's seek for it.</p>
+				<code>
+					<pre>
+						//#define SCRIPT_ASWELL           (217)   // ASWell.int      ; Arroyo Well. It's broken. Fix w/ Repair
+					</pre>
+				</code>
+			<p>There it is! Line 236! It didn't work because someone put double slash before it to make it a comment... (；￣Д￣）</p>
+			<p>Just remove the double slash. It'd now look like this.</p>
+				<code>
+					<pre>
+						#define SCRIPT_ASWELL           (217)   // ASWell.int      ; Arroyo Well. It's broken. Fix w/ Repair
+					</pre>
+				</code>
+			<p>Okay. Now you should more or less understand #define SCRIPT_ASWELL. But what's up with (217)? It serves the purpose of a placeholder or some kind of link. So, to make things short SCRIPT_ASWELL = 217.
+				Humans use SCRIPT_ASWELL because it's easier to read and engines work with numbers so 217 is easier for the engine to understand. Every script has its unique number. Every number is assigned once.
+				Explore SCRIPTS.H to understand this procedure better.</p>
+			<p>Now give it another try. Save the file SCRIPTS.H. Push the compile button.</p>
+			<img src="images\press-button-explosion.gif" alt="" width="15%" height="15%">
+			<p>Just kidding.</p>
+			<img src="images\compiling_success.png" alt="">
+			<p>Yes! You did it! Do you feel the rush of power running through your veins? How does it feel? It feels goood...</p>
+			<img src="images\ssl_and_int.png" alt="">
+			<p>Ta-da! You compiled a .ssl script into a .int one. The compiled script will be created at the same place your decompiled script lies. You can be proud of yourself.</p>
+		<br>
+
+		<h5>Notice</h5>
+			<p>* You can choose whatever name your script has. It doesn't matter if it's called ASWELL.ssl, WELL.ssl or MYSCRIPT.ssl. 
+				But remember, and this is important, a scripts name mustn't be longer than 8 characters, the suffix .ssl not counted.
+				It mustn't be exactly 8 characters long either. Just pick a name between min. 1 and max. 8 chars long.
+				If you don't follow this rule you'll burn in hell for all eternity!!! And your sleeves slip down every time washing your hands!!!
+				The truth is the engine can't handle more than 8 chars and will probably crash. ¯\_(ツ)_/¯</p>
+			<p>* Script names and the suffix aren't case sensitive. It doesn't matter if you write ASWELL.SSL, ASWELL.int, aswell.SSL, aswell.INT, aSwElL.sSl... you're getting the point.</p>
+	<br>
+	<hr>
+
+	<div id="scripts.lst"><h3>SCRIPTS.LST</h3></div>
+	<br>
+
+		<h4>Test your script within the BIS Mapper</h4>
+			<p>Now that you've got a compiled script you certainly want to test it. One way to test it is within the BIS Mapper. But first we have to add the script into SCRIPTS.LST.
+				We need to do this so that the mapper is able to find the script. Locate the file and open it with whatever editor you like. Jump at the end of the file and add your script like this:</p>
+				<code>
+					<pre>
+						HCPAVEL.INT		;Pavel the former scout of Home.				# local_vars=3
+					</pre>
+				</code>
+			<p>HCPAVEL.INT is the name of your compiled script how you of course already noticed. The text after the semicolon is a descriptive text. 
+				The text after the hashtag is the amount of LVARs (LVARs = local variables = local_vars) used inside your script. In this example you see that script HCPAVEL.int uses 3 LVARs. 
+				If you use 0 LVARs then you write # local_vars=0. If you use 5 but write # local_vars=7 nobody will tear your head off the script will work anyways.
+				The important thing is that you add your script at the same line number as the entry inside SCRIPTS.H corresponds.
+				E.g. inside SCRIPTS.H SCRIPT_HCPAVEL has number (1034) so your entry inside SCRIPTS.LST needs to be on line number 1304.</p>
+			<p>Now open the BIS Mapper. At the dropdown menu change to "Critters" and place a critter of your choice. Mark the critter and press the button "edit". 
+				An overview window of the char called "Critter Instance Editor critters" should appear. Inside this windows click on "New script".
+				An window with a lot of scripts to choose from should appear. Search manually for HCPAVEL.int, choose it and </p>    
+			<br>
+
+		<h5>Notice</h5>
+			<p>* If you see your script inside the mapper and attach it to a critter but you cannot interact with the critter how you've supposed it with your script then the error could be following:</p>
+			<p>&nbsp; * Your script isn't located inside the same folder as SCRIPTS.LST.</p>        
+			<p>&nbsp; * The entry of your script inside SCRIPTS.LST doesn't correspond with the entry inside SCRIPTS.H.</p>        
+	<br>
+	<hr>
+		
+	<div id="dialog"><h3>Dialog</h3></div>
+	<br>
+
+		<h4>Let's talk about...</h4>
+			<p>Do you remember this guy?</p>
+			<img src="images\Talk_to_Klint_remember.png" alt="">
+			<p>It's Klint. Say hi to Klint.</p>
+			<img src="images\Talk_to_Klint.png" alt="">
+			<p>The mouth symbol is the procedure talk_p_proc.</p>
+			<img src="images\Talk_to_Klint_dialogsystem.png" alt="">
+			<p>The conversation has been initiated and the dialog system appears. Now you see two lines of text. But how does the engine know when which text to say?
+				Well to understand how it works, we need to dig down deeper and take a look at two files ACKLINT.SSL and ACKLINT.MSG.</p>
+			<p>First file is ACKLINT.SSL located here:</p>
+				<code>
+					<pre>
+						X:\...\...\BIS mapper patched (+complementary ressources)\BIS mapper\scripts\ARROYO
+					</pre>
+				</code>
+				<code>
+					<pre>
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">talk_p_proc</span> <span class="dyestatement">begin</span>
+							[...]
+							<span class="dyestatement">if</span> ((<span class="dyefunction">obj_art_fid</span>(<span class="dyefunction">dude_obj</span>) <span class="dyeoperator">==</span> FID_HMWARR) <span class="dyestatement">or</span> (<span class="dyefunction">obj_art_fid</span>(<span class="dyefunction">dude_obj</span>) <span class="dyeoperator">==</span> FID_HFPRIM)) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>
+								<span class="dyefunction">start_gdialog</span>(NAME,<span class="dyefunction">self_obj</span>,<span class="dyedefine">4</span>,<span class="dyedefine">-1</span>,<span class="dyedefine">-1</span>);
+								<span class="dyefunction">gSay_Start</span>;
+									<span class="dyestatement">call</span> <span class="dyeprocedure">Node001</span>;
+								<span class="dyefunction">gSay_End</span>;
+								<span class="dyefunction">end_dialogue</span>;
+							<span class="dyestatement">end</span>
+
+							<span class="dyestatement">else</span> <span class="dyestatement">begin</span>
+								<span class="dyefunction">start_gdialog</span>(NAME,<span class="dyefunction">self_obj</span>,<span class="dyedefine">4</span>,<span class="dyedefine">-1</span>,<span class="dyedefine">-1</span>);
+								<span class="dyefunction">gSay_Start</span>;
+									<span class="dyestatement">call</span> <span class="dyeprocedure">Node006</span>;
+								<span class="dyefunction">gSay_End</span>;
+								<span class="dyefunction">end_dialogue</span>;
+							<span class="dyestatement">end</span>
+						<span class="dyestatement">end</span>
+					</pre>
+				</code>
+			<p>This is procedure talk_p_proc or at least a part of it. Dialog begins here but we are only interested in call Node006; the rest is unimportant for now.
+				Let's jump to call Node006;.</p>
+				<code>
+					<pre>
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">Node006</span> <span class="dyestatement">begin</span>
+							<span class="dyestandardmacro">Reply</span>(<span class="dyedefine">121</span>);
+
+							[...]
+							<span class="dyestandardmacro">NOption</span>(<span class="dyedefine">123</span>,<span class="dyeprocedure">Node007</span>,<span class="dyedefine">004</span>);
+						<span class="dyestatement">end</span>
+					</pre>
+				</code>
+			<p>You can probably guess that 121 and 123 are the two lines we've seen at the screenshots when you started talking to Klint and the dialog window appeared. 
+				But where do they come from? Let's take a look at ACKLINT.MSG located here:</p>
+				<code>
+					<pre>
+						X:\Fallout 2\data\text\english\dialog
+					</pre>
+				</code>
+			<p>Try and open the file with notepad, notepad++, Sfall script editor or whatever you prefer. After you opened the file, it will look like this:</p>
+				<code>
+					<pre>
+						{100}{}{You see Klint, a fellow tribesman.}
+						{101}{}{You see Klint.}
+						{102}{}{You see a young man with bulging muscles and a very confident air about him.}
+						{103}{}{Good day to you, }
+						{104}{}{. You have not completed the trial of the Elder and may not pass.}
+						{105}{}{Uh...}
+						{106}{}{I need to go back to the village.}
+						{107}{}{I have some questions of you.}
+						{108}{}{All right, I'm off to take the test.}
+						{109}{}{(sigh) }
+						{110}{}{. You go temple. You take test. You not come back here until take test. Obey Elder. Go!}
+						{111}{}{Me go.}
+						{112}{}{Forgive me, }
+						{113}{}{, but I can not allow you to pass. If you wish to return to the village you may do so only by passing the trial set before you.}
+						{114}{}{I see. I guess I'll be going then.}
+						{115}{}{Can I ask you some questions then?}
+						{116}{}{I could kick your ass and just walk out of here.}
+						{117}{}{Forgive me, but I have no answers to your questions. Take the trial set before you by the Elder and prove yourself worthy to lead our people.}
+						{118}{}{Very well.}
+						{119}{}{Two people working together can move the obelisk that blocks the path. Alone, you would fail. I have no intention of helping you until you pass the trial of the Elder.}
+						{120}{}{Uh-huh. I get the picture.}
+						{121}{}{Greetings, Chosen One! It is good to see you. How may I serve you?}
+						{122}{}{Me say hi. That all.}
+						{123}{}{Just thought I'd say hello. I'll be leaving on my quest soon.}
+						{124}{}{May the spirits of our ancestors protect you, Chosen One. I wish you well on your journey.}
+					</pre>
+				</code>
+			<p>Every piece of text related to Klint. As you can see lines 121 and 123 are located inside this message file. So, when dialog jumps to Node006 and lines 121 and 123 are requested, 
+				the engine looks inside ACKLINT.MSG finds and returns the necessary text lines.</p>
+			<p>You might have noticed that line 100, 101 and 102 contain descriptive text. They are used by the procedures look_at_p_proc and description_p_proc.</p>
+			<p>left: look_at_p_proc; right: description_p_proc</p>
+			<img src="images\look_at_p_proc.png" alt="">
+			<img src="images\description_p_proc.png" alt="">
+			<br>
+
+		<h4>Message files basic framework</h4>
+			<p>The basic framework of every message file is this:</p>
+				<code>
+					<pre>
+						{}{}{}
+					</pre>
+				</code>
+			<p>Thats it. You just have to fill in these curvy brackets. The first pair of brackets contains the line number. The second pair stays always empty. 
+				And the third one contains the sentences which will be said by the critters or the dude.
+				The number inside the first pair of brackets simply is the line number of this dialog message. 
+				So, if you want the npc or the dude talking to this npc say a certain sentence, you don't need to write the same sentence over and over again. 
+				You just write the specific line number into your script which refers to the certain sentence you want the critters to say.</p>
+			<p>Comments are written like this:</p>
+				<code>
+					<pre>
+						#MyComment
+					</pre>
+				</code>
+			<p>Everything behind the hashtag is interpreted as a comment.</p>
+			<p>I like my message files a bit more organized. Like this:</p>
+				<code>
+					<pre>
+						#############################################################
+						#  
+						#
+						# Message File: HCPAVEL.msg                               
+						#                                                          
+						#       Body Type:  Pavel                                 
+						#       Combat AI: None                                     
+						#       Weapons: None                                       
+						#       HP: ?                                               
+						#       Skills to note: None                                
+						#                                                           
+						#  Log:                                                     
+						#                                                           
+						#  Created: August 10, 2021                               
+						#                                                           
+						#  Updated: August 14, 2021
+						#
+						#                                                
+						#############################################################
+
+
+						#############################################################
+						#  The following lines are used by look_at_p_proc and description_p_proc.
+						#############################################################
+						{100}{}{You see an old and grumpy looking man.}
+						{101}{}{This man looks like he consumes alot of alcohol and cigarettes.}
+						{102}{}{You see Pavel, the former scout.}
+						#############################################################
+
+
+						#############################################################
+						#  The following lines are only once used by NodeTalkIntro. Introductional conversation.
+						#############################################################
+						#Reply
+						{200}{}{Hm...? Who are you and what do you want? Me is Pavel.}
+						#NOption
+						{201}{}{Hi Pavel. Don't you recognize me? It's me }
+						{202}{}{. }
+						{203}{}{How do you do?} #Invokes NodeTalkAdvanced
+						{204}{}{ I'm just looking for work.} #Invokes NodeQuestStart 300
+						{205}{}{Bye.} #Invokes Node999
+						#############################################################
+
+
+						#############################################################
+						#  The following lines are only once used by NodeTalkAdvanced. Advanced conversation.
+						#############################################################
+						#Reply
+						{206}{}{What do you think how I'm doing? I ran out of hard stuff.}
+						#NOption
+						{207}{}{Can I do anything for you?} #Invokes NodeQuestStart 301
+						{208}{}{Ouh. That's sad. Bye!} #Invokes Node999
+						#############################################################
+
+
+						#############################################################
+						#  The following lines are used by NodeTalkReturn. If the player has already spoken to Pavel but didn't accept the Quest.
+						#############################################################
+						#Reply
+						{209}{}{You again. What'Cha want?}
+						#NOption
+						{210}{}{Still looking for work.} #Invokes NodeQuestStart 300
+						{211}{}{Bye again.} #Invokes Node999 or 
+						#############################################################
+
+
+						#############################################################
+						#  The following lines are used by NodeQuestStart. Initiating Quest: Get some alcohol.
+						#############################################################
+						#Reply
+						{300}{}{So you're looking for work! Okay! Listen here lazybones! Bring me some booze!} #Invoked by NodeTalkIntro 204
+						#NOption
+						{302}{}{Sounds easy. Wait here. I'll be back soon.} #Invokes the Quest to start.
+						{303}{}{Not interested. Have a nice day.} #Invokes Node999
+						#############################################################
+
+
+						#############################################################
+						#  The following lines are used by NodeQuestStart2. Initiating Quest: Get some alcohol.
+						#############################################################
+						#Reply
+						{301}{}{Yes you can! Bring me liquor, pronto!} #Invoked by NodeTalkAdvanced 207
+						#NOption
+						{305}{}{Sounds easy. Wait here. I'll be back soon.} #Invokes the Quest to start.
+						{306}{}{Not interested. Have a nice day.} #Invokes Node999
+						#############################################################
+
+
+						#############################################################
+						#  The following lines are used by NodeQuestReturn . If the player has already spoken to Pavel and did accept the Quest.
+						#############################################################
+						#Reply
+						{307}{}{Did you get my stuff?!} 
+						#NOption
+						{308}{}{Yep. Here it is.} #Invokes NodeQuestEnd
+						{309}{}{Nope, not yet.} #Invokes Node999
+						#############################################################
+
+
+						#############################################################
+						#  The following lines are used by NodeQuestEnd. If the player fulfilled the quest requirement.
+						#############################################################
+						#Reply
+						{310}{}{It's been about damn time!}
+						#NOption
+						{311}{}{I'm glad I could help you.} #Invokes reward.
+						#############################################################
+
+
+						#############################################################
+						#  The following lines are used by NodeTalkFinal. If the player has finished Pavels Quest and has already returned to him to get the reward.
+						#############################################################
+						#Reply
+						{312}{}{Hey man. Thanks again for the booze.}
+						#NOption
+						{313}{}{No problem mate. Cheers!}
+						#############################################################
+					</pre>
+				</code>
+			<p>You see the message file of my first character called Pavel. You can organize your message file as you like.</p>
+		<br>
+	
+		<h5>Notice</h5>    
+			<p>* Message files do always have the suffix .MSG. For example ACKLINT.MSG.</p>
+	<br>
+	<hr>
+
+	<div id="complex"><h3>Scripting (Complex)</h3></div>
+	<br>
+	
+		<h4>Fix the well for Feargus - Arroyo</h4>
+			<img src="images\FO2_Arroyo_Feargus.jpg" alt="FO2 Arroyo Feargus">
+			<p>At the center of the Arroyo village there is a well, and Feargus, the Chosen One's nephew, is standing next to it, 
+				whining because it is broken. Simply Repair the well. Even with a negative Repair skill, it can still be fixed.</p>
+			<p>This procedure is executed when the player uses the repair skill on the well. After using the skill, a message appears, and the player is rewarded with experience points.</p>
+				<code>
+					<pre>
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span>
+							<span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>)) <span class="dyestatement">then begin</span>
+								<span class="dyefunction">script_overrides</span>;
+								<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
+								<span class="dyedevelopermacro"">give_xp</span>(EXP_FIX_WELL);
+								<span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,</span><span class="dyedefine">1</span>);
+								<span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,</span><span class="dyedefine">1</span>);
+							<span class="dyestatement">end</span>
+						<span class="dyestatement">end</span>
+					</pre>
+				</code>
+			<br>
+
+		<h4>How does this work in detail? Let’s break it down.</h4> 
+			<p>The procedures use_skill_on_p_proc is called.</p>
+				<code>
+					<pre>
+						<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span>
+						<span class="dyestatement">end</span>
+					</pre>
+				</code>
+			<p>The first function action_being_used checks if the repair skill, written as SKILL_REPAIR, is used on the well. 
+				The second one local_var checks if the local variable  LVAR_Gave_Xp is equal 0. 
+				If both conditions match the following code is executed, else the procedure ends without anything been done.</p>
+				<code>
+					<pre>
+						<span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>)) <span class="dyestatement">then begin</span>
+					</pre>
+				</code>
+			<p>For certain procedures in the game there are default functions that are called when nothing is written inside these procedures. 
+				To prevent these default functions to happen when something is indeed written inside the procedures the function script_overrides is used.</p>
+				<code>
+					<pre>
+						<span class="dyefunction">script_overrides</span>;
+					</pre>
+				</code>
+			<p>Show message line 1005 of file GENERIC.msg.</p>
+			<p>The function display_msg invokes the functionality to display a message. The function message_str has two arguments in this case. 
+				SCRIPT_GENERIC is the message file (.msg) that contains all lines of text that should be used for generic purposes. 
+				This file is actually named GENERIC.msg and is located at \text\english\dialog\GENERIC.msg. 100 and 101 are the lines which are contained inside the file GENERIC.msg.</p>
+				<code>
+					<pre>
+						<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
+					</pre>
+				</code>
+			<p>Inside EXPPOINT.H you’ll find the definition of the macro give_xp(x).</p>
+				<code>
+					<pre>
+						<span class="dyedefine">#define</span> <span class="dyedevelopermacro"">give_xp</span>(x)    <span class="dyefunction">give_exp_points</span>(x);
+												<span class="indent278px" class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">100</span>)+x+<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">101</span>))
+					</pre>
+				</code>
+			<p>You can also define the amount of given exp points in the file EXPPOINT.H. In this example it’s EXP_FIX_WELL. 100 means 100 exp points given.</p>
+				<code>
+					<pre>
+						<span class="dyedefine">#define</span> EXP_FIX_WELL &emsp; &emsp; &emsp; (<span class="dyedefine">100</span>)
+					</pre>
+				</code>
+			<p>As you can see in the file ASWELL.SSL the macro give_xp is used with the defined argument EXP_FIX_WELL. 
+				So, if you want to change the amount of exp points given. You just can change the defined argument in the file EXPPOINT.H.</p>
+			<p>This give_xp(x) gives a certain amount of experience points to the player and displays a message to the player so he is informed how many exp points he received.</p>
+				<code>
+					<pre>
+						<span class="dyedevelopermacro"">give_xp</span>(EXP_FIX_WELL);
+					</pre>
+				</code>
+			<p>The function set_map_var sets the map variable MVAR_Fixed_Well to 1. The game remembers that the well has been fixed even if you change the map. 
+				So, it’s not possible to trick the game and invoking this quest again.</p>
+				<code>
+					<pre>
+						<span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,</span><span class="dyedefine">1</span>);
+					</pre>
+				</code>
+			<p>The map variable MVAR_Fixed_Well is located in the ARVILLAG.H file inside the header folder.</p>
+				<code>
+					<pre>
+						<span class="dyedefine">#define</span> MVAR_Fixed_Well</span> &emsp; &emsp; (<span class="dyedefine">4</span>)
+					</pre>
+				</code>
+			<p>The set_local_var function sets the local variable LVAR_Gave_Xp to 1.
+				So, if the player tries to invoke the procedure use_skill_on_p_proc again on the well, nothing happens.</p>
+				<code>
+					<pre>
+						<span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,</span><span class="dyedefine">1</span>);
+					</pre>
+				</code>
+	<br>
+	<hr>
+
+	<div id="talkhead"><h3>Talking Heads</h3></div>
+	<br>
+
+		<h4>Preparations</h4>
+			<p>Make sure you have these programs:</p>
+				<code>
+					<pre>
+						-Adobe Photoshop or Gimp (preferably the former),
+						-Fallout Frame Animator,
+						-SFall Script Editor.
+					</pre>
+				</code>
+		<br>
+
+		<h4>Animation Basics</h4>
+			<p>Every talking head has 3 moods:</p>
+				<code>
+					<pre>
+						-Bad,
+						-Neutral and
+						-Good.
+					</pre>
+				</code>
+			<p>Each one of them must have at least 1 idle animation (most vanilla heads have 3) and 1 speaking animation otherwise the game won't function properly. 
+				If you downloaded the Vic images, you'll notice that there's a folder for each mood with 3 idle/fidget and speaking animations each.</p>
+			<p>The folder structure can look like this:</p>
+				<code>
+					<pre>
+						Bad
+						|
+						|->Fidget1
+							|->1.png
+							|->2.png 
+						|
+						|->Fidget2
+							|->1.png
+							|->2.png
+							|->3.png
+							|->4.png   
+							|->5.png
+							|->6.png   
+							|->7.png
+							|->8.png  
+						|
+						|->Fidget3
+							|->1.png
+							|->2.png
+							|->3.png
+							|->4.png   
+							|->5.png
+							|->6.png   
+							|->7.png
+						|
+						|->Talk
+							|->1.png
+							|->2.png
+							|->3.png
+							|->4.png   
+							|->5.png
+							|->6.png   
+							|->7.png
+							|->8.png
+							|->9.png
+
+						Good
+						|
+						|->Fidget1
+							|->1.png
+							|->2.png  
+							|->3.png
+							|->4.png
+						|
+						|->Fidget2
+							|->1.png
+							|->2.png
+							|->3.png
+							|->4.png   
+							|->5.png
+							|->6.png   
+							|->7.png
+							|->8.png  
+							|->9.png
+						|
+						|->Fidget3
+							|->1.png
+							|->2.png
+							|->3.png
+							|->4.png   
+							|->5.png
+							|->6.png   
+							|->7.png
+						|
+						|->Talk
+							|->1.png
+							|->2.png
+							|->3.png
+							|->4.png   
+							|->5.png
+							|->6.png   
+							|->7.png
+							|->8.png
+							|->9.png
+
+						Neutral
+						|
+						|->Fidget1
+							|->1.png
+							|->2.png  
+							|->3.png
+							|->4.png
+						|
+						|->Fidget2
+							|->1.png
+							|->2.png
+							|->3.png
+							|->4.png   
+							|->5.png
+							|->6.png   
+							|->7.png
+							|->8.png  
+							|->9.png
+							|->10.png   
+							|->11.png
+							|->12.png   
+							|->13.png
+							|->14.png  
+							|->15.png
+						|
+						|->Fidget3
+							|->1.png
+							|->2.png
+							|->3.png
+							|->4.png   
+							|->5.png
+							|->6.png   
+							|->7.png
+							|->8.png
+						|
+						|->Talk
+							|->1.png
+							|->2.png
+							|->3.png
+							|->4.png   
+							|->5.png
+							|->6.png   
+							|->7.png
+							|->8.png
+							|->9.png
+						|
+						|->Transitions
+							|->Neutral - Bad
+								|->1.png
+								|->2.png
+								|->3.png
+								|->4.png   
+								|->5.png
+							|
+							|->Neutral - Good
+								|->1.png
+								|->2.png
+								|->3.png
+								|->4.png   
+								|->5.png
+					</pre>
+				</code>
+			<br>
+
+		<h4>Converting images to proper format</h4>
+			<p>First off open your first series of images (in this case the folder "Neutral\Fidget1").</p>
+			<img src="images\Photoshop picture 1.png" alt="Photoshop picture 1.">
+			<br>
+			<br>
+			<p>Select all layers and change the image size to 356 x 200.</p>
+			<img src="images\Photoshop picture 2.png" alt="Photoshop picture 2.">
+			<br>
+			<br>
+			<p>Go to Image -> Mode -> Indexed Color and select Custom Palette.</p>
+			<img src="images\Photoshop picture 3.png" alt="Photoshop picture 3.">
+			<br>
+			<br>
+			<p>Open the Fallout Frame Animator folder and select the Fallout.act file (I've also uploaded the palette in this message).</p>
+			<img src="images\Photoshop picture 4.png" alt="Photoshop picture 4.">
+			<br>
+			<br>
+			<p>Save the image as an 8bit BMP this is the image format the Fallout 2 engine uses.</p>
+			<p>Do the same process for all the images.</p>
+			<br>
+			<h5>Tips</h5>
+			<p>* Make sure you use a uniform color as the background for your images (the transparent part of PNG images turn white which is ideal) as the program to create FRMs (which we will see in the next step) 
+				will cut the background color, for this reason try not have that same one on the character of the program will cut sections of the it that uses the same color.</p>    
+			<p>* Use shortcut keys to make the workflow faster on Photoshop you can go to Edit -> Keyboard Shortcuts to make your own.</p>    
+			<p>* You don't have to use Photoshop, Gimp is a good free alternative. </p>    
+		<br>
+
+		<h4>How the animations work</h4>
+			<p>Before creating our animation files (FRMs) I'll try to explain how the talking head animations work.</p>
+			<p>Every talking head file (.frm) has main name that must be 5 letters or less, for this tutorial we will use the word "Vic".
+				You then add the relevant suffix to the name for each animation, they are as follows:</p>
+				<code>
+					<pre>
+						B = Bad mood
+						G = Good Mood
+						N = Neutral Mood
+						f1 = Fidget 1 (Character blinking)
+						f2 = Fidget 2 (Character nodding)
+						f3 = Fidget 3 (Character shaking head)
+						(B,G,N)P = Character talking.
+						BN,NB,GN,NG = Mood transition from (B,G,N) to (B,G,N)
+					</pre>
+				</code>
+		<br>
+
+		<h5>Examples</h5>
+			<p>If you want to create an animation for Vic where he is blinking and in a neutral mood you must name it:</p>
+				<code>
+					<pre>
+						VicNf1
+					</pre>
+				</code>
+			<p>Vic (the characters name) + N (the mood he is in) + f1 (Fidget 1).</p>
+		<br>
+
+			<p>If you want to create an animation where Vic is speaking in a bad mood you must name it:</p>
+				<code>
+					<pre>
+						VicBP
+					</pre>
+				</code>
+			<p>Vic (the character name) + B (the mood he is in) + P (Talk).</p>
+		<br>
+
+			<p>If you want to an animation where Vic transitions from good to neutral mood you must name it:</p>
+				<code>
+					<pre>
+						VicGN
+					</pre>
+				</code>
+			<p>Vic (the character name) + GN ( Good to Neutral).</p>
+			<p>Hopefully this isn't too confusing.</p>
+		<br>
+
+			<p>I'll show you what each animation looks like.</p>
+			<p>Neutral mood:</p>
+			<p>Nf1 (Neutral Fidget 1).</p>
+			<img src="images\nf1.gif" alt="Vic neutral fidget 1.">
+			<p>Nf2 (Neutral Fidget 2).</p>
+			<img src="images\nf2.gif" alt="Vic neutral fidget 2.">
+			<p>Nf3 (Neutral Fidget 3).</p>
+			<img src="images\nf3.gif" alt="Vic neutral fidget 3.">
+			<p>NP (Neutral Talk).</p>
+			<img src="images\np.gif" alt="Vic neutral talk.">
+		<br>
+		<br>
+		<br>
+
+			<p>Bad mood:</p>
+			<p>Bf1 (Bad Fidget 1).</p>
+			<img src="images\bf1.gif" alt="Vic bad fidget 1.">
+			<p>Bf2 (Bad Fidget 2).</p>
+			<img src="images\bf2.gif" alt="Vic bad fidget 2.">
+			<p>Bf3 (Bad Fidget 3).</p>
+			<img src="images\bf3.gif" alt="Vic bad fidget 3.">
+			<p>BP (Bad Talk).</p>
+			<img src="images\bp.gif" alt="Vic bad talk.">
+		<br>
+		<br>
+		<br>
+
+			<p>Good mood:</p>
+			<p>Gf1 (Good Fidget 1).</p>
+			<img src="images\gf1.gif" alt="Vic good fidget 1.">
+			<p>Gf2 (Good Fidget 2).</p>
+			<img src="images\gf2.gif" alt="Vic good fidget 2.">
+			<p>Gf3 (Good Fidget 3).</p>
+			<img src="images\gf3.gif" alt="Vic good fidget 3.">
+			<p>GP (Good Talk).</p>
+			<img src="images\gp.gif" alt="Vic good talk.">
+		<br>
+		<br>
+		<br>
+
+			<p>Mood Transitions:</p>
+			<p>NB (Neutral to Bad)</p>
+			<img src="images\nb.gif" alt="NB (Neutral to Bad).">
+			<p>BN (Bad to Neutral).</p>
+			<img src="images\bn.gif" alt="BN (Bad to Neutral).">
+			<p>NG (Neutral to Good).</p>
+			<img src="images\ng.gif" alt="NG (Neutral to Good).">
+			<p>GN (Good to Neutral).</p>
+			<img src="images\gn.gif" alt="GN (Good to Neutral).">
+		<br>
+		<br>
+		<br>
+
+		<h4>Creating FRMs</h4>
+			<p>After converting our images to 8bit BMPs we can open the Fallout Frame Animator Program and click Add Frames (Ctrl + A).</p>
+			<img src="images\Creating FRMs 1.png" alt="">
+		<br>
+		<br>
+			<p>We will be creating the first neutral fidget (Nf1) so select the relevant BMP images.</p>
+			<img src="images\Creating FRMs 2.png" alt="">
+		<br>
+		<br>
+			<p>We will have to remove the white background, to do this go to options (folder icon left of the vault boy icon) and on Transparent Color check Auto and on Frames Tune check Autocutting.</p>
+			<img src="images\Creating FRMs 3.png" alt="">
+		<br>
+		<br>
+			<p>We will save the file as "VicNf1", use the previous section for naming guidelines.</p>
+			<img src="images\Creating FRMs 4.png" alt="">
+		<br>
+		<br>
+			<p>Create all the remaining FRMs, this is what the complete set will look like:</p>
+				<code>
+					<pre>
+						VicBf1.frm
+						VicBf2.frm
+						VicBf3.frm
+						VicBN.frm
+						VicBP.frm
+						VicGf1.frm
+						VicGf2.frm
+						VicGf3.frm
+						VicGN.frm
+						VicGP.frm
+						VicNB.frm
+						VicNf1.frm
+						VicNf2.frm
+						VicNf3.frm
+						VicNG.frm
+						VicNP.frm 
+					</pre>
+				</code>
+		<br>
+		
+		<h4>Talking Animations</h4>
+			<p>All talking animations (NP,GP,BP) must have 9 frames, each one representing a different viseme (the shape the mouth makes when saying a letter).</p>
+			<img src="images\Creating FRMs 5.png" alt="">
+			<p>I'm not 100% sure of the exact order but I think it is:</p>
+				<code>
+					<pre>
+						1 - Closed (In between frame)
+						2 - A
+						3 - E
+						4 - I
+						5 - F
+						6 - L
+						7 - M
+						8 - O
+						9 - U
+					</pre>
+				</code>
+			<br>
+
+		<h5>Animation Tips</h5>
+			<p>* The bare minimum amount of animations for a Talking Head to be functional is this:</p>
+				<code>
+					<pre>
+						[name]Nf1,
+						[name]NP,
+						[name]NG,
+						[name]NB,
+						[name]Bf1,
+						[name]BN,
+						[name]BP
+						[name]Gf1
+						[name]GN
+						[name]GP
+					</pre>
+				</code>
+			<p>* If use want to make a static image as a Talking Head instead of an animated one, simply make a FRM of each animation (mentioned in the previous tip) with that single image. </p>
+			<p>* Try to make the animations loop so in game the Heads will look fluid, make sure the last frame links to the first one.</p>
+			<p>* The first frame of Nf1,Bf1 and Gf1 (specially Nf1) is arguably the most important as the Head freezes on it before randomly choosing one of the Fidgets (f1,f2,f3), so make sure it looks cool! </p>
+		<br>
+
+		<h4>Adding our head into the game</h4>
+			<p>For this section we will need the Sfall Script editor and "Dat Explorer" by Dims.</p>
+		<br>
+
+		<h4>Creating a Patch</h4>
+			<p>Go into your main Fallout 2 directory and create a folder called "patch001.dat" 
+				(if you already have a "patch001" folder or .dat file name it "patch002"), open it and create two new folder named "art" and "scripts" respectively.</p>
+			<img src="images\Patch 1.png" alt="">
+			<br>
+			<br>
+			<p>Open the "art" folder and create a folder named "heads".</p>
+			<img src="images\Patch 2.png" alt="">
+			<br>
+			<br>
+			<p>In the main Fallout 2 directory open the "master.dat" file with Dat Explorer</p>
+			<img src="images\Patch 3.png" alt="">
+			<br>
+			<br>
+			<p>In Master.dat open the "art" folder and then the "heads" folder and find "HEADS.lst".</p>
+			<img src="images\Patch 4.png" alt="">
+			<br>
+			<br>
+			<p>Extract HEADS.lst to the "heads" folder we created inside of "patch001.dat" (.../patch001/art/heads).</p>
+			<p>Put all the Vic FRMs we created earlier in the "Heads" folder, it should look like this:</p>
+			<img src="images\Patch 5.png" alt="">
+			<br>
+			<br>
+			<p>Open HEADS.lst with a text editing software like Notepad (ideally Notepad++), this is the list of all the the Talking Heads in Vanilla Fallout 2. 
+				The name on each line is the name of one talking head (for example Marcus' head is named "mrcus"), 
+				the "3,3,3" indicates how many fidget/idle animations they have for each mood (Bad, Neutral, Good in this order).</p>
+			<img src="images\Patch 6.png" alt="">
+			<br>
+			<br>
+			<p>Add the line "vic,3,3,3" at the bottom of the list: vic is the name of the talking head and 
+				3,3,3 is the number of fidgets we made (bf1, bf2, bf3 for Bad, nf1, nf2, nf3 for Neutral and gf1,gf2, gf3 for Good)</p>
+			<img src="images\Patch 7.png" alt="">
+	<br>
+	<br>
+	<br>
+	<hr>
+
+	<div id="addendum"><h3>Addendum</h3></div>
+	<br>
+		<p>If you want to share feedback, got questions, find any error or just want to chat 
+			please consider looking at the <a href="https://www.nma-fallout.com/forums/fallout-general-modding.18/">No Mutants Allowed (NMA) forum modding subsection</a>.
+			There you'll find the <a href="https://www.nma-fallout.com/threads/femics-fallout-2-modding-guide.221013/">thread of this guide.</a></p>
+		<p>A really big thanks to anybody who wrote a tutorial or dropped some knowledge here and there.</p>    
+	<br>
+	<br>
+	<hr>
+
+	<h3>Sources</h3>
+		<a href=""></a>
 </body>
 </html>
