@@ -1383,6 +1383,102 @@
 	<br>
 	<hr>
 
+	<div id="tiles"><h3>Making new tiles</h3></div>
+		<p>Here's the basic process so far, I have tried a few of them ingame and they work great, so this works so far.
+			Please note that the tiles are slightly bigger than you would expect them to be and do not fit neatly together, in fact they actually overlap slightly which provides a snug fit in game.</p>
+		<p>Step1:</p>
+		<p>Download a free square tile or texture, you want something that is fairly consistent so that the tiles come out seamless. You can also make your own texture with The Gimp.</p>
+		<img src="images\making_new_tiles\step1_tile.webp" alt="">
+		<p>Step2:</p>
+		<p>Save this template file. You will be using this as the tile mask.</p>
+		<img src="images\making_new_tiles\step2_tile.webp" alt="">
+		<p>Step3:</p>
+		<p>Paste the template onto the texture, you can do this in any image editor eg mspaint. </p>
+		<img src="images\making_new_tiles\step3_tile.webp" alt="">
+		<p>Step4:</p>
+		<p>Resize the image to 80 pixels by 36 pixels (the size of the template). Here are a few I've already done. </p>
+		<img src="images\making_new_tiles\step4a_tile.webp" alt="">
+		<img src="images\making_new_tiles\step4b_tile.webp" alt="">
+		<img src="images\making_new_tiles\step4c_tile.webp" alt="">
+		<p>Step5:</p>
+		<p>Optional Step - Create Tile variations Once you have made your new seamless tile you can start to make variations of the tile. In this example we will make a tile that has a blood stain on it. 
+			I just cut the blood stain out of an old screen shot and then pasted it onto the new tile. You can use this method to make a tile that has bits of grass on it or some bones for example. </p>
+		<img src="images\making_new_tiles\step5a_tile.webp" alt="">
+		<img src="images\making_new_tiles\step5b_tile.webp" alt="">
+		<p>Step6:</p>
+		<p>The following are the two opposite transitions templates, for creating the transition from one tile type to another. </p>
+		<img src="images\making_new_tiles\step6a_tile.webp" alt="">
+		<img src="images\making_new_tiles\step6b_tile.webp" alt="">
+		<p>Here's an example of the transitions from dark sand to light sand. </p>
+		<img src="images\making_new_tiles\step6c_tile.webp" alt="">
+		<p>Step7:</p>
+		<p>You can now cut the new tiles into separate 80x36 tiles and save them as a PNG file. </p>
+		<p>Step8:</p>
+		<p>Now it is possible to convert the tile into a FRM for use with FO1 or FO2, this can be done by using Frame Animator. Just add each PNG tile into frame animator and create a new FRM for each tile. </p>
+	<hr>
+
+	<div id="walls"><h3>Making new walls</h3></div>
+		<p>When ever you make a wall you need to add the offset information so that the wall is centered correctly. 
+			Save the new wall as a *.FRM file, using a program such as Frame Animator, but make sure you use the edit the Frames Offset with the wall offsets at the bottom of this artical. </p>
+		<h4>Offset summary</h4>
+		<p>The offset is the 'x' and 'y' shift of the art object in pixels, this is used to align the wall segment in the correct location within the hex. 
+			If you use these templates you can just use the given offset values for any new walls you make. The offset file should use the following format. </p>
+		<p>offset=X,Y</p>
+		<p>X = A postive number will shift the image to the right and a negative will shift it to the left.</p>
+		<p>Y = A Postive number will shift the the image down and a negative number will shift it up. </p>
+		<h4>Master Templates</h4>
+		<p>Take each of these templates and overlay them onto the desired wall texture, then over lay each of wall sections onto of each other. 
+			You will end up with a selection of walls as like in the example below. 
+			When you are selecting the textures to use I found it easier to pick one texture and then just adjust the brightness of the image so that you have three different levels of contrast. 
+			The brightest texture should be the top of the walls. </p>
+		<img src="images\makine_new_walls\Master.PNG.webp" alt="">
+		<br>
+		<img src="images\makine_new_walls\Master_-_Blue.PNG.webp" alt="">
+		<br>
+		<img src="images\makine_new_walls\Master_-_Green.PNG.webp" alt="">
+		<br>
+		<img src="images\makine_new_walls\Master_-_Red.PNG.webp" alt="">
+		<br>
+		<img src="images\makine_new_walls\Master_-_Yellow.PNG.webp" alt="">
+		<br>
+		<h4>Example</h4>
+		<img src="images\makine_new_walls\Concrete_-_Walls.PNG.webp" alt="">- Completed walls
+		<br>
+		<img src="images\makine_new_walls\Concrete_-_Medium.PNG.webp" alt="">- medium shade (dark shade + 20 brightness)
+		<br>
+		<img src="images\makine_new_walls\Concrete_-_Light.PNG.webp" alt="">- Light shade - Top (medium shade + 20 brightness)
+		<br>
+		<img src="images\makine_new_walls\Concrete_-_Dark.PNG.webp" alt="">- dark shade (taken from the Gimp)
+		<br>
+		<h4>Wall Templates</h4>
+		<img src="images\makine_new_walls\Wall1.PNG.webp" alt="">- offset=0,6 
+		<br>
+		<img src="images\makine_new_walls\Wall2.PNG.webp" alt="">- offset=8,10 
+		<br>
+		<img src="images\makine_new_walls\Wall3.PNG.webp" alt="">- offset=-7,2 
+		<br>
+		<h4>Corner Templates</h4>
+		<img src="images\makine_new_walls\Corner1.PNG.webp" alt="">- offset=0,0 
+		<br>
+		<img src="images\makine_new_walls\Corner2.PNG.webp" alt="">- offset=0,14 
+		<br>
+		<img src="images\makine_new_walls\Corner3.PNG.webp" alt="">- offset=0,6 
+		<br>
+		<img src="images\makine_new_walls\Corner4.PNG.webp" alt="">- offset=5,16 
+		<br>
+		<h4>Wall Intersections</h4>
+		<img src="images\makine_new_walls\Wall-int1.PNG.webp" alt="">- offset=1,14 
+		<br>
+		<img src="images\makine_new_walls\Wall-int2.PNG.webp" alt="">- offset=0,14 
+		<br>
+		<img src="images\makine_new_walls\Wall-int3.PNG.webp" alt="">- offset=0,13 
+		<br>
+		<img src="images\makine_new_walls\Wall-int4.PNG.webp" alt="">- offset=0,6 
+		<br>
+		<img src="images\makine_new_walls\Wall-int5.PNG.webp" alt="">- offset=0,13 
+		<br>
+	<hr>
+	
 	<div id="addendum"><h3>Addendum</h3></div>
 	<br>
 		<p>If you want to share feedback, got questions, find any error or just want to chat 
@@ -1394,6 +1490,7 @@
 	<hr>
 
 	<h3>Sources</h3>
-		<a href=""></a>
+		<a href="https://falloutmods.fandom.com/wiki/Making_new_tiles">Making_new_tiles (Author: Wild_Qwerty - Mutants Rising Team)</a>
+		<a href="https://falloutmods.fandom.com/wiki/Making_new_walls">Making_new_walls (Author: Wild_Qwerty - Mutants Rising Team)</a>
 </body>
 </html>
