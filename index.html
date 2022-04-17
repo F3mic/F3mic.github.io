@@ -43,6 +43,9 @@
 		<li><a href="index.html#art">Art</a></li>	
 			<ol class="fifth">
 				<li><a href="index.html#talkhead">Talking Heads</a></li>
+				<li><a href="index.html#tiles">Make new tiles</a></li>
+				<li><a href="index.html#walls">Make new walls</a></li>
+				<li><a href="index.html#fot">FOT Critters In FO2</a></li>
 			</ol>
 		<!--<li><a href="">Summary</a></li>-->
 		<li><a href="index.html#addendum">Addendum</a></li>
@@ -1378,8 +1381,54 @@
 			<p>Add the line "vic,3,3,3" at the bottom of the list: vic is the name of the talking head and 
 				3,3,3 is the number of fidgets we made (bf1, bf2, bf3 for Bad, nf1, nf2, nf3 for Neutral and gf1,gf2, gf3 for Good)</p>
 			<img src="images\Patch 7.png" alt="">
-	<br>
-	<br>
+			<br>
+			<br>
+			<p>Go to the "scripts" folder inside "master.dat" and open the character's script you wish to modify, for example "acklint.int".
+				To open Fallout 2 script files (.int) you can use various programs, to most common is Sfall Script Editor.</p>
+			<p>Find the line starting with "start_gdialog" (use CTRL + F to find code with ease).
+				If it has no talking head assigned to it, it will look like this (the first number will be different):</p>
+				<code>
+					<pre>
+						start_gdialog(1364, self_obj, 4, -1, -1);
+					</pre>
+				</code>
+			<p>* The first number (1364) represent's the characters script number, you don't need to change that.
+			<br>
+			* "self_obj" makes it so that the code is referring to the object it's assigned to, you also don't need to change this.
+			<br>
+			* The second number (4) represents the mood the character is in, 4 is neutral, 1 is happy and 7 is angry. 
+			<br>
+			&nbsp;	You can change these if you want your character to start the dialog with a certain mood, although it's not essential.
+			<br>
+				* The third number (-1) represents the talking head the character would use, since it doesn't have one the number is -1, we will be changing this one.
+			<br>
+				* And finally the fourth number ( the last -1) represents the background the character would be using, as it doesn't have one the number is -1, we will also be changing this.</p>
+			<p>Open "head.lst" in ".../art/heads" and "backgrnd.lst" in ".../art/backgrnd":</p>
+			<p>* "head.lst" lists all the talking heads in the game files, they are ordered numerically from top to bottom (starting from 0).
+			<br>
+			&nbsp;	For example Sulik's head is the 9th row in the list so, since we start counting from 0, his talking head number is "8".
+			<br>
+				* "backgrnd.lst" is very similar as it lists all the backgrounds in the game.
+			<br>
+			&nbsp;	For example "junktown.frm" is in the 8th row so, since we also start counting from 0, it's background number is "7".</p>
+			<p>Using both "head.lst" and "backgrnd.lst" as a reference change the "start_gdialog" line as follows:</p>
+				<code>
+					<pre>
+						start_gdialog(1364, self_obj, 4, [talking head number], [background number]);
+					</pre>
+				</code>
+			<p>* The [talking head number] for the one we are adding would be it's number in "head.lst", for example if you modified the vanilla list the number would likely be "13".
+			<br>
+			* You can choose anything you want as a background, for example use "3" if you want The Hub backdrop.</p>
+			<p>Using these examples the code would look like this:</p>
+				<code>
+					<pre>
+						start_gdialog(1364, self_obj, 4, 13, 3);
+					</pre>
+				</code>
+			<p>* There may be more than one "start_gdialog" line so make sure you change all of them.</p>
+			<br>
+			<p>Compile the script and your done!</p>
 	<br>
 	<hr>
 
@@ -1479,6 +1528,90 @@
 		<br>
 	<hr>
 	
+	<div id="fot"><h3>How To use FOT Critters In FO2</h3></div>
+			<p>This is a basic tutorial on how to make a new FRM for a critter in Fallout 2. 
+				Though this tutorial will explain the steps in taking a new critter from Fallout Tactics a lot will apply to creating new FRMs for critters in general. 
+				Requirements A suitable *.Spr file from Fallout Tactics, in this case we will use "environmental.spr" Spr2Frm (Includes Spr2Gif, Gif2Fr, and FrmCat) Frame Animator 2.51 Frame Animator Scripts RenFRM.bat </p>
+			<h4>Step 1 - Making the raw FRMs</h4>
+			<p>Ok in this step you will actually make the new FRMs, though these are only a 'raw' FRM as they still need to be tidied up or they just look nasty.</p>
+			<p>Copy environmental.spr into the same folder as Spr2Frm and from command prompt type the following (note: without the *.Spr file extension):</p>
+			<p>Spr2Frm environmental</p>
+			<p>Sit back and enjoy the show, this could take a while on some computers. Once the conversion is completed proceed to the next step. </p>
+				<h4>Step 2 - Aligning the new FRMs</h4>
+				<p>Now to adjust the alignment for all the FRMs, dont worry its not as bad as it sounds, you only have to make sure that the primary FRM is centered correctly and the engine automaticaly aligns the rest to this one. 
+					The primary FRM is the one that is named xxxxxxAA.FRM but at the moment it is called either StandBreath or StandFidget if it is available, 
+					the good thing about the FO2 engine is that is automaticly looks at the image in the FRM and lines them all up so that the feet are in the same place as the primary FRM. 
+					Open Frame Animator Select 'File' and 'Open', and select the first FRM Select 'View' and 'Hexes' </p>
+				<img src="images\how_to_add_fot_critter\fot1.webp" alt="">
+				<p>You may have noticed how the critters feet are not centred in the hex correctly; you will need to adjust the 'Frames Offset' (note the 's' do not adjust the Frame Offset yet). 
+					You can do this by clicking the 'Frames Offset' button or by dragging the image with the mouse. You should end up with something like this: </p>
+				<img src="images\how_to_add_fot_critter\fot2.webp" alt="">
+				<p>You will now need to repeat this for all six different orientations (North East, East, South East, South West, West, & North West), 
+					to save you will need to click the 'Create FRM' button. You may also have noticed that you when save the file it gives you the option to save as separate FRMs for each orientation, 
+					I think that this is to improve the loading time of larger FRMs such as death sequences. I left them all as FRM rather than FR0,FR1,FR2,FR3,FR4,FR5 files. </p>
+				<img src="images\how_to_add_fot_critter\fot3.webp" alt="">
+				<p>This is due to Spr2Gif centring each orientation on a different point. It's not really a big problem anyway as you only have to adjust one or two FRMs, 
+					depending on what one you use, but if the critter has a FRM called StandFidgit you should use it instead as they usally look better. </p>
+				<img src="images\how_to_add_fot_critter\fot4.webp" alt="">
+				<h4>Step 3 - Walking, Running & Climbing</h4>
+				<p>Now the FRMs that 'walk' and 'run' require some special treatment before they will work, in fact if you do not adjust the individual Frame Offset for each frame the critters feet will just slide in the original hex when 
+					it tries to move, in fact it does it indefinitely (I had to hit the reset button on my computer to get out). Thanks to Jochua adding 'automate' and scripting support this is now super easy 
+					(previously for each frame of the critter you will need to adjust the Frame Offset for each 'step' the critter takes in a given direction, this also had to be repeated for each of the orientations) </p>
+				<p>Open Frame Animator Select 'File' and 'Automate...' </p>
+				<img src="images\how_to_add_fot_critter\fot5.webp" alt="">
+				<p>In the 'Source' box select the desired movement FRMs Tick the 'Script' check box Browse to the desired script (eg: 'Walking 11' for a walking animation containing 11 frames) 
+					Set the 'Destination' folder Set the 'Destination Format' to 'FRM' </p>
+				<p>Click 'Start' </p>
+				<p>This will automacticaly set the movement for all the FRMs that were selected. You will need to run a different script for each of the following movement types: </p>
+				<p>Walking FRMs - These are the main movement type, and is required for each weapon type. Running FRMs - These travel double the distance and the FPS is set to 18 Climbing FRMs - 
+					These move -2 Y for each frame, but for these FRMs it doesnt really matter </p>
+				<p>note: These scritps will only work on FRMs where the individual frames within a given FRM are the same size or are aligned while the offset is set to '0', 
+					hence do not run the 'Autocutting' feature until after running these scripts. </p>
+				<h4>Step 4 - set the action frame</h4>
+				<p>There is an a Hex offset within a FRM file that signifies when to launch an attack or use an item. By default this value is zero in a newly created FRM, 
+					which in turn makes the critters attack at the beginning of its animation rather than in the middle or when ever it should happen to be. In the animation below the critter would make the attack roll on the 1st 
+					frame instead of when its arm is extended on the 5th frame. </p>
+				<img src="images\how_to_add_fot_critter\fot6.webp" alt="">
+				<p>This value is set in Frame Animator by selecting "Edit" "Options" "Action Frame" and entering the frame number for which the action takes place. 
+					Please note that Frame Animator starts counting at 0, not 1. So the first frame is frame zero and the second is frame one etc... </p>
+				<img src="images\how_to_add_fot_critter\fot7.webp" alt="">
+				<p>Once again repeat this for all the attack FRMs, though for now only do the HtH and Melee attacks we will come back to the guns a bit later, 
+					as you will need to edit them a bit first. Please dont adjust the FPS (frames per second) yet as you only need to change this for the running frames (new new scripts should take care of that). </p>
+				<h4>Step 5 - Creating the missing FRMs</h4>
+				<p>There are a few FRMs that you will need to create, as they are either not included as separate animations or not included at all in FOT. Here is a list of the FRMs you will need to make/edit. 
+					Without these FRMs you wont be able change weapons or fire the guns. </p>
+				<p>Equip weapon - xC - (made from 'StandMagichigh' or 'default' FRM) Unequip weapon - xD - (made from 'StandMagichigh' or 'default' FRM) </p>
+				<p>Aim gun - xH - (made from 'StandAtackGun' FRM) Lower gun - xI - (made from 'StandAtackGun' FRM) Fire gun, Single - xJ - (made from 'StandAtackGunSingle' FRM) Fire gun, Burst - xK - 
+					(made from 'StandAtackGunBurst' FRM) Fire gun, Flame - xL - (made from 'StandAtackGunSingle' FRM) - only needed if critter requires Flame Thrower </p>
+				<p>For the Equiping FRMs I just edited the standard 'StandMagichigh' FRM and saved it as "Equip.FRM". To edit it just delete all but the middle three frames and save it as "Equip.FRM" 
+					(the rename batch file will use this name so please do save it as this filename). This will provide a quick 'movement' to give the impression of changing guns. 
+					Or you can just use the 'default' FRM if you want a quick transition. </p>
+				<p>Unfortunately FOT does not include the animation for the equip sequences, using the above method works fine, but the gun just appears in the FRMs hands. More noticable is the fact the new weapons FRM will be centered in a 
+					slightly different location due to the size difference between the no gun animation critter and the critter with a gun, this is more noticable on larger guns such as the mini-gun. 
+					If you want to get around this you can make a smoother transition by adding frames from the desired weapon transition to the 'default.frm' file and then making sure that the frames are correctly centered, 
+					this will then ensure that the critter does not 'hop' during weapon transitions. This is very time consuming so I didnt bother. </p>
+				<p>To delete frames, select the unwanted frames and click the 'Delete Frames' button, or you can load the desired script which will delete a particular group of frames for you. 
+					eg : "6 Up.fas" will delete all the frame from 6 upwards. When using the scripts I find it easier to delete the last frames first. </p>
+				<img src="images\how_to_add_fot_critter\fot8.webp" alt="">
+				<p>Now for the aim, lower & fire gun FRMs just open up the StandAtackGunname.frm and save the first segment where the critter aims his gun StandAtackGunnameH.frm, 
+					and where the critter lowers its gun StandAtackGunnameI.frm and where the critter fires its gun StandAtackGunnameJ.frm For each of these FRMs you will need to delete the unneeded frames. 
+					Also for guns that have both a single shot and a burst mode you only need to make one set of aim and lower animations. 
+					You should also notice that most of the FRMs tend to have a transition point where there are two identical frames in a row this is where you should split the animation, 
+					but not all of the FRMs will have this so just use your best judgement. Once you have done this you will need to select the action frame for the StandAttackgunJ.frm </p>
+				<img src="images\how_to_add_fot_critter\fot9.webp" alt="">
+				<h4>Step 6 - Renaming your FRMs</h4>
+				<p>Now you need to rename the files into a standard that Fallout 2 will recognise, luckily I have also made a small batch file that will do this for you. Of course it will actually double up some of the FRMs as for example all of the different weapon poses will use the same 'recoil' animation but they each require their own file even though it is the same one (I copied StandRecoil.frm for each of the other recoil animations). </p>
+				<p>Anyway just copy RenFrm into the same folder as your new FRMs and run it from the command line using the following naming convention. </p>
+				<p>Please note that the 'XX' suffix should use the following convention. </p>
+				<p>HA = Hero Androgneus HF = Hero Female HM = Hero Male NA = NPC Androgneus NF = NPC Female NM = NPC Male MA = Monster Androgynous </p>
+				<p>The 'name' should only be a 4 character long abbrevation, in order to maintain the correct fallout2 naming convention (it wont work otherwise). </p>
+				<p>Once you have decided on its name run Renfrm using hte following syntax: </p>
+				<p>RenFrm XXname </p>
+				<br>
+				<p>And wa-la hey-presto you're done! Just copy the completed FRMs into the \data\art\critters folder update the *.lst file and you can now create a new proto for the critter within the editor! </p>
+		<br>
+		<hr>
+		
 	<div id="addendum"><h3>Addendum</h3></div>
 	<br>
 		<p>If you want to share feedback, got questions, find any error or just want to chat 
@@ -1492,6 +1625,6 @@
 	<h3>Sources</h3>
 		<p><a href="https://falloutmods.fandom.com/wiki/Making_new_tiles">Making_new_tiles (Author: Wild_Qwerty - Mutants Rising Team)</a></p>
 		<p><a href="https://falloutmods.fandom.com/wiki/Making_new_walls">Making_new_walls (Author: Wild_Qwerty - Mutants Rising Team)</a></p>
-		
+		<p><a href="https://falloutmods.fandom.com/wiki/How_To_Use_FOT_Critters_In_FO2">How_To_Use_FOT_Critters_In_FO2 (Author: Wild_Qwerty - Mutants Rising Team)</a></p>
 </body>
 </html>
