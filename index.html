@@ -1611,7 +1611,80 @@
 				<p>And wa-la hey-presto you're done! Just copy the completed FRMs into the \data\art\critters folder update the *.lst file and you can now create a new proto for the critter within the editor! </p>
 		<br>
 		<hr>
-		
+
+		<div id="grey"><h3>Greyscaling and manipulating FRM sprites </h3></div>
+			<p>This is THE tutorial on FRMs including extracting existing data, greyscaling them and putting new data back to FRM format.</p>
+			<p>Tools needed: </p>
+			<p>- Photoshop 5.x or better or CS (don't expect me to link it here)</p>
+			<p>	- Frame Animator 2.51 (http://www.jochua.nm.ru/dwnld/fantr251.zip)</p>
+			<p>	- frm2bmp or frm2gif (I recommend first one, link: http://www.nma-fallout.com/forum/dload.php?action=file&file_id=107)</p>
+			<p>	- IrfanView (free image viewer, link - www.irfanview.com)</p>
+			<p>	- Dat Explorer (or other utility for extracting data from "master.dat", link: http://www.teamx.ru/utils/dat_explorer.rar)</p>
+			<p>- Modding Fallout2 FAQ (http://modguide.nma-fallout.com) </p>
+			
+			<h4>Intro </h4>
+			<p>FRM format is standard graphic format made (and mostly used) by Interplay. It's similar to other graphic formats as BMP, GIF, PNG, TGA, TIFF etc... However, some things are different. </p>
+			<p>a) The FRM file contains 256 colors from a 1024 colored palette. The palette (1024 colors) for the Fallout games is included with the FRM animator 2.51, 
+				the name is "Default.ACT". This palette is recognised by Photoshop (later about this). 	</p>
+			<p>b) Less colors -> smaller size of the file, but converting pictures from 16,7 billions of colors to 256 (in other words "dithering") must be taken care of. 
+				FRM Animator can do it with an average quality, but Photoshop will do it like a "pro". </p>
+			<p>c) FRM format can be animated (as GIF), so we can make animations using it (characters in-game are animated FRMs, right? http://devforum.nwsgames.net/images/smiles/icon_wink.gif). 
+				The parameters for animations (and animating itself) are described later on. </p>
+			
+			<h4>Get to work! </h4>
+			<p>We have a simple (haha) task to do - we need an albino deathclaw. Lets divide a task to smaller steps: </p>
+			
+			<h4>STEP 1 - CONVERTING FRM TO OTHER (SUITABLE FOR EDITING) FORMAT </h4>
+			<p>a) Extract the FRM (or all) files from the "master.dat" file using "Dat explorer" or some other utility (NMA has nice database of utils)</p>
+			<p>b) Find FRMs you want to edit. We'll look for the small deathclaw frms - according to FO2 modding FAQ these files are named "MACLW2xx.FRM".</p>
+			<p>c) UPDATE! Start "frm2bmp" utility which shall extract all frames from the FRM file(s) and save them as BMP files. The command should be written in a DOS window like this: frm2bmp maclw2aa.frm</p>
+			<p>Every BMP file represents ONE ANIMATION FRAME from animated FRM.</p>
+			<p>Now, we have easy-editable BMP files! Let's edit them! </p>
+
+			<h4>STEP 2 - MY GFX WULEZ!!!1!11! </h4>
+			<p>I'll stick to greyscaling here, but you can do whatever you want with your new aquired BMP sprites. So...</p>
+			<p>a) Start IrfanView. Go to: File->Batch conversion/rename.</p>
+			<p>b) Select and add your BMP frames into the left window ("Add all" option is very useful http://devforum.nwsgames.net/images/smiles/icon_wink.gif)</p>
+			<p>c) Choose output directory, check "batch conversion" and choose BMP for output format.</p>
+			<p>d) Turn "Advanced options" on. Click on "Set advanced options" and check "convert to grayscale" option.</p>
+			<p>e) Click on "Start". </p>
+			<p>God, everything is grey now!!! </p>
+
+			<h4>STEP 3 - PREPARING NEW BMPS SO THEY CAN BE CONVERTED (OPTIMAL) TO FRMS </h4>
+			<p>We can make this in Frame Animator, but we need to be sure that our new graphics (BMPs) will be converted back to FRM without loosing its' quality (colors quality). 
+				This is more important for colored sprites, but I think it'd be nice to do it with greyscaled too.</p>
+			<p>a) Open your BMP sprites (pictures, files) in Photoshop.</p>
+			<p>b) Go to: Image->Mode, there should be checked "Indexed color..." If it's not checked - check it yourself, then you'll see a new opened window.</p>
+			<p>c) Choose Palette->Custom->Load and load the "default.ACT" palette from FRM Animator 2.51</p>
+			<p>d) Choose Dither - IMO "Diffusion 75%" is perfect for Fallout sprites.</p>
+			<p>e) Don't forget to check "Preserve exact colors", so the dithering can be done at its' best.</p>
+			<p>f) Save the new, indexed, 256 colored and for the Fallout2 palette dithered sprite (frame).</p>
+			<p>We're almost there! Now we have to make a FRM and that's it. </p>
+
+			<h4>STEP 4 - UNDERSTANDING FRM ANIMATOR 2.51 AND MAKING FRMS WITH IT</h4>
+			<p>a) Start FRM Animator 2.51 and open original FRM containing frames we need to change (e.g. MACLW2AA.FRM)</p>
+			<p>We need to pay attention on a few things here:</p>
+			<p>- Animated FRMs consist from 6 DIRECTIONS (usually), each directions has ONE or MORE ANIMATION FRAMES.</p>
+			<p>- UPDATE! Every from 6 DIRECTIONS has its' own COORDINATES (x,y) in-game - "FRAMES OFFSET" in FRM Animator.</p>
+			<p>- UPDATE! Each ANIMATION FRAME has its' own (x1,y1) COORDINATES inside the sprite - "FRAME OFFSET" in FRM Animator.</p>
+			<p>- Background color is the transparent color. It can be set in "Edit->Options". I usually use "sample" option, then use color picker to pick the background/transparent color. My sprites usually have blue background (0,0,255).</p>
+			<p>- UPDATE! Another useful option is "Locked Offsets"(!) It locks the coordinates of a sprite, so deleting old frames and adding new shouldn't affect coordinates! Only offset from the directions (x,y) can be locked.</p>
+			<p>- Dithering method is irrelevant, since we did it in Photoshop nice&smooth http://devforum.nwsgames.net/images/smiles/icon_wink.gif</p>
+			<p>- ACTION FRAME is the frame which represents an action. E.g. for picking up animation action frame could be Nr.5, and that's the frame when character touches an item. You shouldn't change it, unless you make a new animations.</p>
+			<p>- FPS means Frames Per Second - it controls speed of animation! More FPS means faster animation.</p>
+			<p>- Interesting option is "View->Ghost", since it enables ghost view of previous frame in the background, so you can use it to tweak your own animations. Used when making new sprites (mostly).</p>
+			<p>- You can save your project as FPR file, but I preffer saving to FRM directly.</p>
+			<p>Now, back to making albino baby deathclaw!</p>
+			<p>b) First, we need to lock offsets! (Options->Lock offsets)</p>
+			<p>c) Now, we add greyscaled frames (BMPs or GIFs), (Edit->Add frames) to specific directions. Watch out for the order, they must be ordered properly! After adding new frames (BMPs), delete old frames (colored frames).</p>
+			<p>d) Repeat the "c" step for all directions.</p>
+			<p>e) Save your new file (MACLW3AA.FRM would be nice, so we can keep the structure of the naming conventions http://devforum.nwsgames.net/images/smiles/icon_biggrin.gif) </p>
+	
+			<h4>STEP 5 - TESTING YOUR NEW CREATION!</h4>
+			<p>Now, try putting the sprite into the game and test it. You can rename it to MACLW2AA.FRM and put it into "..\data\art\critters" folder of your FO2 game, then start FO2 mapper and add one baby deathclaw to a map. Pressing F8 shall bring you in-game mod on that map. </p>
+			<br>
+			<hr>
+
 	<div id="addendum"><h3>Addendum</h3></div>
 	<br>
 		<p>If you want to share feedback, got questions, find any error or just want to chat 
@@ -1626,5 +1699,6 @@
 		<p><a href="https://falloutmods.fandom.com/wiki/Making_new_tiles">Making_new_tiles (Author: Wild_Qwerty - Mutants Rising Team)</a></p>
 		<p><a href="https://falloutmods.fandom.com/wiki/Making_new_walls">Making_new_walls (Author: Wild_Qwerty - Mutants Rising Team)</a></p>
 		<p><a href="https://falloutmods.fandom.com/wiki/How_To_Use_FOT_Critters_In_FO2">How_To_Use_FOT_Critters_In_FO2 (Author: Wild_Qwerty - Mutants Rising Team)</a></p>
+		<p><a href="https://falloutmods.fandom.com/wiki/Greyscaling_and_manipulating_FRM_sprites">Greyscaling and manipulating FRM sprites (Author: Lisac2k)</a></p>
 </body>
 </html>
