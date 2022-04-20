@@ -81,16 +81,67 @@
 			
 	<div id="prep"><h3>Preparations</h3></div>
 	<br>
-		<h4>Tools</h4>
+		<h4>Fallout 2 Installation</h4>
+			<p>I think I don't need to explain how to install Fallout 2. If you don't know how to install it, just ask someone of the community. 
+				It doesn't matter where you bought Fallout 2 you can just use any version for modding. However, I'd recommend to have an English Fallout 2 installation.</p>
+			<p>So please go on and do a freshly installtion of Fallout 2 in English.</p>
+			<p>My installation of Fallout 2 looks like this because I own it via GOG:</p>
+				<code>
+					<pre>
+						C:\Program Files (x86)\GOG Galaxy\Games\Fallout 2
+					</pre>
+				</code>
+		<br>
+
+		<h4>Unpacking the Fallout 2 .dat files</h4>
+			<p>This tutorial should cover something that those in the know, when it comes to Fallout editing, often forget to tell you when you take your first steps into their world. </p>
+			<p>Before you do anything modding-wise, it's expected that you've already unpacked three Fallout 2 .dat files. You'll find these in your ...\Fallout2\ directory. 
+				These are</p>
+				<code>
+					<pre>
+						master.dat
+						critter.dat
+					</pre>
+				</code>
+			<p>and if you've patched your version of FO2, as you should have done,</p>
+				<code>
+					<pre>
+						patch000.dat
+					</pre>
+				</code>
+			<p>These three files contain all the various audio, graphic, dialogue, script, font, map, etc. files used in FO2. 
+				You can see how you'd need to unpack the .dats if you wanted to edit any one file within them, so you need to do this before you do any sort of modding of FO2. </p>
+			
+		<h4>Extracting the Fallout 2 .dat files</h4>
+			<p>Download DatExplorer from NMA or similar. Unpack the file inside it wherever you like. Luckily, it doesn't require installation on your computer as such, so it can be run straight out of the box.</p>
+			<p>Fire up the unpacked DatExplorer .exe.</p>
+			<p>In the 'Startup form' box, double-click on the folder with the vault boy's grinning face on it. In the 'Open' box that comes up next, find and open your ...\Fallout2\ folder. 
+				Select master.dat. This will open up the .dat file within DatExplorer, allowing you to browse its contents before extracting them, WinZip style. So now we extract all these files.</p>
+			<p>Minimise DatExplorer for a moment and create a folder called data somewhere where you can easily find it, like your desktop or My Documents, for instance. Doesn't really matter.</p>
+			<p>Bring up DatExplorer again. On the menu bar, select Extract ==> Extract all files to... and point it to your freshly-made data folder. 'OK' it, and DatExplorer will unpack the files. This takes a while.</p>
+			<p>When DatExplorer is finished, minimise it, cut the data folder from wherever you made it and paste it into the root of your ...\Fallout2\ directory. 
+				Hit 'Yes To All' in the window that comes up, to replace any old files in the directory with the new, extracted ones.</p>
+			<p>That's master.dat done. Now do the same with critter.dat. Finally - and make sure you do this last - unpack Patch000.dat. 
+				It is vital that Patch000.dat is unpacked last, since it updates many of the files within the other two, big .dat files.</p>
+			<br>
+			<p>Why the extracted files go into '...\Fallout2\data' instead of the Fallout 2 root directory</p>
+			<p>Thanks Red. </p>
+			<p>The engine is actually built to read the data files from ...\Fallout2\data first (Well, that's how fallout2.cfg sets it by default...) and failing that, will read the ...\Fallout2\ root directory. </p>
+			<p>Of course, this causes problems since when you put the extracted files in ...\Fallout2\data, Fallout2 likes to delete most if not all the files in ...\Fallout2\data\proto, 
+				so you need to make them read-only. Yet if you want to be able to edit them, they should NOT be read-only... Quite a pain in the ass huh? </p>
+			<p>I [Red] haven't found any clever workarounds...The danger in putting the extracted files in the root instead of in ...\Fallout2\data is that I think the original .dat files would actually have priority over them... 
+				While the extracted files in ...\Fallout2\data have priority over the .dat files. </p>
+
+		<h4>Tools - Scripting</h4>
 			<iframe width="480" height="320" src="https://www.youtube-nocookie.com/embed/vCPc1gxPtKk" title="YouTube video player" frameborder="0" 
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			<p>What do you need for modding Fallout 2 you ask? Well let's begin with scripting. 
 				You can take a simple text editor like notepad or notepad++ with or without
 				<a href="https://nma-fallout.com/threads/vscode-ssl-support.217033/">Burns VScode SSL support</a> to write scripts. 
 				But we take a more dedicated tool for this task. The tool we're going to use is called SFall Script Editor by Mr. Stalin.
 				This <a href="https://www.nma-fallout.com/resources/sfall-script-editor.77/">tool</a> is gold and will save us a lot of work.</p>
 			<iframe width="480" height="320" src="https://www.youtube-nocookie.com/embed/JRZb8ZGrHuw" title="YouTube video player" frameborder="0" 
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			<p>If you want to just write scripts and hope they'll work you'll be fine. 
 				But if you want to be sure your scripts work you can do this in severals ways.
 				How you do test your scripts will be discussed at a later time.
@@ -100,9 +151,9 @@
 				Keep these decompiled scripts save and untouched. Make a copy of them because we're going to work and manipulate alot with these files.</p>
 		<br>
 
-		<h4>Mapping</h4>
+		<h4>Tools - Mapping</h4>
 			<iframe width="480" height="320" src="https://www.youtube-nocookie.com/embed/UWRrtQgsaYU" title="YouTube video player" frameborder="0" 
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			<p>If you want to map you'd use the before mentioned BIS Mapper. You can also use 
 				<a href="https://www.nuclear-city.com/index.php/topic/1054-%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%BE%D1%80-%D0%BA%D0%B0%D1%80%D1%82-bis-%D0%B8-dims-fallout-1-2/">
 				Dims Mapper (russian speaking site)</a> as complentary. You'll also find a modified version of BIS Mapper under the russian link.</p>
