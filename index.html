@@ -49,6 +49,7 @@
 			</ol>
 		<!--<li><a href="">Summary</a></li>-->
 		<li><a href="index.html#addendum">Addendum</a></li>
+		<li><a href="index.html#source">Sources</a></li>
 	</ol>
 </div>
 
@@ -1814,20 +1815,163 @@
 		<br>
 		<hr>
 
+		<div id="loadscreen"><h3>Making Loading Screens</h3></div>
+			<h4>Making ColorRIX Images for Fallout Loading Screens </h4>
+			<p>This is a tutorial by Pixote. It is is designed to demonstrate how to build ColorRIX images: (ColorRIX Bitmap Graphic), for Fallout splash screens. </p>
+			<p>The beauty of the ColorRIX images is that there is no need to use the Fallout color palette, therefore the images are cleaner in appearance, but the Fallout color palette can be used to create the “Fallout look”. 
+				The only restriction with this version of Image Alchemy is the ColorRIX images can be no larger than 640x480 pixels. The software will accept 8bit, 16bit, and 24bit - BMP’s, GIF’s, JPEG’s, etc. 
+				The image that you wish to convert should be placed in the folder you installed Image Alchemy (this is to make the process easier), any ColorRIX images you build will also be saved into the Alchemy folder. </p>
+			<p>The first thing you need is the software Image Alchemy or here Image Alchemy. </p>
+			<p>Now the software is ancient so you will need to mess around with the program to become familiar with its interface. The top menu is made up of - FILE – VIEW – RESIZE - PALETTE – COLORS – DITHER – MISC – BASIC PS – ADVANCED PS. </p>
+			<p>1). Go to FILE and - Select Input Image and locate the image file you wish to convert. A box (Input Image) in the bottom left will indicate the name and type of the file. </p>
+			<p>2). Go to VIEW and – View Image to check the file. ESC key gets you back to the menu. At this stage you can experiment with the COLORS and DITHER menus, and return to the VIEW to see the results. </p>
+			<p>3). Go to FILE and – Select Output Type. A red box will pop up – scan through the image formats and find RIX. A box in the bottom right-hand side (Output Type) will now have RIX described. </p>
+			<p>4). Go to FILE and – Convert! An Output File Name box will pop up. Change the name to SPLASH0 (Fallout SPLASH files are saved as SPLASH0, SPLASH1, etc), and change the .SCX to .RIX, and hit the enter key. 
+				The ColorRIX image will be saved to the Alchemy folder. </p>
+			<p>5). You will need a small program - Titanium Frm Browser to actually view the finished ColorRIX image, but this program can also view Fallout FRM’s. 
+				The finished SPLASH screens should be placed in a folder - \Fallout1\data\art\splash…or \Fallout2\data\art\splash. </p>
+			<p>It's important to remember that these images can only be seen in the actual game if the resolution patch has ‘not’ been installed, or the graphic are turned to 8bit.</p>
+			<p>Here is an example of one I made: </p>
+			<img src="images\loading_screens\Splash0.webp" alt="">
+		<br>
+		<br>
+		<br>
+		<hr>
+
+		<div id="animation-3dsmax"><h3>Making animations with 3ds Max and FrameAnimator </h3></div>
+			<h4>Create a character model</h4>
+			<img src="images\animations_3dsmax\Frmantr1.webp" alt="">
+			<p>Start with a 3D model of a character </p>
+
+			<h4>Set up the scene for animation</h4>
+			<img src="images\animations_3dsmax\Frmantr2.webp" alt="">
+				<code>
+					<pre>
+						Reference 	Description
+
+						1 		character model
+						2 		camera ('Orthographic Projection' - 3ds Max)
+						3 		light source to create shadows of the character on the ground ('Cast Shadows', 'Use Ray-Traced Shadows', 'Decay' to 'None')
+						4 		arbitrary light source to create ambient lighting ('Cast Shadows' off, 'Decay' to 'None')
+						5 		horizontal plane to form the background color and shadows on the final image
+						a1 		vertical camera angle (-25.7 degrees)
+						a2 		angle of the light source for shadows (-75.7 degrees)
+						a3 		horizontal camera angle (-150, -90, -30, 30, 90, and 150 for six orientations). 
+					</pre>
+				</code>
+			
+			<h4>Generate frames</h4>
+			<img src="images\animations_3dsmax\Frmantr3.webp" alt="">
+			<p>An animation set of five frames in the 'South East' (SE) orientation. For rendering, disable Anti-Aliasing. 
+				Notice that The "stay frame" is not included in animation set 'AB', but is included in the 'AA' set. </p>
+
+			<h4>Create the animation project</h4>
+			<img src="images\animations_3dsmax\Frmantr4.webp" alt="">
+			<p>A single frame </p>
+				<code>
+					<pre>
+						Reference 	Description
+
+						1 		the actual dimensions of the picture
+						2 		target character image
+						3 		empty border. (Do not cut them yourself. They are needed to correctly calculate the displacement of the logical boundaries of frames relative to each other. 
+								FrameAnimator pairs these empty areas together itself just before the generation of .FRM file, if you set the option 'Edit\Options...\Autocutting')
+						4 		background, interpreted as transparent
+						5 		the logical boundary of the frame (If the option FrameAnimator 'Edit\Options...\Autocutting' is not enabled, 
+								then the logical boundary coincides with the actual dimensions of the picture. For the different frames in the collection the logical boundaries are different)
+						H, W 		height and width of the frame
+						OffsetX,  	the offset of the logical center (in FrameAnimator the values FramesOffset[direction].X and FramesOffset[direction].Y).
+						OffsetY		Offset X is measured from the center of the image, and Offset Y is measured from the bottom edge. 
+					</pre>
+				</code>
+
+			<h4>Finish the animation</h4>
+			<img src="images\animations_3dsmax\Frmantr5.webp" alt="">
+				<code>
+					<pre>
+						Reference 	Description
+
+						1 		standing character frame (not included in the walking animation)
+						2 		walking animation frames
+						3 		repeated walk animation frames (played repeatedly until the character reaches the desired location on the map)
+						dx1, dy1 	the offset of the first frame at the beginning of the animation:
+								FirstOffset[direction].X = FramesOffsets[direction].X + FrameOffsets[direction][1].X
+								FirstOffset[direction].Y = FramesOffsets[direction].Y + FrameOffsets[direction][1].Y
+						dx2, dy2 	the offset between two adjacent frames (In FrameAnimator these are the values FrameOffset[direction][i].X and FrameOffset[direction][i].Y. 
+								FrameAnimator can calculate them automatically, if not trim the empty background of images!)
+						dx3, dy3 	the offset between the last frame and first frame in the repeated animation 
+								(in FrameAnimator these are the values FrameOffset[direction][1].X and FrameOffset[direction][1].Y. 
+								Set the value of X and use the 'OffsetWizard' button in the 'FrameOffset' dialog box to calculate the correct value of Y). 
+					</pre>
+				</code>
+		<br>
+		<hr>
+
+		<div id="new_worldmap"><h3>Making a new worldmap </h3></div>
+			<p>Lisac2k made a worldmap for Survivor 2 MOD a few days ago and here's the simple way to do it. </p>
+			<p>Tools: FRM animator 2.51 or FRManim shortly (here) A picture editing program (Photoshop, Paint Shop pro, GIMP etc...) </p>
+			<p>Steps: 1. Knowing the truth: Fallout worldmap is 1400x1500 pixels formated. So, your map should be so formated too. It's 8-bit coloured, that means there will be some color loss when converting to FRM format, 
+				but it has to be that way. That's why your map shouldn't be too much coloured (something like sepia works nice). </p>
+			<p>2. Find your area of interest somewhere on the net: I recommend using this site for a start - http://www.terraserver.com - grab your map image there. </p>
+			<p>3. Load your image into your picture editing program. Resize, cut,adjust, apply effects etc. until you get a satisfying result which is 1500x1400 pixels sized. Save image (I usually use BMP format). 
+				Now that image should be divided into 20 smaller images which are 350x300 sized. Here's the picture how it looks like: </p>
+			<img src="images\new_worldmap\Mapabig7ve.th.webp" alt="">
+			<p>Name your parts like this WRLDMPxx.BMP (where "xx" is number from 00 to 19) and save the files. 00 represents 1st map part, and 19 represents 20th map part. </p>
+			<p>4. If you want (and I know I want) to show yellow lines (meridians, parallels) on your map, here's what you need to do. Open each of your map parts and draw lines like on this picture: </p>
+			<img src="images\new_worldmap\Mapasmall1uw.th.webp" alt="">
+			<p>Warning: don't draw lines on the RIGHT- and DOWN-side of the map! </p>
+			<p>5. Load each of your WRLDMPxx.BMP maps into FRManim. and save them as FRMs. That's it. For using it in-game, copy the map files to "your Fallout2 directory/data/art/intrface". </p>
+		<br>
+		<hr>
+
+		<div id="tile_worldmap"><h3>New World Map Tiles </h3></div>
+			<p>Here you will see example of how to make new worldmap tiles using Adobe Photoshop 7.0 </p>
+			<p>1.First, you need a picture of Fo2 world map. It doesn't matter if it's in .bmp .jpg .gif or any other format, you can convert it using a palette or "Save As..." option. 
+				However, picture size is important. For standard 4x5 tiles, wm* size is 1400x1500 pix. </p>
+			<img src="" alt="">
+			<p>Those yellow grid lines you see across the world map are just being used for easier navigation on the world map, nothing more. 2.Now, when you have wm* in appropriate format, open it with "Adobe ImageReady". 
+				3.It's time to make some tiles... </p>
+			<img src="" alt="">
+			<p>Next, select tile size... </p>
+			<img src="" alt="">
+			<p>At the same time, in the top right corner you will see this toolbox. Here you can select output format for tiles (currently GIF, 256 colors). </p>
+			<img src="" alt="">
+			<p>To make sure your tiles are divided correctly, use "Optimized" tab in the opened document main window like so: </p>
+			<img src="" alt="">
+			<p>4. File\Save optimized as... </p>
+			<p>Later, you can rename tiles and convert them to frms using any of the available tools. </p>
+			<p>5*. Updating worldmap.txt: </p>
+			<p>After adding new frms to art\intrface and updating intrface.lst now you want these new tiles to be shown in game... </p>
+			<p>First you have to check worldmap.txt line "num_horizontal_tiles=x" to see if you have correct number of tiles (if x =4 then tiles num= 20). Usually, you should never change this number if you don't intend to alter world map size. 
+				In any other case, with x=5 tiles number will increase to 25. That also means you've got to have new tiles from WRLDMP20.frm - WRLDMP24.frm </p>
+			<p>Now, if you have more than 20 tiles, add new tiles information in worldmap.txt: </p>
+				<code>
+					<pre>
+						[Tile 20]  	greater than 19
+						art_idx=357 	for new tiles, must be greater than 468 (intrface.lst)
+						encounter_difficulty=0 	note that (-10) is harder encounter table
+					</pre>
+				</code>
+		<br>
+		<hr>
+
 	<div id="addendum"><h3>Addendum</h3></div>
 		<p>If you want to share feedback, got questions, find any error or just want to chat 
 			please consider looking at the <a href="https://www.nma-fallout.com/forums/fallout-general-modding.18/">No Mutants Allowed (NMA) forum modding subsection</a>.
 			There you'll find the <a href="https://www.nma-fallout.com/threads/femics-fallout-2-modding-guide.221013/">thread of this guide.</a></p>
 		<p>A really big thanks to anybody who wrote a tutorial or dropped some knowledge here and there.</p>    
 	<br>
-	<br>
 	<hr>
 
-	<h3>Sources</h3>
+	<div id="source"></div><h3>Sources</h3>
 		<p><a href="https://falloutmods.fandom.com/wiki/Making_new_tiles">Making_new_tiles (Author: Wild_Qwerty - Mutants Rising Team)</a></p>
 		<p><a href="https://falloutmods.fandom.com/wiki/Making_new_walls">Making_new_walls (Author: Wild_Qwerty - Mutants Rising Team)</a></p>
 		<p><a href="https://falloutmods.fandom.com/wiki/How_To_Use_FOT_Critters_In_FO2">How_To_Use_FOT_Critters_In_FO2 (Author: Wild_Qwerty - Mutants Rising Team)</a></p>
 		<p><a href="https://falloutmods.fandom.com/wiki/Greyscaling_and_manipulating_FRM_sprites">Greyscaling and manipulating FRM sprites (Author: Lisac2k)</a></p>
 		<p><a href="https://falloutmods.fandom.com/wiki/Making_a_new_character_using_existing_Fallout_characters">Making_a_new_character_using_existing_Fallout_characters (Author: Lisac2k)</a></p>
+		<p><a href="https://falloutmods.fandom.com/wiki/Making_ColorRIX_Images_for_Fallout_Loading_Screens">Making_ColorRIX_Images_for_Fallout_Loading_Screens (Author: .Pixote.)</a></p>
+		<p><a href="https://falloutmods.fandom.com/wiki/Making_animations_with_3ds_Max_and_FrameAnimator">Making_animations_with_3ds_Max_and_FrameAnimator (Author: Jochua)</a></p>
+		<p><a href="https://falloutmods.fandom.com/wiki/Making_a_new_worldmap">Making_a_new_worldmap (Author: Lisac2k)<a></p>
+		<p><a href="https://falloutmods.fandom.com/wiki/New_World_Map_Tiles">New_World_Map_Tiles (Author: Unknown (Last Hope mod))</a></p>
 </body>
 </html>
