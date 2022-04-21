@@ -87,7 +87,7 @@
 			<p>I think I don't need to explain how to install Fallout 2. If you don't know how to install it, just ask someone of the community. 
 				It doesn't matter where you bought Fallout 2 you can just use any version for modding. However, I'd recommend to have an English Fallout 2 installation.</p>
 			<p>So please go on and do a freshly installation of Fallout 2 in English.</p>
-			<p>After the installation is done, create a copy of the FO2 folder and paste it somewhere else. Now that we have a backup of our newly installed FO2 we can happly mod our backuped FO2
+			<p>After the installation is done, create a copy of the FO2 folder and paste it somewhere else. Now that we have a backup of our newly installed FO2 we can happily mod our backuped FO2
 				installation without being afraid of breaking something. And if we break something we can steal if from our original FO2 installation :P</p>
 		<br>
 
@@ -215,7 +215,7 @@
 				But if you want to be sure your scripts work you can do this in severals ways.
 				How you do test your scripts will be discussed at a later time.
 				The maybe quickest way is following tool.-->
-			<p>Keep the original of these BIS Mapper decompiled scripts save and untouched. We're going to work and manipulate alot with these files.</p>
+			<p>Keep the original of these BIS Mapper decompiled scripts save and untouched.</p>
 		<br>
 
 		<h4>Config sFall Script Editor</h4>
@@ -233,8 +233,80 @@
 
 		<h4>Tools - Mapping</h4>
 			<p>If you want to map you'd use the before mentioned BIS Mapper. You can also use 
+				<a href="https://www.mediafire.com/folder/2aheaguwymint/Welcome_to_Fallout_Database#jhjy1cz6dbklg">Dims Mapper (Fallout Database by Dobrovik)</a> or
 				<a href="https://www.nuclear-city.com/index.php/topic/1054-%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%BE%D1%80-%D0%BA%D0%B0%D1%80%D1%82-bis-%D0%B8-dims-fallout-1-2/">
-				Dims Mapper (russian speaking site)</a> as complentary. You'll also find a modified version of BIS Mapper under the russian link.</p>
+				Dims Mapper (Nuclear-city.com russian speaking site)</a> as complentary. You'll also find a modified version of BIS Mapper under the russian link.</p>
+
+		<h4>Config BIS Mapper</h4>
+			<p>The first time you run 'mapper2.exe' you should encounter this error...</p>
+			<img src="images\mapping\2022-04-21 14_09_35-Fehler.png" alt="">
+			<p>Open 'mapper2.cfg' with a text-editor of your choice.</p>
+			<p>Let's take a look at lines 58 to 74 looking like this...</p>
+				<code>
+					<pre>
+						[...]
+
+						[system]
+						art_cache_size=261
+						cdlock=
+						color_cycling=1
+						critter_dat=
+						critter_patches=
+						cycle_speed_factor=1
+						executable=mapper
+						free_space=0
+						hashing=1
+						interrupt_walk=1
+						language=english
+						master_dat=
+						master_patches=
+						scroll_lock=0
+						splash=1
+						times_run=1
+					</pre>
+				</code>
+			<p>We need to take a closer look at these files...</p>
+				<code>
+					<pre>
+						[...]
+						critter_dat=
+						critter_patches=
+						[...]
+						master_dat=
+						master_patches=
+						[...]
+					</pre>
+				</code>
+			<p>The mapper is looking for files to work with. Because these lines are empty the mapper cannot start. We need to tell the mapper where the files are located  it's looking for.
+				Fill in the lines like this...</p>
+				<code>
+					<pre>
+						[...]
+						critter_dat=E:\Fallout2\critter.dat
+						critter_patches=E:\Fallout2\data
+						[...]
+						master_dat=E:\Fallout2\master.dat
+						master_patches=E:\Fallout2\data
+						[...]
+					</pre>
+				</code>
+			<p>Save 'mapper2.cfg' and close it. Now run 'mapper2.exe' again and it should start.</p>
+			<br>
+
+			<h4>BIS Mapper explained</h4>
+				<p>First time running BIS Mapper should look like this...</p>
+				<img src="images\mapping\2022-04-21 14_21_45-Greenshot.png" alt="">
+				<p>Let's take a look at the interface and it's buttons.</p>
+				<img src="images\mapping\2022-04-21 14_21_45-Greenshot - Kopie.png" alt="">
+				<p>1. This is a dropdown menu where you can choose between tiles; critters; scenery; items etc. The left panel below the dropdown menu shows the number of the hex field when an object is placed inside the map area.</p>
+				<p>2. </p>
+				<p>3. </p>
+				<p>4. </p>
+				<p>5. </p>
+				<p>6. </p>
+				<p>7. </p>
+				<p>8. </p>
+				<p>9. </p>
 	<br>
 	<hr>
 
