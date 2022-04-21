@@ -86,7 +86,7 @@
 		<h4>Fallout 2 Installation</h4>
 			<p>I think I don't need to explain how to install Fallout 2. If you don't know how to install it, just ask someone of the community. 
 				It doesn't matter where you bought Fallout 2 you can just use any version for modding. However, I'd recommend to have an English Fallout 2 installation.</p>
-			<p>So please go on and do a freshly installtion of Fallout 2 in English.</p>
+			<p>So please go on and do a freshly installation of Fallout 2 in English.</p>
 			<p>After the installation is done, create a copy of the FO2 folder and paste it somewhere else. Now that we have a backup of our newly installed FO2 we can happly mod our backuped FO2
 				installation without being afraid of breaking something. And if we break something we can steal if from our original FO2 installation :P</p>
 		<br>
@@ -150,7 +150,7 @@
 						E:\dev\Ressources\data
 					</pre>
 				</code>
-			<p>Bring up DatExplorer again. On the menu bar, select Extract ==> Extract all files to (or Shift+E)... and point it to your freshly-made data folder. 
+			<p>Bring up DatExplorer again. On the menu bar, select Extract ==> Extract all files to (or Shift+E) and point it to your freshly-made data folder. 
 				'OK' it, and DatExplorer will unpack the files. This takes a while.</p>
 				<img src="images\preparations_datexplorer\2022-04-20-Extract.png" alt="">
 			<p>That's master.dat done. Now do the same with critter.dat. Finally - and make sure you do this last - unpack patch000.dat. 
@@ -161,6 +161,7 @@
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/vCPc1gxPtKk?start=438" title="YouTube video player" frameborder="0" 
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			<br>
+			<h5>Note</h5>
 			<p>Why the extracted files go into '...\Fallout2\data' instead of the Fallout 2 root directory? (Thanks Red)</p>
 			<p>The engine is actually built to read the data files from ...\Fallout2\data first (Well, that's how fallout2.cfg sets it by default...) 
 				and failing that, will read the ...\Fallout2\ root directory. </p>
@@ -175,21 +176,62 @@
 			
 			<p>You can take a simple text editor like notepad or notepad++ with or without <a href="https://nma-fallout.com/threads/vscode-ssl-support.217033/">Burns VScode SSL support</a> 
 				to write scripts. But we take a more dedicated tool for this task. The tool we're going to use is called 
-				<a href="https://www.nma-fallout.com/resources/sfall-script-editor.77/">SFall Script Editor</a> by Mr. Stalin. This tool is gold and will save us a lot of work.</p>
+				<a href="https://www.nma-fallout.com/resources/sfall-script-editor.77/">SFall Script Editor (Link is dead)</a> by Mr. Stalin. This tool is gold and will save us a lot of work.</p>
+			<p>Unfortunately sFall Script Editor is not available anymore for download but I do have a backup of the install file, so just ask if you want it.</p>
+			<p>Download and extract the file 'Fallout sFall Script Editor v4.1.7.RC1.rar'. Execute the installer. Install it wherever you want.</p>
+			<p>My installed sFall Script Editor folder looks like this...</p>
+				<code>
+					<pre>
+						E:\dev\Tools\Fallout sFall Script Editor v4.1.7.RC1
+					</pre>
+				</code>
+			<img src="images\scripting\2022-04-21 08_29_43-Fallout sFall Script Editor v4.1.7.RC1.png" alt="">
+			<br>
+			<br>
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/vCPc1gxPtKk?start=534" title="YouTube video player" frameborder="0" 
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			
-			<p>If you want to just write scripts and hope they'll work you'll be fine. 
+			<p>We need one more tool and some files that come with it. It's the good old <a href="https://www.nma-fallout.com/resources/bis-mapper.55/">Black Isle Studio (BIS) Mapper</a>.</p>
+				<p>Download and extract the BIS Mapper wherever you want.</p> 
+			<p>Mine looks like this...</p>
+				<code>
+					<pre>
+						E:\dev\Tools\BIS mapper patched (+complementary ressources)
+					</pre>
+				</code>
+				<img src="images\scripting\2022-04-21 08_08_31-BIS mapper patched (+complementary ressources).png" alt="">
+			<p>Inside the BIS Mappers folder you'll find decompiled (human readable) scripts from Fallout 2. </p>
+				<code>
+					<pre>
+						E:\dev\Tools\BIS mapper patched (+complementary ressources)\BIS mapper\scripts
+					</pre>
+				</code>
+			<p>Copy everything inside the 'scripts' folder into the 'data' folder you created and pasted recently into the FO2 backup directory.</p>
+				<code>
+					<pre>
+						E:\Fallout2\data
+					</pre>
+				</code>
+			<!--<p>If you want to just write scripts and hope they'll work you'll be fine. 
 				But if you want to be sure your scripts work you can do this in severals ways.
 				How you do test your scripts will be discussed at a later time.
-				The maybe quickest way is following tool.
-				It's the good old <a href="https://www.nma-fallout.com/resources/bis-mapper.55/">Black Isle Studio (BIS) Mapper</a>.
-				Inside the BIS Mappers folder you'll find decompiled (human readable) scripts from Fallout 2.
-				Keep these decompiled scripts save and untouched. Make a copy of them because we're going to work and manipulate alot with these files.</p>
+				The maybe quickest way is following tool.-->
+			<p>Keep the original of these BIS Mapper decompiled scripts save and untouched. We're going to work and manipulate alot with these files.</p>
+		<br>
+
+		<h4>Config sFall Script Editor</h4>
+			<p>Run 'SfallScriptEditor.exe'. It'd look like this...</p>
+			<img src="images\scripting\2022-04-21-sFall_Script_Editor_first_run.png" alt="">
+			<p>Uncheck 'Don't use compiling path'. The first field 'unset' should change it's color.</p>
+			<img src="images\scripting\2022-04-21 08_36_20-Sfall Script Editor v.4.1.7.0.RC1.png" alt="">
+			<p>Select the folder-symbol on the right side at 'Compiled/Output scripts folder:' and navigate to the 'scripts' folder inside 'data' and choose it.</p>
+			<img src="images\scripting\2022-04-21 09_03_39-Sfall Script Editor v.4.1.7.0.RC1.png" alt="">
+			<p>Now select the next folder-symbol at 'Location folder of headers files:' and again navigate to 'scripts' inside 'data' and this time choose the 'HEADERS' folder.</p>
+			<img src="images\scripting\2022-04-21 08_37_12-Sfall Script Editor v.4.1.7.0.RC1.png" alt="">
+			<p>The last field 'Location of Scripts.H file' is filled automatically when choosing the path to the 'HEADERS' folder.</p>
+			<p>Now you're ready for scripting :)</p>
 		<br>
 
 		<h4>Tools - Mapping</h4>
-			
 			<p>If you want to map you'd use the before mentioned BIS Mapper. You can also use 
 				<a href="https://www.nuclear-city.com/index.php/topic/1054-%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%BE%D1%80-%D0%BA%D0%B0%D1%80%D1%82-bis-%D0%B8-dims-fallout-1-2/">
 				Dims Mapper (russian speaking site)</a> as complentary. You'll also find a modified version of BIS Mapper under the russian link.</p>
