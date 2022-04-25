@@ -63,29 +63,29 @@ a:active {
 
 
 ol {
-  margin-left: -100%;
+  margin-left: -98%;
   counter-reset: item;
   list-style-type: none;
 }
 
 ol.second {
-  margin-left: -5%;
+  margin-left: -7%;
 }
 
 ol.third {
-  margin-left: -5%;
+  margin-left: -7%;
 }
 
 ol.fourth {
-  margin-left: -5%;
+  margin-left: -7%;
 }
 
 ol.fifth {
-  margin-left: -5%;
+  margin-left: -7%;
 }
 
 ol.sixth {
-  margin-left: -5%;
+  margin-left: -7%;
 }
 
 ol li::before {
