@@ -63,28 +63,12 @@ a:active {
 
 
 ol {
-  margin-left: -98%;
+  margin-left: -94%;
   counter-reset: item;
   list-style-type: none;
 }
 
-ol.second {
-  margin-left: -7%;
-}
-
-ol.third {
-  margin-left: -7%;
-}
-
-ol.fourth {
-  margin-left: -7%;
-}
-
-ol.fifth {
-  margin-left: -7%;
-}
-
-ol.sixth {
+ol.first {
   margin-left: -7%;
 }
 
