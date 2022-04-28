@@ -54,6 +54,9 @@
 				<li><a href="index.html#mapping">Mapping</a></li>
 					<ol class="first">
 						<li><a href="index.html#BIS_Mapper_explained">BIS Mapper explained</a></li>
+						<li><a href="index.html#Floors_and_walls">Floors and walls </a></li>
+						<li><a href="index.html#adding_maps">Adding maps </a></li>
+						<li><a href="index.html#Ladders_and_stairs">Ladders and stairs</a></li>
 					</ol>
 				<li><a href="index.html#art">Art</a></li>	
 					<ol class="first">
@@ -1171,10 +1174,10 @@
 	<br>
 	<hr>
 
-	<div id="mapping"></div><h3>Mapping</h3>
-	<br>
-		<div id="BIS_Mapper_explained"><h4>BIS Mapper explained</h4></div>
-		
+<div id="mapping"><h3>Mapping</h3></div>
+<br>
+
+	<div id="BIS_Mapper_explained"><h4>BIS Mapper explained</h4></div>
 		<p>Let's take a look at the interface and it's buttons.</p>
 		<img src="images\mapping\2022-04-21 14_21_45-Greenshot - Kopie.png" alt="">
 		<br>
@@ -1285,11 +1288,266 @@
 	<br>
 	<hr>
 
-	<div id="art"><h3>Art</h3></div>
+	<div id="Floors_and_walls"><h4>Floors and walls </h4></div>
+		<p>A few people have asked for a tutorial on the basics of mapping, so here it is. </p>
+		<p>First you need a floor for your map. </p>
+		<p>You can do this one of 2 ways.. by hand, or by using the patterns included with the editor. </p>
+		<p>To do it by hand, you just scroll through the tiles selector at the bottom of the screen and chose the tiles you want, 
+			right click on the one you want to stamp down, then left-click on the map area where you want to place it. </p>
+		<img src="images\mapping\Floors_and_walls\Bas01.webp" alt="">
+		<p>To use the patterns ( most of which are desert of some kind ), you simply have to go to the tools menu, and select "use pattern". </p>
+		<img src="images\mapping\Floors_and_walls\Bas02.webp" alt="">
+		<p>Select the pattern you want to use from the window that pops up. </p>
+		<img src="images\mapping\Floors_and_walls\Bas03.webp" alt="">
+		<p>Then just click away all over that black screen that is your map. </p>
+		<p>When you are done stamping the pattern down, right click to exit the pattern mode. </p>
+		<p>To speed things up a bit, you can make a large area, then copy it using the copy button on the tool bar at the bottom. </p>
+		<p>While you have the pattern selected, you can press the + ( plus ) and - ( minus ) keys to make the pattern stamp bigger or smaller. ( 2x2, 3x3, 4x4 etc... ) </p>
+		<img src="images\mapping\Floors_and_walls\Bas04.webp" alt="">
+		<p>Once you have a basic floor to your map, you need to put down the "footprint" of all your buildings and things such as roads.. there are no patterns for this so you'll just have to do it by hand. </p>
+		<p>I recommend using tiles that make a "grid" for the footprint to your buildings. You can change it later but it helps with placing the walls. </p>
+		<img src="images\mapping\Floors_and_walls\Bas05.webp" alt="">
+		<p>Next you need to place the walls, so set the selector to walls, and find the look you are going for. </p>
+		<img src="images\mapping\Floors_and_walls\Bas06.webp" alt="">
+		<p>NOTE! some wall sections are spread all over the selector bar, this was because sections of wall were added as they became needed by the original mappers, so you might have to hunt for that corner you want.</p>
+		<p>You should ideally place your walls on the "grid" if you intend to include roofs to your buildings.. </p>
+		<p>Because of the way the some wall pieces are made, they leave "holes" that the player can walk through. Corners are especially prone to this. </p>
+		<p>Turn on the hex grid. You will see that the walls have red hexes below them. These are areas the player cannot go ( in simple terms.. ). </p>
+		<img src="images\mapping\Floors_and_walls\Bas07.webp" alt="">
+		<p>Where the wall has no red hex below them is where the "hole" is. </p>
+		<img src="images\mapping\Floors_and_walls\Bas08.webp" alt="">
+		<img src="images\mapping\Floors_and_walls\Bas09.webp" alt="">
+			<code>
+				<pre>
+					(Hole under corner)  (Walls turned off for clarity)
+				</pre>
+			</code>
+		<p>You need to plug these "holes" with a wall blocker, found in the walls selector, tile number 620 and 621. They are named "wall" and "wall s.t" respectively, 
+			and are a solid wall, and a wall that can be shot through. ( hence the s.t. ). </p>
+		<img src="images\mapping\Floors_and_walls\Bas10.webp" alt="">
+		<p>They are placed just like normal walls, but they do not show up on the map normally, they just make the hex red. </p>
+		<p>To be able to see them, you need to turn "Toggle Block Obj View" on in the Tools menu. </p>
+		<img src="images\mapping\Floors_and_walls\Bas11.webp" alt="">
+		<p>The Blockers show up as a green hex with a "W" in them. The solid walls have a solid "W" ( shown on the left in the pic ), and the "Shoot through" walls have a faded "W" in them ( shown on the right in the pic ) </p>
+		<img src="images\mapping\Floors_and_walls\Bas12.webp" alt="">
+		<p>This ends the Basics tutorial on Floors and Walls. </p>
 	<br>
+	<hr>
 
-		<div id="talkhead"><h4>Talking Heads</h4></div>
+	<div id="adding_maps"><h4>Adding maps</h4></div>
+		<p>1. put your map in the fallout2\data\maps directory ( editor should do it automatically but if it's not your map then put it here.. ) </p>
+		<p>2. unpack the master.dat file to fallout2\data directory.. using datmanlite or other suitable utility. 
+			( so you would end up with all files from the dat in their sub directories in ..\data ie fallout2\data\art and so on..) </p>
+		<p>If you are using the official patch also, you need to unpack the patch000.dat after you unpack the master.dat and let it overwrite any files it wants, 
+			then re-name / delete the patch000.dat before doing the following.. </p>
+		<p>( The reason for deleting / renaming the patch000.dat is that it overrides the files in the data directory. ) </p>
+		<p>3. open the file called maps.txt which is found in fallout2\data\data ( if you unpacked it correctly..) </p>
+		<p>4. scroll to the end of the list and copy / paste one of the entry blocks at the end.. so you would end up with.. </p>
+			<code>
+				<pre>
+					[Map 150] lookup_name=Bess Dead map_name=rndbess music=07desert saved=No
+					[Map 150] lookup_name=Bess Dead map_name=rndbess music=07desert saved=No 
+				</pre>
+			</code>
+		<p>5. re-number the entry block you just pasted as the next in the list (ie 151 ) </p>
+		<p>6. change the name after map_name= to the name of your map.. </p>
+		<p>7. set any music you want in the music= line.. ( see other entries for examples of what music you can use.. ) </p>
+		<p>8. change saved=No to saved=Yes ( this makes the game save the status of the map when you ave the game.. so you can drop things and not lose them.. )( i think.. i may be wrong... ) </p>
+		<p>9. The lookup_name is what the city.txt file references the map with. </p>
+		<p>so you would end up with.. </p>
+			<code>
+				<pre>
+					[Map 150] lookup_name=Bess Dead map_name=rndbess music=07desert saved=No
+					[Map 151] lookup_name=YourMap_Entrance map_name=yourmap music=07desert saved=Yes 
+				</pre>
+			</code>
+		<p>The "YourMap_Entrance" is just an identifying name for the map. "yourmap" is the actual name of the map file </p>
+		<p>10. save the file ( duh!! ) </p>
+		<p>11. open the file called city.txt. This is where the map is put on the worldmap, and set the "town map" art that comes up for you to choose 
+			a shortcut to a part of the town when you enter the map from the worldmap.. </p>
+		<p>12. scroll to the end and copy / paste the last entry again.. so you would have.. </p>
+			<code>
+				<pre>
+					[Area 48] area_name=Reno Stables world_pos=953,882 start_state=Off 
+				</pre>
+			</code>
+		<p>lock_state=on</p>
+			<code>
+				<pre>
+					size=Small townmap_art_idx=-1 townmap_label_art_idx=-1 entrance_0=On,130,410,New Reno Stables,-1,-1,0
+					[Area 48] area_name=Reno Stables world_pos=953,882 start_state=Off 
+				</pre>
+			</code>
+		<p>lock_state=on</p>
+			<code>
+				<pre>
+					size=Small townmap_art_idx=-1 townmap_label_art_idx=-1 entrance_0=On,130,410,New Reno Stables,-1,-1,0 
+				</pre>
+			</code>
+		<p>13. change the area number to the next in the sequence ( so in the example it would be Area 49. </p>
+		<p>14. set the co-ordinates of where you want the town to show up on the map in the line world_pos= ( but read the rest to make sure you don't overlap any existing towns... ) </p>
+		<p>15. set the start_state to on ( so it shows on the worldmap.. ) </p>
+		<p>16. set the size= to whatever size circle you want.. </p>
+		<p>17. the townmap_art_idx= should be left as -1 ( for none.. it references an external txt file to look up the name of the townmap artwork.. ) as should the townmap_lable_art_idx= </p>
+		<p>18. The line "entrance_0=..." sets whether the location in the town is available or not, the location of the triangle on the townmap 
+			( x,y coordinates ),the map to go to when the triangle is clicked, elevation, destination hex, and rotation on the map.( in that order. ) </p>
+		<p>19. Substitite xxx,xxx with the worldmap co-ordinates, and YourMap_Entrance with whatever you put for the lookup_name in the maps.txt file. </p>
+		<p>so you would get.. </p>
+			<code>
+				<pre>
+					[Area 48] area_name=Reno Stables world_pos=953,882 start_state=Off 
+				</pre>
+			</code>
+		<p>lock_state=on</p>
+			<code>
+				<pre>
+					size=Small townmap_art_idx=-1 townmap_label_art_idx=-1 entrance_0=On,130,410,New Reno Stables,-1,-1,0
+					[Area 49] area_name=yourmap area name world_pos=xxx,xxx ;( your town position on the worlmap ) start_state=On 
+				</pre>
+			</code>
+		<p>lock_state=on</p>
+			<code>
+				<pre>
+					size=Small townmap_art_idx=-1 townmap_label_art_idx=-1 entrance_0=On,130,410,YourMap_Entrance,-1,-1,0 
+				</pre>
+			</code>
+		<p>you can have extra "entrance_x=" in each area for as many maps as make up the town, just add them after entrance_0, and sequentially number them. Look at the other areas in the file for examples. </p>
+		<p>"yourmap area name" is the name of the town , city, or area that you want your map to be part of. </p>
+		<p>Making start_state as On makes the town visible on the worldmap. Some scripts change this state so that the towns 
+			show up only as people tell you of them or take you there, such as Golgotha or the Sierra Army Depot. </p>
+		<p>I'll break down the line "entrance_0=On,130,410,YourMap_Entrance,-1,-1,0" to try to explain it better. </p>
+		<p>entrance_0 - the first entrance point to your town On - states that this entrance is "on", ie it can be used picked from the town picture you get when entering a town 130, 410 - 
+			the coordinates in x,y format of the triangle that appears on the town picture to indicate this entrance YourMap_Entrance - 
+			the identifying name for the map you should be taken to when clicking the triangle ( as set in the maps.txt above.. ) -1,-1,0 - the destination elevation, hex, 
+			and rotation to place the player on when entering the map ( -1 for the map defaults ) </p>
+		<p>20. save the file ( duh!! ) </p>
+		<p>21. open the file maps.msg ( found in \fallout2\data\text\english\game ) and scroll to the end.. </p>
+		<p>22. copy / paste the last line.. </p>
+		<p>so you would get.. </p>
+			<code>
+				<pre>
+					{1540}{}{Guardian of Forever} {1541}{}{Toxic Waste Dump} {1542}{}{Pariahs} {1543}{}{Mad Brahmin} {1544}{}{Caravan} 
+					{1545}{}{Vault 13} {1546}{}{Fake Vault 13} {1547}{}{Random Encounter} {1548}{}{Stables} {1548}{}{Stables} 
+				</pre>
+			</code>
+		<p>23. re-number the line you just pasted to the next number and change the label to your town label.. </p>
+			<code>
+				<pre>
+					{1540}{}{Guardian of Forever} {1541}{}{Toxic Waste Dump} {1542}{}{Pariahs} {1543}{}{Mad Brahmin} {1544}{}{Caravan} 
+					{1545}{}{Vault 13} {1546}{}{Fake Vault 13} {1547}{}{Random Encounter} {1548}{}{Stables} {1549}{}{My Cool Map} 
+				</pre>
+			</code>
+		<p>24. find the last entry before the 1500's start and copy / paste it below itself.. </p>
+		<p>148. Shi Temple</p>
+			<code>
+				<pre>
+					{644}{}{Shi Temple} {645}{}{Shi Temple} {646}{}{Shi Temple} 
+				</pre>
+			</code>
+		<p>149. In Game Movie</p>
+			<code>
+				<pre>
+					{647}{}{Desert} {648}{}{Desert} {649}{}{Desert} 
+				</pre>
+			</code>
+		<p>150. RndBess</p>
+			<code>
+				<pre>
+					{650}{}{Desert} {651}{}{Desert} {652}{}{Desert} 
+				</pre>
+			</code>
+		<p>150. RndBess</p>
+			<code>
+				<pre>
+					{650}{}{Desert} {651}{}{Desert} {652}{}{Desert} 
+				</pre>
+			</code>
+		<p>Short City names</p>
+			<code>
+				<pre>
+					{1500}{}{Arroyo} {1501}{}{Den} {1502}{}{Klamath} {1503}{}{Modoc} {1504}{}{Vault City} {1505}{}{Gecko} {1506}{}{Broken Hills} 
+				</pre>
+			</code>
+		<p>25. re-number the entry you just pasted to the next number/s ( as shown below.. easy to figure out.. ) and change the name to your map name... </p>
+		<p>148. Shi Temple</p>
+			<code>
+				<pre>
+					{644}{}{Shi Temple} {645}{}{Shi Temple} {646}{}{Shi Temple} 
+				</pre>
+			</code>
+		<p>149. In Game Movie</p>
+			<code>
+				<pre>
+					{647}{}{Desert} {648}{}{Desert} {649}{}{Desert} 
+				</pre>
+			</code>
+		<p>150. RndBess</p>
+			<code>
+				<pre>
+					{650}{}{Desert} {651}{}{Desert} {652}{}{Desert} 
+				</pre>
+			</code>
+		<p>151. yourmap</p>
+			<code>
+				<pre>
+					{653}{}{Desert} {654}{}{Desert} {655}{}{Desert} 
+				</pre>
+			</code>
+		<p>Short City names</p>
+			<code>
+				<pre>
+					{1500}{}{Arroyo}
+
+					{1501}{}{Den}
+
+					{1502}{}{Klamath}
+
+					{1503}{}{Modoc}
+
+					{1504}{}{Vault City}
+
+					{1505}{}{Gecko}
+
+					{1506}{}{Broken Hills} 
+				</pre>
+			</code>
+		<p>151. yourmap - the name of the map file 653 - name to display for elevation 0 of your map ( mapper level 1 ) 
+			654 - name to display for elevation 1 of your map ( mapper level 2 ) 655 - name to display for elevation 2 of your map ( mapper level 3 ) </p>
+		<p>so you might have a map with a church with a basement so 653 would be "church" and 654 would be "basement" etc.... </p>
+		<p>26. save the file ( duh!! ) </p>
+	<br>
+	<hr>
+
+	<div id="Ladders_and_stairs"><h4>Ladders and stairs</h4></div>
+		<p>1. Build your map. </p>	
+		<p>2. Add your ladders / stairs. </p>
+		<img src="images\mapping\Ladders and stairs\Ladder01.webp" alt="">
 		<br>
+		<img src="images\mapping\Ladders and stairs\Ladder02.webp" alt="">
+		<p>3. I suggest changing your cursor to the arrow for the next part as it makes selecting ladders easier. </p>
+		<p>To change your cursor to the arrow, press the "m" key ( press again to change it back ) </p>
+		<p>4. Select the ladder you want to set the info for. </p>
+		<p>5. Click on the EDIT button, a screen will appear as shown. </p>
+		<img src="images\mapping\Ladders and stairs\Ladder03.webp" alt="">
+		<p>6. Click the button marked "Dest Tile" and put in the hex number you would like the player to "arrive" on on the destination level. </p>
+		<p>7. To find the hex number, click on the floor near the ladder and look in the grey box in the bottom left corner, it is the number on the left. </p>
+		<img src="images\mapping\Ladders and stairs\Ladder04.webp" alt="">
+		<p>8. Click the button marked "Dest Elev" and put in the number of the "level" you want the ladder / stairs to go to. </p>
+		<p>NOTE! The game calls level 1 elevation 0 and so on. </p>
+		<p>9. Click the button marked "Dest Map". This is where you put the number of the map you want the ladder to go to, so you CAN make ladders span maps if you like.. </p>
+		<p>To get it to go to the same map as it is on, you need to give that map a number in the maps.txt file and put it in the "Dest Map" box. </p>
+		<p>10. For my example map, I ended up with the following. </p>
+		<img src="images\mapping\Ladders and stairs\Ladder05.webp" alt="">
+		<p>11. Click "Done" </p>
+		<p>12. Repeat steps 4 - 11 for the other ladders / stairs. </p>
+	<br>
+	<hr>
+
+<div id="art"><h3>Art</h3></div>
+<br>
+
+	<div id="talkhead"><h4>Talking Heads</h4></div>
+	<br>
 
 		<h4>Preparations</h4>
 			<p>Make sure you have these programs:</p>
@@ -2253,16 +2511,19 @@
 	<hr>
 
 	<div id="source"><h3>Sources</h3></div>
-		<p><a href="https://falloutmods.fandom.com/wiki/Making_new_tiles">Making_new_tiles (Author: Wild_Qwerty - Mutants Rising Team)</a></p>
-		<p><a href="https://falloutmods.fandom.com/wiki/Making_new_walls">Making_new_walls (Author: Wild_Qwerty - Mutants Rising Team)</a></p>
-		<p><a href="https://falloutmods.fandom.com/wiki/How_To_Use_FOT_Critters_In_FO2">How_To_Use_FOT_Critters_In_FO2 (Author: Wild_Qwerty - Mutants Rising Team)</a></p>
+		<p><a href="https://falloutmods.fandom.com/wiki/Making_new_tiles">Making new tiles (Author: Wild_Qwerty - Mutants Rising Team)</a></p>
+		<p><a href="https://falloutmods.fandom.com/wiki/Making_new_walls">Making new walls (Author: Wild_Qwerty - Mutants Rising Team)</a></p>
+		<p><a href="https://falloutmods.fandom.com/wiki/How_To_Use_FOT_Critters_In_FO2">How To Use FOT Critters In FO2 (Author: Wild_Qwerty - Mutants Rising Team)</a></p>
 		<p><a href="https://falloutmods.fandom.com/wiki/Greyscaling_and_manipulating_FRM_sprites">Greyscaling and manipulating FRM sprites (Author: Lisac2k)</a></p>
-		<p><a href="https://falloutmods.fandom.com/wiki/Making_a_new_character_using_existing_Fallout_characters">Making_a_new_character_using_existing_Fallout_characters (Author: Lisac2k)</a></p>
-		<p><a href="https://falloutmods.fandom.com/wiki/Making_ColorRIX_Images_for_Fallout_Loading_Screens">Making_ColorRIX_Images_for_Fallout_Loading_Screens (Author: .Pixote.)</a></p>
-		<p><a href="https://falloutmods.fandom.com/wiki/Making_animations_with_3ds_Max_and_FrameAnimator">Making_animations_with_3ds_Max_and_FrameAnimator (Author: Jochua)</a></p>
-		<p><a href="https://falloutmods.fandom.com/wiki/Making_a_new_worldmap">Making_a_new_worldmap (Author: Lisac2k)<a></p>
-		<p><a href="https://falloutmods.fandom.com/wiki/New_World_Map_Tiles">New_World_Map_Tiles (Author: Unknown (Last Hope mod))</a></p>
-		<p><a href="https://falloutmods.fandom.com/wiki/Unpacking_the_Fallout_2_.dat_files">Unpacking_the_Fallout_2_.dat_files (Author: Red?)</a></p>
+		<p><a href="https://falloutmods.fandom.com/wiki/Making_a_new_character_using_existing_Fallout_characters">Making a new character using existing Fallout characters (Author: Lisac2k)</a></p>
+		<p><a href="https://falloutmods.fandom.com/wiki/Making_ColorRIX_Images_for_Fallout_Loading_Screens">Making ColorRIX Imagesfor Fallout Loading Screens (Author: .Pixote.)</a></p> 
+		<p><a href="https://falloutmods.fandom.com/wiki/Making_animations_with_3ds_Max_and_FrameAnimator">Making animations with3ds Max and FrameAnimator (Author: Jochua)</a></p>
+		<p><a href="https://falloutmods.fandom.com/wiki/Making_a_new_worldmap">Making a new worldmap (Author: Lisac2k)<a></p>
+		<p><a href="https://falloutmods.fandom.com/wiki/New_World_Map_Tiles">New World Map Tiles (Author: Unknown (Last Hope mod))</a></p>
+		<p><a href="https://falloutmods.fandom.com/wiki/Unpacking_the_Fallout_2_.dat_files">Unpacking the Fallout 2 .dat files (Author: Red?)</a></p>
+		<p><a href="https://falloutmods.fandom.com/wiki/Floors_and_walls">Floors and walls (Author: ColJack)</a></p>
+		<p><a href="https://falloutmods.fandom.com/wiki/Adding_maps">Adding maps (Author: ColJack)</a></p>
+		<p><a href="https://falloutmods.fandom.com/wiki/Ladders_and_stairs">Ladders and stairs (Author: ColJack)</a></p>
 </div>
 </body>
 </html>

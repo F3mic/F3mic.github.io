@@ -13,8 +13,7 @@ html {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 13%  91%;
-  column-gap: 1%;
+  grid-template-columns: 15%  90%;  
   grid-template-areas: 
     'sidebar main ';
 }
