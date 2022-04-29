@@ -13,20 +13,31 @@ html {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 15%  90%;  
+  grid-template-columns: 15%  100%;  
   grid-template-areas: 
     'sidebar main ';
 }
 
 .item-sidebar {
   grid-area: sidebar;
+  font-size: 0.6vw;
 }
 
 .item-main {
   grid-area: main;
+  font-size: 0.8vw;
+  hyphens: auto; 
+	text-align: justify
+  text-align-last: none;
 }
 
-
+/*
+.item-codesnippet {
+  grid-row: auto;
+  background-color: #3a3b3c;
+  padding: 1%;
+}
+*/
 
 
 
@@ -37,8 +48,8 @@ img {
 
 div.sticky {
   position: fixed;
-  top: 30%;
-  font-size: 70%;
+  top: 20%;
+  
 }
 
 /*
@@ -108,7 +119,6 @@ body {
   background-color: #1f1f1f;
   color: white;
   font-weight: normal;
-  font-size: 120%;
   font-family: monospace;
   width: 85%;
   /*margin-left: px;
