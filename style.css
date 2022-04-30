@@ -13,23 +13,36 @@ html {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 15%  100%;  
+  grid-template-columns: auto auto;  
   grid-template-areas: 
     'sidebar main ';
 }
 
 .item-sidebar {
   grid-area: sidebar;
-  font-size: 0.6vw;
+  font-size: 90%;
 }
 
 .item-main {
+  width: 80%;
+  max-width: 80%;
+  margin-left: 15%;
   grid-area: main;
-  font-size: 0.8vw;
+  font-size: 110%;
   hyphens: auto; 
 	text-align: justify
-  text-align-last: none;
 }
+
+body {
+  background-color: #1f1f1f;
+  color: white;
+  font-weight: normal;
+  font-family: monospace;
+  
+  /*margin-left: px;
+  margin-right: auto;*/
+}
+
 
 /*
 .item-codesnippet {
@@ -47,9 +60,9 @@ img {
 }
 
 div.sticky {
+  
   position: fixed;
   top: 20%;
-  
 }
 
 /*
@@ -111,21 +124,6 @@ ol li::before {
   counter-increment: item;
   content: counters(item, ".") ". ";
 }
-
-
-
-
-body {
-  background-color: #1f1f1f;
-  color: white;
-  font-weight: normal;
-  font-family: monospace;
-  width: 85%;
-  /*margin-left: px;
-  margin-right: auto;*/
-}
-
-
 
 
 
