@@ -14,12 +14,11 @@ html {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;  
-  grid-template-areas: 
-    'sidebar main ';
 }
 
 .item-sidebar {
-  grid-area: sidebar;
+  position: fixed;
+  top: 20%;
   font-size: 90%;
 }
 
@@ -27,7 +26,6 @@ html {
   width: 80%;
   max-width: 80%;
   margin-left: 15%;
-  grid-area: main;
   font-size: 110%;
   hyphens: auto; 
 	text-align: justify
@@ -58,13 +56,12 @@ img {
   max-width: 100%;
   height: auto;
 }
-
+/*
 div.sticky {
-  
   position: fixed;
   top: 20%;
 }
-
+*/
 /*
 img.sticky {
   width: 5%;
