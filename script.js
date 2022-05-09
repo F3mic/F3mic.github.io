@@ -9,6 +9,30 @@ $(document).ready(function(){
     }));      
 });
 */
-data-aos="slide-right"
-data-aos-anchor="#trigger-left"
-data-aos-anchor-placement="top-top"
+
+/*
+data-aos="slide-right";
+data-aos-anchor="#trigger-left";
+data-aos-anchor-placement="top-top";
+*/
+
+/*
+{
+    const nav = document.querySelector("item-sidebar");
+    let lastScrollX = window.scrollX;
+
+    window.addEventListener("scroll", () => {
+        if (lastScrollX < window.scrollX) {
+            nav.classList.add("nav--hidden");
+        } else {
+            nav.classList.remove("nav--hidden");
+        }
+
+        lastScrollX = window.scrollX;
+    });
+};
+*/
+
+if (window.pageXOffset > 100) {
+    
+} 
