@@ -1073,6 +1073,94 @@
 	<br>
 	<hr>
 
+	<div id="pipboy"><h3>Add quest to pipboy</h3></div>
+	<br>
+		<h4>What do you need</h4>
+			<code>
+				<pre>
+					E:\Fallout2\data\data\VAULT13.GAM
+				</pre>
+			</code>
+			<code>
+				<pre>
+					E:\Fallout2\data\data\QUEST.TXT
+				</pre>
+			</code>
+			<code>
+				<pre>
+					E:\Fallout2\data\text\english\Game\QUESTS.MSG
+				</pre>
+			</code>
+			<p>Lets take a look at the internal of these files.</p>
+		<br>
+			<p></p>
+
+		<h4>QUESTS.MSG</h4>
+			<code>
+				<pre>
+					#
+					# Arroyo Quests
+					#
+					{100}{}{Kill the evil plants that infest Hakunin's garden.}
+					{110}{}{Obtain flint to have Mynoc sharpen your spear.}
+					{120}{}{Rescue Nagor's dog, Smoke, from the wilds.}
+					{130}{}{Retrieve the GECK for Arroyo.}
+					{140}{}{Find Vic the Trader.}
+					[...]
+				</pre>
+			</code>
+			<p>This file contains every quest description.</p>
+			<p>Everything after # is a comment.</p>
+			<p>100 is the quests linenumber.</p>
+			<p>The text behind is the quests description.</p>
+
+		<h4>VAULT13.GAM</h4>
+			<code>
+				<pre>
+					GAME_GLOBAL_VARS:
+					//GLOBAL                                                NUMBER
+
+					GVAR_PLAYER_REPUTATION                  :=0;    //      (0)
+					GVAR_CHILDKILLER_REPUTATION             :=0;    //      (1)
+					GVAR_CHAMPION_REPUTATION                :=0;    //      (2)
+					GVAR_BERSERKER_REPUTATION               :=0;    //      (3)
+					GVAR_BAD_MONSTER                        :=0;    //      (4)
+					GVAR_GOOD_MONSTER                       :=0;    //      (5)
+					GVAR_PLAYER_MARRIED                     :=0;    //      (6)
+					GVAR_ENEMY_ARROYO                       :=0;    //      (7)
+					GVAR_KNOWLEDGE_HEALING_POWDER           :=0;    //      (8)
+					GVAR_KILL_EVIL_PLANTS                   :=0;    //      (9)
+					[...]
+				</pre>
+			</code>
+			<p>This file contains every GVAR defined.</p>
+			<p>GVAR_x is the GVARs name as you already know.</p>
+			<p>:=0; assigns a starting value to the GVAR. In this case 0.</p>
+			<p>(0) is the placeholder for the GVARs name as you already know.</p>
+
+		<h4>QUEST.TXT</h4>
+			<code>
+				<pre>
+					#####
+					# Arroyo Quests
+					#####
+
+					# Kill the Evil Plants
+					# Arroyo, GVAR_KILL_EVIL_PLANTS, Quest_Accepted, Quest_Completed
+					1500, 100, 9, 2, 6
+					[...]
+				</pre>
+			</code>
+			<p>Here are all the quests with their conditions.</p>
+			<p>Everything after # is a comment.</p>
+			<p>The 1500 retrieves the place name from the MAP.MSG. So in this example it stands for the desert.</p>
+			<p>The 100 refers to the QUESTS.MSG. There you will find the names of the quests.</p>
+			<p>The 9 refers to the global variable from the VAULT13.GAM.</p>
+			<p>2 is the minimum value that the global variable must contain to be displayed in Pipboy.</p>
+			<p>6 is the minimum value that the global variable must contain in order to be displayed as Done in Pipboy.</p>
+	<br>
+	<hr>
+
 	<div id="complex"><h3>Scripting (Complex)</h3></div>
 	<br>
 	
