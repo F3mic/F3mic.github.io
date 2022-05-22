@@ -1224,6 +1224,27 @@
 <br>
 <hr>
 
+<div id="end"><h3>Add new ending sequence</h3></div>
+<br>
+	<p>To be able to add new ending sequences in Fallout 2, we need to change the Endgame.txt in the Fallout2\data\data folder.</p>
+			<code>
+				<pre>
+					#####
+					# Arroyo
+					#####
+					408, 1, 440, nar_ar1
+				</pre>
+			</code>
+	<p>The 408 stands for the number of the Global Variable. The VAULT13.GAM contains the list. In this the GVAR is called GVAR_ENDGAME_MOVIE_ARROYO.</p>
+	<p>The global variable must have the value 1 to call this end. But of course it can also be used as a counter.</p>
+	<p>Graphic 440 is loaded from Fallout2\art\intrface\intrface.lst.</p>
+	<p>nar_ar1 calls the file of the same name from the Fallout2\text\...\cuts directory.</p>
+	<br>
+	<p>If you use a new graphic, you must of course also enter it in the list. The global variables are switched by script. When using new global variables, these must also be entered. </p>
+	<p>The order in which the closing sequences run at the end of the game conforms to the order in Endgame.txt.</p>
+<br>
+<hr>
+
 	<div id="complex"><h3>Scripting (Complex)</h3></div>
 	<br>
 	
@@ -1238,7 +1259,7 @@
 							<span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>)) <span class="dyestatement">then begin</span>
 								<span class="dyefunction">script_overrides</span>;
 								<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
-								<span class="dyedevelopermacro"">give_xp</span>(EXP_FIX_WELL);
+								<span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL);
 								<span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,</span><span class="dyedefine">1</span>);
 								<span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,</span><span class="dyedefine">1</span>);
 							<span class="dyestatement">end</span>

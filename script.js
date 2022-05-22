@@ -2,11 +2,10 @@
 $(document).ready(function(){
     if ($(window).scroll( function(){
         $('.item-sidebar').fadeOut($(this) > 1);
-    }));
-
-    else ($(window).scroll( function(){
+    } else {
+        ($(window).scroll( function(){
         $('.item-sidebar').fadeIn($(this) < 1);
-    }));      
+    }); 
 });
 */
 
@@ -33,6 +32,7 @@ data-aos-anchor-placement="top-top";
 };
 */
 
-if (window.pageXOffset > 100) {
-    
-} 
+if (window.pageXOffset  > 400) {
+    window.scroll(0,0);
+  }
+  
