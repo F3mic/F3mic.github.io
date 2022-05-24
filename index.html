@@ -1713,6 +1713,93 @@
 	<br>
 	<hr>
 
+	<div id="New_Critter"><h3>Make new prototype</h3></div>
+	<br>
+		<h4>Critters</h4>
+			<p>Rename patch000.dat inside \Fallout2 so it cannot overwrite \data. If you cannot find patch000.dat the better.</p>
+			<p>Create these directories \dev\proto\critters inside \Fallout2.</p>
+			<p>Should look like this.</p>
+				<code>
+					<pre>
+						E:\Fallout2\dev\proto\critters
+					</pre>
+				</code>
+	<br>
+			<p>Open mapper2.cfg inside \BIS mapper and change</p>
+				<code>
+					<pre>
+						this librarian=0 to librarian=1.
+					</pre>
+				</code>
+	<br>
+			<p>Run mapper2.exe.</p>
+	<br>
+			<p>Choose 'Critters' from the dropdownmenu.</p>
+			<img src="images\Make_new_prototype\Critters\2022-05-24 21_16_32-FALLOUT Mapper.png" alt="">
+	<br>
+	<br>
+			<p>Hit 'END' on your keyboard.</p>
+			<img src="images\Make_new_prototype\Critters\2022-05-24 21_28_51-FALLOUT Mapper.png" alt="">
+	<br>
+	<br>
+			<p>You've arrived at the right most of the Critters selection bar. You can tell this by the empty slot where a Critter FRM should be.</p>
+			<img src="images\Make_new_prototype\Critters\2022-05-24 21_29_31-FALLOUT Mapper.png" alt="">
+	<br>
+	<br>
+			<p>Choose the empty slot. You've chosen it when the empty slot has a red border.</p>
+			<img src="images\Make_new_prototype\Critters\2022-05-24 21_29_55-FALLOUT Mapper.png" alt="">
+	<br>
+	<br>
+			<p>Hit 'edit'.</p>
+			<img src="images\Make_new_prototype\Critters\2022-05-24 21_30_14-E__Fallout2_data_data_CITY.TXT - Notepad++.png" alt="">
+	<br>
+	<br>
+			<p>This window should appear. You can choose a ton of options for your new Critter.</p>
+			<img src="images\Make_new_prototype\Critters\2022-05-24 21_30_40-FALLOUT Mapper.png" alt="">
+	<br>
+	<br>
+			<p>But don't touch anything for now. Just hit 'DONE'.</p>
+			<img src="images\Make_new_prototype\Critters\2022-05-24 21_30_54-FALLOUT Mapper.png" alt="">
+	<br>
+	<br>
+			<p>The window should close and you can now see a flaming mannequin on the place where the empty slot was.</p>
+			<img src="images\Make_new_prototype\Critters\2022-05-24 21_31_19-BIS mapper.png" alt="">
+	<br>
+	<br>
+			<p>A bunch of new files have been created.</p>
+			<p>A .txt file here. Called e.g. 00000484.txt.</p>
+				<code>
+					<pre>
+						E:\Fallout2\dev\proto\critters
+					</pre>
+				</code>
+	<br>
+			<p>And a new .pro file here. Called e.g. 00000484.pro.</p>
+				<code>
+					<pre>
+						E:\Fallout2\data\proto\critters
+					</pre>
+				</code>
+	<br>
+			<p>You should also have critters.lst inside this directory. Open critters.lst. Scroll to the very bottom of the file and you should see this.</p>
+				<code>
+					<pre>
+						[...]
+						00000479.pro
+						00000480.pro
+						00000481.pro
+						00000482.pro
+						00000483.pro
+						00000484.pro
+					</pre>
+				</code>
+			<p>Your new proto 00000484.pro has been added to the list.</p>
+	<br>
+			<p>If you want to delete your new proto, just delete both newly created files and the entry inside critters.lst and the flaming mannequin should have been diseappeared inside the mapper.</p>
+	<br>
+	<hr>
+
+
 <div id="art"><h3>Art</h3></div>
 <br>
 
