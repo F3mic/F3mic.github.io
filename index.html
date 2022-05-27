@@ -57,8 +57,9 @@
 				<ol class="first">
 					<li><a href="index.html#BIS_Mapper_explained">BIS Mapper explained</a></li>
 					<li><a href="index.html#Floors_and_walls">Floors and walls </a></li>
-					<li><a href="index.html#adding_maps">Adding maps </a></li>
 					<li><a href="index.html#Ladders_and_stairs">Ladders and stairs</a></li>
+					<li><a href="index.html#adding_maps">Adding maps</a></li>
+					<li><a href="index.html#New_Critter">Make new prototype</a></li>
 				</ol>
 			<li><a href="index.html#art">Art (Optional)</a></li>	
 				<ol class="first">
@@ -1229,27 +1230,6 @@
 <br>
 <hr>
 
-<div id="end"><h3>Add new ending sequence</h3></div>
-<br>
-	<p>To be able to add new ending sequences in Fallout 2, we need to change the Endgame.txt in the Fallout2\data\data folder.</p>
-				<code>
-					<pre>
-						#####
-						# Arroyo
-						#####
-						408, 1, 440, nar_ar1
-					</pre>
-				</code>
-	<p>The 408 stands for the number of the Global Variable. The VAULT13.GAM contains the list. In this the GVAR is called GVAR_ENDGAME_MOVIE_ARROYO.</p>
-	<p>The global variable must have the value 1 to call this end. But of course it can also be used as a counter.</p>
-	<p>Graphic 440 is loaded from Fallout2\art\intrface\intrface.lst.</p>
-	<p>nar_ar1 calls the file of the same name from the Fallout2\text\...\cuts directory.</p>
-	<br>
-	<p>If you use a new graphic, you must of course also enter it in the list. The global variables are switched by script. When using new global variables, these must also be entered. </p>
-	<p>The order in which the closing sequences run at the end of the game conforms to the order in Endgame.txt.</p>
-<br>
-<hr>
-
 	<div id="complex"><h3>Scripting (Complex)</h3></div>
 	<br>
 	
@@ -1509,10 +1489,37 @@
 	<br>
 	<hr>
 
+	<div id="Ladders_and_stairs"><h4>Ladders and stairs</h4></div>
+		<p>1. Build your map. </p>	
+		<p>2. Add your ladders / stairs. </p>
+		<img src="images\mapping\Ladders and stairs\Ladder01.webp" alt="">
+		<br>
+		<img src="images\mapping\Ladders and stairs\Ladder02.webp" alt="">
+		<p>3. I suggest changing your cursor to the arrow for the next part as it makes selecting ladders easier. </p>
+		<p>To change your cursor to the arrow, press the "m" key ( press again to change it back ) </p>
+		<p>4. Select the ladder you want to set the info for. </p>
+		<p>5. Click on the EDIT button, a screen will appear as shown. </p>
+		<img src="images\mapping\Ladders and stairs\Ladder03.webp" alt="">
+		<p>6. Click the button marked "Dest Tile" and put in the hex number you would like the player to "arrive" on on the destination level. </p>
+		<p>7. To find the hex number, click on the floor near the ladder and look in the grey box in the bottom left corner, it is the number on the left. </p>
+		<img src="images\mapping\Ladders and stairs\Ladder04.webp" alt="">
+		<p>8. Click the button marked "Dest Elev" and put in the number of the "level" you want the ladder / stairs to go to. </p>
+		<p>NOTE! The game calls level 1 elevation 0 and so on. </p>
+		<p>9. Click the button marked "Dest Map". This is where you put the number of the map you want the ladder to go to, so you CAN make ladders span maps if you like.. </p>
+		<p>To get it to go to the same map as it is on, you need to give that map a number in the maps.txt file and put it in the "Dest Map" box. </p>
+		<p>10. For my example map, I ended up with the following. </p>
+		<img src="images\mapping\Ladders and stairs\Ladder05.webp" alt="">
+		<p>11. Click "Done" </p>
+		<p>12. Repeat steps 4 - 11 for the other ladders / stairs. </p>
+	<br>
+	<hr>
+
 	<div id="adding_maps"><h4>Adding maps</h4></div>
-		<p>Put your map in the fallout2\data\maps directory ( editor should do it automatically but if it's not your map then put it here).</p>
-		<p>Open the file maps.txt which is found in fallout2\data\data.</p>
-		<p>Scroll to the end of the list and copy / paste one of the entry blocks at the end.. so you would end up with.. </p>
+		<p>Put your map in the fallout2\data\maps directory (editor should do it automatically but if it's not your map then put it here).</p>
+	<br>
+		<h4>MAPS.TXT</h4>
+		<p>Open the file MAPS.TXT which is found in fallout2\data\data.</p>
+		<p>Scroll to the end of the list and copy / paste one of the entry blocks at the end, so you would end up with.</p>
 				<code>
 					<pre>
 						[Map 150] 
@@ -1522,25 +1529,26 @@
 						saved=No 
 					</pre>
 				</code>
-		<p>Re-number the entry block you just pasted as the next in the list (e.g. 151 ).</p>
-		<p>Change the name after map_name= to the name of your map.</p>
-		<p>Set any music you want in the music= line.. ( see other entries for examples of what music you can use.. ) </p>
-		<p>Change saved=No to saved=Yes ( this makes the game save the status of the map when you save the game, so you can drop things and not lose them.. )( i think.. i may be wrong... ).</p>
-		<p>The lookup_name is what the city.txt file references the map with.</p>
+		<p>Re-number the entry block you just pasted as the next in the list (e.g. 151).</p>
+		<p>Change the name after 'map_name=' to the name of your map.</p>
+		<p>Set any music you want in the 'music=' (see other entries for examples of what music you can use).</p>
+		<p>Change 'saved=No' to 'saved=Yes' (this makes the game save the status of the map when you save the game, so you can drop things and not lose them)(I think, I may be wrong).</p>
+		<p>'lookup_name' is what the CITY.TXT file references the map with.</p>
 		<p>So you would end up with...</p>
 				<code>
 					<pre>
 						[Map 151] 
-						lookup_name=YourMap_Entrance 
-						map_name=yourmap 
+						lookup_name=TestMap_Entrance 
+						map_name=testmap 
 						music=07desert 
 						saved=Yes 
 					</pre>
 				</code>
-		<p>The "YourMap_Entrance" is just an identifying name for the map. "yourmap" is the actual name of the map file. </p>
+		<p>The 'TestMap_Entrance' is just an identifying name for the map. 'testmap' is the actual name of the map file. </p>
 		<p>Save the file.</p>
 	<br>
-		<p>Open the file called city.txt. This is where the map is put on the worldmap, and set the "town map" art that comes up for you to choose a shortcut to a part of the town when you enter the map from the worldmap.</p>
+		<h4>CITY.TXT</h4>
+		<p>Open the file called CITY.TXT. This is where the map is put on the worldmap, and set the 'town map' art that comes up for you to choose a shortcut to a part of the town when you enter the map from the worldmap.</p>
 		<p>Scroll to the end and copy / paste the last entry again, so you would have...</p>
 				<code>
 					<pre>
@@ -1555,13 +1563,14 @@
 						entrance_0=On,130,410,New Reno Stables,-1,-1,0
 					</pre>
 				</code>
-		<p>Change the area number to the next in the sequence ( so in the example it would be Area 49).</p>
-		<p>Set the co-ordinates of where you want the town to show up on the map in the line world_pos= ( but read the rest to make sure you don't overlap any existing towns).</p>
-		<p>Set the start_state to on ( so it shows on the worldmap).</p>
-		<p>Set the size= to whatever size circle you want.</p>
-		<p>The townmap_art_idx= should be left as -1 (it references an external txt file to look up the name of the townmap artwork) as should the townmap_lable_art_idx=-1.</p>
-		<p>The line "entrance_0=..." sets whether the location in the town is available or not, the location of the triangle on the townmap (x,y coordinates),the map to go to when the triangle is clicked, elevation, destination hex, and rotation on the map.(in that order).</p>
-		<p>Substitite xxx,xxx with the worldmap co-ordinates, and YourMap_Entrance with whatever you put for the lookup_name in the maps.txt file.</p>
+		<p>Change the area number to the next in the sequence (so in the example it would be Area 49).</p>
+		<p>Set the coordinates of where you want the town to show up on the map in the line 'world_pos='' (but read the rest to make sure you don't overlap any existing towns).</p>
+		<p>Set 'start_state' to 'on' (so it shows on the worldmap).</p>
+		<p>Set 'size=' to whatever size circle you want.</p>
+		<p>'townmap_art_idx=' should be left as '-1' (it references an external .txt file to look up the name of the townmap artwork) as should the 'townmap_lable_art_idx='.</p>
+		<p>'entrance_0=' sets whether the location in the town is available or not.</p>
+		<p>The location of the triangle on the townmap (x,y coordinates), the map to go to when the triangle is clicked, elevation, destination hex, and rotation on the map (in that order). Substitite xxx,xxx with the worldmap coordinates.</p>
+		<p>'YourMap_Entrance' with whatever you put for the 'lookup_name' in the MAPS.TXT file.</p>
 		<p>So you would get...</p>
 				<code>
 					<pre>
@@ -1576,16 +1585,17 @@
 						entrance_0=On,130,410,YourMap_Entrance,-1,-1,0 
 					</pre>
 				</code>
-		<p>You can have extra "entrance_x=" in each area for as many maps as make up the town, just add them after entrance_0, and sequentially number them. Look at the other areas in the file for examples.</p>
-		<p>"yourmap area name" is the name of the town , city, or area that you want your map to be part of.</p>
-		<p>Writing "start_state=On" makes the town visible on the worldmap. Some scripts change this state so that the town shows up only as people tell you of them or take you there, such as Golgotha or the Sierra Army Depot.</p>
-		<p>I'll break down the line "entrance_0=On,130,410,YourMap_Entrance,-1,-1,0" to try to explain it better. </p>
-		<p>entrance_0 - the first entrance point to your town On - states that this entrance is "on", ie it can be used picked from the town picture you get when entering a town 130, 410 - 
-			the coordinates in x,y format of the triangle that appears on the town picture to indicate this entrance YourMap_Entrance - 
-			the identifying name for the map you should be taken to when clicking the triangle ( as set in the maps.txt above.. ) -1,-1,0 - the destination elevation, hex, 
-			and rotation to place the player on when entering the map ( -1 for the map defaults ) </p>
+		<p>You can have extra 'entrance_x='' in each area for as many maps as make up the town, just add them after 'entrance_0=', and sequentially number them. Look at the other areas in the file for examples.</p>
+		<p>'yourmap area name' is the name of the town , city, or area that you want your map to be part of.</p>
+		<p>'start_state=On' makes the town visible on the worldmap. Some scripts change this state so that the town shows up only as people tell you of them or take you there, such as Golgotha or the Sierra Army Depot.</p>
+		<p>'entrance_0' - the first entrance point to your town.</p>
+		<p>'On' - states that this entrance is "enabled", e.g. it can be picked from the town picture you get when entering a town.</p> 
+		<p>'130, 410' - the coordinates in x,y format of the triangle that appears on the town picture to indicate this entrance.</p> 
+		<p>'YourMap_Entrance' - the identifying name for the map you should be taken to when clicking the triangle ( as set in the maps.txt above).</p>
+		<p>'-1,-1,0' - the destination elevation, hex, and rotation to place the player on when entering the map (-1 for the map defaults).</p>
 		<p>Save the file.</p>
-		<p>Open the file maps.msg ( found in \fallout2\data\text\english\game ) and scroll to the end.. </p>
+		<br>
+		<p>Open the file MAP.MSG ( found in \fallout2\data\text\english\game ) and scroll to the end.</p>
 		<p>Copy / paste the last line.</p>
 		<p>So you would get...</p>
 				<code>
@@ -1599,9 +1609,9 @@
 						{1546}{}{Fake Vault 13} 
 						{1547}{}{Random Encounter} 
 						{1548}{}{Stables} 
-						{1548}{}{Stables} 
 					</pre>
 				</code>
+		<br>
 		<p>Re-number the line you just pasted to the next number and change the label to your town label.</p>
 				<code>
 					<pre>
@@ -1613,11 +1623,11 @@
 						{1545}{}{Vault 13} 
 						{1546}{}{Fake Vault 13} 
 						{1547}{}{Random Encounter} 
-						{1548}{}{Stables} 
 						{1548}{}{Stables}  
 						{1549}{}{My Cool Map} 
 					</pre>
 				</code>
+		<br>
 		<p>Find the last entry before the 1500's start and copy / paste it below itself.</p>
 				<code>
 					<pre>
@@ -1643,7 +1653,8 @@
 						{652}{}{Desert} 
 					</pre>
 				</code>
-		<p>Re-number the entry you just pasted to the next number/s ( as shown below.. easy to figure out.. ) and change the name to your map name... </p>
+		<br>
+		<p>Re-number the entry you just pasted to the next number/s (as shown below, easy to figure out) and change the name to your map name.</p>
 				<code>
 					<pre>
 						148. Shi Temple
@@ -1676,37 +1687,15 @@
 						{655}{}{Desert} 
 					</pre>
 				</code>
-		<p>151. yourmap - the name of the map file 
-			653 - name to display for elevation 0 of your map ( mapper level 1 ) 
-			654 - name to display for elevation 1 of your map ( mapper level 2 ) 
-			655 - name to display for elevation 2 of your map ( mapper level 3 )</p>
+		<p>151. yourmap - the name of the map file.
+		<br>
+		{653}{}{Desert}  - name to display for elevation 0 of your map (mapper level 1).
+		<br>
+		{654}{}{Desert}  - name to display for elevation 1 of your map (mapper level 2).
+		<br>
+		{655}{}{Desert}  - name to display for elevation 2 of your map (mapper level 3).</p>
 		<p>So you might have a map with a church with a basement so 653 would be "church" and 654 would be "basement" etc.</p>
 		<p>Save the file.</p>
-	<br>
-	<hr>
-
-	<div id="Ladders_and_stairs"><h4>Ladders and stairs</h4></div>
-		<p>1. Build your map. </p>	
-		<p>2. Add your ladders / stairs. </p>
-		<img src="images\mapping\Ladders and stairs\Ladder01.webp" alt="">
-		<br>
-		<img src="images\mapping\Ladders and stairs\Ladder02.webp" alt="">
-		<p>3. I suggest changing your cursor to the arrow for the next part as it makes selecting ladders easier. </p>
-		<p>To change your cursor to the arrow, press the "m" key ( press again to change it back ) </p>
-		<p>4. Select the ladder you want to set the info for. </p>
-		<p>5. Click on the EDIT button, a screen will appear as shown. </p>
-		<img src="images\mapping\Ladders and stairs\Ladder03.webp" alt="">
-		<p>6. Click the button marked "Dest Tile" and put in the hex number you would like the player to "arrive" on on the destination level. </p>
-		<p>7. To find the hex number, click on the floor near the ladder and look in the grey box in the bottom left corner, it is the number on the left. </p>
-		<img src="images\mapping\Ladders and stairs\Ladder04.webp" alt="">
-		<p>8. Click the button marked "Dest Elev" and put in the number of the "level" you want the ladder / stairs to go to. </p>
-		<p>NOTE! The game calls level 1 elevation 0 and so on. </p>
-		<p>9. Click the button marked "Dest Map". This is where you put the number of the map you want the ladder to go to, so you CAN make ladders span maps if you like.. </p>
-		<p>To get it to go to the same map as it is on, you need to give that map a number in the maps.txt file and put it in the "Dest Map" box. </p>
-		<p>10. For my example map, I ended up with the following. </p>
-		<img src="images\mapping\Ladders and stairs\Ladder05.webp" alt="">
-		<p>11. Click "Done" </p>
-		<p>12. Repeat steps 4 - 11 for the other ladders / stairs. </p>
 	<br>
 	<hr>
 
@@ -2260,6 +2249,27 @@
 			<p>Compile the script and your done!</p>
 	<br>
 	<hr>
+
+<div id="end"><h3>Add new ending sequence</h3></div>
+<br>
+	<p>To be able to add new ending sequences in Fallout 2, we need to change the Endgame.txt in the Fallout2\data\data folder.</p>
+				<code>
+					<pre>
+						#####
+						# Arroyo
+						#####
+						408, 1, 440, nar_ar1
+					</pre>
+				</code>
+	<p>The 408 stands for the number of the Global Variable. The VAULT13.GAM contains the list. In this the GVAR is called GVAR_ENDGAME_MOVIE_ARROYO.</p>
+	<p>The global variable must have the value 1 to call this end. But of course it can also be used as a counter.</p>
+	<p>Graphic 440 is loaded from Fallout2\art\intrface\intrface.lst.</p>
+	<p>nar_ar1 calls the file of the same name from the Fallout2\text\...\cuts directory.</p>
+	<br>
+	<p>If you use a new graphic, you must of course also enter it in the list. The global variables are switched by script. When using new global variables, these must also be entered. </p>
+	<p>The order in which the closing sequences run at the end of the game conforms to the order in Endgame.txt.</p>
+<br>
+<hr>
 
 	<div id="tiles"><h3>Making new tiles</h3></div>
 		<p>Here's the basic process so far, I have tried a few of them ingame and they work great, so this works so far.
