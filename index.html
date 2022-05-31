@@ -17,14 +17,14 @@
 			<li><a href="index.html#intro">Introduction</a></li>
 			<li><a href="index.html#prep">Preparations</a></li>
 				<ol class="first">
-					<li><a href="index.html#Fallout2_Installation">Fallout2 Installation</a></li>
-					<li><a href="index.html#Fallout2_.dat_files">Fallout2 .dat files</a></li>
-					<li><a href="index.html#Tools_Data_Exploring">Tools - Data Exploring</a></li>
-					<li><a href="index.html#Extracting_.dat_files">Extracting .dat files</a></li>
+					<li><a href="index.html#Fallout2_Installation">Installation - Fallout2</a></li>
+					<li><a href="index.html#Fallout2_.dat_files">File handling - .dat files</a></li>
+					<li><a href="index.html#Tools_Data_Exploring">Tools - .dat Extractor</a></li>
+					<li><a href="index.html#Extracting_.dat_files">Extracting - .dat files</a></li>
 					<li><a href="index.html#Tools_Scripting">Tools - Scripting</a></li>
-					<li><a href="index.html#Config_sFall_Script_Editor">Config sFall SE</a></li>
+					<li><a href="index.html#Config_sFall_Script_Editor">Config - sFall Script Editor</a></li>
 					<li><a href="index.html#Tools_Mapping">Tools - Mapping</a></li>
-					<li><a href="index.html#Config_BIS_Mapper">Config BIS Mapper</a></li>
+					<li><a href="index.html#Config_BIS_Mapper">Config - BIS Mapper</a></li>
 				</ol>
 			<li><a href="index.html#basic">Scripting (Basics)</a></li>	
 				<ol class="first">
@@ -85,7 +85,8 @@
 				<p><em>Shot a child in the face after he pickpocketed me. Turned the whole town hostile. Ran away to New Reno. Became a Pornstar.
 	<br>
 				Fallout 2 in a nutshell.
-	<br>		11/10</em></p>
+	<br>		
+				11/10</em></p>
 				--Rat Prik (Steam review)
 		</header>
 <br>
@@ -105,7 +106,7 @@
 	<br>
 		<p>The first part of this guide is meant to be read from top to bottom. You'll learn what and how to touch and modify every file necessary to create a simple mod.</p>
 		<p>The second part covers mostly art. Since art is not necessary to create a mod, it is optional.</p>
-		<p>The third part serves as glossary. There you'll find deeper knowledge and stuff that didn't fit inside the other parts.</p>
+		<p>The third part serves as glossary and reference book. There you'll find deeper knowledge and stuff that didn't fit inside the other parts.</p>
 	<br>
 		<p>I presume that basic PC affinity is present. Otherwise, just ask.</p>
 <br>
@@ -114,7 +115,7 @@
 
 <div id="prep"><h3>Preparations</h3></div>
 	<br>
-		<div id="Fallout2_Installation"><h4>Fallout2 Installation</h4></div>
+		<div id="Fallout2_Installation"><h4>Installation - Fallout2</h4></div>
 			<p>I think I don't need to explain how to install Fallout 2. If you don't know how to install it, just ask someone of the community. 
 				It doesn't matter where you bought Fallout 2 you can just use any version for modding. However, I'd recommend to have an English Fallout 2 installation.</p>
 			<p>So please go on and do a freshly installation of Fallout 2 in English.</p>
@@ -136,7 +137,7 @@
 	<br>
 	<br>
 
-		<div id="Fallout2_.dat_files"><h4>Fallout2 .dat files</h4></div>
+		<div id="Fallout2_.dat_files"><h4>File handling - .dat files</h4></div>
 			<p>Inside the games folder you'll find .dat files. We need three of them.</p>
 			<p>These are...</p> 
 				<code>
@@ -151,8 +152,9 @@
 						patch000.dat
 					</pre>
 				</code>
-			<p>These three files contain all the various audio, graphic, dialogue, script, font, map, etc. files used in FO2. 
-				You can see how you'd need to unpack the .dats if you wanted to edit any one file within them, so you need to do this before you do any sort of modding of FO2.</p>
+			<p>These three files contain all the various audio, graphic, dialogue, script, font, map, etc. files used in FO2.</p>
+			<p>To be able to edit any of the files inside the .dat files you need to unpack the .dat files first. It's like having a .zip file that needs to be unzipped first. 
+				It's obligatory to do this before you do any sort of modding of FO2.</p>
 			<p>Just save them at a place of your choice.</p>
 			<p>Mine looks like this...</p>
 				<code>
@@ -167,7 +169,7 @@
 	<br>
 	<br>
 
-		<div id="Tools_Data_Exploring"><h4>Tools - Data Exploring</h4></div>
+		<div id="Tools_Data_Exploring"><h4>Tools - .dat Extractor</h4></div>
 			<p>Download <a href="https://www.nma-fallout.com/resources/dat-explorer-by-dims.56/">Dat Explorer by Dims 1.43</a> from NMA.</p>
 			<p>Unpack the file inside it wherever you like. Should look like this.</p> 
 				<img src="images\preparations_datexplorer\2022-04-20 20_47_40-Fallout 2 Dat Explorer 1.43 by Dims.png" alt="">
@@ -182,7 +184,7 @@
 	<br>
 	<br>
 
-		<div id="Extracting_.dat_files"><h4>Extracting .dat files</h4></div>
+		<div id="Extracting_.dat_files"><h4>Extracting - .dat files</h4></div>
 			<p>In the 'Startup form' box, double-click on the folder saying 'DAT file' with the vault boy's grinning face on it.</p> 
 			<p>In the 'Open' box that comes up next, find and open the folder where you saved the .dat files. </p>	
 				<img src="images\preparations_datexplorer\2022-04-20 20_57_56-DAT explorer.png" alt="">
@@ -242,23 +244,23 @@
 					</pre>
 				</code>
 				<img src="images\scripting\2022-04-21 08_08_31-BIS mapper patched (+complementary ressources).png" alt="">
-			<p>Inside the BIS Mappers folder you'll find decompiled (human readable) scripts from Fallout 2. </p>
+			<p>Inside the BIS Mappers folder you'll find decompiled (human readable) scripts from Fallout2. </p>
 				<code>
 					<pre>
 						E:\dev\Tools\BIS mapper patched (+complementary ressources)\BIS mapper\scripts
 					</pre>
 				</code>
-			<p>Copy everything inside the 'scripts' folder into the 'data' folder you created and pasted recently into the FO2 backup directory.</p>
+			<p>Copy everything inside the 'scripts' folder to the 'data' folder you created and pasted recently into the FO2 backup directory.</p>
 				<code>
 					<pre>
-						E:\Fallout2\data
+						E:\Fallout2\data\decompiled
 					</pre>
 				</code>
 			<p>Keep the original of these BIS Mapper decompiled scripts save and untouched.</p>
 	<br>
 	<br>
 
-		<div id="Config_sFall_Script_Editor"><h4>Config sFall Script Editor</h4></div>
+		<div id="Config_sFall_Script_Editor"><h4>Config - sFall Script Editor</h4></div>
 			<p>Run 'SfallScriptEditor.exe'. It'd look like this...</p>
 				<img src="images\scripting\2022-04-21-sFall_Script_Editor_first_run.png" alt="">
 			<p>Uncheck 'Don't use compiling path'. The first field 'unset' should change it's color.</p>
@@ -280,7 +282,7 @@
 	<br>
 	<br>
 
-		<div id="Config_BIS_Mapper"><h4>Config BIS Mapper</h4></div>
+		<div id="Config_BIS_Mapper"><h4>Config - BIS Mapper</h4></div>
 			<p>The first time you run 'mapper2.exe' you should encounter this error...</p>
 				<img src="images\mapping\2022-04-21 14_09_35-Fehler.png" alt="">
 			<p>Open 'mapper2.cfg' with a text-editor of your choice.</p>
@@ -288,7 +290,6 @@
 				<code>
 					<pre>
 						[...]
-
 						[system]
 						art_cache_size=261
 						cdlock=
@@ -752,17 +753,18 @@
 	<br>
 	<hr>
 
-	<div id="advanced"><h3>Scripting (Advanced)</h3></div>
+	<div id="advanced"><h2>Scripting (Advanced)</h2></div>
     <br>
 
-		<div id="compiling"><h4>Compiling</h4></div>
+		<div id="compiling"><h3>Compiling</h3></div>
 			<p>As you have probably already noticed, the suffix of your script or any script in general is .ssl. For example ASWELL.ssl. 
 				However, this suffix is the raw state of a script. To be able to use your script inside the game you need to compile it. What does that mean? 
 				It means the script needs to be translated from human readable code into machine readable code.
 				Decompiled (human readable) scripts have the suffix .ssl, compiled ones (machine readable) have the suffix .int.
 				So the engine knows what to do with the scripts content.</p>
-			<p>But how exactly do we compile scripts? With Sfall script editor this is child's play.
-			<br>Just look at the top center of the Sfall script editor. There you'll find this button.</p>
+	<br>
+			<p>But how exactly do we compile scripts? With Sfall script editor this is child's play.</p>
+			<p>Just look at the top center of the Sfall script editor. There you'll find this button.</p>
 			<br>
 			<img src="images\compile_button.png" alt="">
 			<p>Press it. Come on, do it! Press it! Or F8...</p>
@@ -776,10 +778,13 @@
 						<span class="dyedefine">#define</span> NAME                    SCRIPT_ASWELL
 					</pre>
 				</code>
+	<br>
+	
+	<div id="scripts.h"><h4>SCRIPTS.H</h4></div>
 			<p>In order to compile your script correctly, it must be listed inside SCRIPTS.H. Let's take a look at SCRIPTS.H located here:</p>
 				<code>
 					<pre>
-						X:\...\...\BIS mapper patched (+complementary ressources)\BIS mapper\scripts\HEADERS
+						E:\Fallout2\data\scripts\decompiled\HEADERS
 					</pre>
 				</code>
 				<code>
@@ -851,10 +856,10 @@
 	<br>
 	<hr>
 
-	<div id="scripts.lst"><h3>Test your map</h3></div>
+	<div id="scripts.lst"><h2>Test your map</h2></div>
 	<br>
 
-		<h4>Within the BIS Mapper - SCRIPTS.LST</h4>
+		<h3>Within the BIS Mapper - SCRIPTS.LST</h3>
 			<p>Now that you've got a compiled script you certainly want to test it. One way to test it is within the BIS Mapper. But first we have to add the script into SCRIPTS.LST.
 				We need to do this so that the mapper is able to find the script. Locate the file and open it with whatever editor you like. Jump at the end of the file and add your script like this:</p>
 				<code>
@@ -879,10 +884,10 @@
 	<br>
 	<hr>
 		
-	<div id="dialog"><h3>Dialog</h3></div>
+	<div id="dialog"><h2>Dialog</h2></div>
 	<br>
 
-		<h4>Let's talk about...</h4>
+		<h3>Let's talk about...</h3>
 			<p>Do you remember this guy?</p>
 			<img src="images\Talk_to_Klint_remember.png" alt="">
 			<p>It's Klint. Say hi to Klint.</p>
@@ -894,7 +899,7 @@
 			<p>First file is ACKLINT.SSL located here:</p>
 				<code>
 					<pre>
-						X:\...\...\BIS mapper patched (+complementary ressources)\BIS mapper\scripts\ARROYO
+						E:\Fallout2\data\scripts\decompiled\ARROYO
 					</pre>
 				</code>
 				<code>
@@ -935,7 +940,7 @@
 				But where do they come from? Let's take a look at ACKLINT.MSG located here:</p>
 				<code>
 					<pre>
-						X:\Fallout 2\data\text\english\dialog
+						E:\Fallout2\data\text\english\dialog
 					</pre>
 				</code>
 			<p>Try and open the file with notepad, notepad++, Sfall script editor or whatever you prefer. After you opened the file, it will look like this:</p>
@@ -997,129 +1002,127 @@
 					</pre>
 				</code>
 			<p>Everything behind the hashtag is interpreted as a comment.</p>
-			<p>I like my message files a bit more organized. Like this:</p>
+			<p>I like my message files a bit more organized. Like this...</p>
 				<code>
 					<pre>
 						#############################################################
 						#  
 						#
-						# Message File: HCPAVEL.msg                               
+						#  Message File: ACKLINT.msg                               
 						#                                                          
-						#       Body Type:  Pavel                                 
-						#       Combat AI: None                                     
-						#       Weapons: None                                       
+						#       Body Type:  Klint
+						#	Location: Arroyo - Temple entrance
+						#       Combat AI: AI_ARROYO_WARRIOR                                     
+						#       Weapons: Sharpened Spear                                       
 						#       HP: ?                                               
 						#       Skills to note: None                                
+						#                                                                                                             
 						#                                                           
-						#  Log:                                                     
+						#  Created: November 13, 1997                               
 						#                                                           
-						#  Created: August 10, 2021                               
-						#                                                           
-						#  Updated: August 14, 2021
+						#  Updated: December 24, 1997  
 						#
 						#                                                
 						#############################################################
 
 
 						#############################################################
-						#  The following lines are used by look_at_p_proc and description_p_proc.
+						#  Used by look_at_p_proc and description_p_proc.
 						#############################################################
-						{100}{}{You see an old and grumpy looking man.}
-						{101}{}{This man looks like he consumes alot of alcohol and cigarettes.}
-						{102}{}{You see Pavel, the former scout.}
+						{100}{}{You see Klint, a fellow tribesman.}
+						{101}{}{You see Klint.}
+						{102}{}{You see a young man with bulging muscles and a very confident air about him.}
 						#############################################################
 
 
 						#############################################################
-						#  The following lines are only once used by NodeTalkIntro. Introductional conversation.
+						#  Used by Node001
 						#############################################################
 						#Reply
-						{200}{}{Hm...? Who are you and what do you want? Me is Pavel.}
+						{103}{}{Good day to you, }
+						{104}{}{. You have not completed the trial of the Elder and may not pass.}
+
+						#NLowOption
+						{105}{}{Uh...}								#Invokes Node002
+
 						#NOption
-						{201}{}{Hi Pavel. Don't you recognize me? It's me }
-						{202}{}{. }
-						{203}{}{How do you do?} #Invokes NodeTalkAdvanced
-						{204}{}{ I'm just looking for work.} #Invokes NodeQuestStart 300
-						{205}{}{Bye.} #Invokes Node999
+						{106}{}{I need to go back to the village.}				#Invokes Node003
+						{107}{}{I have some questions of you.}					#Invokes Node004
+						{108}{}{All right, I'm off to take the test.}				#Invokes Node999
 						#############################################################
 
 
 						#############################################################
-						#  The following lines are only once used by NodeTalkAdvanced. Advanced conversation.
+						#  Used by Node002
 						#############################################################
 						#Reply
-						{206}{}{What do you think how I'm doing? I ran out of hard stuff.}
-						#NOption
-						{207}{}{Can I do anything for you?} #Invokes NodeQuestStart 301
-						{208}{}{Ouh. That's sad. Bye!} #Invokes Node999
+						{109}{}{(sigh) }
+						{110}{}{. You go temple. You take test. You not come back here until take test. Obey Elder. Go!}
+
+						#NLowOption
+						{111}{}{Me go.}								#Invokes Node999
 						#############################################################
 
 
 						#############################################################
-						#  The following lines are used by NodeTalkReturn. If the player has already spoken to Pavel but didn't accept the Quest.
+						#  Used by Node003
 						#############################################################
 						#Reply
-						{209}{}{You again. What'Cha want?}
+						{112}{}{Forgive me, }
+						{113}{}{, but I can not allow you to pass. If you wish to return to the village you may do so only by passing the trial set before you.}
+
 						#NOption
-						{210}{}{Still looking for work.} #Invokes NodeQuestStart 300
-						{211}{}{Bye again.} #Invokes Node999 or 
+						{114}{}{I see. I guess I'll be going then.}				#Invokes Node999
+						{115}{}{Can I ask you some questions then?}				#Invokes Node004
+						{116}{}{I could kick your ass and just walk out of here.}		#Invokes Node005
 						#############################################################
 
 
 						#############################################################
-						#  The following lines are used by NodeQuestStart. Initiating Quest: Get some alcohol.
+						#  Used by Node004
 						#############################################################
 						#Reply
-						{300}{}{So you're looking for work! Okay! Listen here lazybones! Bring me some booze!} #Invoked by NodeTalkIntro 204
+						{117}{}{Forgive me, but I have no answers to your questions. Take the trial set before you by the Elder and prove yourself worthy to lead our people.}
+
 						#NOption
-						{302}{}{Sounds easy. Wait here. I'll be back soon.} #Invokes the Quest to start.
-						{303}{}{Not interested. Have a nice day.} #Invokes Node999
+						{118}{}{Very well.}							#Invokes Node999
 						#############################################################
 
 
 						#############################################################
-						#  The following lines are used by NodeQuestStart2. Initiating Quest: Get some alcohol.
+						#  Used by Node005
 						#############################################################
 						#Reply
-						{301}{}{Yes you can! Bring me liquor, pronto!} #Invoked by NodeTalkAdvanced 207
+						{119}{}{Two people working together can move the obelisk that blocks the path. Alone, you would fail. I have no intention of helping you until you pass the trial of the Elder.}
+
 						#NOption
-						{305}{}{Sounds easy. Wait here. I'll be back soon.} #Invokes the Quest to start.
-						{306}{}{Not interested. Have a nice day.} #Invokes Node999
+						{120}{}{Uh-huh. I get the picture.}					#Invokes Node999
 						#############################################################
 
 
 						#############################################################
-						#  The following lines are used by NodeQuestReturn . If the player has already spoken to Pavel and did accept the Quest.
+						#  Used by Node006
 						#############################################################
 						#Reply
-						{307}{}{Did you get my stuff?!} 
+						{121}{}{Greetings, Chosen One! It is good to see you. How may I serve you?}
+
+						#NLowOption
+						{122}{}{Me say hi. That all.}						#Invokes Node007
+
 						#NOption
-						{308}{}{Yep. Here it is.} #Invokes NodeQuestEnd
-						{309}{}{Nope, not yet.} #Invokes Node999
+						{123}{}{Just thought I'd say hello. I'll be leaving on my quest soon.} 	#Invokes Node007
 						#############################################################
 
 
 						#############################################################
-						#  The following lines are used by NodeQuestEnd. If the player fulfilled the quest requirement.
+						#  Used by Node007
 						#############################################################
-						#Reply
-						{310}{}{It's been about damn time!}
-						#NOption
-						{311}{}{I'm glad I could help you.} #Invokes reward.
-						#############################################################
-
-
-						#############################################################
-						#  The following lines are used by NodeTalkFinal. If the player has finished Pavels Quest and has already returned to him to get the reward.
-						#############################################################
-						#Reply
-						{312}{}{Hey man. Thanks again for the booze.}
-						#NOption
-						{313}{}{No problem mate. Cheers!}
+						#NMessage
+						{124}{}{May the spirits of our ancestors protect you, Chosen One. I wish you well on your journey.}
 						#############################################################
 					</pre>
 				</code>
-			<p>You see the message file of my first character called Pavel. You can organize your message file as you like.</p>
+			<p>But you can organize your message files as you like.</p>
 	<br>
 	
 		<h5>Notice</h5>    
