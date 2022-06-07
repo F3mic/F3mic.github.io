@@ -114,14 +114,14 @@ a:active {
 
 
 ol {
-  margin-left: -15%;
+  margin-left: -11%;
   counter-reset: item;
   list-style-type: none;
 }
 
 ol.first {
- margin-left: -10%;
-}
+  margin-left: -10%;
+ }
 
 ol li::before {
   counter-increment: item;
