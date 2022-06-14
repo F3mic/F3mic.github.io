@@ -35,6 +35,7 @@
 					<li><a href="index.html#build_map">How to build a map</a></li>
 						<ol>
 							<li><a href="index.html#Floors_and_walls">Floors and walls</a></li>
+							<li><a href="index.html#scenery and critters">Scenery and critters</a></li>
 							<li><a href="index.html#Ladders_and_stairs">Ladders and stairs</a></li>
 						</ol>
 					<li><a href="index.html#adding_maps">Adding maps</a></li>
@@ -815,7 +816,7 @@
 		<br>
 		<br>
 			<p>Have placed the tiles plus all walls plus roof and filling up the holes looks like this.</p>
-			<img src="images\mapping\Floors_and_walls\All walls + roof small.png" alt="" width="900" height="500">
+			<img src="images\mapping\Floors_and_walls\All walls + roof small.png" alt="" width="700" height="500">
 		<br>
 		<hr>
 
@@ -823,12 +824,29 @@
 			<p>Our basic map should now be ready. Now place the objects (Scenery). We place some objects that we think fit into the current scene. 
 				But be careful... sometimes less is more! Don't try to put the same scenery elements several times in the map so that you get them on one screen. 
 				Otherwise you will get the impression that everything is always repeated. And that usually looks ugly or boring.</p>
-			<img src="" alt="">
+			<img src="images\mapping\Scenery and critters\Scenery small.png" alt="" width="700" height="500">
 			<p>Placing Critters. We select "Critters" in the gray box at the bottom left. Now we can place the existing critters into the map. 
 				(I'll tell you later how to create new critters) Use the arrows at the bottom of the screen to indicate in which direction the figure should look. 
 				When we have placed a person, we press the M key to get the arrow cursor. We click on the figure and click EDIT at the bottom. 
 				Now we can make various settings, such as setting the inventory or assigning a script to the character.</p>
-			<img src="" alt="">
+			<img src="images\mapping\Scenery and critters\Critters small.png" alt="" width="700" height="500">
+			<p>Now come the rest of the details, such as setting light sources. Some scenery objects emit light by themselves, like the burning barrels. 
+				But that's not enough for us, so we'll add some lights ourselves. To do this, we go to "Scenery" in the lower left corner and move to tile number 140. 
+				This is our light source. Select it with the right mouse button and place it in the map at the desired position.</p>
+			<p>IMPORTANT: You have to activate "Toggle Block Obj View" (Tools -> Toggle Block Obj View) before, otherwise you can't see the light source!</p>	
+			<p>Under Scripts -> Set Start Hex we determine the start location of the player.</p>	
+			<img src="images\mapping\Scenery and critters\Light source visible small.png" alt="">
+		<br>
+			<img src="images\mapping\Scenery and critters\Light source small.png" alt="" width="700" height="500">
+			<p>If we now press F8 (default_f8_as_game= must be set to 1 in mapper.cfg), we enter the test game and we can walk around. 
+				The critters don't do much yet, since we haven't assigned them a script. If we press the D key, we change the time of day and can see how our placed light sources work. 
+				The map is not 100% finished yet. Still missing are the so-called "scroll blockers", which limit the scroll radius of the player and the exit points, 
+				which bring the player to the world map etc. This will follow in the next tutorial.</p>
+		<br>
+		<hr>
+
+		<div id="scrollblocker and levelexit"><h4>Scrollblocker and levelexits</h4></div>
+			<p></p>
 		<br>
 		<hr>
 
