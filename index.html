@@ -849,10 +849,85 @@
 			<p>When you're finished to build your map, you need to put Scroll Blockers to limitate until where the screen can scroll.</p>
 			<p>You do that by clicking on 'EDG' on bottom screen. You'll receive this menu.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\EDG.png" alt="">
-			<p>You can set the borders by clicking on the four arrows directing in different directions. If you click them a green line will appear and stick to your cursor.
-				Just left-click on an area where you desire the edge of the screen to stop.</p>
+			<p>You can set the borders by clicking on the four arrows directing in different directions.</p>
+			<img src="images\mapping\Scroll Blocker and level exits\EDG choose.png" alt="">
+			<p>If you click them a green line will appear and stick to your cursor.</p>
+			<img src="images\mapping\Scroll Blocker and level exits\EDG chosen.png" alt="">
+			<p>Just left-click on an area where you desire the edge of the screen to stop.</p>
+			<img src="images\mapping\Scroll Blocker and level exits\EDG place.png" alt="" width="700" height="500">
+			<p>When you're done placing all directions just press 'save'.</p>
+			<img src="images\mapping\Scroll Blocker and level exits\EDG placed save.png" alt="" width="700" height="500">
+			<p>You can turn the visibility of the scroll blocker on/off with the asterisk on the bottom panel.</p>
+			<img src="images\mapping\Scroll Blocker and level exits\EDG asterisk.png" alt="" width="550" height="250">
+			<p>That's the result in game.</p>
+			<img src="images\mapping\Scroll Blocker and level exits\EDG scroll block.png" alt="">
+		<br>
+		<br>
+			<p>If you want to exit the map you're currently on, there are to possibilities how to leave it. Exit to the next map or exit to the worldmap.</p>
+			<p>Let's begin with exit to other map.</p>
+			<p>You may know the green and brown exit grids of the Fallout Classic games.</p>
+			<p>Inside the mapper there are even three types of exit grids. Green, brown and black but only the green ones work. The other two don't and shouldn't be used.</p>
+			<img src="images\mapping\Scroll Blocker and level exits\all exit grids.png" alt="">
+			<p>Choose 'Misc', the green ones begin at 15 to 22. Okay, so put some green exit grids on the map. Notice that only the red hexagons on the green exit grids do something.</p>
+			<img src="images\mapping\Scroll Blocker and level exits\green exit grids placed.png" alt="">
+			<p>Now it's time to write down some information about your map.</p>
+				<code>
+					<pre>
+						map name: 		
+						map number: 	 
+						lookup name:	
+						hex number:		
+						map level:		
+					</pre>
+				</code>
+			<p>Before I explain what the individual information mean, we need to do another step first.</p>
+			<p>Open MAPS.txt located inside...</p>
+				<code>
+					<pre>
+						E:\Fallout2\data\data
+					</pre>
+				</code>
+			<p>Scroll to the bottom and the last entry should look like this.</p>
+				<code>
+					<pre>
+						[Map 150]
+						lookup_name=Bess Dead
+						map_name=rndbess
+						music=07desert
+						saved=No
+					</pre>
+				</code>
+			<p>Now fill in your map information like this.</p>
+				<code>
+					<pre>
+						[Map 151]
+						lookup_name=Testmap number6
+						map_name=tm_s6
+					</pre>
+				</code>
+			<p>Save the information.</p>
+		<br>
+			<p>'map_name:' Is the name of the file of your map, e.g. arrvillage for Arroyo village. My map is called 'tm_s6' without the extension .map.</p>
+			<p>'map number:' This is the number we gave our map. In this case '151'.</p>
+			<p>'lookup_name:' This is the full name of the map. My map is called 'Testmap number6'. You can take up to 144 characters.</p>
+			<p>'hex number:' This is the number of the hex where you want obj_dude to start after exiting and reentering the new map. I chose hex number '18697'.</p>
+			<p>'map level:' This is the evelvation of your map. Inside the mapper you'll see 1, 2 and 3. But the engine handles this differently. 
+				(Mapper)1 = (Engine)0; (Mapper)2 = (Engine)1; (Mapper)3 = (Engine)2. My map is at elevation (Mapper)1 = (Engine)0.</p>
+		<br>
+			<p>Okay, we have every information we need to be able to do an exit to another map.</p>
+				<code>
+					<pre>
+						map name: 	tm_s6
+						map number: 	151
+						lookup name:	Testmap number6
+						hex number:	18697
+						map level:	0
+					</pre>
+				</code>
 		<br>
 		<hr>
+			<p>Return to the mapper.</p>
+			<p>Choose 'TOOLS' -> 'Set Exit-Grid Data'.</p>
 
 		<div id="Ladders_and_stairs"><h4>Ladders and stairs</h4></div>
 			<p>Add your ladders/stairs.</p>
