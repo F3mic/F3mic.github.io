@@ -863,7 +863,9 @@
 			<img src="images\mapping\Scroll Blocker and level exits\EDG scroll block.png" alt="">
 		<br>
 		<br>
-			<p>If you want to exit the map you're currently on, there are to possibilities how to leave it. Exit to the next map or exit to the worldmap.</p>
+		<br>
+			<p>If you want to exit the map you're currently on, there are two possibilities how to leave it. Exit to the next map or exit to the worldmap.</p>
+		<br>
 			<p>Let's begin with exit to other map.</p>
 			<p>You may know the green and brown exit grids of the Fallout Classic games.</p>
 			<p>Inside the mapper there are even three types of exit grids. Green, brown and black but only the green ones work. The other two don't and shouldn't be used.</p>
@@ -905,11 +907,12 @@
 						map_name=tm_s6
 					</pre>
 				</code>
+			<p>'lookup_name:' This is the full name of the map. My map is called 'Testmap number6'. You can take up to 144 characters.</p>
+			<p>'map_name:' Is the name of the file of your map, e.g. arrvillage for Arroyo village. My map is called 'tm_s6' without the extension .map.</p>
 			<p>Save the information.</p>
 		<br>
-			<p>'map_name:' Is the name of the file of your map, e.g. arrvillage for Arroyo village. My map is called 'tm_s6' without the extension .map.</p>
+			<p>The other information mean this...</p>
 			<p>'map number:' This is the number we gave our map. In this case '151'.</p>
-			<p>'lookup_name:' This is the full name of the map. My map is called 'Testmap number6'. You can take up to 144 characters.</p>
 			<p>'hex number:' This is the number of the hex where you want obj_dude to start after exiting and reentering the new map. I chose hex number '18697'.</p>
 			<p>'map level:' This is the evelvation of your map. Inside the mapper you'll see 1, 2 and 3. But the engine handles this differently. 
 				(Mapper)1 = (Engine)0; (Mapper)2 = (Engine)1; (Mapper)3 = (Engine)2. My map is at elevation (Mapper)1 = (Engine)0.</p>
@@ -924,11 +927,66 @@
 						map level:	0
 					</pre>
 				</code>
-		<br>
-		<hr>
 			<p>Return to the mapper.</p>
 			<p>Choose 'TOOLS' -> 'Set Exit-Grid Data'.</p>
-
+			<img src="images\mapping\Scroll Blocker and level exits\Set Exit-Grid Data.png" alt="">
+			<p>Four smaller windows will appear.</p>
+			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Map -1.png" alt="">
+			<p>Exit Grid Dest Map is our map number.</p>
+		<br>
+			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Tile -1.png" alt="">
+			<p>Exit Grid Dest Tile is our hex number.</p>
+		<br>	
+			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Elevation.png" alt="">
+			<p>Exit Grid Dest Elevation is our map level.</p>
+		<br>	
+			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Rotation.png" alt="">
+			<p>Exit Grid Dest Roration is the rotation of obj_dude.</p>
+		<br>
+			<p>Let's fill in our information.</p>
+			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Map 151.png" alt="">
+			<p>Our map number is 151 which you gave in MAPS.txt.</p>
+		<br>
+			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Tile 18697.png" alt="">
+			<p>Our hex number is 18697 where obj_dude will be teleported after stepping on the now invisible red hex field on the green exit grid.</p>
+		<br>
+			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Elevation.png" alt="">
+			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Rotation.png" alt="">
+			<p>Elevation an rotation can stay at 0. Because our elevation is (Mapper)1 = (Engine)0. And rotation 0 is northeast, that's ok for now.</p>
+		<br>
+			<p>Now that we provided our information, we can mark the exit grids.</p>
+			<p>Choose 'TOOLS' -> 'Mark Exit-Grids'.</p>
+			<img src="images\mapping\Scroll Blocker and level exits\Mark Exit-Grids.png" alt="">
+			<p>You will see this...</p>
+			<img src="images\mapping\Scroll Blocker and level exits\Entering mark exit_grids mode.png" alt="">
+			<p>You don't need to choose every exit-grid for itself. If you click on one exit grid, all exit grids at a scope of 20x20 will be marked.</p>
+			<p>Once you're done just press ESC. You will see this...</p>
+			<img src="images\mapping\Scroll Blocker and level exits\Exiting mark exit-grids.png" alt="">
+			<p>Don't test it right away! You need to save your map first, leave the mapper, reenter it and load your map. Now you can test if it works.</p>
+		<br>
+		<br>
+		<br>
+			<p>Let's continue with exit to worldmap.</p>
+			<p>Exit to worldmap is easier because you don't need to change the information asked when hitting 'TOOLS' -> 'Set Exit-Grid Data'.</p>
+			<p>Draw your green exit grids where you want them to exit to worldmap.</p>
+			<p>Choose 'TOOLS' -> 'Set Exit-Grid Data'.</p>
+			<p> Just let them default. Like this...</p>
+			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Map -1.png" alt="">
+		<br>
+			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Tile -1.png" alt="">
+		<br>	
+			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Elevation.png" alt="">
+		<br>	
+			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Rotation.png" alt="">
+			<p>Choose 'TOOLS' -> 'Mark Exit-Grids'.</p>
+			<p>Only choose the exit grids which should lead to the worldmap.</p>
+			<p>Exit the marking mode and save the map and leave the mapper.</p>
+			<p>After you relaunch the mapper you will notice that the green exit grids you chose to exit to worldmap are now brown.</p>
+			<p>Go on and test if it works.</p>
+		<br>
+		<br>
+		<hr>
+			
 		<div id="Ladders_and_stairs"><h4>Ladders and stairs</h4></div>
 			<p>Add your ladders/stairs.</p>
 			<img src="images\mapping\Ladders and stairs\Ladder01.webp" alt="">
