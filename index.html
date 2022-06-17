@@ -37,8 +37,8 @@
 							<li><a href="index.html#Floors_and_walls">Floors and walls</a></li>
 							<li><a href="index.html#scenery and critters">Scenery and critters</a></li>
 							<li><a href="index.html#Ladders_and_stairs">Ladders and stairs</a></li>
+							<li><a href="index.html#adding_maps">Worldmap</a></li>
 						</ol>
-					<li><a href="index.html#adding_maps">Adding maps</a></li>
 					<li><a href="index.html#New_Critter">Make new prototype</a></li>
 				</ol>
 			<li><a href="index.html#basic">Scripting (Basics)</a></li>	
@@ -785,6 +785,11 @@
 			<p>Once you have a basic floor to your map, you need to put down the 'footprint' of all your buildings and things such as roads, there are no patterns for this so you'll just have to do it by hand.</p>
 			<p>I recommend using tiles that make a 'grid' for the footprint to your buildings. You can change it later but it helps with placing the walls. </p>
 			<img src="images\mapping\Floors_and_walls\Tiles grid small.png" alt="" width="900" height="500">
+		<br>
+		<br>
+		<br>
+		<br>
+
 			<p>Next you need to place the walls, so set the selector to walls, and find the look you are going for.</p>
 			<img src="images\mapping\Floors_and_walls\Bas06.webp" alt="">
 			<p>Some wall sections are spread all over the selector bar, this was because sections of wall were added as they became needed by the original mappers, so you might have to hunt for that corner you want.</p>
@@ -845,7 +850,29 @@
 		<br>
 		<hr>
 
-		<div id="scrollblocker and levelexit"><h4>Scroll Blocker and level exits</h4></div>
+		<div id="Ladders_and_stairs"><h4>Ladders and stairs</h4></div>
+			<p>Add your ladders/stairs.</p>
+			<img src="images\mapping\Ladders and stairs\Ladder01.webp" alt="">
+			<br>
+			<img src="images\mapping\Ladders and stairs\Ladder02.webp" alt="">
+			<p>I suggest changing your cursor to the arrow ('m' key - press again to change it back) for the next part as it makes selecting ladders easier.</p>
+			<p>Select the ladder you want to set the info for.</p>
+			<p>Click on the EDIT button, a screen will appear as shown.</p>
+			<img src="images\mapping\Ladders and stairs\Ladder03.webp" alt="">
+			<p>Click the button called 'Dest Tile' and put in the hex number you would like the player to 'arrive' on on the destination level.</p>
+			<p>To find the hex number, click on the floor near the ladder and look in the grey box in the bottom left corner, it is the number 19902 on the left.</p>
+			<img src="images\mapping\Ladders and stairs\Ladder04.webp" alt="">
+			<p>Click the button called 'Dest Elev' and put in the number of the 'level' you want the ladder/stairs to go to.</p>
+			<p>Click the button called 'Dest Map'. This is where you put the number of the map you want the ladder to go to, so you CAN make ladders span maps if you like.</p>
+			<p>To get it to go to the same map as it is on, you need to give that map a number in the maps.txt file and put it in the 'Dest Map' box.</p>
+			<p>For my example map, I ended up with the following.</p>
+			<img src="images\mapping\Ladders and stairs\Ladder05.webp" alt="">
+			<p>Click 'Done'.</p>
+			<p>Repeat steps 4 - 11 for the other ladders/stairs.</p>
+		<br>
+		<hr>
+
+		<div id="scrollblocker and levelexit"><h4>Scroll Blocker</h4></div>
 			<p>When you're finished to build your map, you need to put Scroll Blockers to limitate until where the screen can scroll.</p>
 			<p>You do that by clicking on 'EDG' on bottom screen. You'll receive this menu.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\EDG.png" alt="">
@@ -864,9 +891,14 @@
 		<br>
 		<br>
 		<br>
+		<br>
+		<hr>
+
+		<div id="scrollblocker and levelexit"><h4>Map exits</h4></div>
 			<p>If you want to exit the map you're currently on, there are two possibilities how to leave it. Exit to the next map or exit to the worldmap.</p>
 		<br>
-			<p>Let's begin with exit to other map.</p>
+		<div id="scrollblocker and levelexit"><h5>Map exit to another map</h5></div>
+			<p>Let's begin with exit to another map.</p>
 			<p>You may know the green and brown exit grids of the Fallout Classic games.</p>
 			<p>Inside the mapper there are even three types of exit grids. Green, brown and black but only the green ones work. The other two don't and shouldn't be used.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\all exit grids.png" alt="">
@@ -883,6 +915,8 @@
 					</pre>
 				</code>
 			<p>Before I explain what the individual information mean, we need to do another step first.</p>
+		<br>
+			<h5>MAPS.TXT</h5>
 			<p>Open MAPS.txt located inside...</p>
 				<code>
 					<pre>
@@ -906,15 +940,23 @@
 						lookup_name=Testmap number6
 						map_name=tm_s6
 					</pre>
+				</code>	
+			<p>'lookup_name=' This is the full name of the map. My map is called 'Testmap number6'. You can take up to 144 characters.</p>
+			<p>'map_name=' Is the name of the file of your map, e.g. arrvillage for Arroyo village. My map is called 'tm_s6' without the extension .map.</p>
+		<br>
+			<p>These following two information are not mandatory to make the map work.</p>
+				<code>
+					<pre>
+						'music=' Set any music you want in the  (see other entries for examples of what music you can use)
+						'saved=' Change 'saved=No' to 'saved=Yes' (this makes the game save the status of the map when you save the game, so you can drop things and not lose them)
+					</pre>
 				</code>
-			<p>'lookup_name:' This is the full name of the map. My map is called 'Testmap number6'. You can take up to 144 characters.</p>
-			<p>'map_name:' Is the name of the file of your map, e.g. arrvillage for Arroyo village. My map is called 'tm_s6' without the extension .map.</p>
 			<p>Save the information.</p>
 		<br>
 			<p>The other information mean this...</p>
 			<p>'map number:' This is the number we gave our map. In this case '151'.</p>
 			<p>'hex number:' This is the number of the hex where you want obj_dude to start after exiting and reentering the new map. I chose hex number '18697'.</p>
-			<p>'map level:' This is the evelvation of your map. Inside the mapper you'll see 1, 2 and 3. But the engine handles this differently. 
+			<p>'map level:' This is the elevation of your map. Inside the mapper you'll see 1, 2 and 3. But the engine handles this differently. 
 				(Mapper)1 = (Engine)0; (Mapper)2 = (Engine)1; (Mapper)3 = (Engine)2. My map is at elevation (Mapper)1 = (Engine)0.</p>
 		<br>
 			<p>Okay, we have every information we need to be able to do an exit to another map.</p>
@@ -987,32 +1029,10 @@
 		<br>
 		<hr>
 			
-		<div id="Ladders_and_stairs"><h4>Ladders and stairs</h4></div>
-			<p>Add your ladders/stairs.</p>
-			<img src="images\mapping\Ladders and stairs\Ladder01.webp" alt="">
-			<br>
-			<img src="images\mapping\Ladders and stairs\Ladder02.webp" alt="">
-			<p>I suggest changing your cursor to the arrow ('m' key - press again to change it back) for the next part as it makes selecting ladders easier.</p>
-			<p>Select the ladder you want to set the info for.</p>
-			<p>Click on the EDIT button, a screen will appear as shown.</p>
-			<img src="images\mapping\Ladders and stairs\Ladder03.webp" alt="">
-			<p>Click the button called 'Dest Tile' and put in the hex number you would like the player to 'arrive' on on the destination level.</p>
-			<p>To find the hex number, click on the floor near the ladder and look in the grey box in the bottom left corner, it is the number 19902 on the left.</p>
-			<img src="images\mapping\Ladders and stairs\Ladder04.webp" alt="">
-			<p>Click the button called 'Dest Elev' and put in the number of the 'level' you want the ladder/stairs to go to.</p>
-			<p>Click the button called 'Dest Map'. This is where you put the number of the map you want the ladder to go to, so you CAN make ladders span maps if you like.</p>
-			<p>To get it to go to the same map as it is on, you need to give that map a number in the maps.txt file and put it in the 'Dest Map' box.</p>
-			<p>For my example map, I ended up with the following.</p>
-			<img src="images\mapping\Ladders and stairs\Ladder05.webp" alt="">
-			<p>Click 'Done'.</p>
-			<p>Repeat steps 4 - 11 for the other ladders/stairs.</p>
-		<br>
-		<hr>
-
-	<div id="adding_maps"><h3>Adding maps</h3></div>
-		<p>Put your map in the fallout2\data\maps directory (editor should do it automatically but if it's not your map then put it here).</p>
+	<div id="adding_maps"><h4>Worldmap</h4></div>
+		<!-- <p>Put your map in the fallout2\data\maps directory (editor should do it automatically but if it's not your map then put it here).</p>
 	<br>
-		<h4>MAPS.TXT</h4>
+		
 		<p>Open the file MAPS.TXT which is found in fallout2\data\data.</p>
 		<p>Scroll to the end of the list and copy / paste one of the entry blocks at the end, so you would end up with.</p>
 				<code>
@@ -1026,8 +1046,7 @@
 				</code>
 		<p>Re-number the entry block you just pasted as the next in the list (e.g. 151).</p>
 		<p>Change the name after 'map_name=' to the name of your map.</p>
-		<p>Set any music you want in the 'music=' (see other entries for examples of what music you can use).</p>
-		<p>Change 'saved=No' to 'saved=Yes' (this makes the game save the status of the map when you save the game, so you can drop things and not lose them)(I think, I may be wrong).</p>
+		
 		<p>'lookup_name' is what the CITY.TXT file references the map with.</p>
 		<p>So you would end up with...</p>
 				<code>
@@ -1040,10 +1059,11 @@
 					</pre>
 				</code>
 		<p>The 'TestMap_Entrance' is just an identifying name for the map. 'testmap' is the actual name of the map file. </p>
-		<p>Save the file.</p>
+		<p>Save the file.</p> -->
 	<br>
 		<h4>CITY.TXT</h4>
-		<p>Open the file called CITY.TXT. This is where the map is put on the worldmap, and set the 'town map' art that comes up for you to choose a shortcut to a part of the town when you enter the map from the worldmap.</p>
+		<p>You'll probably notice that if you enter your newly created brown exit grid your map is not shown on the worldmap. For this we need to modify CITY.TXT.</p>
+		<p>Open CITY.TXT. This is where you set the 'town map' art that comes up for you to choose a shortcut to a part of the town when you enter the map from the worldmap (green triangle).</p>
 		<p>Scroll to the end and copy / paste the last entry again, so you would have...</p>
 				<code>
 					<pre>
@@ -1058,64 +1078,71 @@
 						entrance_0=On,130,410,New Reno Stables,-1,-1,0
 					</pre>
 				</code>
-		<p>Change the area number to the next in the sequence (so in the example it would be Area 49).</p>
-		<p>Set the coordinates of where you want the town to show up on the map in the line 'world_pos='' (but read the rest to make sure you don't overlap any existing towns).</p>
-		<p>Set 'start_state' to 'on' (so it shows on the worldmap).</p>
-		<p>Set 'size=' to whatever size circle you want.</p>
-		<p>'townmap_art_idx=' should be left as '-1' (it references an external .txt file to look up the name of the townmap artwork) as should the 'townmap_lable_art_idx='.</p>
-		<p>'entrance_0=' sets whether the location in the town is available or not.</p>
-		<p>The location of the triangle on the townmap (x,y coordinates), the map to go to when the triangle is clicked, elevation, destination hex, and rotation on the map (in that order). Substitite xxx,xxx with the worldmap coordinates.</p>
-		<p>'YourMap_Entrance' with whatever you put for the 'lookup_name' in the MAPS.TXT file.</p>
+		<p>Change the area number to the next in the sequence.</p>
 		<p>So you would get...</p>
 				<code>
 					<pre>
 						[Area 49] 
-						area_name=yourmap area name 
-						world_pos=xxx,xxx ;( your town position on the worlmap ) 
+						area_name=Testmap number6 
+						world_pos=xxx,xxx
 						start_state=On 
 						lock_state=on
 						size=Small 
 						townmap_art_idx=-1 
 						townmap_label_art_idx=-1 
-						entrance_0=On,130,410,YourMap_Entrance,-1,-1,0 
+						entrance_0=On,130,410,Testmap Entrance 0,-1,-1,0 
 					</pre>
 				</code>
-		<p>You can have extra 'entrance_x='' in each area for as many maps as make up the town, just add them after 'entrance_0=', and sequentially number them. Look at the other areas in the file for examples.</p>
-		<p>'yourmap area name' is the name of the town , city, or area that you want your map to be part of.</p>
-		<p>'start_state=On' makes the town visible on the worldmap. Some scripts change this state so that the town shows up only as people tell you of them or take you there, such as Golgotha or the Sierra Army Depot.</p>
-		<p>'entrance_0' - the first entrance point to your town.</p>
-		<p>'On' - states that this entrance is "enabled", e.g. it can be picked from the town picture you get when entering a town.</p> 
-		<p>'130, 410' - the coordinates in x,y format of the triangle that appears on the town picture to indicate this entrance.</p> 
-		<p>'YourMap_Entrance' - the identifying name for the map you should be taken to when clicking the triangle ( as set in the maps.txt above).</p>
-		<p>'-1,-1,0' - the destination elevation, hex, and rotation to place the player on when entering the map (-1 for the map defaults).</p>
-		<p>Save the file.</p>
-		<br>
-		<p>Open the file MAP.MSG ( found in \fallout2\data\text\english\game ) and scroll to the end.</p>
-		<p>Copy / paste the last line.</p>
-		<p>So you would get...</p>
 				<code>
 					<pre>
-						{1540}{}{Guardian of Forever} 
-						{1541}{}{Toxic Waste Dump} 
-						{1542}{}{Pariahs} 
-						{1543}{}{Mad Brahmin} 
-						{1544}{}{Caravan} 
-						{1545}{}{Vault 13} 
+						'area name=' This is the name of your town , city or area. It's equal to 'lookup_name=' in MAPS.TXT.
+						'world_pos=' Set the x- and y-coordinates of where you want the town to show up on the worldmap (make sure you don't overlap any existing towns).
+						'start_state=' Set to 'on' so it shows on the worldmap or 'off' so it doesn't show on the worldmap until you change that with a script.
+						'lock_state='
+						'size=' Set to whatever circle size you want. There are 'Small; Medium and Large'.
+						'townmap_art_idx=' Should be left as '-1' (it references an external .txt file to look up the name of the townmap artwork).
+						'townmap_lable_art_idx=' Should be left as '-1' (it references an external .txt file to look up the name of the townmap artwork).
+					</pre>
+				</code>
+				<code>
+					<pre>
+						'entrance_0=' The first entrance point to your town visible on the townmap graphic (green triangle).
+						
+						'On' States that this entrance is "enabled". It can be picked from the townmap graphic you get when entering a town from worldmap.
+						'130,410' The location of the triangle on the townmap graphic (x- & y- coordinates). 
+						'Testmap Entrance 0' Name of the entrance visible on the townmap graphic.
+						'-1,-1,0' The destination elevation, hex, and rotation to place the player on when entering the map (-1 for the map defaults).
+
+						'entrance_x=' You can add extra entrances in each area for as many maps as make up the town, just add them after 'entrance_0=' and sequentially number them. 
+					</pre>
+				</code>
+		<p>Save the file.</p>
+	<br>
+	<h4>MAP.MSG</h4>
+		<p>To make the name of your area under the circle on the worldmap show correctly you need to modify MAP.MSG.</p>
+		<p>Open the file MAP.MSG found in...</p> 
+				<code>
+					<pre>
+						\fallout2\data\text\english\game
+					</pre>
+				</code> 
+		<p>and scroll to the end.</p>
+	<br>
+		<p>Copy / paste the last line.</p>
+				<code>
+					<pre>
+						[...]
 						{1546}{}{Fake Vault 13} 
 						{1547}{}{Random Encounter} 
 						{1548}{}{Stables} 
 					</pre>
 				</code>
 		<br>
-		<p>Re-number the line you just pasted to the next number and change the label to your town label.</p>
+		<p>Renumber the line you just pasted to the next number and change the name to your townmap name.</p>
+		<p>So you would get...</p>
 				<code>
 					<pre>
-						{1540}{}{Guardian of Forever} 
-						{1541}{}{Toxic Waste Dump} 
-						{1542}{}{Pariahs} 
-						{1543}{}{Mad Brahmin} 
-						{1544}{}{Caravan} 
-						{1545}{}{Vault 13} 
+						[...]
 						{1546}{}{Fake Vault 13} 
 						{1547}{}{Random Encounter} 
 						{1548}{}{Stables}  
@@ -1123,23 +1150,7 @@
 					</pre>
 				</code>
 		<br>
-		<p>Find the last entry before the 1500's start and copy / paste it below itself.</p>
-				<code>
-					<pre>
-						148. Shi Temple
-						{644}{}{Shi Temple} 
-						{645}{}{Shi Temple} 
-						{646}{}{Shi Temple} 
-					</pre>
-				</code>
-				<code>
-					<pre>
-						149. In Game Movie
-						{647}{}{Desert} 
-						{648}{}{Desert} 
-						{649}{}{Desert} 
-					</pre>
-				</code>
+		<p>Find the last entry before the 1500's and start copy / paste below itself.</p>
 				<code>
 					<pre>
 						150. RndBess
@@ -1149,31 +1160,8 @@
 					</pre>
 				</code>
 		<br>
-		<p>Re-number the entry you just pasted to the next number/s (as shown below, easy to figure out) and change the name to your map name.</p>
-				<code>
-					<pre>
-						148. Shi Temple
-						{644}{}{Shi Temple} 
-						{645}{}{Shi Temple} 
-						{646}{}{Shi Temple} 
-					</pre>
-				</code>
-				<code>
-					<pre>
-						149. In Game Movie
-						{647}{}{Desert} 
-						{648}{}{Desert} 
-						{649}{}{Desert} 
-					</pre>
-				</code>
-				<code>
-					<pre>
-						150. RndBess
-						{650}{}{Desert} 
-						{651}{}{Desert} 
-						{652}{}{Desert} 
-					</pre>
-				</code>
+		<p>Renumber the entry you just pasted to the next number/s (as shown below, easy to figure out) and change the name to your map name.</p>
+		<p>So you would get...</p>
 				<code>
 					<pre>
 						151. yourmap
@@ -1182,14 +1170,17 @@
 						{655}{}{Desert} 
 					</pre>
 				</code>
-		<p>151. yourmap - the name of the map file.
-		<br>
-		{653}{}{Desert}  - name to display for elevation 0 of your map (mapper level 1).
-		<br>
-		{654}{}{Desert}  - name to display for elevation 1 of your map (mapper level 2).
-		<br>
-		{655}{}{Desert}  - name to display for elevation 2 of your map (mapper level 3).</p>
-		<p>So you might have a map with a church with a basement so 653 would be "church" and 654 would be "basement" etc.</p>
+		<p>A little explanation.</p>
+				<code>
+					<pre>
+						151. yourmap 	 - The name of the map file.
+						{653}{}{Desert}  - Name to display for elevation 0 of your map (mapper level 1).
+						{654}{}{Desert}  - Name to display for elevation 1 of your map (mapper level 2).
+						{655}{}{Desert}  - Name to display for elevation 2 of your map (mapper level 3).
+					</pre>
+				</code>
+		
+		<p>So you might have a map of a church with a second floor and a basement so 654 would be "first floor", 655 would be "basement" and 653 the "second floor". It doesn't matter how you do this.</p>
 		<p>Save the file.</p>
 	<br>
 	<hr>
@@ -1795,12 +1786,10 @@
 			Humans use SCRIPT_ASWELL because it's easier to read and engines work with numbers so 217 is easier for the engine to understand. Every script has its unique number. Every number is assigned once.
 			Explore SCRIPTS.H to understand this procedure better.</p>
 		<p>Now give it another try. Save the file SCRIPTS.H. Push the compile button.</p>
-		<img src="images\press-button-explosion.gif" alt="" width="15%" height="15%">
-		<p>Just kidding.</p>
 		<img src="images\compiling_success.png" alt="">
-		<p>Yes! You did it! Do you feel the rush of power running through your veins? How does it feel? It feels goood...</p>
+		<p>Yes! You did it!</p>
 		<img src="images\ssl_and_int.png" alt="">
-		<p>Ta-da! You compiled a .ssl script into a .int one. The compiled script will be created at the same place your decompiled script lies. You can be proud of yourself.</p>
+		<p>You compiled a .ssl script into a .int one. The compiled script will be created at the same place your decompiled script lies. You can be proud of yourself.</p>
 	<br>
 		<h5>Notice</h5>
 			<p>* You can choose whatever name your script has. It doesn't matter if it's called ASWELL.ssl, WELL.ssl or MYSCRIPT.ssl. 
