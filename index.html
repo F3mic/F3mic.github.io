@@ -34,10 +34,12 @@
 						</ol>
 					<li><a href="index.html#build_map">How to build a map</a></li>
 						<ol>
-							<li><a href="index.html#Floors_and_walls">Floors and walls</a></li>
-							<li><a href="index.html#scenery and critters">Scenery and critters</a></li>
-							<li><a href="index.html#Ladders_and_stairs">Ladders and stairs</a></li>
-							<li><a href="index.html#adding_maps">Worldmap</a></li>
+							<li><a href="index.html#FloorWall">Floors and walls</a></li>
+							<li><a href="index.html#SceneryCritter">Scenery and critters</a></li>
+							<li><a href="index.html#LadderStair">Ladders and stairs</a></li>
+							<li><a href="index.html#ScrollBlocker">Scroll blocker</a></li>
+							<li><a href="index.html#MapExit">Map exits</a></li>
+							<li><a href="index.html#Worldmap">Worldmap</a></li>
 						</ol>
 					<li><a href="index.html#New_Critter">Make new prototype</a></li>
 				</ol>
@@ -763,10 +765,10 @@
 	<br>
 	<hr>
 
-	<div id="build_map"><h3>How to build a map</h3></div>
+	<div id="BuildMap"><h3>How to build a map</h3></div>
 	<br>
 	
-		<div id="Floors_and_walls"><h4>Floors and walls</h4></div>
+		<div id="FloorWall"><h4>Floors and walls</h4></div>
 			<p>First you need a floor for your map. Its recommended to always place the tiles first because walls and tiles don't always match. 
 				If you'd place walls first it isn't guaranteed that placing the tiles afterwards matches with the already placed walls.</p>
 			<p>You can do this one of 2 ways, by hand, or by using the patterns included with the editor.</p>
@@ -825,7 +827,7 @@
 		<br>
 		<hr>
 
-		<div id="scenery and critters"><h4>Scenery and critters</h4></div>
+		<div id="SceneryCritter"><h4>Scenery and critters</h4></div>
 			<p>Our basic map should now be ready. Now place the objects (Scenery). We place some objects that we think fit into the current scene. 
 				But be careful... sometimes less is more! Don't try to put the same scenery elements several times in the map so that you get them on one screen. 
 				Otherwise you will get the impression that everything is always repeated. And that usually looks ugly or boring.</p>
@@ -850,7 +852,7 @@
 		<br>
 		<hr>
 
-		<div id="Ladders_and_stairs"><h4>Ladders and stairs</h4></div>
+		<div id="LadderStair"><h4>Ladders and stairs</h4></div>
 			<p>Add your ladders/stairs.</p>
 			<img src="images\mapping\Ladders and stairs\Ladder01.webp" alt="">
 			<br>
@@ -872,7 +874,7 @@
 		<br>
 		<hr>
 
-		<div id="scrollblocker and levelexit"><h4>Scroll Blocker</h4></div>
+		<div id="ScrollBlocker"><h4>Scroll blocker</h4></div>
 			<p>When you're finished to build your map, you need to put Scroll Blockers to limitate until where the screen can scroll.</p>
 			<p>You do that by clicking on 'EDG' on bottom screen. You'll receive this menu.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\EDG.png" alt="">
@@ -894,10 +896,10 @@
 		<br>
 		<hr>
 
-		<div id="scrollblocker and levelexit"><h4>Map exits</h4></div>
+		<div id="MapExit"><h4>Map exits</h4></div>
 			<p>If you want to exit the map you're currently on, there are two possibilities how to leave it. Exit to the next map or exit to the worldmap.</p>
 		<br>
-		<div id="scrollblocker and levelexit"><h5>Map exit to another map</h5></div>
+		<div id="""><h5>Map exit to another map</h5></div>
 			<p>Let's begin with exit to another map.</p>
 			<p>You may know the green and brown exit grids of the Fallout Classic games.</p>
 			<p>Inside the mapper there are even three types of exit grids. Green, brown and black but only the green ones work. The other two don't and shouldn't be used.</p>
@@ -1029,7 +1031,7 @@
 		<br>
 		<hr>
 			
-	<div id="adding_maps"><h4>Worldmap</h4></div>
+	<div id="Worldmap"><h4>Worldmap</h4></div>
 		<!-- <p>Put your map in the fallout2\data\maps directory (editor should do it automatically but if it's not your map then put it here).</p>
 	<br>
 		
@@ -1061,7 +1063,7 @@
 		<p>The 'TestMap_Entrance' is just an identifying name for the map. 'testmap' is the actual name of the map file. </p>
 		<p>Save the file.</p> -->
 	<br>
-		<h4>CITY.TXT</h4>
+		<h5>CITY.TXT</h5>
 		<p>You'll probably notice that if you enter your newly created brown exit grid your map is not shown on the worldmap. For this we need to modify CITY.TXT.</p>
 		<p>Open CITY.TXT. This is where you set the 'town map' art that comes up for you to choose a shortcut to a part of the town when you enter the map from the worldmap (green triangle).</p>
 		<p>Scroll to the end and copy / paste the last entry again, so you would have...</p>
@@ -1118,7 +1120,7 @@
 				</code>
 		<p>Save the file.</p>
 	<br>
-	<h4>MAP.MSG</h4>
+	<h5>MAP.MSG</h5>
 		<p>To make the name of your area under the circle on the worldmap show correctly you need to modify MAP.MSG.</p>
 		<p>Open the file MAP.MSG found in...</p> 
 				<code>
@@ -2096,27 +2098,6 @@
 		<br>
 		<br>
 
-		<h4>QUESTS.MSG</h4>
-				<code>
-					<pre>
-						#
-						# Arroyo Quests
-						#
-						{100}{}{Kill the evil plants that infest Hakunin's garden.}
-						{110}{}{Obtain flint to have Mynoc sharpen your spear.}
-						{120}{}{Rescue Nagor's dog, Smoke, from the wilds.}
-						{130}{}{Retrieve the GECK for Arroyo.}
-						{140}{}{Find Vic the Trader.}
-						[...]
-					</pre>
-				</code>
-			<p>This file contains every quest description.</p>
-			<p>Everything after # is a comment.</p>
-			<p>100 is the quests linenumber.</p>
-			<p>The text behind is the quests description.</p>
-		<br>
-		<br>
-
 		<h4>VAULT13.GAM</h4>
 				<code>
 					<pre>
@@ -2156,13 +2137,34 @@
 						[...]
 					</pre>
 				</code>
-		<p>Here are all the quests with their conditions.</p>
-		<p>Everything after # is a comment.</p>
-		<p>The 1500 retrieves the place name from the MAP.MSG. So in this example it stands for the desert.</p>
-		<p>The 100 refers to the QUESTS.MSG. There you will find the names of the quests.</p>
-		<p>The 9 refers to the global variable from the VAULT13.GAM.</p>
-		<p>2 is the minimum value that the global variable must contain to be displayed in Pipboy.</p>
-		<p>6 is the minimum value that the global variable must contain in order to be displayed as Done in Pipboy.</p>
+			<p>Here are all the quests with their conditions.</p>
+			<p>Everything after # is a comment.</p>
+			<p>The 1500 retrieves the place name from the MAP.MSG. So in this example it stands for the desert.</p>
+			<p>The 100 refers to the QUESTS.MSG. There you will find the names of the quests.</p>
+			<p>The 9 refers to the global variable from the VAULT13.GAM.</p>
+			<p>2 is the minimum value that the global variable must contain to be displayed in Pipboy.</p>
+			<p>6 is the minimum value that the global variable must contain in order to be displayed as Done in Pipboy.</p>
+		<br>
+		<br>
+
+		<h4>QUESTS.MSG</h4>
+				<code>
+					<pre>
+						#
+						# Arroyo Quests
+						#
+						{100}{}{Kill the evil plants that infest Hakunin's garden.}
+						{110}{}{Obtain flint to have Mynoc sharpen your spear.}
+						{120}{}{Rescue Nagor's dog, Smoke, from the wilds.}
+						{130}{}{Retrieve the GECK for Arroyo.}
+						{140}{}{Find Vic the Trader.}
+						[...]
+					</pre>
+				</code>
+			<p>This file contains every quest description.</p>
+			<p>Everything after # is a comment.</p>
+			<p>100 is the quests linenumber.</p>
+			<p>The text behind is the quests description.</p>
 <br>
 <hr>
 <hr>
