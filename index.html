@@ -62,7 +62,14 @@
 			<li><a href="index.html#advanced">Scripting (Advanced)</a></li>
 				<ol class="first">
 					<li><a href="index.html#compiling">Compiling</a></li>
-					<li><a href="index.html#scripts.lst">Test your script</a></li>
+					<ol>
+						<li><a href="index.html#Scripts.h">SCRIPTS.H</a></li>
+					</ol>
+						<li><a href="index.html#TestScript">Test your script</a></li>
+					<ol>
+						<li><a href="index.html#Scripts.lst">SCRIPTS.LST</a></li>
+						<li><a href="index.html#AssignScript">Assign script to object</a></li>
+					</ol>
 					<li><a href="index.html#dialog">Dialog</a></li>
 					<li><a href="index.html#pipboy">Add quest to pipboy</a></li>
 				</ol>
@@ -1730,7 +1737,7 @@
 				</code>
 	<br>
 	
-	<div id="scripts.h"><h4>SCRIPTS.H</h4></div>
+	<div id="Scripts.h"><h4>SCRIPTS.H</h4></div>
 		<p>In order to compile your script correctly, it must be listed inside SCRIPTS.H. Let's take a look at SCRIPTS.H located here:</p>
 				<code>
 					<pre>
@@ -1803,10 +1810,10 @@
 	<br>
 	<hr>
 
-	<div id="scripts.lst"><h3>Test your script</h3></div>
+	<div id="TestScript"><h3>Test your script</h3></div>
 	<br>
 
-		<h4>Within the BIS Mapper - SCRIPTS.LST</h4>
+		<div id="Scripts.lst"></div><h4>SCRIPTS.LST</h4>
 			<p>Now that you've got a compiled script you certainly want to test it. One way to test it is within the BIS Mapper. But first we have to add the script into SCRIPTS.LST.
 				We need to do this so that the mapper is able to find the script. Locate the file and open it with whatever editor you like. Jump at the end of the file and add your script like this:</p>
 				<code>
@@ -1818,11 +1825,34 @@
 				The text after the hashtag is the amount of LVARs (LVARs = local variables = local_vars) used inside your script. In this example you see that script HCPAVEL.int uses 3 LVARs. 
 				If you use 0 LVARs then you write # local_vars=0. If you use 5 but write # local_vars=7 nobody will tear your head off the script will work anyways.
 				The important thing is that you add your script at the same line number as the entry inside SCRIPTS.H corresponds.
-				E.g. inside SCRIPTS.H SCRIPT_HCPAVEL has number (1034) so your entry inside SCRIPTS.LST needs to be on line number 1304.</p>
-			<p>Now open the BIS Mapper. At the dropdown menu change to "Critters" and place a critter of your choice. Mark the critter and press the button "edit". 
-				An overview window of the char called "Critter Instance Editor critters" should appear. Inside this windows click on "New script".
-				An window with a lot of scripts to choose from should appear. Search manually for HCPAVEL.int, choose it and </p>    
-			<br>
+				E.g. inside SCRIPTS.H SCRIPT_HCPAVEL has number (1034) so your entry inside SCRIPTS.LST needs to be on line number 1304.</p> 
+		<br>
+		<hr>	
+		<div id="AssignScript"><h4>Assign script to object</h4></div>
+			<p>Open the mapper and load your map of choice. There should be at least one object on the map.</p>
+			<img src="images\scripting\AssignScript\AssignScript.png" alt="" height="80%" width="80%">
+			<p>Choose 'Critters' in dropdown menu, otherwise you cannot mark Critters.</p>
+			<img src="images\scripting\AssignScript\AssignScriptCritters.png" alt="">
+			<p>Press 'm' to change the cursor from hex to pointer. Left-click the Critter.</p>
+			<img src="images\scripting\AssignScript\AssignScriptCrittersChoose.png" alt="" height="60%" width="40%">
+			<p>Press 'Edit' on the bottom button panel.</p>
+			<img src="images\scripting\AssignScript\AssignScriptCrittersEdit.png" alt="" height="60%" width="40%">
+			<p>Choose 'New Script'.</p>
+			<img src="images\scripting\AssignScript\AssignScriptCrittersNewScript.png" alt="" height="50%" width="50%">
+			<p>A window with all available .int scripts appears.</p>
+			<img src="images\scripting\AssignScript\AssignScriptCrittersChooseScript.png" alt="" height="50%" width="50%">
+			<p>Navigate to the script you want to assign to the object.</p>
+			<img src="images\scripting\AssignScript\AssignScriptCrittersChooseScriptHCPAVEL.png" alt="" height="50%" width="50%">
+			<p>After you chose the script the window closes and gets back to the edit window.</p>
+			<img src="images\scripting\AssignScript\AssignScriptCrittersChooseScriptHCPAVELChosen.png" alt="" height="50%" width="50%">
+			<p>When you're satisfied click on 'Done'.</p>
+			<img src="images\scripting\AssignScript\AssignScriptCrittersEditDone.png" alt="" height="50%" width="50%">
+			<p>To see if it has really been assigend just go to 'SCRIPTS' and choose 'List all Scripts'.</p>
+			<img src="images\scripting\AssignScript\AssignScriptListAllScripts.png" alt="">
+			<p>As you can see, our chosen script has successfully been assigned.</p>
+			<img src="images\scripting\AssignScript\AssignScriptListAllScriptsSeeScripts.png" alt="" height="80%" width="80%">
+			<p>Press 'F8' to test if your script works.</p>
+		<br>
 			<h5>Notice</h5>
 				<p>* If you see your script inside the mapper and attach it to a critter but you cannot interact with the critter how you've supposed it with your script then the error could be following:</p>
 				<p>&nbsp; * Your script isn't located inside the same folder as SCRIPTS.LST.</p>        
@@ -1929,7 +1959,7 @@
 		<br>
 		<br>
 
-		<h4>Message files basic framework</h4>
+		<h4>Message file basic framework</h4>
 			<p>The basic framework of every message file is this:</p>
 					<code>
 						<pre>
