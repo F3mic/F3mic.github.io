@@ -1830,27 +1830,27 @@
 		<hr>	
 		<div id="AssignScript"><h4>Assign script to object</h4></div>
 			<p>Open the mapper and load your map of choice. There should be at least one object on the map.</p>
-			<img src="images\scripting\AssignScript\AssignScript.png" alt="" height="80%" width="80%">
+			<img src="images\Scripting (Advanced)\AssignScript\AssignScript.png" alt="" height="80%" width="80%">
 			<p>Choose 'Critters' in dropdown menu, otherwise you cannot mark Critters.</p>
-			<img src="images\scripting\AssignScript\AssignScriptCritters.png" alt="">
+			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCritters.png" alt="">
 			<p>Press 'm' to change the cursor from hex to pointer. Left-click the Critter.</p>
-			<img src="images\scripting\AssignScript\AssignScriptCrittersChoose.png" alt="" height="60%" width="40%">
+			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersChoose.png" alt="" height="60%" width="40%">
 			<p>Press 'Edit' on the bottom button panel.</p>
-			<img src="images\scripting\AssignScript\AssignScriptCrittersEdit.png" alt="" height="60%" width="40%">
+			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersEdit.png" alt="" height="60%" width="40%">
 			<p>Choose 'New Script'.</p>
-			<img src="images\scripting\AssignScript\AssignScriptCrittersNewScript.png" alt="" height="50%" width="50%">
+			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersNewScript.png" alt="" height="50%" width="50%">
 			<p>A window with all available .int scripts appears.</p>
-			<img src="images\scripting\AssignScript\AssignScriptCrittersChooseScript.png" alt="" height="50%" width="50%">
+			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersChooseScript.png" alt="" height="50%" width="50%">
 			<p>Navigate to the script you want to assign to the object.</p>
-			<img src="images\scripting\AssignScript\AssignScriptCrittersChooseScriptHCPAVEL.png" alt="" height="50%" width="50%">
+			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersChooseScriptHCPAVEL.png" alt="" height="50%" width="50%">
 			<p>After you chose the script the window closes and gets back to the edit window.</p>
-			<img src="images\scripting\AssignScript\AssignScriptCrittersChooseScriptHCPAVELChosen.png" alt="" height="50%" width="50%">
+			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersChooseScriptHCPAVELChosen.png" alt="" height="50%" width="50%">
 			<p>When you're satisfied click on 'Done'.</p>
-			<img src="images\scripting\AssignScript\AssignScriptCrittersEditDone.png" alt="" height="50%" width="50%">
+			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersEditDone.png" alt="" height="50%" width="50%">
 			<p>To see if it has really been assigend just go to 'SCRIPTS' and choose 'List all Scripts'.</p>
-			<img src="images\scripting\AssignScript\AssignScriptListAllScripts.png" alt="">
+			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptListAllScripts.png" alt="">
 			<p>As you can see, our chosen script has successfully been assigned.</p>
-			<img src="images\scripting\AssignScript\AssignScriptListAllScriptsSeeScripts.png" alt="" height="80%" width="80%">
+			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptListAllScriptsSeeScripts.png" alt="" height="80%" width="80%">
 			<p>Press 'F8' to test if your script works.</p>
 		<br>
 			<h5>Notice</h5>
@@ -2195,7 +2195,119 @@
 			<p>Everything after # is a comment.</p>
 			<p>100 is the quests linenumber.</p>
 			<p>The text behind is the quests description.</p>
-<br>
+	<br>
+	<hr>
+
+	<div id="MakeTrader"><h3>Make a trader</h3></div>
+		<br>
+			<p>In this tutorial I shall attempt to explain how traders work and how to script you own. I will not be covering the actual script compiling or conversation nodes or basic script structure, just the trading part.</p>
+			<p>Traders don't carry their shop inventory, they store it in shelves or other containers, sometimes visible and sometimes not.</p>
+			<p>As we can see from Vault City, Randal and two others keep their stock in lockers that are outside the scroll edes of the map.</p>
+			<img src="images\Scripting (Advanced)\Make_Trader\Tradertut1.webp" alt="">
+			<p>As seen in San Fransisco and other maps, traders can have several tables or shelves to choose from. </p>
+			<img src="images\Scripting (Advanced)\Make_Trader\Tradertut2.webp" alt="">
+			<p>Traders actually use 2 boxes and 4 scripts to deal with swapping their inventory.</p>
+			<p>First create a container somewhere off the edge of the map and give it the script "ZITMPBOX.int". 
+				This is the temporary box for swapping the inventories. Think of it as the table you need to swap a glass of beer and a glass of wine between hands. 
+				You have to put down one glass to pass the other from hand to hand.</p>
+			<p>To use this box, you must put the following line in the map script after the procedure list at the start: </p>
+				<code>
+					<pre>
+						export variable generic_temp_box;
+					</pre>
+				</code>
+			<p>Each trader will also need a variable for their store box such as these listed in the Den's map script for the various traders. </p>
+				<code>
+					<pre>
+						export variable den_flick_box_obj;
+						export variable den_smitty_box_obj;
+						export variable den_mom_box_obj;
+						export variable den_metzger_box_obj;
+						export variable den_tubby_box_obj;
+					</pre>
+				</code>
+			<p>For the sake of this tutorial we'll be using Tubby in the den as our example. </p>	
+			<p>In the trader's script you need to import the variables for the temporary box and the store box(s). Add the following lines after the #DEFINE's but before the procedures. </p>
+				<code>
+					<pre>
+						import variable den_tubby_box_obj;
+						import variable generic_temp_box;
+					</pre>
+				</code>
+			<p>This brings in pointers to the temporary box and Tubby's store box to this script. </p>
+			<p>To actually swap the contents of the trader's inventory with the store inventory, you use the following 2 lines (modified with the right variable name for the trader's box of course).</p>
+				<code>
+					<pre>
+						move_obj_inven_to_obj(self_obj,generic_temp_box);
+ 						move_obj_inven_to_obj(den_tubby_box_obj,self_obj);
+					</pre>
+				</code>
+			<p>This (in order) moves the trader's personal inventory to the temporary box, and then moves the store box inventory to the trader. 
+				This is usually initiated as a conversation node, but can be done as soon as you talk to him before the nodes start! 
+				Next, once trading is complete and you say goodbye, the contents are swapped back by reversing the sequence like so:</p>
+				<code>
+					<pre>
+						move_obj_inven_to_obj(self_obj,den_tubby_box_obj);
+ 						move_obj_inven_to_obj(generic_temp_box,self_obj);
+					</pre>
+				</code>
+			<p>This (in order) moves Tubby's inventory (which is his store inventory at this point) back to the store's box, and the contents of the temp box (Tubby's personal inventory) back to Tubby. </p>
+			<p>Swapping back is usually done as part of the exit node(s) of a conversation (there may be more than one exit node such as "Thanks, bye", 
+				where you walk away a happy customer, and "Screw you, you ripped me off" for example where he would end the conversation and start combat.) </p>
+			<p>This deals with the trader script and it would work at that, but the stores stock would be limited to whatever you put in the store box and/or sold to the trader and once depleted would not re-stock. 
+				For this you need a script on the store box to replenish the stock over time. </p>
+			<p>Here is Tubby's store box for example on re-stocking over time: </p>
+				<code>
+					<pre>
+						#include "..\headers\define.h"
+  
+						#define NAME SCRIPT_DITUBBOX
+						
+						#include "..\headers\command.h"
+						
+						#define LVAR_RESTOCK_TIME (0)
+						
+						import variable den_tubby_box_obj;
+						
+						procedure start;
+						procedure map_enter_p_proc;
+						
+						procedure start begin
+						den_tubby_box_obj := self_obj;
+						end
+						
+						procedure map_enter_p_proc begin
+						
+						den_tubby_box_obj := self_obj;
+						if (is_loading_game == false) then begin
+						if (local_var(LVAR_RESTOCK_TIME) < game_time) then begin
+						item_caps_adjust(self_obj, random(151, 161) - self_caps);
+						check_restock_item(PID_JET, 5, 10, 100)
+						check_restock_item(PID_PSYCHO, 0, 2, 100)
+						check_restock_item(PID_BUFFOUT, 0, 1, 100)
+						check_restock_item(PID_10MM_PISTOL, 1, 2, 100)
+						check_restock_item(PID_10MM_JHP, 2, 4, 100)
+						check_restock_item(PID_10MM_AP, 0, 2, 100)
+						check_restock_item(PID_BRASS_KNUCKLES, 1, 1, 100)
+						check_restock_item(PID_LEATHER_JACKET, 1, 1, 100)
+						check_restock_item(PID_STIMPAK, 2, 5, 100)
+						check_restock_item(PID_10MM_SMG, 0, 1, 100)
+						check_restock_item(PID_DESERT_EAGLE, 1, 2, 100)
+						check_restock_item(PID_SLEDGEHAMMER, 0, 1, 100)
+						check_restock_item(PID_RADAWAY, 0, 3, 100)
+						set_local_var(LVAR_RESTOCK_TIME, (random(1, 2) * ONE_GAME_DAY) + game_time);
+						end
+						end
+						end
+					</pre>
+				</code>
+			<p>While I'm not fully conversant with scripting yet, I'll take a stab at what I think the above does. </p>
+			<p>The map_enter_p_proc gets called every time you enter the map. It looks to see if the restock time has elapsed (first time it's game_time + 0 so it must have) 
+				If it has then it adds a random amount of caps to the store (between 151 and 161 in this case?) and a quantity of the other items listed. 
+				The item is defined by the PID name, and the quantity is between the first number and the second. </p>
+			<p>The last number is the chance if it restocking, in this case all 100 percent. After it's finished restocking, it adds a random amount of time (in this case between 1 and 2 game days) 
+				to the game_time and sets that as the restock time. This makes it re-stock every time you come back if it's been more than 1 or 2 days (depending on the random roll). </p>
+<br>	
 <hr>
 <hr>
 
