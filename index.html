@@ -2259,29 +2259,78 @@
 			<p>Here is Tubby's store box for example on re-stocking over time: </p>
 				<code>
 					<pre>
+						/* Include Files */
 						#include "..\headers\define.h"
-  
-						#define NAME SCRIPT_DITUBBOX
-						
+
+						#define NAME                    SCRIPT_DITUBBOX
+
 						#include "..\headers\command.h"
-						
-						#define LVAR_RESTOCK_TIME (0)
-						
+
+						#define LVAR_RESTOCK_TIME                       (0)
+
 						import variable den_tubby_box_obj;
-						
+
 						procedure start;
 						procedure map_enter_p_proc;
-						
+
 						procedure start begin
-						den_tubby_box_obj := self_obj;
 						end
-						
+
 						procedure map_enter_p_proc begin
-						
-						den_tubby_box_obj := self_obj;
+							if (is_loading_game == false) then begin
+								if (local_var(LVAR_RESTOCK_TIME) < game_time) then begin
+									item_caps_adjust(self_obj, random(151, 161) - self_caps);
+									check_restock_item(PID_JET, 5, 10, 100)
+									check_restock_item(PID_PSYCHO, 0, 2, 100)
+									check_restock_item(PID_BUFFOUT, 0, 1, 100)
+									check_restock_item(PID_10MM_PISTOL, 1, 2, 100)
+									check_restock_item(PID_10MM_JHP, 2, 4, 100)
+									check_restock_item(PID_10MM_AP, 0, 2, 100)
+									check_restock_item(PID_BRASS_KNUCKLES, 1, 1, 100)
+									check_restock_item(PID_LEATHER_JACKET, 1, 1, 100)
+									check_restock_item(PID_STIMPAK, 2, 5, 100)
+									check_restock_item(PID_10MM_SMG, 0, 1, 100)
+									check_restock_item(PID_DESERT_EAGLE, 1, 2, 100)
+									check_restock_item(PID_SLEDGEHAMMER, 0, 1, 100)
+									check_restock_item(PID_RADAWAY, 0, 3, 100)
+									set_local_var(LVAR_RESTOCK_TIME, (random(1, 2) * ONE_GAME_DAY) + game_time);
+								end
+							end
+						end
+					</pre>
+				</code>
+		<br>
+			<p>The map_enter_p_proc gets called every time you enter the map.</p>
+				<code>
+					<pre>
+						procedure map_enter_p_proc begin
+					</pre>
+				</code>
+		<br>
+			<p>It's been checked if you're loading a savefile. If yes skip entire procedure. If no proceed with next step.</p>
+				<code>
+					<pre>
 						if (is_loading_game == false) then begin
+					</pre>
+				</code>
+		<br>
+			<p>It's been checked if the local variable LVAR_RESTOCK_TIME is smaller than the game time. In this case LVAR_RESTOCK_TIME = 0. Proceed with next step.</p>
+				<code>
+					<pre>
 						if (local_var(LVAR_RESTOCK_TIME) < game_time) then begin
+					</pre>
+				</code>
+		<br>
+			<p>A random amount of caps will be added to the store box(between 151 and 161 inclusive). The chosen random amount of caps will be subtracted from the already contained caps inside the store box.</p>
+				<code>
+					<pre>
 						item_caps_adjust(self_obj, random(151, 161) - self_caps);
+					</pre>
+				</code>
+		<br>
+			<p>Different items will be added to the store box. E.g. PID_JET is the proto ID Jet (the drug); 5 is minimum amount; 10 maxmimum amount and 100 is the percentage probability of the item to restock.</p>
+				<code>
+					<pre>
 						check_restock_item(PID_JET, 5, 10, 100)
 						check_restock_item(PID_PSYCHO, 0, 2, 100)
 						check_restock_item(PID_BUFFOUT, 0, 1, 100)
@@ -2295,18 +2344,27 @@
 						check_restock_item(PID_DESERT_EAGLE, 1, 2, 100)
 						check_restock_item(PID_SLEDGEHAMMER, 0, 1, 100)
 						check_restock_item(PID_RADAWAY, 0, 3, 100)
-						set_local_var(LVAR_RESTOCK_TIME, (random(1, 2) * ONE_GAME_DAY) + game_time);
-						end
-						end
-						end
 					</pre>
 				</code>
-			<p>While I'm not fully conversant with scripting yet, I'll take a stab at what I think the above does. </p>
-			<p>The map_enter_p_proc gets called every time you enter the map. It looks to see if the restock time has elapsed (first time it's game_time + 0 so it must have) 
-				If it has then it adds a random amount of caps to the store (between 151 and 161 in this case?) and a quantity of the other items listed. 
-				The item is defined by the PID name, and the quantity is between the first number and the second. </p>
-			<p>The last number is the chance if it restocking, in this case all 100 percent. After it's finished restocking, it adds a random amount of time (in this case between 1 and 2 game days) 
-				to the game_time and sets that as the restock time. This makes it re-stock every time you come back if it's been more than 1 or 2 days (depending on the random roll). </p>
+		<br>
+			<p>After it has finished restocking, it sets the local variable LVAR_RESTOCK_TIME. A random number between 1 and 2 inclusive is taken. It multiplies the random number with one game day
+				and adds the result with the elapsed game time.</p>
+				<code>
+					<pre>
+						set_local_var(LVAR_RESTOCK_TIME, (random(1, 2) * ONE_GAME_DAY) + game_time);
+					</pre>
+				</code>
+				<code>
+					<pre>
+						ONE_GAME_SECOND             (10)
+						ONE_GAME_MINUTE             (60*ONE_GAME_SECOND)
+						ONE_GAME_HOUR               (60*ONE_GAME_MINUTE)
+						ONE_GAME_DAY                (24*ONE_GAME_HOUR)
+						ONE_GAME_WEEK               (7*ONE_GAME_DAY)
+						ONE_GAME_MONTH              (30*ONE_GAME_DAY)
+					</pre>
+				</code>
+			<p>This makes it re-stock every time you come back if it's been more than 1 or 2 days (depending on the random roll).</p>
 <br>	
 <hr>
 <hr>
