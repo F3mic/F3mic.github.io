@@ -72,6 +72,10 @@
 					</ol>
 					<li><a href="index.html#dialog">Dialog</a></li>
 					<li><a href="index.html#pipboy">Add quest to pipboy</a></li>
+					<li><a href="index.html#MakeTrader">Make trader</a></li>
+					<ol>
+						<li><a href="index.html#StoreRestock">Store restock</a></li>
+					</ol>
 				</ol>
 			<li><a href="index.html#complex">Scripting (Complex)</a></li>
 				<ol class="first">
@@ -1818,14 +1822,34 @@
 				We need to do this so that the mapper is able to find the script. Locate the file and open it with whatever editor you like. Jump at the end of the file and add your script like this:</p>
 				<code>
 					<pre>
-						HCPAVEL.INT		;Pavel the former scout of Home.				# local_vars=3
+						HCPAVEL.int		;Pavel the former scout of Hock.				# local_vars=3
 					</pre>
 				</code>
-			<p>HCPAVEL.INT is the name of your compiled script how you of course already noticed. The text after the semicolon is a descriptive text. 
-				The text after the hashtag is the amount of LVARs (LVARs = local variables = local_vars) used inside your script. In this example you see that script HCPAVEL.int uses 3 LVARs. 
+			<p>HCPAVEL.int is the name of your compiled script how you of course already noticed. The text after the semicolon is a descriptive text. 
+				The text after the hashtag is the amount of LVARs used inside your script. In this example you see that script HCPAVEL.int uses 3 LVARs. 
 				If you use 0 LVARs then you write # local_vars=0. If you use 5 but write # local_vars=7 nobody will tear your head off the script will work anyways.
 				The important thing is that you add your script at the same line number as the entry inside SCRIPTS.H corresponds.
-				E.g. inside SCRIPTS.H SCRIPT_HCPAVEL has number (1034) so your entry inside SCRIPTS.LST needs to be on line number 1304.</p> 
+				E.g. inside SCRIPTS.H SCRIPT_HCPAVEL has number (1304) so your entry inside SCRIPTS.LST needs to be on line number 1304.</p>
+		<br>
+		<div id="F8Mode"></div><h4>F8 mode</h4>
+			<p>Open the BIS mapper and just press F8. You'll entering some sort of Fallout2 "light". 
+				You can exit it by pressing F8 again then you'll return to the mapper editing interface.</p>
+		<br>
+		<div id="GameMode"></div><h4>Game mode</h4>
+			<p>Navigate to the Fallout2 game folder located here...</p>
+				<code>
+					<pre>
+						E:\Fallout2\
+					</pre>
+				</code>
+			<p>Open file ddraw.ini and navigate to line 167 called 'StartingMap='. It could be commented out with a semicolon (;) but just uncomment it by deleting the semicolon.</p>
+			<p>Write your map name after the equals symbol (=). E.g. #StartingMap=ABCDEFG.map'.</p>
+			<p>Save the file and hit fallout2.exe. Start a new game with any character and you'll notice that you'll start on your map.</p>
+		<br>
+			<h5>Notice</h5>
+				<p>When you face the strange behavior inside the BIS mapper that you can choose all your self written scripts but the last entry overwrites your presious scripts inside the list.
+					Then your facing a bug. I got rid of this bug by shuffling around a few of the vanilla scripts already located inside SCRIPTS.LST 
+					and putting some of my self written scripts between the vanilla scripts but not behind each other.</p>
 		<br>
 		<hr>	
 		<div id="AssignScript"><h4>Assign script to object</h4></div>
@@ -2198,7 +2222,7 @@
 	<br>
 	<hr>
 
-	<div id="MakeTrader"><h3>Make a trader</h3></div>
+	<div id="MakeTrader"><h3>Make trader</h3></div>
 		<br>
 			<p>In this tutorial I shall attempt to explain how traders work and how to script you own. I will not be covering the actual script compiling or conversation nodes or basic script structure, just the trading part.</p>
 			<p>Traders don't carry their shop inventory, they store it in shelves or other containers, sometimes visible and sometimes not.</p>
@@ -2207,7 +2231,7 @@
 			<p>As seen in San Fransisco and other maps, traders can have several tables or shelves to choose from. </p>
 			<img src="images\Scripting (Advanced)\Make_Trader\Tradertut2.webp" alt="">
 			<p>Traders actually use 2 boxes and 4 scripts to deal with swapping their inventory.</p>
-			<p>First create a container somewhere off the edge of the map and give it the script "ZITMPBOX.int". 
+			<p>First create a container somewhere off the edge of the map and give it the script 'ZITMPBOX.int'. 
 				This is the temporary box for swapping the inventories. Think of it as the table you need to swap a glass of beer and a glass of wine between hands. 
 				You have to put down one glass to pass the other from hand to hand.</p>
 			<p>To use this box, you must put the following line in the map script after the procedure list at the start: </p>
@@ -2256,6 +2280,9 @@
 				where you walk away a happy customer, and "Screw you, you ripped me off" for example where he would end the conversation and start combat.) </p>
 			<p>This deals with the trader script and it would work at that, but the stores stock would be limited to whatever you put in the store box and/or sold to the trader and once depleted would not re-stock. 
 				For this you need a script on the store box to replenish the stock over time. </p>
+		<br>
+
+		<div id="StoreRestock"><h4>Store restock</h4></div>
 			<p>Here is Tubby's store box for example on re-stocking over time: </p>
 				<code>
 					<pre>
@@ -2365,6 +2392,10 @@
 					</pre>
 				</code>
 			<p>This makes it re-stock every time you come back if it's been more than 1 or 2 days (depending on the random roll).</p>
+		<br>
+			<h5>Notice</h5>
+				<p>The critter you want to be a trader must have the proto flag 'Barter = YES' otherwise you will face bugs.</p>
+				<p>If you want to test your trading scripts you must test them inside game. The F8 mode won't execute the inventory swap.</p>
 <br>	
 <hr>
 <hr>
