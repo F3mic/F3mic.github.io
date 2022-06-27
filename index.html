@@ -65,11 +65,11 @@
 					<ol>
 						<li><a href="index.html#Scripts.h">SCRIPTS.H</a></li>
 					</ol>
-						<li><a href="index.html#TestScript">Test your script</a></li>
+					<li><a href="index.html#TestScript">Test your script</a></li>
 					<ol>
 						<li><a href="index.html#Scripts.lst">SCRIPTS.LST</a></li>
-						<li><a href="index.html#AssignScript">Assign script to object</a></li>
 					</ol>
+					<li><a href="index.html#AssignScript">Assign script to object</a></li>
 					<li><a href="index.html#dialog">Dialog</a></li>
 					<li><a href="index.html#pipboy">Add quest to pipboy</a></li>
 					<li><a href="index.html#MakeTrader">Make trader</a></li>
@@ -1021,6 +1021,7 @@
 		<br>
 		<br>
 		<br>
+		<div id="""><h5>Map exit to worldmap</h5></div>
 			<p>Let's continue with exit to worldmap.</p>
 			<p>Exit to worldmap is easier because you don't need to change the information asked when hitting 'TOOLS' -> 'Set Exit-Grid Data'.</p>
 			<p>Draw your green exit grids where you want them to exit to worldmap.</p>
@@ -1524,8 +1525,15 @@
 	<div id="variable"><h3>Variable</h3></div>
 		<p>A variable is like a temporary container. You can save things into it. For example strings, integers, booleans and the result of functions etc.</p>
 		<p>There are several types of variables. The ones which get into global namespace and the ones that don't. The global namespace is the place where variables are shared between scripts.
-			So every variable inside the global namespace needs to have a unique name otherwise the engine gets confused and throws errors. 
-			This also means variables that are inside the global namespace are saved and remembered on map change or game load. 
+		<p>	The engine does not see names for variables. It refers to variables by numbers. You can perfectly have...</p>
+				<code>
+					<pre>
+						#define GVAR_1 120
+						#define GVAR_2 120
+					</pre>
+				</code>
+		<p>And use either in your scripts, it will work. As you can see the name number combination of variables must be unique otherwise the engine gets confused and throws errors.</p>
+			This also means variables that are inside the global namespace are saved and remembered on map change or game load.</p> 
 			The other variables that are not inside the global namespace just run while the script they are defined in is running. They will be forgotten on map change or game load. </p>
 		<p>The image below is intended to illustrate the global namespace. The green circles are scripts with variables. The blue circle is the global namespace. 
 			The scripts that are partially in the blue circle have local variables that are not in the global namespace. 
@@ -1653,7 +1661,7 @@
 	<hr>
 
 	<div id="macro"><h3>Macro</h3></div>
-		<p>A macro is a collection of functions. Functions can easily get huge and messy. Macros are shorter and therefore better to read.</p>
+		<p>A macro is a fragment of code which has been given a name. Whenever the name is used, it is replaced by the contents of the macro. Functions can easily get huge and messy. Macros are shorter and therefore better to read.</p>
 		<p>Let's look at an example.</p>
 				<code>
 					<pre>
