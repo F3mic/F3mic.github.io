@@ -2507,6 +2507,80 @@
 <br>
 <hr>
 
+		<h3>Critters walks around</h3>
+		<img src="" alt="">
+		<p>You've probably seen critters of different kind walking around in random directions. Well based on a Brahmin in Arroyo I'll explain how this works.</p>
+		<p>Inside ACBRAHMN.SSL on line 51 to 61 you'll find these code snippets.</p>
+			<code>
+				<pre>
+						procedure timed_event_p_proc begin
+							if (((critter_state(self_obj) bwand DAM_KNOCKED_DOWN) == FALSE)
+								and (not(combat_is_initialized))) then begin
+								reg_anim_clear(self_obj);
+								reg_anim_begin();
+									animate_move_to_tile(tile_num_in_direction(tile_num(self_obj),random(0,5),3));
+								reg_anim_end();
+							end
+							add_timer_event(self_obj,game_ticks(random(3,5)),1);
+						end
+				</pre>
+			</code>
+		<br>
+		<p>And on line 125 to 130 this.</p>
+			<code>
+				<pre>
+						procedure map_enter_p_proc begin
+							[...]
+							add_timer_event(self_obj,game_ticks(random(1,5)),1);
+						end
+				</pre>
+			</code>
+		<br>
+		<p>So when the player enters the map the following procedure will be executed.</p>
+			<code>
+				<pre>
+						procedure map_enter_p_proc
+				</pre>
+			</code>
+		<p>And with it the following function.</p>
+			<code>
+				<pre>
+						add_timer_event(self_obj,game_ticks(random(1,5)),1);
+				</pre>
+			</code>
+		<p>add_timer_event adds a timed event to the script queue. That means if add_timer_event is called it'll execute code inside the procedure timed_event_p_proc.</p>
+		<p>In this case add_timer_event will be executed on self_obj (brahmin) every 1 to 5 (every number in between included) seconds.</p>
+		<p>Now it jumps into the procedure timed_event_p_proc and continues code execution here.</p>
+			<code>
+				<pre>
+						if (((critter_state(self_obj) bwand DAM_KNOCKED_DOWN) == FALSE)
+							and (not(combat_is_initialized))) then begin
+				</pre>
+			</code>
+		<p>The first line looks if the critters is knocked down. The second line looks if the critter is inside a combat situation.</p>
+		<p>Let's assume the brahmin isn't knocked down and no combat is initialized. Then the following is executed.</p>
+			<code>
+				<pre>
+							reg_anim_clear(self_obj);
+							reg_anim_begin();
+								animate_move_to_tile(tile_num_in_direction(tile_num(self_obj),random(0,5),3));
+							reg_anim_end();
+						end
+				</pre>
+			</code>
+		<p>First line clears all momentarily executed animations of the brahmin.</p>
+		<p>The second line initiates the beginning of an animation.</p> 
+		<p>The third line does the actual animation. It says that an animation to a tile should be executed to a random direction beginning at 0 going to 5 (remember the directions inside the BIS mapper?) 
+			and a distance of 3.</p>
+		<p>And the fourth line terminates the execution of the animation.</p>
+		<p>Next line is known from before. The add_timer_event. Now it'll be executed not every 1 to 5 seconds, instead it will be executed every 3 to 5 (4 included)
+			seconds and repeats the code inside timed_event_p_proc.</p>
+		<p>Now assume the Brahming is knocked down or inside a fight, the animation won't be executed and the code jumps directly to the add_timer_event inside timed_event_p_proc.</p>
+
+<br>
+<hr>
+<hr>
+
 <div id="Make_DAT_file"><h2>Make your own DAT-file</h2></div>
 		<p>If you're finished with creating the files and directories you need for your mod, you can bundle them into one single file, the DAT-file.</p>
 		<p>To do this we open the DATExplorer2.exe</p>
