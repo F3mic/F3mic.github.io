@@ -1,122 +1,42 @@
 /*
-@font-face {
-    src: url('fonts/fallout-webfont.woff2') format('woff2'), url('fonts/fallout-webfont.woff') format('woff');
-    font-family: 'gothic821_cn_btregular';
-    font-weight: normal;
-    font-style: normal;
-}
-*/
-
 html {
   scroll-behavior: smooth;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto;  
+  grid-template-columns: 1fr;
 }
 
 .item-sidebar {
+ 
   position: fixed;
   top: 10%;
   font-size: 90%;
+
+  font-size: .75rem;
+  position: absolute; 
+	inset-inline-start: 0;
+	inset-block-start: 0;
+	transform: translatex(-100%);
 }
 
 .item-main {
+ 
   width: 80%;
   max-width: 80%;
   margin-left: 15%;
+
   font-size: 110%;
   hyphens: auto; 
 	text-align: justify
 }
 
-body {
-  background-color: #1f1f1f;
-  color: white;
-  font-weight: normal;
-  font-family: monospace;
-  
-  /*margin-left: px;
-  margin-right: auto;*/
-}
-
-
-/*
-.item-codesnippet {
-  grid-row: auto;
-  background-color: #3a3b3c;
-  padding: 1%;
-}
-*/
-
-
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-/*
-div.sticky {
-  position: fixed;
-  top: 20%;
-}
-*/
-/*
-img.sticky {
-  width: 5%;
-  height: auto;
-  margin-left: 3%;
-}*/
-
-header {
-  text-align: center;
-  font-size: 120%;
-}
-
-
-
-h2 {
-  color: #bd9d30;
-}
-
-h3 {
-  color: #bd9d30;
-}
-
-h4 {
-  color: #bd9d30;
-}
-
-h5 {
-  color: #bd9d30;
-}
-
-
-
-
-
-a:link {
-  color: #0cbe0c;
-  text-decoration: none;
-}
-
-a:visited {
-  color: #447c44;
-}
-
-a:active {
-  color: #80ff00;
-}
-
-
-
-
-
 ol {
   margin-left: -11%;
   counter-reset: item;
   list-style-type: none;
+  padding-inline-start: .5rem;
 }
 
 ol.first {
@@ -128,6 +48,103 @@ ol li::before {
   content: counters(item, ".") ". ";
 }
 
+@media only screen and (min-width: 70rem) {
+	
+	.item-sidebar {
+		transform: translatex(0);
+		padding-block-start: 16px;
+	}	
+
+body {
+  background-color: #1f1f1f;
+  color: white;
+  font-weight: normal;
+  font-family: monospace;
+  
+
+  margin-left: px;
+  margin-right: auto;
+}
+
+.item-codesnippet {
+  grid-row: auto;
+  background-color: #3a3b3c;
+  padding: 1%;
+}
+*/
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: #1f1f1f;
+	color: white;
+	font-weight: normal;
+	font-family: monospace;
+}
+
+ol {
+	counter-reset: item;
+	list-style-type: none;
+	padding-inline-start: .5rem; 
+}
+
+ol li::before {
+	counter-increment: item;
+	content: counters(item, ".") ". ";
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.item-sidebar {
+	font-size: .75rem; 
+	position: absolute; 
+	inset-inline-start: 0;
+	inset-block-start: 0;
+	transform: translatex(-100%);
+}
+
+.item-main {
+	font-size: 110%;
+	hyphens: auto;
+	text-align: justify;
+}
+
+@media only screen and (min-width: 70rem) {
+	
+	.item-sidebar {
+		transform: translatex(0);
+		padding-block-start: 16px;
+	}	
+	
+	/*// solution 1 using position fixed.  comment out this solution and un-comment the next solution to see it in action*/
+	
+	.item-sidebar {
+		position: fixed;
+		width: min(23%, 19rem); 
+	}
+	
+	.item-main {
+		padding-inline-start: calc(20% + 1.5rem); 
+		padding-inline-end: 1.5rem;
+	}
+
+	/*// solution 2 using position sticky and a 2 column grid container*/
+	/*
+  .grid-container {
+ 		grid-template-columns: minmax(auto, 20%) 1fr;
+		column-gap: 1.5rem; 
+ 	}
+  
+	.item-sidebar {
+ 		position: sticky; 
+ 		align-self: start; 
+ 	}*/
+}
 
 
 pre {
@@ -154,8 +171,47 @@ code {
   margin-right: 10%;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 
+header {
+  text-align: center;
+  font-size: 120%;
+}
+
+
+h2 {
+  color: #bd9d30;
+}
+
+h3 {
+  color: #bd9d30;
+}
+
+h4 {
+  color: #bd9d30;
+}
+
+h5 {
+  color: #bd9d30;
+}
+
+
+a:link {
+  color: #0cbe0c;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #447c44;
+}
+
+a:active {
+  color: #80ff00;
+}
 
 
 .dyeoperator {
