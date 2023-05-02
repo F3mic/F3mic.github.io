@@ -125,11 +125,12 @@ ol li::before {
 	
 	.item-sidebar {
 		position: fixed;
+    top: 10%;
 		width: min(23%, 19rem); 
 	}
 	
 	.item-main {
-		padding-inline-start: calc(20% + 1.5rem); 
+		padding-inline-start: calc(15% + 1.5rem); 
 		padding-inline-end: 1.5rem;
 	}
 
