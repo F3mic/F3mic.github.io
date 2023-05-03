@@ -101,7 +101,7 @@ ol li::before {
 }
 
 .item-sidebar {
-	font-size: .75rem; 
+	font-size: .75rem;
 	position: absolute; 
 	inset-inline-start: 0;
 	inset-block-start: 0;
@@ -118,35 +118,19 @@ ol li::before {
 	
 	.item-sidebar {
 		transform: translatex(0);
-		padding-block-start: 16px;
+		padding-block-start: 170px;
 	}	
 	
-	/*// solution 1 using position fixed.  comment out this solution and un-comment the next solution to see it in action*/
-	
 	.item-sidebar {
-		position: fixed;
-    top: 10%;
+		position:fixed;
 		width: min(23%, 19rem); 
 	}
 	
 	.item-main {
-		padding-inline-start: calc(15% + 1.5rem); 
+		padding-inline-start: calc(15% + 1.5rem);
 		padding-inline-end: 1.5rem;
 	}
-
-	/*// solution 2 using position sticky and a 2 column grid container*/
-	/*
-  .grid-container {
- 		grid-template-columns: minmax(auto, 20%) 1fr;
-		column-gap: 1.5rem; 
- 	}
-  
-	.item-sidebar {
- 		position: sticky; 
- 		align-self: start; 
- 	}*/
 }
-
 
 pre {
   padding-top: 1%;
@@ -176,7 +160,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-
 
 header {
   text-align: center;
