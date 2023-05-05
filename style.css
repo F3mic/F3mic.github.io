@@ -119,7 +119,7 @@ ol li::before {
 	
 	.item-sidebar {
 		transform: translatex(0);
-		padding-block-start: 170px;
+		padding-block-start: 16px;
 	}	
 
 	.item-sidebar {
