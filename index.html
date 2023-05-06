@@ -135,7 +135,7 @@
 
 	<div id="Fallout2_Installation"><h3>Installation - Fallout2</h3></div>
 		<p>I think I don't need to explain how to install Fallout 2. If you don't know how to install it, just ask someone of the community. 
-			 It doesn't matter where you bought Fallout 2 you can just <!--<code class="codeinline">C:\Program Files (x86)\GOG Galaxy\Games\Fallout2</code>--> use any version for modding. However, I'd recommend to have an English Fallout 2 installation.</p>
+			  It doesn't matter where you bought Fallout 2 you can just <!--<code class="codeinline">C:\Program Files (x86)\GOG Galaxy\Games\Fallout2</code>--> use any version for modding. However, I'd recommend to have an English Fallout 2 installation.</p> 
 		<p>So please go on and do a freshly installation of Fallout 2 in English.</p>
 		<p>My fresh installation of Fallout2 looks like this...</p>
 				<code>
@@ -144,7 +144,70 @@
 					</pre>
 				</code>
 				
-				<!-- <code>C:\Program Files (x86)\GOG Galaxy\Games\Fallout2</code> -->
+				 <!-- <code>C:\Program Files (x86)\GOG Galaxy\Games\Fallout2</code>  -->
+
+	<!-- <code class="">
+	
+				<span class="dyeheader">/* Include Files */</span>
+				<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\define.h"</span>
+				<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\arvillag.h"</span>
+				<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\command.h"</span>
+				
+				<span class="dyedefine">#define</span> NAME                    SCRIPT_ASWELL
+				
+				<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span>;
+				<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;
+				<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span>;
+				<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span>;
+				
+				<span class="dyedefine">#define</span> LVAR_Gave_Xp            (<span class="dyedefine">0</span>)
+				
+				<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span> <span class="dyestatement">begin</span>
+				<span class="dyestatement">end</span>
+				
+				<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span> <span class="dyestatement">begin</span>
+					<span class="dyefunction">script_overrides</span>;                                     
+					<span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>         
+						<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));                           
+					<span class="dyestatement">end</span>
+					<span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
+						<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));                           
+					<span class="dyestatement">end</span>
+				<span class="dyestatement">end</span>
+				
+				<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
+					<span class="dyefunction">script_overrides</span>;
+					<span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span> 
+						<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));
+					<span class="dyestatement">end</span>
+					<span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
+						<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));
+					<span class="dyestatement">end</span>
+				<span class="dyestatement">end</span>
+				
+				<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span> 
+					<span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) == <span class="dyedefine">0</span>)) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>        
+						<span class="dyefunction">script_overrides</span>;
+						<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));                                           
+						<span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL);                                                                   
+						<span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,<span class="dyedefine">1</span>);                                                          
+						<span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,<span class="dyedefine">1</span>);                                                           
+					<span class="dyestatement">end</span>
+				<span class="dyestatement">end</span>
+			</pre>
+		</code> -->
+
+		
+		<!-- <code class="dyedefine">#define  NAME &emsp; &emsp; SCRIPT_ASWELL</code>
+				<code class="codepre" >
+					<code class="codepopup">
+						Define: SCRIPT_ASWELL
+						(217) //ASWell.int  :Arroyo Well. It's broken. Fix w/ Repair.
+						
+						Declare file: scripts.h
+					</code>
+					</code>
+				</code> -->
 
 			<p>After the installation is done, create a copy of the FO2 folder and paste it somewhere else.</p>
 			<p>My backup of Fallout2 looks like this...</p>
@@ -1310,9 +1373,9 @@
 			You could also build a map and place critters, scenery and stuff without assigning scripts to them.You could nevertheless interact with them but not that much.What does it mean "not that much"?
 			Well, the game uses default scripts if you don't assign any like combat, push, look, description etc.</p>
 		<p>Let’s see how a script can look like. The following is the script for the well found in Arroyo village.</p>   
-				<code>
-					<pre>
-						<span class="dyeheader">/* Include Files */</span> 
+		<code>
+			<pre>
+						<span class="dyeheader">/* Include Files */</span>
 						<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\define.h"</span>
 						<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\arvillag.h"</span>
 						<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\command.h"</span>
