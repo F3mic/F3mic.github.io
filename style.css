@@ -145,13 +145,14 @@ header {
 
 /*********************************************************************************************************************/
 
-pre {
-  padding-top: 1%;
-  margin-left: -20%;
+li {
+  list-style-type: none;
 }
 
 code {
   background-color: #3a3b3c;
+  padding: 1em;
+  padding-left: 4.5em;
   display: block;
 }
 
@@ -163,21 +164,15 @@ code {
   margin-bottom: -2.5%;
 }
 
+.codebigbox {
+  background-color: #3a3b3c;
+  padding: 2px;
+}
+
 .codepopup {
   background-color: #474757;
   margin-left: 26%;
   margin-right: 10%;
-}
-
-/*********************************************************************************************************************/
-/*
-li {
-  list-style-type: none;
-}
-
-code {
-  background-color: #3a3b3c;
-  padding: 10px;
 }
 
 .codeinline {
@@ -195,7 +190,7 @@ code {
   background-color: #474757;
   padding: 10px;
 }
-*/
+
 /*********************************************************************************************************************/
 
 h2 {

@@ -10,12 +10,12 @@
 </head>
 
 <body>
-	<div class="grid-container">
+	<div>
 		<div class="item-sidebar">
 			<ol>
 				<li><a href="index.html#intro">Introduction</a></li>
 				<li><a href="index.html#prep">Preparations</a></li>
-				<ol class="first">
+				<ol>
 					<li><a href="index.html#Fallout2_Installation">Installation - Fallout2</a></li>
 					<li><a href="index.html#Fallout2_.dat_files">File handling - .dat files</a></li>
 					<li><a href="index.html#Tools_Data_Exploring">Tools - .dat Extractor</a></li>
@@ -26,7 +26,7 @@
 					<li><a href="index.html#Config_BIS_Mapper">Config - BIS Mapper</a></li>
 				</ol>
 				<li><a href="index.html#mapping">Mapping</a></li>
-				<ol class="first">
+				<ol>
 					<li><a href="index.html#BIS_Mapper_explained">BIS Mapper explained</a></li>
 					<ol>
 						<li><a href="index.html#hotkeys">Hotkeys</a></li>
@@ -43,7 +43,7 @@
 					<li><a href="index.html#New_Critter">Make new prototype</a></li>
 				</ol>
 				<li><a href="index.html#basic">Scripting (Basics)</a></li>
-				<ol class="first">
+				<ol>
 					<li><a href="index.html#ssl">Scripting language</a></li>
 					<li><a href="index.html#script">Script</a></li>
 					<li><a href="index.html#header">Header File</a></li>
@@ -59,7 +59,7 @@
 					<li><a href="index.html#semicolon">Semicolon</a></li>
 				</ol>
 				<li><a href="index.html#advanced">Scripting (Advanced)</a></li>
-				<ol class="first">
+				<ol>
 					<li><a href="index.html#compiling">Compiling</a></li>
 					<ol>
 						<li><a href="index.html#Scripts.h">SCRIPTS.H</a></li>
@@ -77,13 +77,13 @@
 					</ol>
 				</ol>
 				<li><a href="index.html#complex">Scripting (Complex)</a></li>
-				<ol class="first">
+				<ol>
 				</ol>
 				<li><a href="index.html#sFall">Scripting (SFall) (Optional)</a></li>
-				<ol class="first">
+				<ol>
 				</ol>
 				<li><a href="index.html#art">Art (Optional)</a></li>
-				<ol class="first">
+				<ol>
 					<li><a href="index.html#talkhead">Talking Heads</a></li>
 					<!--<li><a href="index.html#tiles">Make new tiles</a></li>
                         <li><a href="index.html#walls">Make new walls</a></li>
@@ -135,69 +135,11 @@
 
 	<div id="Fallout2_Installation"><h3>Installation - Fallout2</h3></div>
 		<p>I think I don't need to explain how to install Fallout 2. If you don't know how to install it, just ask someone of the community. 
-			  It doesn't matter where you bought Fallout 2 you can just <!--<code class="codeinline">C:\Program Files (x86)\GOG Galaxy\Games\Fallout2</code>--> use any version for modding. However, I'd recommend to have an English Fallout 2 installation.</p> 
+			  It doesn't matter where you bought Fallout 2 you can just use any version for modding. However, I'd recommend to have an English Fallout 2 installation.</p> 
 		<p>So please go on and do a freshly installation of Fallout 2 in English.</p>
 		<p>My fresh installation of Fallout2 looks like this...</p>
-				<code>
-					<pre>
-						C:\Program Files (x86)\GOG Galaxy\Games\Fallout2
-					</pre>
-				</code>
+			<code>C:\Program Files (x86)\GOG Galaxy\Games\Fallout2</code>
 				
-				 <!-- <code>C:\Program Files (x86)\GOG Galaxy\Games\Fallout2</code>  -->
-
-	<!-- <code class="">
-	
-				<span class="dyeheader">/* Include Files */</span>
-				<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\define.h"</span>
-				<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\arvillag.h"</span>
-				<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\command.h"</span>
-				
-				<span class="dyedefine">#define</span> NAME                    SCRIPT_ASWELL
-				
-				<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span>;
-				<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;
-				<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span>;
-				<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span>;
-				
-				<span class="dyedefine">#define</span> LVAR_Gave_Xp            (<span class="dyedefine">0</span>)
-				
-				<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span> <span class="dyestatement">begin</span>
-				<span class="dyestatement">end</span>
-				
-				<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span> <span class="dyestatement">begin</span>
-					<span class="dyefunction">script_overrides</span>;                                     
-					<span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>         
-						<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));                           
-					<span class="dyestatement">end</span>
-					<span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
-						<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));                           
-					<span class="dyestatement">end</span>
-				<span class="dyestatement">end</span>
-				
-				<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
-					<span class="dyefunction">script_overrides</span>;
-					<span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span> 
-						<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));
-					<span class="dyestatement">end</span>
-					<span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
-						<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));
-					<span class="dyestatement">end</span>
-				<span class="dyestatement">end</span>
-				
-				<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span> 
-					<span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) == <span class="dyedefine">0</span>)) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>        
-						<span class="dyefunction">script_overrides</span>;
-						<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));                                           
-						<span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL);                                                                   
-						<span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,<span class="dyedefine">1</span>);                                                          
-						<span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,<span class="dyedefine">1</span>);                                                           
-					<span class="dyestatement">end</span>
-				<span class="dyestatement">end</span>
-			</pre>
-		</code> -->
-
-		
 		<!-- <code class="dyedefine">#define  NAME &emsp; &emsp; SCRIPT_ASWELL</code>
 				<code class="codepre" >
 					<code class="codepopup">
@@ -212,9 +154,7 @@
 			<p>After the installation is done, create a copy of the FO2 folder and paste it somewhere else.</p>
 			<p>My backup of Fallout2 looks like this...</p>
 				<code>
-					<pre>
 						E:\Fallout2
-					</pre>
 				</code>
 		<p>Now that we have a backup of our newly installed FO2 we can happily mod our backuped FO2
 			installation without being afraid of breaking something. And if we break something we can steal if from our original FO2 installation :P</p>
@@ -225,32 +165,35 @@
 	<div id="Fallout2_.dat_files"><h3>File handling - .dat files</h3></div>
 		<p>Inside the games folder you'll find .dat files. We need three of them.</p>
 		<p>These are...</p> 
-				<code>
-					<pre>
-						master.dat
-						critter.dat
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span>master.dat</span>
+	<span>critter.dat</span>
+</pre>
+</div>
+</li>
 		<p>and if your version of FO2 is patched, then it should also contain following...</p>
-				<code>
-					<pre>
-						patch000.dat
-					</pre>
-				</code>
+				
+		<pre><code>patch000.dat</code></pre>
 		<p>These three files contain all the various audio, graphic, dialogue, script, font, map, etc. files used in FO2.</p>
 		<p>To be able to edit any of the files inside the .dat files you need to unpack the .dat files first. It's like having a .zip file that needs to be unzipped first. 
 			It's obligatory to do this before you do any sort of modding of FO2.</p>
 		<p>Just save them at a place of your choice.</p>
 		<p>Mine looks like this...</p>
-				<code>
-					<pre>
-						E:\dev\Ressources
-							|
-							|->master.dat
-							|->critter.dat
-							|->patch000.dat
-					</pre>
-				</code>
+		
+
+<li>
+<div class="codebigbox">
+<pre>
+	<span>E:\dev\Ressources</span>
+			<span>|</span>
+			<span>|->master.dat</span>
+			<span>|->critter.dat</span>
+			<span>|->patch000.dat</span>
+</pre>
+</div>
+</li>
 	<br>
 	<br>
 	<hr>
@@ -281,11 +224,7 @@
 		<img src="images\Preparations\ToolsDATExplorer\2022-04-20-Opened_master.dat.png" alt="">
 		<p>Minimise DatExplorer for a moment and create a folder called 'data' somewhere where you can easily find it.</p>
 		<p>I suggest doing it like this...</p>
-				<code>
-					<pre>
-						E:\dev\Ressources\data
-					</pre>
-				</code>
+				<code>E:\dev\Ressources\data</code>
 		<p>Bring up DatExplorer again. On the menu bar, select Extract ==> Extract all files to (or Shift+E) and point it to your freshly-made data folder. 
 		'OK' it, and DatExplorer will unpack the files. This takes a while.</p>
 		<img src="images\Preparations\ToolsDATExplorer\2022-04-20-Extract.png" alt="">
@@ -318,11 +257,7 @@
 			<a href="https://github.com/F3mic/F3mic.github.io/blob/main/Fallout%20sFall%20Script%20Editor%20v4.1.7.RC1.rar">SFall Script Editor</a> by Mr. Stalin. This tool is gold and will save us a lot of work.</p>
 		<p>Download and extract the file 'Fallout sFall Script Editor v4.1.7.RC1.rar'. Execute the installer. Install it wherever you want.</p>
 		<p>My installed sFall Script Editor folder looks like this...</p>
-				<code>
-					<pre>
-						E:\dev\Tools\Fallout sFall Script Editor v4.1.7.RC1
-					</pre>
-				</code>
+				<pre><code>E:\dev\Tools\Fallout sFall Script Editor v4.1.7.RC1</code></pre>
 		<img src="images\Preparations\ToolsScripting\2022-04-21 08_29_43-Fallout sFall Script Editor v4.1.7.RC1.png" alt="">
 		<br>
 		<br>
@@ -331,24 +266,12 @@
 		<p>We need one more tool and some files that come with it. It's the good old <a href="https://www.nma-fallout.com/resources/bis-mapper.55/">Black Isle Studio (BIS) Mapper</a>.</p>
 		<p>Download and extract the BIS Mapper wherever you want.</p> 
 		<p>Mine looks like this...</p>
-				<code>
-					<pre>
-						E:\dev\Tools\BIS mapper patched (+complementary ressources)
-					</pre>
-				</code>
+				<pre><code>E:\dev\Tools\BIS mapper patched (+complementary ressources)</code></pre>
 				<img src="images\Preparations\ToolsScripting\2022-04-21 08_08_31-BIS mapper patched (+complementary ressources).png" alt="">
 		<p>Inside the BIS Mappers folder you'll find decompiled (human readable) scripts from Fallout2. </p>
-				<code>
-					<pre>
-						E:\dev\Tools\BIS mapper patched (+complementary ressources)\BIS mapper\scripts
-					</pre>
-				</code>
+				<code>E:\dev\Tools\BIS mapper patched (+complementary ressources)\BIS mapper\scripts</code>
 		<p>Copy everything inside the 'scripts' folder to the 'data' folder you created and pasted recently into the FO2 backup directory.</p>
-				<code>
-					<pre>
-						E:\Fallout2\data\decompiled
-					</pre>
-				</code>
+				<pre><code>E:\Fallout2\data\decompiled</code></pre>
 		<p>Keep the original of these BIS Mapper decompiled scripts save and untouched.</p>
 	<br>
 	<br>
@@ -383,53 +306,59 @@
 		<img src="images\Preparations\ToolsMapping\2022-04-21 14_09_35-Fehler.png" alt="">
 		<p>Open 'mapper2.cfg' with a text-editor of your choice.</p>
 		<p>Let's take a look at lines 58 to 74 looking like this...</p>
-				<code>
-					<pre>
-						[...]
-						[system]
-						art_cache_size=261
-						cdlock=
-						color_cycling=1
-						critter_dat=
-						critter_patches=
-						cycle_speed_factor=1
-						executable=mapper
-						free_space=0
-						hashing=1
-						interrupt_walk=1
-						language=english
-						master_dat=
-						master_patches=
-						scroll_lock=0
-						splash=1
-						times_run=1
-					</pre>
-				</code>
-		<p>We need to take a closer look at these files...</p>
-				<code>
-					<pre>
-						[...]
-						critter_dat=
-						critter_patches=
-						[...]
-						master_dat=
-						master_patches=
-						[...]
-					</pre>
-				</code>
-		<p>The mapper is looking for files to work with. Because these lines are empty the mapper cannot start. We need to tell the mapper where the files are located  it's looking for.
-			Fill in the lines like this...</p>
-				<code>
-					<pre>
-						[...]
-						critter_dat=E:\Fallout2\critter.dat
-						critter_patches=E:\Fallout2\data
-						[...]
-						master_dat=E:\Fallout2\master.dat
-						master_patches=E:\Fallout2\data
-						[...]
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span>[...]</span>
+	<span>[system]</span>
+	<span>art_cache_size=261</span>
+	<span>cdlock=</span>
+	<span>color_cycling=1</span>
+	<span>critter_dat=</span>
+	<span>critter_patches=</span>
+	<span>cycle_speed_factor=1</span>
+	<span>executable=mapper</span>
+	<span>free_space=0</span>
+	<span>hashing=1</span>
+	<span>interrupt_walk=1</span>
+	<span>language=english</span>
+	<span>master_dat=</span>
+	<span>master_patches=</span>
+	<span>scroll_lock=0</span>
+	<span>splash=1</span>
+	<span>times_run=1</span>
+</pre>
+</div>
+</li>
+		<p>We need to take a closer look at these files...</p>		
+<li>
+<div class="codebigbox">
+<pre>
+	<span>[...]</span>
+	<span>critter_dat=</span>
+	<span>critter_patches=</span>
+	<span>[...]</span>
+	<span>master_dat=</span>
+	<span>master_dat=</span>
+	<span>master_patches=</span>
+	<span>[...]</span>
+</pre>
+</div>
+</li>
+		<p>The mapper is looking for files to work with. Because these lines are empty the mapper cannot start. We need to tell the mapper where the files are located  it's looking for.Fill in the lines like this...</p>
+<li>
+<div class="codebigbox">
+<pre>
+	<span>[...]</span>
+	<span>critter_dat=E:\Fallout2\critter.dat</span>
+	<span>critter_patches=E:\Fallout2\data</span>
+	<span>[...]</span>
+	<span>master_dat=E:\Fallout2\master.dat</span>
+	<span>master_patches=E:\Fallout2\data</span>
+	<span>[...]</span>
+</pre>
+</div>
+</li>					
 		<p>Save 'mapper2.cfg' and close it. Now run 'mapper2.exe' again and it should start.</p>
 		<p>First time running BIS Mapper should look like this...</p>
 		<img src="images\Preparations\ToolsMapping\2022-04-21 14_21_45-Greenshot.png" alt="">
@@ -981,52 +910,56 @@
 			<p>Choose 'Misc', the green ones begin at 15 to 22. Okay, so put some green exit grids on the map. Notice that only the red hexagons on the green exit grids do something.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\green exit grids placed.png" alt="">
 			<p>Now it's time to write down some information about your map.</p>
-				<code>
-					<pre>
-						map name: 		
-						map number: 	 
-						lookup name:	
-						hex number:		
-						map level:		
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span>map name:</span>
+	<span>map number:</span>
+	<span>lookup name:</span>
+	<span>hex number:</span>
+	<span>map level:</span>
+</pre>
+</div>
+</li>
 			<p>Before I explain what the individual information mean, we need to do another step first.</p>
 		<br>
 			<h5>MAPS.TXT</h5>
 			<p>Open MAPS.txt located inside...</p>
-				<code>
-					<pre>
-						E:\Fallout2\data\data
-					</pre>
-				</code>
+			<pre><code>E:\Fallout2\data\data</code></pre>
 			<p>Scroll to the bottom and the last entry should look like this.</p>
-				<code>
-					<pre>
-						[Map 150]
-						lookup_name=Bess Dead
-						map_name=rndbess
-						music=07desert
-						saved=No
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span>[Map 150]</span>
+	<span>lookup_name=Bess Dead</span>
+	<span>map_name=rndbess</span>
+	<span>music=07desert</span>
+	<span>saved=No</span>
+</pre>
+</div>
+</li>
 			<p>Now fill in your map information like this.</p>
-				<code>
-					<pre>
-						[Map 151]
-						lookup_name=Testmap number6
-						map_name=tm_s6
-					</pre>
-				</code>	
+<li>
+<div class="codebigbox">
+<pre>
+	<span>[Map 151]</span>
+	<span>lookup_name=Testmap number6</span>
+	<span>map_name=tm_s6</span>
+</pre>
+</div>
+</li>							
 			<p>'lookup_name=' This is the full name of the map. My map is called 'Testmap number6'. You can take up to 144 characters.</p>
 			<p>'map_name=' Is the name of the file of your map, e.g. arrvillage for Arroyo village. My map is called 'tm_s6' without the extension .map.</p>
 		<br>
 			<p>These following two information are not mandatory to make the map work.</p>
-				<code>
-					<pre>
-						'music=' Set any music you want in the  (see other entries for examples of what music you can use)
-						'saved=' Change 'saved=No' to 'saved=Yes' (this makes the game save the status of the map when you save the game, so you can drop things and not lose them)
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span>'music=' Set any music you want in the  (see other entries for examples of what music you can use)</span>
+	<span>'saved=' Change 'saved=No' to 'saved=Yes' (this makes the game save the status of the map when you save the game, so you can drop things and not lose them)</span>
+</pre>
+</div>
+</li>							
 			<p>Save the information.</p>
 		<br>
 			<p>The other information mean this...</p>
@@ -1036,15 +969,17 @@
 				(Mapper)1 = (Engine)0; (Mapper)2 = (Engine)1; (Mapper)3 = (Engine)2. My map is at elevation (Mapper)1 = (Engine)0.</p>
 		<br>
 			<p>Okay, we have every information we need to be able to do an exit to another map.</p>
-				<code>
-					<pre>
-						map name: 	tm_s6
-						map number: 	151
-						lookup name:	Testmap number6
-						hex number:	18697
-						map level:	0
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span>map name: 	tm_s6</span>
+	<span>map number: 	151</span>
+	<span>lookup name:	Testmap number6</span>
+	<span>hex number:	18697</span>
+	<span>map level:	0</span>
+</pre>
+</div>
+</li>							
 			<p>Return to the mapper.</p>
 			<p>Choose 'TOOLS' -> 'Set Exit-Grid Data'.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\Set Exit-Grid Data.png" alt="">
