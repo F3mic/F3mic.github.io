@@ -156,14 +156,6 @@ code {
   display: block;
 }
 
-.codepre {
-  white-space: pre-line;
-  margin-top: -4%;
-  margin-left: 2%;
-  margin-right: 5%;
-  margin-bottom: -2.5%;
-}
-
 .codebigbox {
   background-color: #3a3b3c;
   padding: 2px;
