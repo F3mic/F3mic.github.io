@@ -139,23 +139,9 @@
 		<p>So please go on and do a freshly installation of Fallout 2 in English.</p>
 		<p>My fresh installation of Fallout2 looks like this...</p>
 			<code>C:\Program Files (x86)\GOG Galaxy\Games\Fallout2</code>
-				
-		<!-- <code class="dyedefine">#define  NAME &emsp; &emsp; SCRIPT_ASWELL</code>
-				<code class="codepre" >
-					<code class="codepopup">
-						Define: SCRIPT_ASWELL
-						(217) //ASWell.int  :Arroyo Well. It's broken. Fix w/ Repair.
-						
-						Declare file: scripts.h
-					</code>
-					</code>
-				</code> -->
-
 			<p>After the installation is done, create a copy of the FO2 folder and paste it somewhere else.</p>
 			<p>My backup of Fallout2 looks like this...</p>
-				<code>
-						E:\Fallout2
-				</code>
+				<code>E:\Fallout2</code>
 		<p>Now that we have a backup of our newly installed FO2 we can happily mod our backuped FO2
 			installation without being afraid of breaking something. And if we break something we can steal if from our original FO2 installation :P</p>
 	<br>
@@ -175,7 +161,7 @@
 </li>
 		<p>and if your version of FO2 is patched, then it should also contain following...</p>
 				
-		<pre><code>patch000.dat</code></pre>
+		<code>patch000.dat</code>
 		<p>These three files contain all the various audio, graphic, dialogue, script, font, map, etc. files used in FO2.</p>
 		<p>To be able to edit any of the files inside the .dat files you need to unpack the .dat files first. It's like having a .zip file that needs to be unzipped first. 
 			It's obligatory to do this before you do any sort of modding of FO2.</p>
@@ -1077,121 +1063,126 @@
 		<p>You'll probably notice that if you enter your newly created brown exit grid your map is not shown on the worldmap. For this we need to modify CITY.TXT.</p>
 		<p>Open CITY.TXT. This is where you set the 'town map' art that comes up for you to choose a shortcut to a part of the town when you enter the map from the worldmap (green triangle).</p>
 		<p>Scroll to the end and copy / paste the last entry again, so you would have...</p>
-				<code>
-					<pre>
-						[Area 48] 
-						area_name=Reno Stables 
-						world_pos=953,882 
-						start_state=Off 
-						lock_state=on
-						size=Small 
-						townmap_art_idx=-1 
-						townmap_label_art_idx=-1 
-						entrance_0=On,130,410,New Reno Stables,-1,-1,0
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span>[Area 48] </span>
+	<span>area_name=Reno Stables </span>
+	<span>world_pos=953,882 </span>
+	<span>start_state=Off</span>
+	<span>lock_state=on</span>
+	<span>size=Small</span>
+	<span>townmap_art_idx=-1</span>
+	<span>townmap_label_art_idx=-1</span>
+	<span>entrance_0=On,130,410,New Reno Stables,-1,-1,0</span>
+</pre>
+</div>
+</li>	
+
 		<p>Change the area number to the next in the sequence.</p>
 		<p>So you would get...</p>
-				<code>
-					<pre>
-						[Area 49] 
-						area_name=Testmap number6 
-						world_pos=xxx,xxx
-						start_state=On 
-						lock_state=on
-						size=Small 
-						townmap_art_idx=-1 
-						townmap_label_art_idx=-1 
-						entrance_0=On,130,410,Testmap Entrance 0,-1,-1,0 
-					</pre>
-				</code>
-				<code>
-					<pre>
-						'area name=' This is the name of your town , city or area. It's equal to 'lookup_name=' in MAPS.TXT.
-						'world_pos=' Set the x- and y-coordinates of where you want the town to show up on the worldmap (make sure you don't overlap any existing towns).
-						'start_state=' Set to 'on' so it shows on the worldmap or 'off' so it doesn't show on the worldmap until you change that with a script.
-						'lock_state='
-						'size=' Set to whatever circle size you want. There are 'Small; Medium and Large'.
-						'townmap_art_idx=' Should be left as '-1' (it references an external .txt file to look up the name of the townmap artwork).
-						'townmap_lable_art_idx=' Should be left as '-1' (it references an external .txt file to look up the name of the townmap artwork).
-					</pre>
-				</code>
-				<code>
-					<pre>
-						'entrance_0=' The first entrance point to your town visible on the townmap graphic (green triangle).
-						
-						'On' States that this entrance is "enabled". It can be picked from the townmap graphic you get when entering a town from worldmap.
-						'130,410' The location of the triangle on the townmap graphic (x- & y- coordinates). 
-						'Testmap Entrance 0' Name of the entrance visible on the townmap graphic.
-						'-1,-1,0' The destination elevation, hex, and rotation to place the player on when entering the map (-1 for the map defaults).
-
-						'entrance_x=' You can add extra entrances in each area for as many maps as make up the town, just add them after 'entrance_0=' and sequentially number them. 
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span>[Area 49] </span>
+	<span>area_name=Testmap number6 </span>
+	<span>world_pos=xxx,xxx</span>
+	<span>start_state=On </span>
+	<span>lock_state=on</span>
+	<span>size=Small</span>
+	<span>townmap_art_idx=-1 </span>
+	<span>townmap_label_art_idx=-1 </span>
+	<span>entrance_0=On,130,410,Testmap Entrance 0,-1,-1,0</span>
+	
+	<span>'area name=' This is the name of your town , city or area. It's equal to 'lookup_name=' in MAPS.TXT.</span>
+	<span>'world_pos=' Set the x- and y-coordinates of where you want the town to show up on the worldmap (make sure you don't overlap any existing towns).</span>
+	<span>'start_state=' Set to 'on' so it shows on the worldmap or 'off' so it doesn't show on the worldmap until you change that with a script.</span>
+	<span>'lock_state='</span>
+	<span>'size=' Set to whatever circle size you want. There are 'Small; Medium and Large'.</span>
+	<span>'townmap_art_idx=' Should be left as '-1' (it references an external .txt file to look up the name of the townmap artwork).</span>
+	<span>'townmap_lable_art_idx=' Should be left as '-1' (it references an external .txt file to look up the name of the townmap artwork).</span>
+	
+	<span>'entrance_0=' The first entrance point to your town visible on the townmap graphic (green triangle).</span>
+	
+	<span>'On' States that this entrance is "enabled". It can be picked from the townmap graphic you get when entering a town from worldmap.</span>
+	<span>'130,410' The location of the triangle on the townmap graphic (x- & y- coordinates). </span>
+	<span>'Testmap Entrance 0' Name of the entrance visible on the townmap graphic.</span>
+	<span>'-1,-1,0' The destination elevation, hex, and rotation to place the player on when entering the map (-1 for the map defaults).</span>
+	
+	<span>'entrance_x=' You can add extra entrances in each area for as many maps as make up the town, just add them after 'entrance_0=' and sequentially number them.</span>
+</pre>
+</div>
+</li>
 		<p>Save the file.</p>
 	<br>
 	<h5>MAP.MSG</h5>
 		<p>To make the name of your area under the circle on the worldmap show correctly you need to modify MAP.MSG.</p>
 		<p>Open the file MAP.MSG found in...</p> 
-				<code>
-					<pre>
-						\fallout2\data\text\english\game
-					</pre>
-				</code> 
+				<code>\fallout2\data\text\english\game</code> 
 		<p>and scroll to the end.</p>
 	<br>
 		<p>Copy / paste the last line.</p>
-				<code>
-					<pre>
-						[...]
-						{1546}{}{Fake Vault 13} 
-						{1547}{}{Random Encounter} 
-						{1548}{}{Stables} 
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span>[...]</span>
+	<span>{1546}{}{Fake Vault 13}</span>
+	<span>{1547}{}{Random Encounter}</span>
+	<span>{1548}{}{Stables}</span>
+</pre>
+</div>
+</li>
 		<br>
 		<p>Renumber the line you just pasted to the next number and change the name to your townmap name.</p>
 		<p>So you would get...</p>
-				<code>
-					<pre>
-						[...]
-						{1546}{}{Fake Vault 13} 
-						{1547}{}{Random Encounter} 
-						{1548}{}{Stables}  
-						{1549}{}{My Cool Map} 
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span>[...]</span>
+	<span>{1546}{}{Fake Vault 13}</span>
+	<span>{1547}{}{Random Encounter}</span>
+	<span>{1548}{}{Stables}</span>
+	<span>{1549}{}{My Cool Map}</span>
+</pre>
+</div>
+</li>
+			
 		<br>
 		<p>Find the last entry before the 1500's and start copy / paste below itself.</p>
-				<code>
-					<pre>
-						150. RndBess
-						{650}{}{Desert} 
-						{651}{}{Desert} 
-						{652}{}{Desert} 
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span>150. RndBess</span>
+	<span>{650}{}{Desert}</span>
+	<span>{651}{}{Desert}</span>
+	<span>{652}{}{Desert}</span>
+</pre>
+</div>
+</li>
 		<br>
 		<p>Renumber the entry you just pasted to the next number/s (as shown below, easy to figure out) and change the name to your map name.</p>
 		<p>So you would get...</p>
-				<code>
-					<pre>
-						151. yourmap
-						{653}{}{Desert} 
-						{654}{}{Desert} 
-						{655}{}{Desert} 
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span>151. yourmap</span>
+	<span>{653}{}{Desert}</span>
+	<span>{654}{}{Desert}</span>
+	<span>{655}{}{Desert}</span>
+</pre>
+</div>
+</li>
 		<p>A little explanation.</p>
-				<code>
-					<pre>
-						151. yourmap 	 - The name of the map file.
-						{653}{}{Desert}  - Name to display for elevation 0 of your map (mapper level 1).
-						{654}{}{Desert}  - Name to display for elevation 1 of your map (mapper level 2).
-						{655}{}{Desert}  - Name to display for elevation 2 of your map (mapper level 3).
-					</pre>
-				</code>
-		
+<li>
+<div class="codebigbox">
+<pre>
+	<span>151. yourmap 	 - The name of the map file.</span>
+	<span>{653}{}{Desert}  - Name to display for elevation 0 of your map (mapper level 1).</span>
+	<span>{654}{}{Desert}  - Name to display for elevation 1 of your map (mapper level 2).</span>
+	<span>{655}{}{Desert}  - Name to display for elevation 2 of your map (mapper level 3).</span>
+</pre>
+</div>
+</li>
 		<p>So you might have a map of a church with a second floor and a basement so 654 would be "first floor", 655 would be "basement" and 653 the "second floor". It doesn't matter how you do this.</p>
 		<p>Save the file.</p>
 	<br>
@@ -1203,24 +1194,12 @@
 			<p>Rename patch000.dat inside \Fallout2 so it cannot overwrite \data. If you cannot find patch000.dat the better.</p>
 			<p>Create these directories \dev\proto\critters inside \Fallout2.</p>
 			<p>Should look like this.</p>
-				<code>
-					<pre>
-						E:\Fallout2\dev\proto\critters
-					</pre>
-				</code>
+				<code>E:\Fallout2\dev\proto\critters</code>
 			<br>
 			<p>Open mapper2.cfg inside \BIS mapper and change this</p>
-				<code>
-					<pre>
-						librarian=0
-					</pre>
-				</code>
+				<code>librarian=0</code>
 			<p>to</p>
-				<code>
-					<pre>
-						librarian=1
-					</pre>
-				</code>
+				<code>librarian=1</code>
 			<br>
 			<p>Run mapper2.exe.</p>
 			<p>Choose 'Critters' from the dropdownmenu.</p>
@@ -1257,31 +1236,25 @@
 			<br>
 			<p>A bunch of new files have been created.</p>
 			<p>A .txt file here. Called e.g. 00000484.txt.</p>
-				<code>
-					<pre>
-						E:\Fallout2\dev\proto\critters
-					</pre>
-				</code>
+				<code>E:\Fallout2\dev\proto\critters</code>
 			<br>
 			<p>And a new .pro file here. Called e.g. 00000484.pro.</p>
-				<code>
-					<pre>
-						E:\Fallout2\data\proto\critters
-					</pre>
-				</code>
+			<code>E:\Fallout2\data\proto\critters</code> 
 			<br>
 			<p>You should also have critters.lst inside this directory. Open critters.lst. Scroll to the very bottom of the file and you should see this.</p>
-				<code>
-					<pre>
-						[...]
-						00000479.pro
-						00000480.pro
-						00000481.pro
-						00000482.pro
-						00000483.pro
-						00000484.pro
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span>[...]</span>
+	<span>00000479.pro</span>
+	<span>00000480.pro</span>
+	<span>00000481.pro</span>
+	<span>00000482.pro</span>
+	<span>00000483.pro</span>
+	<span>00000484.pro</span>
+</pre>
+</div>
+</li>
 			<p>Your new proto 00000484.pro has been added to the list.</p>
 			<br>
 			<p>If you want to delete your new proto, just delete both newly created files and the entry inside critters.lst and the flaming mannequin should have been disappeared inside the mapper.</p>
@@ -1308,56 +1281,58 @@
 			You could also build a map and place critters, scenery and stuff without assigning scripts to them.You could nevertheless interact with them but not that much.What does it mean "not that much"?
 			Well, the game uses default scripts if you don't assign any like combat, push, look, description etc.</p>
 		<p>Let’s see how a script can look like. The following is the script for the well found in Arroyo village.</p>   
-		<code>
-			<pre>
-						<span class="dyeheader">/* Include Files */</span>
-						<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\define.h"</span>
-						<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\arvillag.h"</span>
-						<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\command.h"</span>
-						
-						<span class="dyedefine">#define</span> NAME                    SCRIPT_ASWELL
-						
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span>;
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span>;
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span>;
-						
-						<span class="dyedefine">#define</span> LVAR_Gave_Xp            (<span class="dyedefine">0</span>)
-						
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span> <span class="dyestatement">begin</span>
-						<span class="dyestatement">end</span>
-						
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span> <span class="dyestatement">begin</span>
-							<span class="dyefunction">script_overrides</span>;                                     
-							<span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>         
-								<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));                           
-							<span class="dyestatement">end</span>
-							<span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
-								<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));                           
-							<span class="dyestatement">end</span>
-						<span class="dyestatement">end</span>
-						
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
-							<span class="dyefunction">script_overrides</span>;
-							<span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span> 
-								<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));
-							<span class="dyestatement">end</span>
-							<span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
-								<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));
-							<span class="dyestatement">end</span>
-						<span class="dyestatement">end</span>
-						
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span> 
-							<span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) == <span class="dyedefine">0</span>)) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>        
-								<span class="dyefunction">script_overrides</span>;
-								<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));                                           
-								<span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL);                                                                   
-								<span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,<span class="dyedefine">1</span>);                                                          
-								<span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,<span class="dyedefine">1</span>);                                                           
-							<span class="dyestatement">end</span>
-						<span class="dyestatement">end</span>
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span class="dyeheader">/* Include Files */</span>
+	<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\define.h"</span>
+	<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\arvillag.h"</span>
+	<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\command.h"</span>
+	
+	<span class="dyedefine">#define</span> NAME                    SCRIPT_ASWELL
+	
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span>;
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span>;
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span>;
+	
+	<span class="dyedefine">#define</span> LVAR_Gave_Xp            (<span class="dyedefine">0</span>)
+	
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span> <span class="dyestatement">begin</span>
+	<span class="dyestatement">end</span>
+	
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span> <span class="dyestatement">begin</span>
+		<span class="dyefunction">script_overrides</span>;                                     
+		<span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>         
+			<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));                           
+		<span class="dyestatement">end</span>
+		<span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
+			<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));                           
+		<span class="dyestatement">end</span>
+	<span class="dyestatement">end</span>
+	
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
+		<span class="dyefunction">script_overrides</span>;
+		<span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span> 
+			<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));
+		<span class="dyestatement">end</span>
+		<span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
+			<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));
+		<span class="dyestatement">end</span>
+	<span class="dyestatement">end</span>
+	
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span> 
+		<span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) == <span class="dyedefine">0</span>)) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>        
+			<span class="dyefunction">script_overrides</span>;
+			<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));                                           
+			<span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL);                                                                   
+			<span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,<span class="dyedefine">1</span>);                                                          
+			<span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,<span class="dyedefine">1</span>);                                                           
+		<span class="dyestatement">end</span>
+	<span class="dyestatement">end</span>
+</pre>
+</div>
+</li>
 			<p>At first glance it can look overwhelming even intimidating. But fear not! We will go through this step by step. First of all we will look at the structure. We'll go more indepth later.</p>
 	<br>
 	<br>
@@ -1367,13 +1342,15 @@
 		<p>Header files are files that store information that is used repeatedly in every script. 
 			So, you don’t have to rewrite the same code over and over again in every script. 
 			Once written inside a header File and just included at the top of a script where you want to use the code and you’re good to go.</p>
-				<code>
-					<pre>
-						<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\define.h"</span>
-						<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\arvillag.h"</span>
-						<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\command.h"</span>
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\define.h"</span>
+	<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\arvillag.h"</span>
+	<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\command.h"</span>
+</pre>
+</div>
+</li>
 		<p>As you can see the suffix of header files is .h.</p>
 		<p>They are located inside the folder "\HEADERS".</p>
 	<br>
@@ -1384,43 +1361,28 @@
 		<p>With #define it is possible to specify strings that will be exchanged for another string before the program is translated. 
 			Again, the # character causes the preprocessor to do its work first before the nascent program is translated by the compiler into machine language.</p>
 		<p>We have two #defines in this example.</p> 
-				<code>
-					<pre>
-						<span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
-					</pre>
-				</code>
+				<code><span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL</code>
 		<p>and</p>
-				<code>
-					<pre>
-						<span class="dyedefine">#define</span> LVAR_Gave_Xp            (<span class="dyedefine">0</span>)
-					</pre>
-				</code>
+				<code><span class="dyedefine">#define</span> LVAR_Gave_Xp (<span class="dyedefine">0</span>)</code>	
 		<p>In the #define below NAME is SCRIPT_ASWELL. This means if you want to refer to SCRIPT_ASWELL inside your script you simply can write NAME.</p>
-				<code>
-					<pre>
-						<span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
-					</pre>
-				</code>
+				<code><span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL</code>
 		<p>If you hover over SCRIPT_ASWELL with your cursor you'll see the description inside the bluegreyish box.</p>
-				<code>
-					<pre>
-						<span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
-						<div class="codepopup" >
-							<div class="codepre">
-								Define: SCRIPT_ASWELL
-								(217) //ASWell.int  :Arroyo Well. It's broken. Fix w/ Repair.
-								
-								Declare file: scripts.h
-							</div>
-						</div>
-					</pre>
-				</code>
+				
+<code><span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
+<li>
+<div class="codepopup">
+<pre>
+	<span>Define: SCRIPT_ASWELL</span>
+	<span>(217) //ASWell.int  :Arroyo Well. It's broken. Fix w/ Repair.</span>
+	
+	<span>Declare file: scripts.</span>
+</pre>
+</div>
+</li>
+</code>
+
 		<p>The file SCRIPTS.H is located inside HEADERS\SCRIPTS.H. We'll talk about this later.</p>
-				<code>
-					<pre>
-						<span class="dyedefine">#define</span> SCRIPT_ASWELL &emsp; &emsp; (<span class="dyedefine">217</span>) &emsp; <span class="dyecomment">// ASwell.int</span> &emsp; &emsp; <span class="dyecomment">; Arroyo Well. It's broken. Fix w/ Repair.</span>
-					</pre>
-				</code>
+		<code><span class="dyedefine">#define</span> SCRIPT_ASWELL &emsp; &emsp; (<span class="dyedefine">217</span>) &emsp; <span class="dyecomment">// ASwell.int</span> &emsp; &emsp; <span class="dyecomment">; Arroyo Well. It's broken. Fix w/ Repair.</span></code>
 	<br>
 	<br>
 	<hr>
@@ -1430,54 +1392,50 @@
 			A procedure in Fallout scripting language starts with <span class="dyestatement">procedure </span> a name (<span class="dyeprocedure">start</span> in this case) <span class="dyestatement">begin</span>  
 			and ends with an <span class="dyestatement">end</span> statement.</p>
 		<p>We have four procedures in this example. start; use_skill_on_p_proc; description_p_proc and look_at_p_proc. There are more but this scripts just uses these four. They are predefinied by the devs but you can also write your own procecures.</p>
-			Every procedure you use inside your script needs to be declared at the top of the script like seen below.
-				<code>
-					<pre>
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span>;
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span>;
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span>;
-					</pre>
-				</code>  
+		<p>Every procedure you use inside your script needs to be declared at the top of the script like seen below.</p>
+<li>
+<div class="codebigbox">
+<pre>
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span>;
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span>;
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span>;
+</pre>
+</div>
+</li>
 		<p>The space between <span class="dyestatement">begin</span> and <span class="dyestatement">end</span> is called procedure body. Inside the body you write the stuff you want to be executed.
 			In the example below the body is empty. An empty procedure body cannot execute anything because there is nothing to execute. 
 			If you call an empty procedure, the procedure starts, sees there's nothing inside the body and ends immediately.</p>
 		<p>The most important procedure of them all is the procedure called "start". The start procedure is the entry point of scripts.
 			Every script has it and every script needs it. If you don't have the start procedure inside you script, it won't work.</p>
-				<code>
-					<pre>
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span> <span class="dyestatement">begin</span>
-						<span class="dyestatement">end</span>
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span> <span class="dyestatement">begin</span>
+	<span class="dyestatement">end</span>
+</pre>
+</div>
+</li>
 		<p>The other three procedures inside the example script are these.</p>
-				<code>
-					<pre>
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span> <span class="dyestatement">begin</span>
-						[...]
-						<span class="dyestatement">end</span>
-					</pre>
-				</code>
-				<code>
-					<pre>
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
-						[...]
-						<span class="dyestatement">end</span>
-					</pre>
-				</code>
-				<code>
-					<pre>
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span> 
-						[...]
-						<span class="dyestatement">end</span>
-					</pre>
-				</code>
-				<p> You can call procedures from every corner of your script like this.</p>
-				<code>
-					<pre>
-						<span class="dyestatement">call</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span> <span class="dyestatement">begin</span>
+	<span>[...]</span>
+	<span class="dyestatement">end</span>
+
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
+	<span>[...]</span>
+	<span class="dyestatement">end</span>
+
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span> 
+	<span>[...]</span>
+	<span class="dyestatement">end</span>			
+</pre>
+</div>
+</li>
+		<p> You can call procedures from every corner of your script like this.</p>
+		<code><span class="dyestatement">call</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;</code>
 		<p>You can also export/import procedures.</p>
 	<br>
 	<br>
@@ -1486,17 +1444,9 @@
 	<div id="function"><h3>Function</h3></div>
 		<p>Simple hardcoded commands of SSL are called functions. The stuff you write inside the procedure body. That means they are basis commands, and cannot be broken down further.</p>
 		<p>A simple function can look like this:</p>
-				<code>
-					<pre>
-						<span class="dyefunction">display_msg</span>
-					</pre>
-				</code>
+		<code><span class="dyefunction">display_msg</span></code>
 		<p>You can also write something more complex like this:</p>
-				<code>
-					<pre>
-						<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
-					</pre>
-				</code>
+		<code><span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));</code>
 		<p>As you can see there is a function inside a function and some other stuff. That's also possible.</p>
 	<br>
 	<br>
@@ -1504,17 +1454,9 @@
 
 	<div id="argument"><h3>Argument</h3></div>
 		<p>The stuff inside the parenthesis is called argument.</p>
-				<code>
-					<pre>
-						<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
-					</pre>
-				</code>
+		<code><span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));</code>
 		<p>An argument is also passed here.</p>
-				<code>
-					<pre>
-						<span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL); 
-					</pre>
-				</code>
+		<code><span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL); </code>
 		<p>Many functions need to pass a value of some kind. Just hover over the function to know how many arguments and of what kind wants to be passed.</p>
 	<br>
 	<br>
@@ -1524,12 +1466,14 @@
 		<p>A variable is like a temporary container. You can save things into it. For example strings, integers, booleans and the result of functions etc.</p>
 		<p>There are several types of variables. The ones which get into global namespace and the ones that don't. The global namespace is the place where variables are shared between scripts.
 		<p>	The engine does not see names for variables. It refers to variables by numbers. You can perfectly have...</p>
-				<code>
-					<pre>
-						#define GVAR_1 120
-						#define GVAR_2 120
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span>#define GVAR_1 120</span>
+	<span>#define GVAR_2 120</span>		
+</pre>
+</div>
+</li>
 		<p>And use either in your scripts, it will work. As you can see the name number combination of variables must be unique otherwise the engine gets confused and throws errors.</p>
 			This also means variables that are inside the global namespace are saved and remembered on map change or game load.</p> 
 			The other variables that are not inside the global namespace just run while the script they are defined in is running. They will be forgotten on map change or game load. </p>
@@ -1546,37 +1490,27 @@
 
 	<h4>Variables of global namespace</h4>
 		<p>Variables getting into global namespace are:</p>
-				<code>
-					<pre>
-						LVAR_; 
-						MVAR_; 
-						GVAR_;
-						export variable;
-						import variable;
-					</pre>
-				</code>   
+<li>
+<div class="codebigbox">
+<pre>
+	<span>LVAR_; </span>
+	<span>MVAR_; </span>
+	<span>GVAR_;</span>
+	<span>export variable;</span>
+	<span>import variable;</span>
+</pre>
+</div>
+</li> 
 		<br>
-				<code>
-					<pre>
-						<span class="dyedefine">#define</span> LVAR_Gave_Xp; &emsp; &emsp; (<span class="dyedefine">0</span>)
-					</pre>
-				</code>
+		<code><span class="dyedefine">#define</span> LVAR_Gave_Xp; &emsp; &emsp; (<span class="dyedefine">0</span>)</code>
 		<p>This variable is of type Local variable (LVAR). It is saved during map change and game load. LVARs are used for circumstances that aren't that significant e.g. "have experience points been given to the player?"
 			LVARs are defined and stored in the header of the script in which they are to be used. All LVARs will be prepended with LVAR_.</p>
 		<br>
-				<code>
-					<pre>
-						<span class="dyedefine">#define</span> MVAR_Fixed_Well; &emsp; &emsp; (<span class="dyedefine">4</span>)
-					</pre>
-				</code>
+		<code><span class="dyedefine">#define</span> MVAR_Fixed_Well; &emsp; &emsp; (<span class="dyedefine">4</span>)</code>
 		<p>This variable is of type Map variable (MVAR). It is saved during map change and game load. MVARs are stored in the corresponding map script. 
 			In this case MVAR_Fixed_Well is stored inside ARVILLAG.H. 
 		<p> With the include command the MVAR can be used in the script.</p>
-				<code>
-					<pre>
-						#include "..\headers\arvillag.h"
-					</pre>
-				</code> 
+		<code>#include "..\headers\arvillag.h"</code>
 		<p>	Map variables need to be added to a file called MapName.GAM, e.g. ARVILLAG.GAM, which must be put in the data\maps directory.
 			MVARs are used for circumstances that are significant for a specific map like "has the well been fixed?"
 			All MVARs will be prepended with MVAR_.</p>
@@ -1585,63 +1519,57 @@
 			It is saved during the map change. Any global variables you #define and use must also be put into a file called VAULT13.GAM which is found inside the data\data directory. 
 			GVARs will be stored in a header file called Global.H, located in the \Fallout2\Scripts\Headers\ directory. 
 			All GVARs will be prepended with GVAR_.</p>
-				<code>
-					<pre>
-						<span class="dyedefine">#define</span> GVAR_DUMAR_STATUS; &emsp; &emsp; (<span class="dyedefine">369</span>)
-					</pre>
-				</code>
+		<code><span class="dyedefine">#define</span> GVAR_DUMAR_STATUS; &emsp; &emsp; (<span class="dyedefine">369</span>)</code>
 		<p>The number inside the parenthesis of all three global namespace variables is no value. It serves as a placeholder for the engine. As soon as the script is executed, 
 			the engine replaces the names of the global namespace variables with the number assigned to it.</p>
 		<br>
 		<p>This variable is defined inside script ARCAVES.SSL. The keyword export ensures that the variable can be used in other scripts. 
 			The variable contains the last value that was assigned to it.</p>
-				<code>
-					<pre>
-						<span class="dyestatement">export variable</span> temple_chest_prt;
-					</pre>
-				</code>
+		<code><span class="dyestatement">export variable</span> temple_chest_prt;</code>
 		<br>
 		<p>The previously exported variable can now be used with the keyword import inside the scripts AITEMCST.SSL and ACTEMVIL.SSL. 
 			The variable contains the value that was last assigned to it.</p>
-				<code>
-					<pre>
-						<span class="dyestatement">import variable</span> temple_chest_prt;
-					</pre>
-				</code>
+		<code><span class="dyestatement">import variable</span> temple_chest_prt;</code>
 		<p>These global namespace variable types must always be defined at the top of the script like in the sample script.</p>
 	<br>
 
 	<h4>Variables not of global namespace</h4>
 		<p>Variables not getting into global namespace are:</p>
-				<code>
-					<pre>
-						Local variables e.g.
-						<span class="dyestatement">variable</span> Only_Once <span class="dyeoperator">:=</span> <span class="dyedefine">0</span>;
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span>Local variables e.g.</span>
+	<span class="dyestatement">variable</span> Only_Once <span class="dyeoperator">:=</span> <span class="dyedefine">0</span>;
+</pre>
+</div>
+</li>
 		<br>
 		<p> The variable Only_Once is defined outside the procedure and assigned the value <span class="dyedefine">0</span>. 
 			This variable can be used in every procedure inside the script. This variable will not be saved when changing the map.</p>
-				<code>
-					<pre>
-						<span class="dyestatement">variable</span> Only_Once <span class="dyeoperator">:=</span> <span class="dyedefine">0</span>;
+<li>
+<div class="codebigbox">
+<pre>
+	<span class="dyestatement">variable</span> Only_Once <span class="dyeoperator">:=</span> <span class="dyedefine">0</span>;
 
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">map_enter_p_proc</span> <span class="dyestatement">begin</span>
-							Only_Once <span class="dyeoperator">:=</span> <span class="dyedefine">0</span>;
-					</pre>
-				</code>
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">map_enter_p_proc</span> <span class="dyestatement">begin</span>
+	Only_Once <span class="dyeoperator">:=</span> <span class="dyedefine">0</span>;
+</pre>
+</div>
+</li>
 		<br>
 		<p>The variable item is defined inside the procedure <span class="dyeprocedure">combat_p_proc</span>.
 			This variable can only be used inside the procedure. This variable will not be saved when changing the map.</p>
-				<code>
-					<pre>
-						<span class="dyestatement">procedure</span><span class="dyeprocedure"> combat_p_proc</span> <span class="dyestatement">begin</span>
-							<span class="dyestatement">variable</span> item;
+<li>
+<div class="codebigbox">
+<pre>
+	<span class="dyestatement">procedure</span><span class="dyeprocedure"> combat_p_proc</span> <span class="dyestatement">begin</span>
+	<span class="dyestatement">variable</span> item;
 
-								item <span class="dyeoperator">:=</span> <span class="dyestandardmacro">create_object</span>(PID_HEALING_POWDER),<span class="dyedefine">0</span>,<span class="dyedefine">0</span>);
-								<span class="dyefunction">use_obj_on_obj</span>(item,<span class="dyefunction">self_obj</span>);
-					</pre>
-				</code>
+	item <span class="dyeoperator">:=</span> <span class="dyestandardmacro">create_object</span>(PID_HEALING_POWDER),<span class="dyedefine">0</span>,<span class="dyedefine">0</span>);
+	<span class="dyefunction">use_obj_on_obj</span>(item,<span class="dyefunction">self_obj</span>);
+</pre>
+</div>
+</li>
 	<br>
 	<br>
 	<hr>
@@ -1649,11 +1577,7 @@
 	<div id="constant"><h3>Constant</h3></div>
 		<p>Constants are variables with fixed unchangeable value (You can change them but you don't want to, thats the reason using constants :P). A good example is give_xp(EXP_FIX_WELL) because EXP_FIX_WELL is a constant which is defined in ExpPoint.H. 
 			If you use EXP_FIX_WELL in several scripts and you want to change the given experience from 100 to 200 you just need to change the value in on place, in ExpPoint.H.</p>
-				<code>
-					<pre>
-						<span class="dyedefine">#define</span> EXP_FIX_WELL; &emsp; &emsp; (<span class="dyedefine">100</span>)
-					</pre>
-				</code>
+		<code><span class="dyedefine">#define</span> EXP_FIX_WELL; &emsp; &emsp; (<span class="dyedefine">100</span>)</code>
 	<br>
 	<br>
 	<hr>
@@ -1661,19 +1585,17 @@
 	<div id="macro"><h3>Macro</h3></div>
 		<p>A macro is a fragment of code which has been given a name. Whenever the name is used, it is replaced by the contents of the macro. Functions can easily get huge and messy. Macros are shorter and therefore better to read.</p>
 		<p>Let's look at an example.</p>
-				<code>
-					<pre>
-						<span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL); 
-					</pre>
-				</code>
+		<code><span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL); </code>
 		<p>The macro give_xp(x) is located inside the file EXPPOINT.H.</p>
 		<p>Behind give_xp(x) actually hides:</p>  
-				<code>
-					<pre>
-						<span class="dyefunction">give_exp_points</span>(x);
-						<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">100</span>)<span class="dyeoperator">+</span>x<span class="dyeoperator">+</span><span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">101</span>))
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span class="dyefunction">give_exp_points</span>(x);
+	<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">100</span>)<span class="dyeoperator">+</span>x<span class="dyeoperator">+</span><span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">101</span>))
+</pre>
+</div>
+</li>
 	<br>
 	<br>
 	<hr>
@@ -1695,19 +1617,21 @@
 	<div id="statement"><h3>Statement</h3></div>
 		<p>Statements are used to build and subdivide blocks of logic.</p>
 		<p>For example:</p>
-				<code>
-					<pre>
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
-							<span class="dyefunction">script_overrides</span>;
-							<span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>
-								<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));
-							<span class="dyestatement">end</span>
-							<span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
-								<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));
-							<span class="dyestatement">end</span>
-						<span class="dyestatement">end</span>
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
+		<span class="dyefunction">script_overrides</span>;
+		<span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>
+			<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));
+		<span class="dyestatement">end</span>
+		<span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
+			<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));
+		<span class="dyestatement">end</span>
+	<span class="dyestatement">end</span>						
+</pre>
+</div>
+</li>
 		<p>The above example simply says:</p>
 		<img src="images\Scripting (Basics)\2022-05-30 14_28_19-statement_explained.png" alt="">
 		<p>There is no need to write the related statements on the same column but it helps alot.</p>
@@ -1740,67 +1664,53 @@
 		<img src="images\Compiling\Compiling_failed_top.png" alt="">
 		<p>ヾ( ๑´д`๑)ﾂ oh noez! What happened? It didn't compile... You get some unique and some cryptic error messages. But all in all it didn't compile. But how do we get our script correctly compiled?
 			I'm glad you ask. Maybe you noticed some little detail inside ASWELL.SSL.</p>
-				<code>
-					<pre>
-						<span class="dyedefine">#define</span> NAME                    SCRIPT_ASWELL
-					</pre>
-				</code>
+		<code><span class="dyedefine">#define</span> NAME                    SCRIPT_ASWELL</code>
 	<br>
 	
 	<div id="Scripts.h"><h4>SCRIPTS.H</h4></div>
 		<p>In order to compile your script correctly, it must be listed inside SCRIPTS.H. Let's take a look at SCRIPTS.H located here:</p>
-				<code>
-					<pre>
-						E:\Fallout2\data\scripts\decompiled\HEADERS
-					</pre>
-				</code>
-				<code>
-					<pre>
-						/*
-							Copyright 1998-2003 Interplay Entertainment Corp.  All rights reserved.
-						*/
-
-						#ifndef SCRIPTS_H
-						#define SCRIPTS_H
-
-						/******************************************************************
-						File Name: Scripts.h
-
-						Purpose: This file contains defines for all of the scripts in
-									scripts.lst. This is an ordered list and needs to
-									conform exactly to scripts list. All defines in here
-									need to be prepended with SCRIPT_ as a naming
-									convention.
-
-						Created: October 06, 1997
-						******************************************************************/
-
-						#define SCRIPT_OBJ_DUDE         (1)     // obj_dude.int    ; Player script.
-						#define SCRIPT_TEST0            (2)     // Test0.int       ; Used to Test Scripts
-						#define SCRIPT_TEST1            (3)     // Test1.int       ; Used to Test Scripts
-						#define SCRIPT_TEST2            (4)     // Test2.int       ; Used to Test Scripts
-						#define SCRIPT_TEST3            (5)     // Test3.int       ; Used to Test Scripts
-						#define SCRIPT_TEST4            (6)     // Test4.int       ; Used to Test Scripts
-						#define SCRIPT_TEST5            (7)     // Test5.int       ; Used to Test Scripts
-						#define SCRIPT_ACWARIOR         (8)     // ACWarior.int    ; Generic Warrior in Arroyo
-						#define SCRIPT_ACVILLGR         (9)     // ACVillgr.int    ; Generic Villager of Arroyo
-						[...]
-					</pre>
-				</code>
+		<code>E:\Fallout2\data\scripts\decompiled\HEADERS</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span>/*</span>
+	<span>	Copyright 1998-2003 Interplay Entertainment Corp.  All rights reserved.</span>
+	<span>*/</span>
+	<span></span>
+	<span>#ifndef SCRIPTS_H</span>
+	<span>#define SCRIPTS_H</span>
+	<span></span>
+	<span>/******************************************************************</span>
+	<span>File Name: Scripts.h</span>
+	<span></span>
+	<span>Purpose: This file contains defines for all of the scripts in</span>
+	<span>			scripts.lst. This is an ordered list and needs to</span>
+	<span>			conform exactly to scripts list. All defines in here</span>
+	<span>			need to be prepended with SCRIPT_ as a naming</span>
+	<span>			convention.</span>
+	<span></span>
+	<span>Created: October 06, 1997</span>
+	<span>******************************************************************/</span>
+	<span></span>
+	<span>#define SCRIPT_OBJ_DUDE         (1)     // obj_dude.int    ; Player script.</span>
+	<span>#define SCRIPT_TEST0            (2)     // Test0.int       ; Used to Test Scripts</span>
+	<span>#define SCRIPT_TEST1            (3)     // Test1.int       ; Used to Test Scripts</span>
+	<span>#define SCRIPT_TEST2            (4)     // Test2.int       ; Used to Test Scripts</span>
+	<span>#define SCRIPT_TEST3            (5)     // Test3.int       ; Used to Test Scripts</span>
+	<span>#define SCRIPT_TEST4            (6)     // Test4.int       ; Used to Test Scripts</span>
+	<span>#define SCRIPT_TEST5            (7)     // Test5.int       ; Used to Test Scripts</span>
+	<span>#define SCRIPT_ACWARIOR         (8)     // ACWarior.int    ; Generic Warrior in Arroyo</span>
+	<span>#define SCRIPT_ACVILLGR         (9)     // ACVillgr.int    ; Generic Villager of Arroyo</span>
+	<span>[...]</span>					
+</pre>
+</div>
+</li>
 		<p>What the heck is this?! You might ask. This is SCRIPTS.H or a itsy bitsy tiny part of it (I shorted it because of reasons ;-)). Ok, let's take a look at the framework of this file.</p>
 		<p>#define SCRIPT_... looks familiar. So there needs to be something like #define SCRIPT_ASWELL inside SCRIPTS.H. Let's seek for it.</p>
-				<code>
-					<pre>
-						//#define SCRIPT_ASWELL           (217)   // ASWell.int      ; Arroyo Well. It's broken. Fix w/ Repair
-					</pre>
-				</code>
+		<code>//#define SCRIPT_ASWELL           (217)   // ASWell.int      ; Arroyo Well. It's broken. Fix w/ Repair</code>
 		<p>There it is! Line 236! It didn't work because someone put double slash before it to make it a comment... (；￣Д￣）</p>
 		<p>Just remove the double slash. It'd now look like this.</p>
-				<code>
-					<pre>
-						#define SCRIPT_ASWELL           (217)   // ASWell.int      ; Arroyo Well. It's broken. Fix w/ Repair
-					</pre>
-				</code>
+		<code>#define SCRIPT_ASWELL           (217)   // ASWell.int      ; Arroyo Well. It's broken. Fix w/ Repair</code>
 		<p>Okay. Now you should more or less understand #define SCRIPT_ASWELL. But what's up with (217)? It serves the purpose of a placeholder or some kind of link. So, to make things short SCRIPT_ASWELL = 217.
 			Humans use SCRIPT_ASWELL because it's easier to read and engines work with numbers so 217 is easier for the engine to understand. Every script has its unique number. Every number is assigned once.
 			Explore SCRIPTS.H to understand this procedure better.</p>
@@ -1826,11 +1736,7 @@
 		<div id="Scripts.lst"></div><h4>SCRIPTS.LST</h4>
 			<p>Now that you've got a compiled script you certainly want to test it. One way to test it is within the BIS Mapper. But first we have to add the script into SCRIPTS.LST.
 				We need to do this so that the mapper is able to find the script. Locate the file and open it with whatever editor you like. Jump at the end of the file and add your script like this:</p>
-				<code>
-					<pre>
-						HCPAVEL.int		;Pavel the former scout of Hock.				# local_vars=3
-					</pre>
-				</code>
+			<code>HCPAVEL.int		;Pavel the former scout of Hock.				# local_vars=3</code>
 			<p>HCPAVEL.int is the name of your compiled script how you of course already noticed. The text after the semicolon is a descriptive text. 
 				The text after the hashtag is the amount of LVARs used inside your script. In this example you see that script HCPAVEL.int uses 3 LVARs. 
 				If you use 0 LVARs then you write # local_vars=0. If you use 5 but write # local_vars=7 nobody will tear your head off the script will work anyways.
@@ -1843,11 +1749,7 @@
 		<br>
 		<div id="GameMode"></div><h4>Game mode</h4>
 			<p>Navigate to the Fallout2 game folder located here...</p>
-				<code>
-					<pre>
-						E:\Fallout2\
-					</pre>
-				</code>
+			<code>E:\Fallout2\</code>
 			<p>Open file ddraw.ini and navigate to line 167 called 'StartingMap='. It could be commented out with a semicolon (;) but just uncomment it by deleting the semicolon.</p>
 			<p>Write your map name after the equals symbol (=). E.g. #StartingMap=ABCDEFG.map'.</p>
 			<p>Save the file and hit fallout2.exe. Start a new game with any character and you'll notice that you'll start on your map.</p>
@@ -1903,82 +1805,80 @@
 			<p>The conversation has been initiated and the dialog system appears. Now you see two lines of text. But how does the engine know when which text to say?
 				Well to understand how it works, we need to dig down deeper and take a look at two files ACKLINT.SSL and ACKLINT.MSG.</p>
 			<p>First file is ACKLINT.SSL located here:</p>
-				<code>
-					<pre>
-						E:\Fallout2\data\scripts\decompiled\ARROYO
-					</pre>
-				</code>
-				<code>
-					<pre>
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">talk_p_proc</span> <span class="dyestatement">begin</span>
-							[...]
-							<span class="dyestatement">if</span> ((<span class="dyefunction">obj_art_fid</span>(<span class="dyefunction">dude_obj</span>) <span class="dyeoperator">==</span> FID_HMWARR) <span class="dyestatement">or</span> (<span class="dyefunction">obj_art_fid</span>(<span class="dyefunction">dude_obj</span>) <span class="dyeoperator">==</span> FID_HFPRIM)) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>
-								<span class="dyefunction">start_gdialog</span>(NAME,<span class="dyefunction">self_obj</span>,<span class="dyedefine">4</span>,<span class="dyedefine">-1</span>,<span class="dyedefine">-1</span>);
-								<span class="dyefunction">gSay_Start</span>;
-									<span class="dyestatement">call</span> <span class="dyeprocedure">Node001</span>;
-								<span class="dyefunction">gSay_End</span>;
-								<span class="dyefunction">end_dialogue</span>;
-							<span class="dyestatement">end</span>
+			<code>E:\Fallout2\data\scripts\decompiled\ARROYO</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">talk_p_proc</span> <span class="dyestatement">begin</span>
+	[...]
+	<span class="dyestatement">if</span> ((<span class="dyefunction">obj_art_fid</span>(<span class="dyefunction">dude_obj</span>) <span class="dyeoperator">==</span> FID_HMWARR) <span class="dyestatement">or</span> (<span class="dyefunction">obj_art_fid</span>(<span class="dyefunction">dude_obj</span>) <span class="dyeoperator">==</span> FID_HFPRIM)) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>
+		<span class="dyefunction">start_gdialog</span>(NAME,<span class="dyefunction">self_obj</span>,<span class="dyedefine">4</span>,<span class="dyedefine">-1</span>,<span class="dyedefine">-1</span>);
+		<span class="dyefunction">gSay_Start</span>;
+			<span class="dyestatement">call</span> <span class="dyeprocedure">Node001</span>;
+		<span class="dyefunction">gSay_End</span>;
+		<span class="dyefunction">end_dialogue</span>;
+	<span class="dyestatement">end</span>
 
-							<span class="dyestatement">else</span> <span class="dyestatement">begin</span>
-								<span class="dyefunction">start_gdialog</span>(NAME,<span class="dyefunction">self_obj</span>,<span class="dyedefine">4</span>,<span class="dyedefine">-1</span>,<span class="dyedefine">-1</span>);
-								<span class="dyefunction">gSay_Start</span>;
-									<span class="dyestatement">call</span> <span class="dyeprocedure">Node006</span>;
-								<span class="dyefunction">gSay_End</span>;
-								<span class="dyefunction">end_dialogue</span>;
-							<span class="dyestatement">end</span>
-						<span class="dyestatement">end</span>
-					</pre>
-				</code>
+	<span class="dyestatement">else</span> <span class="dyestatement">begin</span>
+		<span class="dyefunction">start_gdialog</span>(NAME,<span class="dyefunction">self_obj</span>,<span class="dyedefine">4</span>,<span class="dyedefine">-1</span>,<span class="dyedefine">-1</span>);
+		<span class="dyefunction">gSay_Start</span>;
+			<span class="dyestatement">call</span> <span class="dyeprocedure">Node006</span>;
+		<span class="dyefunction">gSay_End</span>;
+		<span class="dyefunction">end_dialogue</span>;
+	<span class="dyestatement">end</span>
+	<span class="dyestatement">end</span>				
+</pre>
+</div>
+</li>
 			<p>This is procedure talk_p_proc or at least a part of it. Dialog begins here but we are only interested in call Node006; the rest is unimportant for now.</p>
 			<p>Let's jump to call Node006.</p>
-				<code>
-					<pre>
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">Node006</span> <span class="dyestatement">begin</span>
-							<span class="dyestandardmacro">Reply</span>(<span class="dyedefine">121</span>);
+<li>
+<div class="codebigbox">
+<pre>
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">Node006</span> <span class="dyestatement">begin</span>
+		<span class="dyestandardmacro">Reply</span>(<span class="dyedefine">121</span>);
 
-							[...]
-							<span class="dyestandardmacro">NOption</span>(<span class="dyedefine">123</span>,<span class="dyeprocedure">Node007</span>,<span class="dyedefine">004</span>);
-						<span class="dyestatement">end</span>
-					</pre>
-				</code>
+		[...]
+		<span class="dyestandardmacro">NOption</span>(<span class="dyedefine">123</span>,<span class="dyeprocedure">Node007</span>,<span class="dyedefine">004</span>);
+	<span class="dyestatement">end</span>			
+</pre>
+</div>
+</li>
 			<p>You can probably guess that 121 and 123 are the two lines we've seen at the screenshots when you started talking to Klint and the dialog window appeared. 
 				But where do they come from? Let's take a look at ACKLINT.MSG located here:</p>
-				<code>
-					<pre>
-						E:\Fallout2\data\text\english\dialog
-					</pre>
-				</code>
+			<code>E:\Fallout2\data\text\english\dialog</code>
 			<p>Try and open the file with notepad, notepad++, Sfall script editor or whatever you prefer. After you opened the file, it will look like this:</p>
-				<code>
-					<pre>
-						{100}{}{You see Klint, a fellow tribesman.}
-						{101}{}{You see Klint.}
-						{102}{}{You see a young man with bulging muscles and a very confident air about him.}
-						{103}{}{Good day to you, }
-						{104}{}{. You have not completed the trial of the Elder and may not pass.}
-						{105}{}{Uh...}
-						{106}{}{I need to go back to the village.}
-						{107}{}{I have some questions of you.}
-						{108}{}{All right, I'm off to take the test.}
-						{109}{}{(sigh) }
-						{110}{}{. You go temple. You take test. You not come back here until take test. Obey Elder. Go!}
-						{111}{}{Me go.}
-						{112}{}{Forgive me, }
-						{113}{}{, but I can not allow you to pass. If you wish to return to the village you may do so only by passing the trial set before you.}
-						{114}{}{I see. I guess I'll be going then.}
-						{115}{}{Can I ask you some questions then?}
-						{116}{}{I could kick your ass and just walk out of here.}
-						{117}{}{Forgive me, but I have no answers to your questions. Take the trial set before you by the Elder and prove yourself worthy to lead our people.}
-						{118}{}{Very well.}
-						{119}{}{Two people working together can move the obelisk that blocks the path. Alone, you would fail. I have no intention of helping you until you pass the trial of the Elder.}
-						{120}{}{Uh-huh. I get the picture.}
-						{121}{}{Greetings, Chosen One! It is good to see you. How may I serve you?}
-						{122}{}{Me say hi. That all.}
-						{123}{}{Just thought I'd say hello. I'll be leaving on my quest soon.}
-						{124}{}{May the spirits of our ancestors protect you, Chosen One. I wish you well on your journey.}
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	{100}{}{You see Klint, a fellow tribesman.}
+	{101}{}{You see Klint.}
+	{102}{}{You see a young man with bulging muscles and a very confident air about him.}
+	{103}{}{Good day to you, }
+	{104}{}{. You have not completed the trial of the Elder and may not pass.}
+	{105}{}{Uh...}
+	{106}{}{I need to go back to the village.}
+	{107}{}{I have some questions of you.}
+	{108}{}{All right, I'm off to take the test.}
+	{109}{}{(sigh) }
+	{110}{}{. You go temple. You take test. You not come back here until take test. Obey Elder. Go!}
+	{111}{}{Me go.}
+	{112}{}{Forgive me, }
+	{113}{}{, but I can not allow you to pass. If you wish to return to the village you may do so only by passing the trial set before you.}
+	{114}{}{I see. I guess I'll be going then.}
+	{115}{}{Can I ask you some questions then?}
+	{116}{}{I could kick your ass and just walk out of here.}
+	{117}{}{Forgive me, but I have no answers to your questions. Take the trial set before you by the Elder and prove yourself worthy to lead our people.}
+	{118}{}{Very well.}
+	{119}{}{Two people working together can move the obelisk that blocks the path. Alone, you would fail. I have no intention of helping you until you pass the trial of the Elder.}
+	{120}{}{Uh-huh. I get the picture.}
+	{121}{}{Greetings, Chosen One! It is good to see you. How may I serve you?}
+	{122}{}{Me say hi. That all.}
+	{123}{}{Just thought I'd say hello. I'll be leaving on my quest soon.}
+	{124}{}{May the spirits of our ancestors protect you, Chosen One. I wish you well on your journey.}		
+</pre>
+</div>
+</li>
 			<p>Every piece of text related to Klint. As you can see lines 121 and 123 are located inside this message file. So, when dialog jumps to Node006 and lines 121 and 123 are requested, 
 				the engine looks inside ACKLINT.MSG finds and returns the necessary text lines.</p>
 			<p>You might have noticed that line 100, 101 and 102 contain descriptive text. They are used by the procedures look_at_p_proc and description_p_proc.</p>
@@ -1991,143 +1891,137 @@
 
 		<h4>Message file basic framework</h4>
 			<p>The basic framework of every message file is this:</p>
-					<code>
-						<pre>
-							{}{}{}
-						</pre>
-					</code>
+			<code>{}{}{}</code>
 			<p>Thats it. You just have to fill in these curvy brackets. The first pair of brackets contains the line number. The second pair stays always empty. 
 				And the third one contains the sentences which will be said by the critters or the dude.
 				The number inside the first pair of brackets simply is the line number of this dialog message. 
 				So, if you want the npc or the dude talking to this npc say a certain sentence, you don't need to write the same sentence over and over again. 
 				You just write the specific line number into your script which refers to the certain sentence you want the critters to say.</p>
 			<p>Comments are written like this:</p>
-					<code>
-						<pre>
-							#MyComment
-						</pre>
-					</code>
+			<code>#MyComment</code>
 			<p>Everything behind the hashtag is interpreted as a comment.</p>
 			<p>I like my message files a bit more organized. Like this...</p>
-				<code>
-					<pre>
-						#############################################################
-						#  
-						#
-						#  Message File: ACKLINT.msg                               
-						#                                                          
-						#       Body Type:  Klint
-						#	Location: Arroyo - Temple entrance
-						#       Combat AI: AI_ARROYO_WARRIOR                                     
-						#       Weapons: Sharpened Spear                                       
-						#       HP: ?                                               
-						#       Skills to note: None                                
-						#                                                                                                             
-						#                                                           
-						#  Created: November 13, 1997                               
-						#                                                           
-						#  Updated: December 24, 1997  
-						#
-						#                                                
-						#############################################################
+<li>
+<div class="codebigbox">
+<pre>
+	#############################################################
+	#  
+	#
+	#  Message File: ACKLINT.msg                               
+	#                                                          
+	#       Body Type:  Klint
+	#	Location: Arroyo - Temple entrance
+	#       Combat AI: AI_ARROYO_WARRIOR                                     
+	#       Weapons: Sharpened Spear                                       
+	#       HP: ?                                               
+	#       Skills to note: None                                
+	#                                                                                                             
+	#                                                           
+	#  Created: November 13, 1997                               
+	#                                                           
+	#  Updated: December 24, 1997  
+	#
+	#                                                
+	#############################################################
 
 
-						#############################################################
-						#  Used by look_at_p_proc and description_p_proc.
-						#############################################################
-						{100}{}{You see Klint, a fellow tribesman.}
-						{101}{}{You see Klint.}
-						{102}{}{You see a young man with bulging muscles and a very confident air about him.}
-						#############################################################
+	#############################################################
+	#  Used by look_at_p_proc and description_p_proc.
+	#############################################################
+	{100}{}{You see Klint, a fellow tribesman.}
+	{101}{}{You see Klint.}
+	{102}{}{You see a young man with bulging muscles and a very confident air about him.}
+	#############################################################
 
 
-						#############################################################
-						#  Used by Node001
-						#############################################################
-						#Reply
-						{103}{}{Good day to you, }
-						{104}{}{. You have not completed the trial of the Elder and may not pass.}
+	#############################################################
+	#  Used by Node001
+	#############################################################
+	#Reply
+	{103}{}{Good day to you, }
+	{104}{}{. You have not completed the trial of the Elder and may not pass.}
 
-						#NLowOption
-						{105}{}{Uh...}								#Invokes Node002
+	#NLowOption
+	{105}{}{Uh...}								#Invokes Node002
 
-						#NOption
-						{106}{}{I need to go back to the village.}				#Invokes Node003
-						{107}{}{I have some questions of you.}					#Invokes Node004
-						{108}{}{All right, I'm off to take the test.}				#Invokes Node999
-						#############################################################
-
-
-						#############################################################
-						#  Used by Node002
-						#############################################################
-						#Reply
-						{109}{}{(sigh) }
-						{110}{}{. You go temple. You take test. You not come back here until take test. Obey Elder. Go!}
-
-						#NLowOption
-						{111}{}{Me go.}								#Invokes Node999
-						#############################################################
+	#NOption
+	{106}{}{I need to go back to the village.}				#Invokes Node003
+	{107}{}{I have some questions of you.}					#Invokes Node004
+	{108}{}{All right, I'm off to take the test.}				#Invokes Node999
+	#############################################################
 
 
-						#############################################################
-						#  Used by Node003
-						#############################################################
-						#Reply
-						{112}{}{Forgive me, }
-						{113}{}{, but I can not allow you to pass. If you wish to return to the village you may do so only by passing the trial set before you.}
+	#############################################################
+	#  Used by Node002
+	#############################################################
+	#Reply
+	{109}{}{(sigh) }
+	{110}{}{. You go temple. You take test. You not come back here until take test. Obey Elder. Go!}
 
-						#NOption
-						{114}{}{I see. I guess I'll be going then.}				#Invokes Node999
-						{115}{}{Can I ask you some questions then?}				#Invokes Node004
-						{116}{}{I could kick your ass and just walk out of here.}		#Invokes Node005
-						#############################################################
+	#NLowOption
+	{111}{}{Me go.}								#Invokes Node999
+	#############################################################
 
 
-						#############################################################
-						#  Used by Node004
-						#############################################################
-						#Reply
-						{117}{}{Forgive me, but I have no answers to your questions. Take the trial set before you by the Elder and prove yourself worthy to lead our people.}
+	#############################################################
+	#  Used by Node003
+	#############################################################
+	#Reply
+	{112}{}{Forgive me, }
+	{113}{}{, but I can not allow you to pass. If you wish to return to the village you may do so only by passing the trial set before you.}
 
-						#NOption
-						{118}{}{Very well.}							#Invokes Node999
-						#############################################################
-
-
-						#############################################################
-						#  Used by Node005
-						#############################################################
-						#Reply
-						{119}{}{Two people working together can move the obelisk that blocks the path. Alone, you would fail. I have no intention of helping you until you pass the trial of the Elder.}
-
-						#NOption
-						{120}{}{Uh-huh. I get the picture.}					#Invokes Node999
-						#############################################################
+	#NOption
+	{114}{}{I see. I guess I'll be going then.}				#Invokes Node999
+	{115}{}{Can I ask you some questions then?}				#Invokes Node004
+	{116}{}{I could kick your ass and just walk out of here.}		#Invokes Node005
+	#############################################################
 
 
-						#############################################################
-						#  Used by Node006
-						#############################################################
-						#Reply
-						{121}{}{Greetings, Chosen One! It is good to see you. How may I serve you?}
+	#############################################################
+	#  Used by Node004
+	#############################################################
+	#Reply
+	{117}{}{Forgive me, but I have no answers to your questions. Take the trial set before you by the Elder and prove yourself worthy to lead our people.}
 
-						#NLowOption
-						{122}{}{Me say hi. That all.}						#Invokes Node007
-
-						#NOption
-						{123}{}{Just thought I'd say hello. I'll be leaving on my quest soon.} 	#Invokes Node007
-						#############################################################
+	#NOption
+	{118}{}{Very well.}							#Invokes Node999
+	#############################################################
 
 
-						#############################################################
-						#  Used by Node007
-						#############################################################
-						#NMessage
-						{124}{}{May the spirits of our ancestors protect you, Chosen One. I wish you well on your journey.}
-						#############################################################
-					</pre>
-				</code>
+	#############################################################
+	#  Used by Node005
+	#############################################################
+	#Reply
+	{119}{}{Two people working together can move the obelisk that blocks the path. Alone, you would fail. I have no intention of helping you until you pass the trial of the Elder.}
+
+	#NOption
+	{120}{}{Uh-huh. I get the picture.}					#Invokes Node999
+	#############################################################
+
+
+	#############################################################
+	#  Used by Node006
+	#############################################################
+	#Reply
+	{121}{}{Greetings, Chosen One! It is good to see you. How may I serve you?}
+
+	#NLowOption
+	{122}{}{Me say hi. That all.}						#Invokes Node007
+
+	#NOption
+	{123}{}{Just thought I'd say hello. I'll be leaving on my quest soon.} 	#Invokes Node007
+	#############################################################
+
+
+	#############################################################
+	#  Used by Node007
+	#############################################################
+	#NMessage
+	{124}{}{May the spirits of our ancestors protect you, Chosen One. I wish you well on your journey.}
+	#############################################################	
+</pre>
+</div>
+</li>
 			<p>But you can organize your message files as you like.</p>
 			<br>
 			<h5>Notice</h5>    
@@ -2139,44 +2033,41 @@
 	<br>
 
 		<h4>What do you need</h4>
-				<code>
-					<pre>
-						E:\Fallout2\data\data\VAULT13.GAM
-					</pre>
-				</code>
-				<code>
-					<pre>
-						E:\Fallout2\data\data\QUEST.TXT
-					</pre>
-				</code>
-				<code>
-					<pre>
-						E:\Fallout2\data\text\english\Game\QUESTS.MSG
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	E:\Fallout2\data\data\VAULT13.GAM
+
+	E:\Fallout2\data\data\QUEST.TXT
+
+	E:\Fallout2\data\text\english\Game\QUESTS.MSG
+</pre>
+</div>
+</li>
 		<p>Lets take a look at the internal of these files.</p>
 		<br>
 		<br>
 
 		<h4>VAULT13.GAM</h4>
-				<code>
-					<pre>
-						GAME_GLOBAL_VARS:
-						//GLOBAL                                                NUMBER
+<li>
+<div class="codebigbox">
+<pre>
+	GAME_GLOBAL_VARS:
+	//GLOBAL                                                NUMBER
 
-						GVAR_PLAYER_REPUTATION                  :=0;    //      (0)
-						GVAR_CHILDKILLER_REPUTATION             :=0;    //      (1)
-						GVAR_CHAMPION_REPUTATION                :=0;    //      (2)
-						GVAR_BERSERKER_REPUTATION               :=0;    //      (3)
-						GVAR_BAD_MONSTER                        :=0;    //      (4)
-						GVAR_GOOD_MONSTER                       :=0;    //      (5)
-						GVAR_PLAYER_MARRIED                     :=0;    //      (6)
-						GVAR_ENEMY_ARROYO                       :=0;    //      (7)
-						GVAR_KNOWLEDGE_HEALING_POWDER           :=0;    //      (8)
-						GVAR_KILL_EVIL_PLANTS                   :=0;    //      (9)
-						[...]
-					</pre>
-				</code>
+	GVAR_PLAYER_REPUTATION                  :=0;    //      (0)
+	GVAR_CHILDKILLER_REPUTATION             :=0;    //      (1)
+	GVAR_CHAMPION_REPUTATION                :=0;    //      (2)
+	GVAR_BERSERKER_REPUTATION               :=0;    //      (3)
+	GVAR_BAD_MONSTER                        :=0;    //      (4)
+	GVAR_GOOD_MONSTER                       :=0;    //      (5)
+	GVAR_PLAYER_MARRIED                     :=0;    //      (6)
+	GVAR_ENEMY_ARROYO                       :=0;    //      (7)
+	GVAR_KNOWLEDGE_HEALING_POWDER           :=0;    //      (8)
+	GVAR_KILL_EVIL_PLANTS                   :=0;    //      (9)
+</pre>
+</div>
+</li>
 			<p>This file contains every GVAR defined.</p>
 			<p>GVAR_x is the GVARs name as you already know.</p>
 			<p>:=0; assigns a starting value to the GVAR. In this case 0.</p>
@@ -2185,18 +2076,20 @@
 		<br>
 
 		<h4>QUEST.TXT</h4>
-				<code>
-					<pre>
-						#####
-						# Arroyo Quests
-						#####
+<li>
+<div class="codebigbox">
+<pre>
+	#####
+	# Arroyo Quests
+	#####
 
-						# Kill the Evil Plants
-						# Arroyo, GVAR_KILL_EVIL_PLANTS, Quest_Accepted, Quest_Completed
-						1500, 100, 9, 2, 6
-						[...]
-					</pre>
-				</code>
+	# Kill the Evil Plants
+	# Arroyo, GVAR_KILL_EVIL_PLANTS, Quest_Accepted, Quest_Completed
+	1500, 100, 9, 2, 6
+	[...]
+</pre>
+</div>
+</li>
 			<p>Here are all the quests with their conditions.</p>
 			<p>Everything after # is a comment.</p>
 			<p>The 1500 retrieves the place name from the MAP.MSG. So in this example it stands for the desert.</p>
@@ -2208,19 +2101,21 @@
 		<br>
 
 		<h4>QUESTS.MSG</h4>
-				<code>
-					<pre>
-						#
-						# Arroyo Quests
-						#
-						{100}{}{Kill the evil plants that infest Hakunin's garden.}
-						{110}{}{Obtain flint to have Mynoc sharpen your spear.}
-						{120}{}{Rescue Nagor's dog, Smoke, from the wilds.}
-						{130}{}{Retrieve the GECK for Arroyo.}
-						{140}{}{Find Vic the Trader.}
-						[...]
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	#
+	# Arroyo Quests
+	#
+	{100}{}{Kill the evil plants that infest Hakunin's garden.}
+	{110}{}{Obtain flint to have Mynoc sharpen your spear.}
+	{120}{}{Rescue Nagor's dog, Smoke, from the wilds.}
+	{130}{}{Retrieve the GECK for Arroyo.}
+	{140}{}{Find Vic the Trader.}
+	[...]
+</pre>
+</div>
+</li>
 			<p>This file contains every quest description.</p>
 			<p>Everything after # is a comment.</p>
 			<p>100 is the quests linenumber.</p>
@@ -2241,46 +2136,50 @@
 				This is the temporary box for swapping the inventories. Think of it as the table you need to swap a glass of beer and a glass of wine between hands. 
 				You have to put down one glass to pass the other from hand to hand.</p>
 			<p>To use this box, you must put the following line in the map script after the procedure list at the start: </p>
-				<code>
-					<pre>
-						export variable generic_temp_box;
-					</pre>
-				</code>
+<code>export variable generic_temp_box;</code>
 			<p>Each trader will also need a variable for their store box such as these listed in the Den's map script for the various traders. </p>
-				<code>
-					<pre>
-						export variable den_flick_box_obj;
-						export variable den_smitty_box_obj;
-						export variable den_mom_box_obj;
-						export variable den_metzger_box_obj;
-						export variable den_tubby_box_obj;
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	export variable den_flick_box_obj;
+	export variable den_smitty_box_obj;
+	export variable den_mom_box_obj;
+	export variable den_metzger_box_obj;
+	export variable den_tubby_box_obj;
+</pre>
+</div>
+</li>
 			<p>For the sake of this tutorial we'll be using Tubby in the den as our example. </p>	
 			<p>In the trader's script you need to import the variables for the temporary box and the store box(s). Add the following lines after the #DEFINE's but before the procedures. </p>
-				<code>
-					<pre>
-						import variable den_tubby_box_obj;
-						import variable generic_temp_box;
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	import variable den_tubby_box_obj;
+	import variable generic_temp_box;
+</pre>
+</div>
+</li>
 			<p>This brings in pointers to the temporary box and Tubby's store box to this script. </p>
 			<p>To actually swap the contents of the trader's inventory with the store inventory, you use the following 2 lines (modified with the right variable name for the trader's box of course).</p>
-				<code>
-					<pre>
-						move_obj_inven_to_obj(self_obj,generic_temp_box);
-						move_obj_inven_to_obj(den_tubby_box_obj,self_obj);
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	move_obj_inven_to_obj(self_obj,generic_temp_box);
+	move_obj_inven_to_obj(den_tubby_box_obj,self_obj);
+</pre>
+</div>
+</li>
 			<p>This (in order) moves the trader's personal inventory to the temporary box, and then moves the store box inventory to the trader. 
 				This is usually initiated as a conversation node, but can be done as soon as you talk to him before the nodes start! 
 				Next, once trading is complete and you say goodbye, the contents are swapped back by reversing the sequence like so:</p>
-				<code>
-					<pre>
-						move_obj_inven_to_obj(self_obj,den_tubby_box_obj);
-						move_obj_inven_to_obj(generic_temp_box,self_obj);
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	move_obj_inven_to_obj(self_obj,den_tubby_box_obj);
+	move_obj_inven_to_obj(generic_temp_box,self_obj);
+</pre>
+</div>
+</li>
 			<p>This (in order) moves Tubby's inventory (which is his store inventory at this point) back to the store's box, and the contents of the temp box (Tubby's personal inventory) back to Tubby. </p>
 			<p>Swapping back is usually done as part of the exit node(s) of a conversation (there may be more than one exit node such as "Thanks, bye", 
 				where you walk away a happy customer, and "Screw you, you ripped me off" for example where he would end the conversation and start combat.) </p>
@@ -2290,113 +2189,100 @@
 
 		<div id="StoreRestock"><h4>Store restock</h4></div>
 			<p>Here is Tubby's store box for example on re-stocking over time: </p>
-				<code>
-					<pre>
-						/* Include Files */
-						#include "..\headers\define.h"
+<li>
+<div class="codebigbox">
+<pre>
+	/* Include Files */
+	#include "..\headers\define.h"
 
-						#define NAME                    SCRIPT_DITUBBOX
+	#define NAME                    SCRIPT_DITUBBOX
 
-						#include "..\headers\command.h"
+	#include "..\headers\command.h"
 
-						#define LVAR_RESTOCK_TIME                       (0)
+	#define LVAR_RESTOCK_TIME                       (0)
 
-						import variable den_tubby_box_obj;
+	import variable den_tubby_box_obj;
 
-						procedure start;
-						procedure map_enter_p_proc;
+	procedure start;
+	procedure map_enter_p_proc;
 
-						procedure start begin
-						end
+	procedure start begin
+	end
 
-						procedure map_enter_p_proc begin
-							if (is_loading_game == false) then begin
-								if (local_var(LVAR_RESTOCK_TIME) < game_time) then begin
-									item_caps_adjust(self_obj, random(151, 161) - self_caps);
-									check_restock_item(PID_JET, 5, 10, 100)
-									check_restock_item(PID_PSYCHO, 0, 2, 100)
-									check_restock_item(PID_BUFFOUT, 0, 1, 100)
-									check_restock_item(PID_10MM_PISTOL, 1, 2, 100)
-									check_restock_item(PID_10MM_JHP, 2, 4, 100)
-									check_restock_item(PID_10MM_AP, 0, 2, 100)
-									check_restock_item(PID_BRASS_KNUCKLES, 1, 1, 100)
-									check_restock_item(PID_LEATHER_JACKET, 1, 1, 100)
-									check_restock_item(PID_STIMPAK, 2, 5, 100)
-									check_restock_item(PID_10MM_SMG, 0, 1, 100)
-									check_restock_item(PID_DESERT_EAGLE, 1, 2, 100)
-									check_restock_item(PID_SLEDGEHAMMER, 0, 1, 100)
-									check_restock_item(PID_RADAWAY, 0, 3, 100)
-									set_local_var(LVAR_RESTOCK_TIME, (random(1, 2) * ONE_GAME_DAY) + game_time);
-								end
-							end
-						end
-					</pre>
-				</code>
+	procedure map_enter_p_proc begin
+		if (is_loading_game == false) then begin
+			if (local_var(LVAR_RESTOCK_TIME) < game_time) then begin
+				item_caps_adjust(self_obj, random(151, 161) - self_caps);
+				check_restock_item(PID_JET, 5, 10, 100)
+				check_restock_item(PID_PSYCHO, 0, 2, 100)
+				check_restock_item(PID_BUFFOUT, 0, 1, 100)
+				check_restock_item(PID_10MM_PISTOL, 1, 2, 100)
+				check_restock_item(PID_10MM_JHP, 2, 4, 100)
+				check_restock_item(PID_10MM_AP, 0, 2, 100)
+				check_restock_item(PID_BRASS_KNUCKLES, 1, 1, 100)
+				check_restock_item(PID_LEATHER_JACKET, 1, 1, 100)
+				check_restock_item(PID_STIMPAK, 2, 5, 100)
+				check_restock_item(PID_10MM_SMG, 0, 1, 100)
+				check_restock_item(PID_DESERT_EAGLE, 1, 2, 100)
+				check_restock_item(PID_SLEDGEHAMMER, 0, 1, 100)
+				check_restock_item(PID_RADAWAY, 0, 3, 100)
+				set_local_var(LVAR_RESTOCK_TIME, (random(1, 2) * ONE_GAME_DAY) + game_time);
+			end
+		end
+	end
+</pre>
+</div>
+</li>
 		<br>
 			<p>The map_enter_p_proc gets called every time you enter the map.</p>
-				<code>
-					<pre>
-						procedure map_enter_p_proc begin
-					</pre>
-				</code>
+<code>procedure map_enter_p_proc begin</code>
 		<br>
 			<p>It's been checked if you're loading a savefile. If yes skip entire procedure. If no proceed with next step.</p>
-				<code>
-					<pre>
-						if (is_loading_game == false) then begin
-					</pre>
-				</code>
+<code>if (is_loading_game == false) then begin</code>
 		<br>
 			<p>It's been checked if the local variable LVAR_RESTOCK_TIME is smaller than the game time. In this case LVAR_RESTOCK_TIME = 0. Proceed with next step.</p>
-				<code>
-					<pre>
-						if (local_var(LVAR_RESTOCK_TIME) < game_time) then begin
-					</pre>
-				</code>
+<code>if (local_var(LVAR_RESTOCK_TIME) < game_time) then begin</code>
 		<br>
 			<p>A random amount of caps will be added to the store box(between 151 and 161 inclusive). The chosen random amount of caps will be subtracted from the already contained caps inside the store box.</p>
-				<code>
-					<pre>
-						item_caps_adjust(self_obj, random(151, 161) - self_caps);
-					</pre>
-				</code>
+<code>item_caps_adjust(self_obj, random(151, 161) - self_caps);</code>
 		<br>
 			<p>Different items will be added to the store box. E.g. PID_JET is the proto ID Jet (the drug); 5 is minimum amount; 10 maxmimum amount and 100 is the percentage probability of the item to restock.</p>
-				<code>
-					<pre>
-						check_restock_item(PID_JET, 5, 10, 100)
-						check_restock_item(PID_PSYCHO, 0, 2, 100)
-						check_restock_item(PID_BUFFOUT, 0, 1, 100)
-						check_restock_item(PID_10MM_PISTOL, 1, 2, 100)
-						check_restock_item(PID_10MM_JHP, 2, 4, 100)
-						check_restock_item(PID_10MM_AP, 0, 2, 100)
-						check_restock_item(PID_BRASS_KNUCKLES, 1, 1, 100)
-						check_restock_item(PID_LEATHER_JACKET, 1, 1, 100)
-						check_restock_item(PID_STIMPAK, 2, 5, 100)
-						check_restock_item(PID_10MM_SMG, 0, 1, 100)
-						check_restock_item(PID_DESERT_EAGLE, 1, 2, 100)
-						check_restock_item(PID_SLEDGEHAMMER, 0, 1, 100)
-						check_restock_item(PID_RADAWAY, 0, 3, 100)
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	check_restock_item(PID_JET, 5, 10, 100)
+	check_restock_item(PID_PSYCHO, 0, 2, 100)
+	check_restock_item(PID_BUFFOUT, 0, 1, 100)
+	check_restock_item(PID_10MM_PISTOL, 1, 2, 100)
+	check_restock_item(PID_10MM_JHP, 2, 4, 100)
+	check_restock_item(PID_10MM_AP, 0, 2, 100)
+	check_restock_item(PID_BRASS_KNUCKLES, 1, 1, 100)
+	check_restock_item(PID_LEATHER_JACKET, 1, 1, 100)
+	check_restock_item(PID_STIMPAK, 2, 5, 100)
+	check_restock_item(PID_10MM_SMG, 0, 1, 100)
+	check_restock_item(PID_DESERT_EAGLE, 1, 2, 100)
+	check_restock_item(PID_SLEDGEHAMMER, 0, 1, 100)
+	check_restock_item(PID_RADAWAY, 0, 3, 100)
+</pre>
+</div>
+</li>
 		<br>
 			<p>After it has finished restocking, it sets the local variable LVAR_RESTOCK_TIME. A random number between 1 and 2 inclusive is taken. It multiplies the random number with one game day
 				and adds the result with the elapsed game time.</p>
-				<code>
-					<pre>
-						set_local_var(LVAR_RESTOCK_TIME, (random(1, 2) * ONE_GAME_DAY) + game_time);
-					</pre>
-				</code>
-				<code>
-					<pre>
-						ONE_GAME_SECOND             (10)					// 10 ticks = 1 second
-						ONE_GAME_MINUTE             (60*ONE_GAME_SECOND)
-						ONE_GAME_HOUR               (60*ONE_GAME_MINUTE)
-						ONE_GAME_DAY                (24*ONE_GAME_HOUR)
-						ONE_GAME_WEEK               (7*ONE_GAME_DAY)
-						ONE_GAME_MONTH              (30*ONE_GAME_DAY)
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	set_local_var(LVAR_RESTOCK_TIME, (random(1, 2) * ONE_GAME_DAY) + game_time);
+
+	ONE_GAME_SECOND             (10)			// 10 ticks = 1 second
+	ONE_GAME_MINUTE             (60*ONE_GAME_SECOND)
+	ONE_GAME_HOUR               (60*ONE_GAME_MINUTE)
+	ONE_GAME_DAY                (24*ONE_GAME_HOUR)
+	ONE_GAME_WEEK               (7*ONE_GAME_DAY)
+	ONE_GAME_MONTH              (30*ONE_GAME_DAY)
+</pre>
+</div>
+</li>
 			<p>This makes it re-stock every time you come back if it's been more than 1 or 2 days (depending on the random roll).</p>
 		<br>
 			<h5>Notice</h5>
@@ -2414,94 +2300,68 @@
 			<p>At the center of the Arroyo village there is a well, and Feargus, the Chosen One's nephew, is standing next to it, 
 				whining because it is broken. Simply Repair the well. Even with a negative Repair skill, it can still be fixed.</p>
 			<p>This procedure is executed when the player uses the repair skill on the well. After using the skill, a message appears, and the player is rewarded with experience points.</p>
-				<code>
-					<pre>
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span>
-							<span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>)) <span class="dyestatement">then begin</span>
-								<span class="dyefunction">script_overrides</span>;
-								<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
-								<span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL);
-								<span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,</span><span class="dyedefine">1</span>);
-								<span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,</span><span class="dyedefine">1</span>);
-							<span class="dyestatement">end</span>
-						<span class="dyestatement">end</span>
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span>
+		<span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>)) <span class="dyestatement">then begin</span>
+			<span class="dyefunction">script_overrides</span>;
+			<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
+			<span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL);
+			<span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,</span><span class="dyedefine">1</span>);
+			<span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,</span><span class="dyedefine">1</span>);
+		<span class="dyestatement">end</span>
+	<span class="dyestatement">end</span>
+</pre>
+</div>
+</li>
 			<br>
 
 			<h4>How does this work in detail? Let’s break it down.</h4> 
 				<p>The procedures use_skill_on_p_proc is called.</p>
-				<code>
-					<pre>
-						<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span>
-						<span class="dyestatement">end</span>
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span>
+	<span class="dyestatement">end</span>
+</pre>
+</div>
+</li>
 				<p>The first function action_being_used checks if the repair skill, written as SKILL_REPAIR, is used on the well. 
 					The second one local_var checks if the local variable  LVAR_Gave_Xp is equal 0. 
 					If both conditions match the following code is executed, else the procedure ends without anything been done.</p>
-				<code>
-					<pre>
-						<span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>)) <span class="dyestatement">then begin</span>
-					</pre>
-				</code>
+<code><span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>)) <span class="dyestatement">then begin</span></code>
 				<p>For certain procedures in the game there are default functions that are called when nothing is written inside these procedures. 
 					To prevent these default functions to happen when something is indeed written inside the procedures the function script_overrides is used.</p>
-				<code>
-					<pre>
-						<span class="dyefunction">script_overrides</span>;
-					</pre>
-				</code>
+<code><span class="dyefunction">script_overrides</span>;</code>
 				<p>Show message line 1005 of file GENERIC.msg.</p>
 				<p>The function display_msg invokes the functionality to display a message. The function message_str has two arguments in this case. 
 					SCRIPT_GENERIC is the message file (.msg) that contains all lines of text that should be used for generic purposes. 
 					This file is actually named GENERIC.msg and is located at \text\english\dialog\GENERIC.msg. 100 and 101 are the lines which are contained inside the file GENERIC.msg.</p>
-				<code>
-					<pre>
-						<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
-					</pre>
-				</code>
+<code><span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));</code>
 				<p>Inside EXPPOINT.H you’ll find the definition of the macro give_xp(x).</p>
-				<code>
-					<pre>
-						<span class="dyedefine">#define</span> <span class="dyedevelopermacro"">give_xp</span>(x)    <span class="dyefunction">give_exp_points</span>(x);
-												<span class="indent278px" class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">100</span>)+x+<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">101</span>))
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	<span class="dyedefine">#define</span> <span class="dyedevelopermacro"">give_xp</span>(x)    <span class="dyefunction">give_exp_points</span>(x);
+	<span class="indent278px" class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">100</span>)+x+<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">101</span>))
+</pre>
+</div>
+</li>
 				<p>You can also define the amount of given exp points in the file EXPPOINT.H. In this example it’s EXP_FIX_WELL. 100 means 100 exp points given.</p>
-				<code>
-					<pre>
-						<span class="dyedefine">#define</span> EXP_FIX_WELL &emsp; &emsp; &emsp; (<span class="dyedefine">100</span>)
-					</pre>
-				</code>
+<code><span class="dyedefine">#define</span> EXP_FIX_WELL &emsp; &emsp; &emsp; (<span class="dyedefine">100</span>)</code>
 				<p>As you can see in the file ASWELL.SSL the macro give_xp is used with the defined argument EXP_FIX_WELL. 
 					So, if you want to change the amount of exp points given. You just can change the defined argument in the file EXPPOINT.H.</p>
 				<p>This give_xp(x) gives a certain amount of experience points to the player and displays a message to the player so he is informed how many exp points he received.</p>
-				<code>
-					<pre>
-						<span class="dyedevelopermacro"">give_xp</span>(EXP_FIX_WELL);
-					</pre>
-				</code>
+<code><span class="dyedevelopermacro"">give_xp</span>(EXP_FIX_WELL);</code>
 				<p>The function set_map_var sets the map variable MVAR_Fixed_Well to 1. The game remembers that the well has been fixed even if you change the map. 
 					So, it’s not possible to trick the game and invoking this quest again.</p>
-				<code>
-					<pre>
-						<span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,</span><span class="dyedefine">1</span>);
-					</pre>
-				</code>
+<code><span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,</span><span class="dyedefine">1</span>);</code>
 				<p>The map variable MVAR_Fixed_Well is located in the ARVILLAG.H file inside the header folder.</p>
-				<code>
-					<pre>
-						<span class="dyedefine">#define</span> MVAR_Fixed_Well</span> &emsp; &emsp; (<span class="dyedefine">4</span>)
-					</pre>
-				</code>
+<code><span class="dyedefine">#define</span> MVAR_Fixed_Well</span> &emsp; &emsp; (<span class="dyedefine">4</span>)</code>
 				<p>The set_local_var function sets the local variable LVAR_Gave_Xp to 1.
 					So, if the player tries to invoke the procedure use_skill_on_p_proc again on the well, nothing happens.</p>
-				<code>
-					<pre>
-						<span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,</span><span class="dyedefine">1</span>);
-					</pre>
-				</code>
+<code><span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,</span><span class="dyedefine">1</span>);</code>
 <br>
 <hr>
 
@@ -2509,63 +2369,63 @@
 		<img src="" alt="">
 		<p>You've probably seen critters of different kind walking around in random directions. Well based on a Brahmin in Arroyo I'll explain how this works.</p>
 		<p>Inside ACBRAHMN.SSL on line 51 to 61 you'll find these code snippets.</p>
-			<code>
-				<pre>
-						procedure timed_event_p_proc begin
-							if (((critter_state(self_obj) bwand DAM_KNOCKED_DOWN) == FALSE)
-								and (not(combat_is_initialized))) then begin
-								reg_anim_clear(self_obj);
-								reg_anim_begin();
-									animate_move_to_tile(tile_num_in_direction(tile_num(self_obj),random(0,5),3));
-								reg_anim_end();
-							end
-							add_timer_event(self_obj,game_ticks(random(3,5)),1);
-						end
-				</pre>
-			</code>
+<li>
+<div class="codebigbox">
+<pre>
+	procedure timed_event_p_proc begin
+		if (((critter_state(self_obj) bwand DAM_KNOCKED_DOWN) == FALSE)
+			and (not(combat_is_initialized))) then begin
+			reg_anim_clear(self_obj);
+			reg_anim_begin();
+				animate_move_to_tile(tile_num_in_direction(tile_num(self_obj),random(0,5),3));
+			reg_anim_end();
+		end
+		add_timer_event(self_obj,game_ticks(random(3,5)),1);
+	end
+</pre>
+</div>
+</li>
 		<br>
 		<p>And on line 125 to 130 this.</p>
-			<code>
-				<pre>
-						procedure map_enter_p_proc begin
-							[...]
-							add_timer_event(self_obj,game_ticks(random(1,5)),1);
-						end
-				</pre>
-			</code>
+<li>
+<div class="codebigbox">
+<pre>
+	procedure map_enter_p_proc begin
+		[...]
+		add_timer_event(self_obj,game_ticks(random(1,5)),1);
+	end
+</pre>
+</div>
+</li>
 		<br>
 		<p>So when the player enters the map the following procedure will be executed.</p>
-			<code>
-				<pre>
-						procedure map_enter_p_proc
-				</pre>
-			</code>
+<code>procedure map_enter_p_proc</code>
 		<p>And with it the following function.</p>
-			<code>
-				<pre>
-						add_timer_event(self_obj,game_ticks(random(1,5)),1);
-				</pre>
-			</code>
+<code>add_timer_event(self_obj,game_ticks(random(1,5)),1);</code>
 		<p>add_timer_event adds a timed event to the script queue. That means if add_timer_event is called it'll execute code inside the procedure timed_event_p_proc.</p>
 		<p>In this case add_timer_event will be executed on self_obj (brahmin) every 1 to 5 (every number in between included) seconds.</p>
 		<p>Now it jumps into the procedure timed_event_p_proc and continues code execution here.</p>
-			<code>
-				<pre>
-						if (((critter_state(self_obj) bwand DAM_KNOCKED_DOWN) == FALSE)
-							and (not(combat_is_initialized))) then begin
-				</pre>
-			</code>
+<li>
+<div class="codebigbox">
+<pre>
+	if (((critter_state(self_obj) bwand DAM_KNOCKED_DOWN) == FALSE)
+	and (not(combat_is_initialized))) then begin
+</pre>
+</div>
+</li>
 		<p>The first line looks if the critters is knocked down. The second line looks if the critter is inside a combat situation.</p>
 		<p>Let's assume the brahmin isn't knocked down and no combat is initialized. Then the following is executed.</p>
-			<code>
-				<pre>
-							reg_anim_clear(self_obj);
-							reg_anim_begin();
-								animate_move_to_tile(tile_num_in_direction(tile_num(self_obj),random(0,5),3));
-							reg_anim_end();
-						end
-				</pre>
-			</code>
+<li>
+<div class="codebigbox">
+<pre>
+		reg_anim_clear(self_obj);
+		reg_anim_begin();
+			animate_move_to_tile(tile_num_in_direction(tile_num(self_obj),random(0,5),3));
+		reg_anim_end();
+	end
+</pre>
+</div>
+</li>
 		<p>First line clears all momentarily executed animations of the brahmin.</p>
 		<p>The second line initiates the beginning of an animation.</p> 
 		<p>The third line does the actual animation. It says that an animation to a tile should be executed to a random direction beginning at 0 going to 5 (remember the directions inside the BIS mapper?) 
@@ -2648,166 +2508,172 @@
 
 		<h4>Preparations</h4>
 			<p>Make sure you have these programs:</p>
-				<code>
-					<pre>
-						♥Adobe Photoshop or Gimp (preferably the former),
-						♥Fallout Frame Animator,
-						♥SFall Script Editor.
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	♥Adobe Photoshop or Gimp (preferably the former),
+	♥Fallout Frame Animator,
+	♥SFall Script Editor.
+</pre>
+</div>
+</li>
 		<br>
 
 		<h4>Animation Basics</h4>
 			<p>Every talking head has 3 moods:</p>
-				<code>
-					<pre>
-						♥Bad,
-						♥Neutral and
-						♥Good.
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	♥Bad,
+	♥Neutral and
+	♥Good.
+</pre>
+</div>
+</li>
 			<p>Each one of them must have at least 1 idle animation (most vanilla heads have 3) and 1 speaking animation otherwise the game won't function properly. 
 				If you downloaded the Vic images, you'll notice that there's a folder for each mood with 3 idle/fidget and speaking animations each.</p>
 			<p>The folder structure can look like this:</p>
-				<code>
-					<pre>
-						Bad
-						|
-						|->Fidget1
-							|->1.png
-							|->2.png 
-						|
-						|->Fidget2
-							|->1.png
-							|->2.png
-							|->3.png
-							|->4.png   
-							|->5.png
-							|->6.png   
-							|->7.png
-							|->8.png  
-						|
-						|->Fidget3
-							|->1.png
-							|->2.png
-							|->3.png
-							|->4.png   
-							|->5.png
-							|->6.png   
-							|->7.png
-						|
-						|->Talk
-							|->1.png
-							|->2.png
-							|->3.png
-							|->4.png   
-							|->5.png
-							|->6.png   
-							|->7.png
-							|->8.png
-							|->9.png
+<li>
+<div class="codebigbox">
+<pre>
+	Bad
+	|
+	|->Fidget1
+		|->1.png
+		|->2.png 
+	|
+	|->Fidget2
+		|->1.png
+		|->2.png
+		|->3.png
+		|->4.png   
+		|->5.png
+		|->6.png   
+		|->7.png
+		|->8.png  
+	|
+	|->Fidget3
+		|->1.png
+		|->2.png
+		|->3.png
+		|->4.png   
+		|->5.png
+		|->6.png   
+		|->7.png
+	|
+	|->Talk
+		|->1.png
+		|->2.png
+		|->3.png
+		|->4.png   
+		|->5.png
+		|->6.png   
+		|->7.png
+		|->8.png
+		|->9.png
 
-						Good
-						|
-						|->Fidget1
-							|->1.png
-							|->2.png  
-							|->3.png
-							|->4.png
-						|
-						|->Fidget2
-							|->1.png
-							|->2.png
-							|->3.png
-							|->4.png   
-							|->5.png
-							|->6.png   
-							|->7.png
-							|->8.png  
-							|->9.png
-						|
-						|->Fidget3
-							|->1.png
-							|->2.png
-							|->3.png
-							|->4.png   
-							|->5.png
-							|->6.png   
-							|->7.png
-						|
-						|->Talk
-							|->1.png
-							|->2.png
-							|->3.png
-							|->4.png   
-							|->5.png
-							|->6.png   
-							|->7.png
-							|->8.png
-							|->9.png
+	Good
+	|
+	|->Fidget1
+		|->1.png
+		|->2.png  
+		|->3.png
+		|->4.png
+	|
+	|->Fidget2
+		|->1.png
+		|->2.png
+		|->3.png
+		|->4.png   
+		|->5.png
+		|->6.png   
+		|->7.png
+		|->8.png  
+		|->9.png
+	|
+	|->Fidget3
+		|->1.png
+		|->2.png
+		|->3.png
+		|->4.png   
+		|->5.png
+		|->6.png   
+		|->7.png
+	|
+	|->Talk
+		|->1.png
+		|->2.png
+		|->3.png
+		|->4.png   
+		|->5.png
+		|->6.png   
+		|->7.png
+		|->8.png
+		|->9.png
 
-						Neutral
-						|
-						|->Fidget1
-							|->1.png
-							|->2.png  
-							|->3.png
-							|->4.png
-						|
-						|->Fidget2
-							|->1.png
-							|->2.png
-							|->3.png
-							|->4.png   
-							|->5.png
-							|->6.png   
-							|->7.png
-							|->8.png  
-							|->9.png
-							|->10.png   
-							|->11.png
-							|->12.png   
-							|->13.png
-							|->14.png  
-							|->15.png
-						|
-						|->Fidget3
-							|->1.png
-							|->2.png
-							|->3.png
-							|->4.png   
-							|->5.png
-							|->6.png   
-							|->7.png
-							|->8.png
-						|
-						|->Talk
-							|->1.png
-							|->2.png
-							|->3.png
-							|->4.png   
-							|->5.png
-							|->6.png   
-							|->7.png
-							|->8.png
-							|->9.png
-						|
-						|->Transitions
-							|->Neutral - Bad
-								|->1.png
-								|->2.png
-								|->3.png
-								|->4.png   
-								|->5.png
-							|
-							|->Neutral - Good
-								|->1.png
-								|->2.png
-								|->3.png
-								|->4.png   
-								|->5.png
-					</pre>
-				</code>
+	Neutral
+	|
+	|->Fidget1
+		|->1.png
+		|->2.png  
+		|->3.png
+		|->4.png
+	|
+	|->Fidget2
+		|->1.png
+		|->2.png
+		|->3.png
+		|->4.png   
+		|->5.png
+		|->6.png   
+		|->7.png
+		|->8.png  
+		|->9.png
+		|->10.png   
+		|->11.png
+		|->12.png   
+		|->13.png
+		|->14.png  
+		|->15.png
+	|
+	|->Fidget3
+		|->1.png
+		|->2.png
+		|->3.png
+		|->4.png   
+		|->5.png
+		|->6.png   
+		|->7.png
+		|->8.png
+	|
+	|->Talk
+		|->1.png
+		|->2.png
+		|->3.png
+		|->4.png   
+		|->5.png
+		|->6.png   
+		|->7.png
+		|->8.png
+		|->9.png
+	|
+	|->Transitions
+		|->Neutral - Bad
+			|->1.png
+			|->2.png
+			|->3.png
+			|->4.png   
+			|->5.png
+		|
+		|->Neutral - Good
+			|->1.png
+			|->2.png
+			|->3.png
+			|->4.png   
+			|->5.png
+</pre>
+</div>
+</li>
 			<br>
 
 		<h4>Converting images to proper format</h4>
@@ -2841,43 +2707,33 @@
 			<p>Before creating our animation files (FRMs) I'll try to explain how the talking head animations work.</p>
 			<p>Every talking head file (.frm) has main name that must be 5 letters or less, for this tutorial we will use the word "Vic".
 				You then add the relevant suffix to the name for each animation, they are as follows:</p>
-				<code>
-					<pre>
-						B = Bad mood
-						G = Good Mood
-						N = Neutral Mood
-						f1 = Fidget 1 (Character blinking)
-						f2 = Fidget 2 (Character nodding)
-						f3 = Fidget 3 (Character shaking head)
-						(B,G,N)P = Character talking.
-						BN,NB,GN,NG = Mood transition from (B,G,N) to (B,G,N)
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	B = Bad mood
+	G = Good Mood
+	N = Neutral Mood
+	f1 = Fidget 1 (Character blinking)
+	f2 = Fidget 2 (Character nodding)
+	f3 = Fidget 3 (Character shaking head)
+	(B,G,N)P = Character talking.
+	BN,NB,GN,NG = Mood transition from (B,G,N) to (B,G,N)
+</pre>
+</div>
+</li>
 		<br>
 
 			<h5>Examples</h5>
 				<p>If you want to create an animation for Vic where he is blinking and in a neutral mood you must name it:</p>
-				<code>
-					<pre>
-						VicNf1
-					</pre>
-				</code>
+<code>VicNf1</code>
 				<p>Vic (the characters name) + N (the mood he is in) + f1 (Fidget 1).</p>
 			<br>
 				<p>If you want to create an animation where Vic is speaking in a bad mood you must name it:</p>
-				<code>
-					<pre>
-						VicBP
-					</pre>
-				</code>
+<code>VicBP</code>
 				<p>Vic (the character name) + B (the mood he is in) + P (Talk).</p>
 			<br>
 				<p>If you want to an animation where Vic transitions from good to neutral mood you must name it:</p>
-				<code>
-					<pre>
-						VicGN
-					</pre>
-				</code>
+<code>VicGN</code>
 				<p>Vic (the character name) + GN ( Good to Neutral).</p>
 				<p>Hopefully this isn't too confusing.</p>
 			<br>
@@ -2950,63 +2806,69 @@
 			<br>
 			<br>
 			<p>Create all the remaining FRMs, this is what the complete set will look like:</p>
-				<code>
-					<pre>
-						VicBf1.frm
-						VicBf2.frm
-						VicBf3.frm
-						VicBN.frm
-						VicBP.frm
-						VicGf1.frm
-						VicGf2.frm
-						VicGf3.frm
-						VicGN.frm
-						VicGP.frm
-						VicNB.frm
-						VicNf1.frm
-						VicNf2.frm
-						VicNf3.frm
-						VicNG.frm
-						VicNP.frm 
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	VicBf1.frm
+	VicBf2.frm
+	VicBf3.frm
+	VicBN.frm
+	VicBP.frm
+	VicGf1.frm
+	VicGf2.frm
+	VicGf3.frm
+	VicGN.frm
+	VicGP.frm
+	VicNB.frm
+	VicNf1.frm
+	VicNf2.frm
+	VicNf3.frm
+	VicNG.frm
+	VicNP.frm 
+</pre>
+</div>
+</li>
 		<br>
 		
 		<h4>Talking Animations</h4>
 			<p>All talking animations (NP,GP,BP) must have 9 frames, each one representing a different viseme (the shape the mouth makes when saying a letter).</p>
 			<img src="images\TalkingHeads\Creating FRMs 5.png" alt="">
 			<p>I'm not 100% sure of the exact order but I think it is:</p>
-				<code>
-					<pre>
-						1 - Closed (In between frame)
-						2 - A
-						3 - E
-						4 - I
-						5 - F
-						6 - L
-						7 - M
-						8 - O
-						9 - U
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	1 - Closed (In between frame)
+	2 - A
+	3 - E
+	4 - I
+	5 - F
+	6 - L
+	7 - M
+	8 - O
+	9 - U
+</pre>
+</div>
+</li>
 		<br>
 
 			<h5>Animation Tips</h5>
 				<p>* The bare minimum amount of animations for a Talking Head to be functional is this:</p>
-				<code>
-					<pre>
-						[name]Nf1,
-						[name]NP,
-						[name]NG,
-						[name]NB,
-						[name]Bf1,
-						[name]BN,
-						[name]BP
-						[name]Gf1
-						[name]GN
-						[name]GP
-					</pre>
-				</code>
+<li>
+<div class="codebigbox">
+<pre>
+	[name]Nf1,
+	[name]NP,
+	[name]NG,
+	[name]NB,
+	[name]Bf1,
+	[name]BN,
+	[name]BP
+	[name]Gf1
+	[name]GN
+	[name]GP
+</pre>
+</div>
+</li>
 				<p>* If use want to make a static image as a Talking Head instead of an animated one, simply make a FRM of each animation (mentioned in the previous tip) with that single image. </p>
 				<p>* Try to make the animations loop so in game the Heads will look fluid, make sure the last frame links to the first one.</p>
 				<p>* The first frame of Nf1,Bf1 and Gf1 (specially Nf1) is arguably the most important as the Head freezes on it before randomly choosing one of the Fidgets (f1,f2,f3), so make sure it looks cool! </p>
@@ -3054,11 +2916,7 @@
 				To open Fallout 2 script files (.int) you can use various programs, to most common is Sfall Script Editor.</p>
 			<p>Find the line starting with "start_gdialog" (use CTRL + F to find code with ease).
 				If it has no talking head assigned to it, it will look like this (the first number will be different):</p>
-				<code>
-					<pre>
-						start_gdialog(1364, self_obj, 4, -1, -1);
-					</pre>
-				</code>
+<code>start_gdialog(1364, self_obj, 4, -1, -1);</code>
 			<p>* The first number (1364) represent's the characters script number, you don't need to change that.
 			<br>
 			* "self_obj" makes it so that the code is referring to the object it's assigned to, you also don't need to change this.
@@ -3079,20 +2937,12 @@
 			<br>
 			&nbsp;	For example "junktown.frm" is in the 8th row so, since we also start counting from 0, it's background number is "7".</p>
 			<p>Using both "head.lst" and "backgrnd.lst" as a reference change the "start_gdialog" line as follows:</p>
-				<code>
-					<pre>
-						start_gdialog(1364, self_obj, 4, [talking head number], [background number]);
-					</pre>
-				</code>
+<code>start_gdialog(1364, self_obj, 4, [talking head number], [background number]);</code>
 			<p>* The [talking head number] for the one we are adding would be it's number in "head.lst", for example if you modified the vanilla list the number would likely be "13".
 			<br>
 			* You can choose anything you want as a background, for example use "3" if you want The Hub backdrop.</p>
 			<p>Using these examples the code would look like this:</p>
-				<code>
-					<pre>
-						start_gdialog(1364, self_obj, 4, 13, 3);
-					</pre>
-				</code>
+<code>start_gdialog(1364, self_obj, 4, 13, 3);</code>
 			<p>* There may be more than one "start_gdialog" line so make sure you change all of them.</p>
 			<br>
 			<p>Compile the script and you are done!</p>
