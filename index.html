@@ -31,13 +31,13 @@
 					<ol>
 						<li><a href="index.html#hotkeys">Hotkeys</a></li>
 					</ol>
-					<li><a href="index.html#build_map">How to build a map</a></li>
+					<li><a href="index.html#BuildMap">How to build a map</a></li>
 					<ol>
 						<li><a href="index.html#FloorWall">Floors and walls</a></li>
 						<li><a href="index.html#SceneryCritter">Scenery and critters</a></li>
-						<li><a href="index.html#LadderStair">Ladders and stairs</a></li>
 						<li><a href="index.html#ScrollBlocker">Scroll blocker</a></li>
 						<li><a href="index.html#MapExit">Map exits</a></li>
+						<li><a href="index.html#LadderStair">Ladders and stairs</a></li>
 						<li><a href="index.html#Worldmap">Worldmap</a></li>
 					</ol>
 					<li><a href="index.html#New_Critter">Make new prototype</a></li>
@@ -840,29 +840,6 @@
 				which bring the player to the world map etc. This will follow in the next tutorial.</p>
 		<br>
 		<hr>
-
-		<div id="LadderStair"><h4>Ladders and stairs</h4></div>
-			<p>Add your ladders/stairs.</p>
-			<img src="images\mapping\Ladders and stairs\Ladder01.webp" alt="">
-			<br>
-			<img src="images\mapping\Ladders and stairs\Ladder02.webp" alt="">
-			<p>I suggest changing your cursor to the arrow ('m' key - press again to change it back) for the next part as it makes selecting ladders easier.</p>
-			<p>Select the ladder you want to set the info for.</p>
-			<p>Click on the EDIT button, a screen will appear as shown.</p>
-			<img src="images\mapping\Ladders and stairs\Ladder03.webp" alt="">
-			<p>Click the button called 'Dest Tile' and put in the hex number you would like the player to 'arrive' on the destination level.</p>
-			<p>To find the hex number, click on the floor near the ladder and look in the grey box in the bottom left corner, it is the number 19902 on the left.</p>
-			<img src="images\mapping\Ladders and stairs\Ladder04.webp" alt="">
-			<p>Click the button called 'Dest Elev' and put in the number of the 'level' you want the ladder/stairs to go to.</p>
-			<p>Click the button called 'Dest Map'. This is where you put the number of the map you want the ladder to go to, so you CAN make ladders span maps if you like.</p>
-			<p>To get it to go to the same map as it is on, you need to give that map a number in the maps.txt file and put it in the 'Dest Map' box.</p>
-			<p>For my example map, I ended up with the following.</p>
-			<img src="images\mapping\Ladders and stairs\Ladder05.webp" alt="">
-			<p>Click 'Done'.</p>
-			<p>Repeat steps 4 - 11 for the other ladders/stairs.</p>
-		<br>
-		<hr>
-
 		<div id="ScrollBlocker"><h4>Scroll blocker</h4></div>
 			<p>When you're finished to build your map, you need to put Scroll Blockers to limitate until where the screen can scroll.</p>
 			<p>You do that by clicking on 'EDG' on bottom screen. You'll receive this menu.</p>
@@ -1026,7 +1003,27 @@
 		<br>
 		<br>
 		<hr>
-			
+		<div id="LadderStair"><h4>Ladders and stairs</h4></div>
+			<p>Add your ladders/stairs.</p>
+			<img src="images\mapping\Ladders and stairs\Ladder01.webp" alt="">
+			<br>
+			<img src="images\mapping\Ladders and stairs\Ladder02.webp" alt="">
+			<p>I suggest changing your cursor to the arrow ('m' key - press again to change it back) for the next part as it makes selecting ladders easier.</p>
+			<p>Select the ladder you want to set the info for.</p>
+			<p>Click on the EDIT button, a screen will appear as shown.</p>
+			<img src="images\mapping\Ladders and stairs\Ladder03.webp" alt="">
+			<p>Click the button called 'Dest Tile' and put in the hex number you would like the player to 'arrive' on the destination level.</p>
+			<p>To find the hex number, click on the floor near the ladder and look in the grey box in the bottom left corner, it is the number 19902 on the left.</p>
+			<img src="images\mapping\Ladders and stairs\Ladder04.webp" alt="">
+			<p>Click the button called 'Dest Elev' and put in the number of the 'level' you want the ladder/stairs to go to.</p>
+			<p>Click the button called 'Dest Map'. This is where you put the number of the map you want the ladder to go to.</p>
+			<p>To get it to go to the same map as it is on, you need to give that map a number in the maps.txt file and put it in the 'Dest Map' box.</p>
+			<p>For my example map, I ended up with the following.</p>
+			<img src="images\mapping\Ladders and stairs\Ladder05.webp" alt="">
+			<p>Click 'Done'.</p>
+			<p>Repeat steps 4 - 11 for the other ladders/stairs.</p>
+		<br>
+		<hr>			
 	<div id="Worldmap"><h4>Worldmap</h4></div>
 		<!-- <p>Put your map in the fallout2\data\maps directory (editor should do it automatically but if it's not your map then put it here).</p>
 	<br>
