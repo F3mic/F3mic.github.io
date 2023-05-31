@@ -189,7 +189,7 @@
 		<p>Unpack the file inside it wherever you like. Should look like this.</p> 
 		<img src="images\Preparations\ToolsDATExplorer\2022-04-20 20_47_40-Fallout 2 Dat Explorer 1.43 by Dims.png" alt="">
 		<p>Luckily, it doesn't require installation on your computer as such, so it can be run straight out of the box.</p>
-		<p>Start Dat Explorer 1.43.exe</p>
+		<p>Start <code class="codeinline">Dat Explorer 1.43.exe</code></p>
 		<img src="images\Preparations\ToolsDATExplorer\2022-04-20 20_53-Dat Explorer_1.43.exe.png" alt="">
 		<br>
 		<br>
@@ -202,22 +202,22 @@
 	<hr>
 
 	<div id="Extracting_.dat_files"><h3>Extracting - .dat files</h3></div>
-		<p>In the 'Startup form' box, double-click on the folder saying 'DAT file' with the vault boy's grinning face on it.</p> 
+		<p>In the 'Startup form' box, double-click on the folder saying <code class="codeinline">DAT file</code> with the vault boy's grinning face on it.</p> 
 		<p>In the 'Open' box that comes up next, find and open the folder where you saved the .dat files. </p>	
 		<img src="images\Preparations\ToolsDATExplorer\2022-04-20 20_57_56-DAT explorer.png" alt="">
-		<p>Select master.dat and click open or just double-click it. This will open up the .dat file within DatExplorer, 
+		<p>Select <code class="codeinline">master.dat</code> and click open or just double-click it. This will open up the .dat file within DatExplorer, 
 			allowing you to browse its contents before extracting them, WinZip style. So now we extract all these files.</p>
 		<img src="images\Preparations\ToolsDATExplorer\2022-04-20-Opened_master.dat.png" alt="">
-		<p>Minimise DatExplorer for a moment and create a folder called 'data' somewhere where you can easily find it.</p>
+		<p>Minimise DatExplorer for a moment and create a folder called <code class="codeinline">data</code> somewhere where you can easily find it.</p>
 		<p>I suggest doing it like this...</p>
 				<code>E:\dev\Ressources\data</code>
-		<p>Bring up DatExplorer again. On the menu bar, select Extract ==> Extract all files to (or Shift+E) and point it to your freshly-made data folder. 
+		<p>Bring up DatExplorer again. On the menu bar, select <code class="codeinline">Extract</code> ==> <code class="codeinline">Extract all files to (or Shift+E)</code> and point it to your freshly-made data folder. 
 		'OK' it, and DatExplorer will unpack the files. This takes a while.</p>
 		<img src="images\Preparations\ToolsDATExplorer\2022-04-20-Extract.png" alt="">
-		<p>That's master.dat done. Now do the same with critter.dat. Finally - and make sure you do this last - unpack patch000.dat. 
-			It is vital that patch000.dat is unpacked last, since it updates many of the files within the other two, big .dat files.</p>
-		<p>When DatExplorer is finished, minimise it, cut the 'data' folder and paste it into the root of your backuped \Fallout2 directory. 
-			Hit 'Yes To All' in the window that comes up, to replace any old files in the directory with the new, extracted ones.</p>
+		<p>That's <code class="codeinline">master.dat</code> done. Now do the same with <code class="codeinline">critter.dat</code>. Finally - and make sure you do this last - unpack <code class="codeinline">patch000.dat</code>. 
+			It is vital that <code class="codeinline">patch000.dat</code> is unpacked last, since it updates many of the files within the other two, big .dat files.</p>
+		<p>When DatExplorer is finished, minimise it, cut the <code class="codeinline">data</code> folder and paste it into the root of your backuped <code class="codeinline">\Fallout2</code> directory. 
+			Hit <code class="codeinline">Yes To All</code> in the window that comes up, to replace any old files in the directory with the new, extracted ones.</p>
 		<br>
 		<p>If you're tired of reading and rather want to listen to someone executing the task, our friend QuantumApprentice has made a video especially for this case :)</p>
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/vCPc1gxPtKk?start=438" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -225,14 +225,10 @@
 		<br>
 
 		<h5>Note</h5>
-			<p>Why the extracted files go into '...\Fallout2\data' instead of the Fallout 2 root directory? (Thanks Red)</p>
-			<p>The engine is actually built to read the data files from ...\Fallout2\data first (Well, that's how fallout2.cfg sets it by default...) 
-				and failing that, will read the ...\Fallout2\ root directory. </p>
-			<p>Of course, this causes problems since you put the extracted files in ...\Fallout2\data, Fallout2 likes to delete most if not all the files in ...\Fallout2\data\proto, 
-				so you need to make them read-only. Yet if you want to be able to edit them, they should NOT be read-only... Quite a pain in the ass huh? </p>
-			<p>There hasn't been found any clever workarounds...The danger in putting the extracted files in the root instead of in 
-				...\Fallout2\data is that I think the original .dat files would actually have priority over them.
-				While the extracted files in ...\Fallout2\data have priority over the .dat files. </p>
+			<p>Why the extracted files go into <code class="codeinline">...\Fallout2\data</code> instead of the Fallout2 root directory? (Thanks Red)</p>
+			<p>The engine is actually built to read the data files from <code class="codeinline">...\Fallout2\data</code> first (Well, that's how fallout2.cfg sets it by default...) and failing that, will read the <code class="codeinline">...\Fallout2\</code> root directory.</p>
+			<p>Of course, this causes problems since you put the extracted files in <code class="codeinline">...\Fallout2\data</code>, Fallout2 likes to delete most if not all the files inside <code class="codeinline">...\Fallout2\data\proto</code>, so you need to make them read-only. Yet if you want to be able to edit them, they should NOT be read-only... Quite a pain in the ass huh?</p>
+			<p>There hasn't been found any clever workarounds...The danger in putting the extracted files in the root instead of in <code class="codeinline">...\Fallout2\data</code> is that I think the original .dat files would actually have priority over them. While the extracted files in <code class="codeinline">...\Fallout2\data</code> have priority over the .dat files.</p>
 	<br>
 	<br>
 	<hr>
@@ -241,7 +237,7 @@
 		<p>You can take a simple text editor like notepad or notepad++ with or without <a href="https://nma-fallout.com/threads/vscode-ssl-support.217033/">Burns VScode SSL support</a> 
 			to write scripts. But we take a more dedicated tool for this task. The tool we're going to use is called 
 			<a href="https://github.com/F3mic/F3mic.github.io/blob/main/Fallout%20sFall%20Script%20Editor%20v4.1.7.RC1.rar">SFall Script Editor</a> by Mr. Stalin. This tool is gold and will save us a lot of work.</p>
-		<p>Download and extract the file 'Fallout sFall Script Editor v4.1.7.RC1.rar'. Execute the installer. Install it wherever you want.</p>
+		<p>Download and extract the file <code class="codeinline">Fallout sFall Script Editor v4.1.7.RC1.rar</code>. Execute the installer. Install it wherever you want.</p>
 		<p>My installed sFall Script Editor folder looks like this...</p>
 				<pre><code>E:\dev\Tools\Fallout sFall Script Editor v4.1.7.RC1</code></pre>
 		<img src="images\Preparations\ToolsScripting\2022-04-21 08_29_43-Fallout sFall Script Editor v4.1.7.RC1.png" alt="">
@@ -256,7 +252,7 @@
 				<img src="images\Preparations\ToolsScripting\2022-04-21 08_08_31-BIS mapper patched (+complementary ressources).png" alt="">
 		<p>Inside the BIS Mappers folder you'll find decompiled (human readable) scripts from Fallout2. </p>
 				<code>E:\dev\Tools\BIS mapper patched (+complementary ressources)\BIS mapper\scripts</code>
-		<p>Copy everything inside the 'scripts' folder to the 'data' folder you created and pasted recently into the FO2 backup directory.</p>
+		<p>Copy everything inside the <code class="codeinline">scripts</code> folder to the <code class="codeinline">data</code> folder you created and pasted recently into the FO2 backup directory.</p>
 				<pre><code>E:\Fallout2\data\decompiled</code></pre>
 		<p>Keep the original of these BIS Mapper decompiled scripts save and untouched.</p>
 	<br>
@@ -264,15 +260,15 @@
 	<hr>
 
 	<div id="Config_sFall_Script_Editor"><h3>Config - sFall Script Editor</h3></div>
-		<p>Run 'SfallScriptEditor.exe'. It'd look like this...</p>
+		<p>Run <code class="codeinline">SfallScriptEditor.exe</code>. It'd look like this...</p>
 		<img src="images\Preparations\ToolsScripting\2022-04-21-sFall_Script_Editor_first_run.png" alt="">
-		<p>Uncheck 'Don't use compiling path'. The first field 'unset' should change its color.</p>
+		<p>Uncheck <code class="codeinline">Don't use compiling path</code>. The first field <code class="codeinline">unset</code> should change its color.</p>
 		<img src="images\Preparations\ToolsScripting\2022-04-21 08_36_20-Sfall Script Editor v.4.1.7.0.RC1.png" alt="">
-		<p>Select the folder-symbol on the right side at 'Compiled/Output scripts folder:' and navigate to the 'scripts' folder inside 'data' and choose it.</p>
+		<p>Select the folder-symbol on the right side at <code class="codeinline">Compiled/Output scripts folder:</code> and navigate to the <code class="codeinline">scripts</code> folder inside <code class="codeinline">data</code> and choose it.</p>
 		<img src="images\Preparations\ToolsScripting\2022-04-21 09_03_39-Sfall Script Editor v.4.1.7.0.RC1.png" alt="">
-		<p>Now select the next folder-symbol at 'Location folder of headers files:' and again navigate to 'scripts' inside 'data' and this time choose the 'HEADERS' folder.</p>
+		<p>Now select the next folder-symbol at 'Location folder of headers files:' and again navigate to <code class="codeinline">scripts</code> inside <code class="codeinline">data</code> and this time choose the <code class="codeinline">HEADERS</code> folder.</p>
 		<img src="images\Preparations\ToolsScripting\2022-04-21 08_37_12-Sfall Script Editor v.4.1.7.0.RC1.png" alt="">
-		<p>The last field 'Location of Scripts.H file' is filled automatically when choosing the path to the 'HEADERS' folder.</p>
+		<p>The last field <code class="codeinline">Location of Scripts.H file</code> is filled automatically when choosing the path to the <code class="codeinline">HEADERS</code> folder.</p>
 		<p>Now you're ready for scripting :)</p>
 	<br>
 	<br>
@@ -288,9 +284,9 @@
 	<hr>
 
 	<div id="Config_BIS_Mapper"><h3>Config - BIS Mapper</h3></div>
-		<p>The first time you run 'mapper2.exe' you should encounter this error...</p>
+		<p>The first time you run <code class="codeinline">mapper2.exe</code> you should encounter this error...</p>
 		<img src="images\Preparations\ToolsMapping\2022-04-21 14_09_35-Fehler.png" alt="">
-		<p>Open 'mapper2.cfg' with a text-editor of your choice.</p>
+		<p>Open <code class="codeinline">mapper2.cfg</code> with a text-editor of your choice.</p>
 		<p>Let's take a look at lines 58 to 74 looking like this...</p>
 <li>
 <div class="codebigbox">
@@ -331,7 +327,7 @@
 </pre>
 </div>
 </li>
-		<p>The mapper is looking for files to work with. Because these lines are empty the mapper cannot start. We need to tell the mapper where the files are located  it's looking for.Fill in the lines like this...</p>
+		<p>The mapper is looking for files to work with. Because these lines are empty the mapper cannot start. We need to tell the mapper where the files are located  it's looking for. Fill in the lines like this...</p>
 <li>
 <div class="codebigbox">
 <pre>
@@ -345,7 +341,7 @@
 </pre>
 </div>
 </li>					
-		<p>Save 'mapper2.cfg' and close it. Now run 'mapper2.exe' again and it should start.</p>
+		<p>Save <code class="codeinline">mapper2.cfg</code> and close it. Now run <code class="codeinline">mapper2.exe</code> again and it should start.</p>
 		<p>First time running BIS Mapper should look like this...</p>
 		<img src="images\Preparations\ToolsMapping\2022-04-21 14_21_45-Greenshot.png" alt="">
 		<p>You're ready for mapping :)</p>
@@ -391,14 +387,14 @@
 		<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_01-Direction_Southwest.png" alt="">
 		<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_01-Direction_West.png" alt="">
 		<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_01-Direction_Northwest.png" alt="">
-		<p>This clock looking thing shows the directions a critter can turn. Northeast; East; Southeast; Southwest; West and Northwest.</p>
+		<p>This clock looking thing shows the directions a critter can turn. <code class="codeinline">Northeast</code>; <code class="codeinline">East</code>; <code class="codeinline">Southeast</code>; <code class="codeinline">Southwest</code>; <code class="codeinline">West</code> and <code class="codeinline">Northwest</code>.</p>
 		<br>
 		<br>
 		<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_09-Multifunctional.png" alt="">
-		<p>This panel has multiple buttons that serve multiple purposes. COPY; COPY ALL; DELETE should be clear. EDIT is used to edit an objects properties.</p>
-		<p>TBOV stands for 'Toggle Block Object View' and it turns special tiles that are normally invisible to visible.</p>
-		<p>EDG stands for 'Edge' and it allows to set the viewable region for the player when they're on the map. But you need your map first.</p>
-		<p>The * symbol toggles the players viewable region on or off while editing a map.</p>
+		<p>This panel has multiple buttons that serve multiple purposes. <code class="codeinline">COPY</code>; <code class="codeinline">COPY ALL</code>; <code class="codeinline">DELETE</code> should be clear. <code class="codeinline">EDIT</code> is used to edit an objects properties.</p>
+		<p><code class="codeinline">TBOV</code> stands for <code class="codeinline">Toggle Block Object View</code> and it turns special tiles that are normally invisible to visible.</p>
+		<p><code class="codeinline">EDG</code> stands for <code class="codeinline">Edge</code> and it allows to set the viewable region for the player when they're on the map. But you need your map first.</p>
+		<p>The <code class="codeinline">*</code> symbol toggles the players viewable region on or off while editing a map.</p>
 		<br>
 		<br>
 		<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_16-Description.png" alt="">
@@ -468,7 +464,7 @@
 
 		<div id="hotkeys"><h4>Hotkeys</h4></div>
 			<h5>Introduction</h5>
-				<p>When there's a slash ( / ), the left part is in game mode (F8, and usually works
+				<p>When there's a slash  <code class="codeinline">/</code> , the left part is in game mode (<code class="codeinline">F8</code>, and usually works
 					in the normal game) while the right is in the editor. Most of the normal game
 					functions still work in the editor - moreso in the game mode of course. The M
 					key is especially useful for selecting critters as it doesn't have the issue of
@@ -478,11 +474,11 @@
 					there's a slash with nothing in front or after it, it means the command isn't
 					available in that mode.</p>
 				<p>	Fallout2/Mapper2 does not block out any of the windows key combinations so all
-					Windows-specific keys will work (Win, Win-B, Win-D, Win-E, Win-F, Win-L, Win-M,
-					Win-U, Win-Pause, Alt-Tab, Alt-Shift-Tab, Alt-Esc, Alt-Shift-Esc, Ctrl-Alt-Del,
-					Ctrl-Esc - Some of the listed combinations might not work depending on you OS
-					version). Additionally, keyboard with extra "Multimedia" or "Internet" keys
-					handle those keys as should be. External "HotKey" programs should work as
+					Windows-specific keys will work (<code class="codeinline">Win</code>, <code class="codeinline">Win-B</code>, <code class="codeinline">Win-D</code>, <code class="codeinline">Win-E</code>, <code class="codeinline">Win-F</code>, <code class="codeinline">Win-L</code>, <code class="codeinline">Win-M</code>,
+					<code class="codeinline">Win-U</code>, <code class="codeinline">Win-Pause</code>, <code class="codeinline">Alt-Tab</code>, <code class="codeinline">Alt-Shift-Tab</code>, <code class="codeinline">Alt-Esc</code>, <code class="codeinline">Alt-Shift-Esc</code>, <code class="codeinline">Ctrl-Alt-Del</code>,
+					<code class="codeinline">Ctrl-Esc</code> - Some of the listed combinations might not work depending on you OS
+					version). Additionally, keyboard with extra <code class="codeinline">"Multimedia"</code> or <code class="codeinline">"Internet"</code> keys
+					handle those keys as should be. External <code class="codeinline">"HotKey"</code> programs should work as
 					expected in the game given that there is no special handling done on the
 					keyboard input.</p>
 			<br>
@@ -560,7 +556,7 @@
 				<p>[ Ctrl-End ]: Go to proto 0 in list</p>
 				<p>[ Ctrl-Up, Ctrl-Down (Arrow keys) ]: Rotate critter North/South</p>
 				<p>[ Ctrl-Left, Ctrl-Right (Arrow keys) ]: Rotate critter Left/Right</p>
-				<!--<p>[ Ctrl-/ ]: In the Ctrl-J, Ctrl-Enter menu, allows you to give multiple number of an item depending on which page you are (weird)</p>-->
+				<p>[ Ctrl-/ ]: In the Ctrl-J, Ctrl-Enter menu, allows you to give multiple number of an item depending on which page you are (weird)</p>
 				<p>[ Ctrl-F1 ]: /Toggle Items display (doesn't update UI)</p>
 				<p>[ Ctrl-F2 ]: /Toggle Critters display (doesn't update UI)</p>
 				<p>[ Ctrl-F3 ]: /Toggle Scenery display (doesn't update UI)</p>
@@ -612,61 +608,61 @@
 				<p>[ Shift-+ or Keypad +, Shift-- ]: /Move proto list right or left by 10</p>
 			<br>
 			<h5>Map keys</h5>
-				<p>You can use the 0 through 9 keys to access any of the defined entrances on a map (accessed from the worldmap on any other occasion then the first). 
+				<p>You can use the <code class="codeinline">0</code> through <code class="codeinline">9</code> keys to access any of the defined entrances on a map (accessed from the worldmap on any other occasion then the first). 
 					This will work regardless of whether you can see the entry point on the map or not and also works in the normal game (sadly).</p>
 			<br>
 			<h5>Generic Keys</h5>
-				<p>The options menu can be driven using the first letter of the button you wish to select. The same can be said with Yes/No dialogs, 
-					as well as the real games main menu and various sub-menus (e.g. load menu, create new char menu, etc.)
-					Lists can be handled with Up/Down buttons, as well as Page Up and Page Down when the list has more items then the area can display. 
+				<p>The options menu can be driven using the first letter of the button you wish to select. The same can be said with <code class="codeinline">Yes/No</code> dialogs, 
+					as well as the real games main menu and various sub-menus (e.g. <code class="codeinline">load menu</code>, <code class="codeinline">create new char menu</code>, etc.)
+					Lists can be handled with <code class="codeinline">Up/Down</code> buttons, as well as <code class="codeinline">Page Up</code> and <code class="codeinline">Page Down</code> when the list has more items then the area can display. 
 					In addition, various element lists (such as a file list) can be controlled by typing the first letter of the item you're looking for 
-					(for example, type D to skip to the first D file in the map list when loading a map). Pressing Enter is equivalent to clicking OK. Pressing Escape cancels the dialogs.</p>
+					(for example, type <code class="codeinline">D</code> to skip to the first <code class="codeinline">D</code> file in the map list when loading a map). Pressing <code class="codeinline">Enter</code> is equivalent to clicking <code class="codeinline">OK</code>. Pressing <code class="codeinline">Escape</code> cancels the dialogs.</p>
 			<br>
 			<h5>Librarian mode</h5>
-				<p>The librarian menu can be toggled on with override_librarian=1 in the .cfg, note that while it's enabled you can't save your map.</p>
+				<p>The librarian menu can be toggled on with <code class="codeinline">override_librarian=1</code> in the <code class="codeinline">.cfg</code>, note that while it's enabled you can't save your map.</p>
 			<br>
 			<h5>Loading saved games</h5>
 				<p>You can load saved games into the editor, note however that the games files are used instead of the ones found in the directories and/or the DATs when possible. 
-					Also note that if you extracted and modified PRO files in your "working" directory, chances are loading the savegame will delete them so you'd need to make them read-only - also see the W key above about this. 
+					Also note that if you extracted and modified PRO files in your <code class="codeinline">"working"</code> directory, chances are loading the savegame will delete them so you'd need to make them read-only - also see the W key above about this. 
 					Additionally there seems to be problems in using edited PROs in savegames as their map properties are not updated in the actual savegame.</p>
 			<br>
 			<h5>Editing PRO files</h5>
-				<p>To get the PRO files to be editable, on the same drive that you run the mapper, create /fallout2/dev/proto, and in it place the directories critters, items, scenery, tiles, walls and misc. 
-					Once that's done you can edit the PRO files by simply Right-Clicking on them with the mouse and Clicking the Edit button (or pressing E). 
-					You also need to make sure that librarian is set to 1 in the .cfg (and preferably librarian_override still set to 0 if you still want to be able to save maps).</p>
+				<p>To get the PRO files to be editable, on the same drive that you run the mapper, create <code class="codeinline">/fallout2/dev/proto</code>, and in it place the directories <code class="codeinline">critters</code>, <code class="codeinline">items</code>, <code class="codeinline">scenery</code>, <code class="codeinline">tiles</code>, <code class="codeinline">walls</code> and <code class="codeinline">misc</code>. 
+					Once that's done you can edit the PRO files by simply Right-Clicking on them with the mouse and Clicking the <code class="codeinline">Edit</code> button (or pressing <code class="codeinline">E</code>). 
+					You also need to make sure that <code class="codeinline">librarian</code> is set to <code class="codeinline">1</code> in the <code class="codeinline">.cfg</code> (and preferably <code class="codeinline">librarian_override</code> still set to <code class="codeinline">0</code> if you still want to be able to save maps).</p>
 				<p>An important note is that each PRO contains its own PID in the file. If you copy a PRO file to overwrite another one or create a new one at the end of the list, 
-					you'll need to make sure the internally contained PID matches the its own critter.lst line number. You could hex edit it, or:</p>
+					you'll need to make sure the internally contained PID matches the its own <code class="codeinline">critter.lst</code> line number. You could hex edit it, or:</p>
 				<p>* edit the proto, thus creating the text file reference.</p>	
-				<p>* rebuild the protos (F9, see above, though you might need to use F11).</p>	
+				<p>* rebuild the protos (<code class="codeinline">F9</code>, see above, though you might need to use <code class="codeinline">F11</code>).</p>	
 			<br>
 			<h5>Bookmarks</h5>
-				<p>Bookmarks deserve a special entry: they are saved right beside the map in the same name as the maps but with the .cfg extention when you save your game. 
+				<p>Bookmarks deserve a special entry: they are saved right beside the map in the same name as the maps but with the <code class="codeinline">.cfg</code> extention when you save your game. 
 					When loading the map it will automatically load the bookmarks. If none exist, the mapper will keep the current bookmark set in memory for any new map and use it.
 					This means that if you edited a map and are rather happy with your bookmarks, you can first load that map to read the bookmarks and then load the map you wish to edit. 
-					If the bookmarks aren't working then it's most probably because you've already toyed with the map and the .cfg already exists and is thus read (with no bookmarks set); 
-					as such you should probably delete it's .cfg file to import your favorite bookmarks.</p>
+					If the bookmarks aren't working then it's most probably because you've already toyed with the map and the <code class="codeinline">.cfg</code> already exists and is thus read (with no bookmarks set); 
+					as such you should probably delete it's <code class="codeinline">.cfg</code> file to import your favorite bookmarks.</p>
 			<br>
 			<h5>Recording mode</h5>
-				<p>In the games main menu hit Ctrl-R. This will ask you to load a map and then select a name (for the recording). You've now started a recording and to exit you'll need to hit Ctrl-R again. 
+				<p>In the games main menu hit <code class="codeinline">Ctrl-R</code>. This will ask you to load a map and then select a name (for the recording). You've now started a recording and to exit you'll need to hit <code class="codeinline">Ctrl-R</code> again. 
 					Once recorded, Fallout2 will play the recording every other time instead of the main movie. 
 					If there's more then one recording it'll iterate through each of them (as well as the main movie). 
 					You can also use this trick to load the map you wish and play it in the real game by saving the game, quitting the recording and loading your recently saved game.</p>
 			<br>
 			<h5>Debug Mode</h5>
 				<p>The mapper, like the game, can be run in debug mode. Unlike the game, the mapper doesn't need to be hacked to access it. 
-					All you need is to set the DEBUGACTIVE environment variable to GNW (For a debug right on the screen) or LOG to create the file debug.log in your Fallout2 directory.</p>
-				<p>See said patch for further informations about the options available in the .cfg.</p> 
+					All you need is to set the <code class="codeinline">DEBUGACTIVE</code> environment variable to <code class="codeinline">GNW</code> (For a debug right on the screen) or <code class="codeinline">LOG</code> to create the file <code class="codeinline">debug.log</code> in your Fallout2 directory.</p>
+				<p>See said patch for further informations about the options available in the <code class="codeinline">.cfg</code>.</p> 
 			<br>
 			<h5>Editor UI Specific Keys</h5>
-				<p>Slashes ( / ) seperate here the proto editing (left side) and the instance editing (right side). 
-					Note that usually the same command works for the instance when availble then it is for the proto. For sakes of simplicity commands which were similar (ie: at worst, press or release shift in relation to the protos) were omitted.</p>
+				<p>Slashes  <code class="codeinline">/</code>  seperate here the proto editing (left side) and the instance editing (right side). 
+					Note that usually the same command works for the instance when availble then it is for the proto. For sakes of simplicity commands which were similar (ie: at worst, press or release <code class="codeinline">shift</code> in relation to the protos) were omitted.</p>
 				<p>These are keys which can be used in various dialogs which pop up in the editor, mostly for editing protos:</p>
 				<p>[ , ]: "<<" and ">>" buttons</p>
 				<p>[ - , + ]: "(*" and "*)" buttons</p>
 				<p>[ Enter or Ctrl-M ]: Done (Ctrl-M is the usual keycode used to represent Enter)</p>
 				<p>[ Esc ]: Cancel</p>
-				<p>[ Shift- ]: Scroll left-right 10 in SCENERY list (regardless of wether your're editing a scenery). This can be used to your advantage if you have the version of the game where kids are removed as
-					when reaching the kid, the UI doesn't go further using the left/right button. Simply use Shift-] to skip over it and scroll back using the left button. If you set a item (for
+				<p>[ Shift- ]: Scroll left-right <code class="codeinline">10</code> in <code class="codeinline">SCENERY</code> list (regardless of wether your're editing a scenery). This can be used to your advantage if you have the version of the game where kids are removed as
+					when reaching the kid, the UI doesn't go further using the left/right button. Simply use <code class="codeinline">Shift-]</code> to skip over it and scroll back using the left button. If you set a item (for
 					example) to a scenery reference, the graphic will still act as a scenery, not as an item. So you can't abuse this feature to make other proto types out of sceneries.</p>
 			<br>
 			<h5>Tiles</h5>
@@ -760,50 +756,47 @@
 		<div id="FloorWall"><h4>Floors and walls</h4></div>
 			<p>First you need a floor for your map. It's recommended to always place the tiles first because walls and tiles don't always match. 
 				If you'd place walls first it isn't guaranteed that placing the tiles afterwards matches with the already placed walls.</p>
-			<p>You can do this one of 2 ways, by hand, or by using the patterns included with the editor.</p>
+			<p>You can do this one of two ways, by hand, or by using the patterns included with the editor.</p>
 			<p>To do it by hand, you just scroll through the tiles selector at the bottom of the screen and choose the tiles you want, 
 				right click on the one you want to stamp down, then left-click on the map area where you want to place it.</p>
 			<img src="images\mapping\Floors_and_walls\Bas01.webp" alt="">
-			<p>To use the patterns, you simply have to go to the tools menu, and select 'use pattern'.</p>
+			<p>To use the patterns, you simply have to go to the tools menu, and select <code class="codeinline">use pattern</code>.</p>
 			<img src="images\mapping\Floors_and_walls\Bas02.webp" alt="">
 			<p>Select the pattern you want to use from the window that pops up. </p>
 			<img src="images\mapping\Floors_and_walls\Bas03.webp" alt="">
 			<p>Then just click away all over that black screen that is your map. </p>
 			<p>When you are done stamping the pattern down, right click to exit the pattern mode. </p>
 			<p>To speed things up a bit, you can make a large area, then copy it using the copy button on the tool bar at the bottom. </p>
-			<p>While you have the pattern selected, you can press the + (plus) and - (minus) keys to make the pattern stamp bigger or smaller. (2x2, 3x3, 4x4 etc.) </p>
+			<p>While you have the pattern selected, you can press the <code class="codeinline">+</code> (plus) and <code class="codeinline">-</code> (minus) keys to make the pattern stamp bigger or smaller. (2x2, 3x3, 4x4 etc.) </p>
 			<img src="images\mapping\Floors_and_walls\Bas04.webp" alt="">
-			<p>Once you have a basic floor to your map, you need to put down the 'footprint' of all your buildings and things such as roads, there are no patterns for this so you'll just have to do it by hand.</p>
-			<p>I recommend using tiles that make a 'grid' for the footprint to your buildings. You can change it later but it helps with placing the walls. </p>
+			<p>Once you have a basic floor to your map, you need to put down the <code class="codeinline">footprint</code> of all your buildings and things such as roads, there are no patterns for this so you'll just have to do it by hand.</p>
+			<p>I recommend using tiles that make a grid for the footprint to your buildings. You can change it later but it helps with placing the walls. </p>
 			<img src="images\mapping\Floors_and_walls\Tiles grid small.png" alt="" width="900" height="500">
 		<br>
 		<br>
-		<br>
-		<br>
-
 			<p>Next you need to place the walls, so set the selector to walls, and find the look you are going for.</p>
 			<img src="images\mapping\Floors_and_walls\Bas06.webp" alt="">
 			<p>Some wall sections are spread all over the selector bar, this was because sections of wall were added as they became needed by the original mappers, so you might have to hunt for that corner you want.</p>
-			<p>You should ideally place your walls on the 'grid' if you intend to include roofs to your buildings.</p>
-			<p>Because of the way some wall pieces are made, they leave 'holes' that the player can walk through. Corners are especially prone to this. </p>
+			<p>You should ideally place your walls on the grid if you intend to include roofs to your buildings.</p>
+			<p>Because of the way some wall pieces are made, they leave holes that the player can walk through. Corners are especially prone to this. </p>
 			<p>Turn on the hex grid. You will see that the walls have red hexes below them. These are areas the player cannot go (in simple terms). </p>
 			<img src="images\mapping\Floors_and_walls\Bas07.webp" alt="">
 		<br>
 		<br>
-			<p>Where the wall has no red hex below them, that is where the 'hole' is (Hole under wall. Walls turned off for clarity).</p>
+			<p>Where the wall has no red hex below them, that is where the hole is (Hole under wall. Walls turned off for clarity).</p>
 			<img src="images\mapping\Floors_and_walls\All walls + hexes + holes small.png" alt="" width="700" height="500">
 			<img src="images\mapping\Floors_and_walls\No walls + hexes + holes small.png" alt="" width="700" height="500">
 		<br>
 		<br>
-			<p>To plug these 'holes' with a wall blocker, found in the walls selector, tile number 620 and 621. They are named 'wall' and 'wall s.t.' respectively, 
-				and are a solid wall, and a wall that can be shot through (hence the s.t.).</p>
+			<p>To plug these holes with a wall blocker, found in the walls selector, tile number <code class="codeinline">620</code> and <code class="codeinline">621</code>. They are named <code class="codeinline">wall</code> and <code class="codeinline">wall s.t.</code> respectively, 
+				and are a solid wall, and a wall that can be shot through (hence the <code class="codeinline">s.t.</code>).</p>
 			<img src="images\mapping\Floors_and_walls\Bas10.webp" alt="">
 			<p>They are placed just like normal walls, but they do not show up on the map normally, they just make the hex red.</p>
-			<p>To be able to see them, you need to turn 'Toggle Block Obj View' on in the Tools menu.</p>
+			<p>To be able to see them, you need to turn <code class="codeinline">Toggle Block Obj View</code> on in the Tools menu.</p>
 			<img src="images\mapping\Floors_and_walls\Bas11.webp" alt="">
 		<br>
 		<br>
-			<p>The Blockers show up as a green hex with a 'W' in them. The solid walls have a solid 'W' (shown on the left in the pic), and the 'shoot through' walls have a faded 'W' in them (shown on the right in the pic).</p>
+			<p>The Blockers show up as a green hex with a <code class="codeinline">W</code> in them. The solid walls have a solid <code class="codeinline">W</code> (shown on the left in the pic), and the <code class="codeinline">shoot through</code> walls have a faded <code class="codeinline">W</code> in them (shown on the right in the pic).</p>
 			<img src="images\mapping\Floors_and_walls\All walls + hexes + hole filler small.png" alt="">
 		<br>
 		<br>
@@ -817,32 +810,33 @@
 		<hr>
 
 		<div id="SceneryCritter"><h4>Scenery and critters</h4></div>
-			<p>Our basic map should now be ready. Now place the objects (Scenery). We place some objects that we think fit into the current scene. 
+			<p>Our basic map should now be ready. Now place the objects (<code class="codeinline">Scenery</code>). We place some objects that we think fit into the current scene. 
 				But be careful... sometimes less is more! Don't try to put the same scenery elements several times in the map so that you get them on one screen. 
 				Otherwise you will get the impression that everything is always repeated. And that usually looks ugly or boring.</p>
 			<img src="images\mapping\Scenery and critters\Scenery small.png" alt="" width="700" height="500">
-			<p>Placing Critters. We select "Critters" in the gray box at the bottom left. Now we can place the existing critters into the map. 
+			<p>Placing Critters. We select <code class="codeinline">Critters</code> in the gray box at the bottom left. Now we can place the existing critters into the map. 
 				(I'll tell you later how to create new critters) Use the arrows at the bottom of the screen to indicate in which direction the figure should look. 
-				When we have placed a person, we press the M key to get the arrow cursor. We click on the figure and click EDIT at the bottom. 
+				When we have placed a person, we press the <code class="codeinline">M</code> key to get the arrow cursor. We click on the figure and click <code class="codeinline">EDIT</code> at the bottom. 
 				Now we can make various settings, such as setting the inventory or assigning a script to the character.</p>
 			<img src="images\mapping\Scenery and critters\Critters small.png" alt="" width="700" height="500">
-			<p>Now come the rest of the details, such as setting light sources. Some scenery objects emit light by themselves, like the burning barrels. 
-				But that's not enough for us, so we'll add some lights ourselves. To do this, we go to "Scenery" in the lower left corner and move to tile number 140. 
+			<p>Now comes the rest of the details, such as setting light sources. Some scenery objects emit light by themselves, like the burning barrels. 
+				But that's not enough for us, so we'll add some lights ourselves. To do this, we go to <code class="codeinline">Scenery</code> in the lower left corner and move to tile number <code class="codeinline">140</code>. 
 				This is our light source. Select it with the right mouse button and place it in the map at the desired position.</p>
-			<p>IMPORTANT: You have to activate "Toggle Block Obj View" (Tools -> Toggle Block Obj View) before, otherwise you can't see the light source! Or just press 'TBOV' on bottom screen.</p>	
-			<p>Under Scripts -> Set Start Hex we determine the start location of the player.</p>	
+			<p>IMPORTANT: You have to activate <code class="codeinline">Toggle Block Obj View</code> (<code class="codeinline">Tools</code> => <code class="codeinline">Toggle Block Obj View</code>) before, otherwise you can't see the light source! Or just press <code class="codeinline">TBOV</code> on bottom screen.</p>	
+			<p>Under <code class="codeinline">Scripts</code> => <code class="codeinline">Set Start Hex</code> we determine the start location of the player.</p>	
 			<img src="images\mapping\Scenery and critters\Light source visible small.png" alt="">
 		<br>
+		<br>
 			<img src="images\mapping\Scenery and critters\Light source small.png" alt="" width="700" height="500">
-			<p>If we now press F8 (default_f8_as_game= must be set to 1 in mapper.cfg), we enter the test game and we can walk around. 
-				The critters don't do much yet, since we haven't assigned them a script. If we press the D key, we change the time of day and can see how our placed light sources work. 
-				The map is not 100% finished yet. Still missing are the so-called "scroll blockers", which limit the scroll radius of the player and the exit points, 
+			<p>If we now press <code class="codeinline">F8</code> (<code class="codeinline">default_f8_as_game=</code> must be set to <code class="codeinline">1</code> in <code class="codeinline">mapper.cfg</code>), we enter the test game and we can walk around. 
+				The critters don't do much yet, since we haven't assigned them a script. If we press the <code class="codeinline">D</code> key, we change the time of day and can see how our placed light sources work. 
+				The map is not 100% finished yet. Still missing are the so-called scroll blockers, which limit the scroll radius of the player and the exit points, 
 				which bring the player to the world map etc. This will follow in the next tutorial.</p>
 		<br>
 		<hr>
 		<div id="ScrollBlocker"><h4>Scroll blocker</h4></div>
 			<p>When you're finished to build your map, you need to put Scroll Blockers to limitate until where the screen can scroll.</p>
-			<p>You do that by clicking on 'EDG' on bottom screen. You'll receive this menu.</p>
+			<p>You do that by clicking on <code class="codeinline">EDG</code> on bottom screen. You'll receive this menu.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\EDG.png" alt="">
 			<p>You can set the borders by clicking on the four arrows directing in different directions.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\EDG choose.png" alt="">
@@ -850,9 +844,9 @@
 			<img src="images\mapping\Scroll Blocker and level exits\EDG chosen.png" alt="">
 			<p>Just left-click on an area where you desire the edge of the screen to stop.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\EDG place.png" alt="" width="700" height="500">
-			<p>When you're done placing all directions just press 'save'.</p>
+			<p>When you're done placing all directions just press <code class="codeinline">save</code>.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\EDG placed save.png" alt="" width="700" height="500">
-			<p>You can turn the visibility of the scroll blocker on/off with the asterisk on the bottom panel.</p>
+			<p>You can turn the visibility of the scroll blocker <code class="codeinline">on/off</code> with the asterisk (<code class="codeinline">*</code>) on the bottom panel.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\EDG asterisk.png" alt="" width="550" height="250">
 			<p>That's the result in game.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\EDG scroll block.png" alt="">
@@ -865,12 +859,12 @@
 		<div id="MapExit"><h4>Map exits</h4></div>
 			<p>If you want to exit the map you're currently on, there are two possibilities how to leave it. Exit to the next map or exit to the worldmap.</p>
 		<br>
-		<div id="""><h5>Map exit to another map</h5></div>
+		<div><h5>Map exit to another map</h5></div>
 			<p>Let's begin with exit to another map.</p>
 			<p>You may know the green and brown exit grids of the Fallout Classic games.</p>
 			<p>Inside the mapper there are even three types of exit grids. Green, brown and black but only the green ones work. The other two don't and shouldn't be used.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\all exit grids.png" alt="">
-			<p>Choose 'Misc', the green ones begin at 15 to 22. Okay, so put some green exit grids on the map. Notice that only the red hexagons on the green exit grids do something.</p>
+			<p>Choose <code class="codeinline">Misc</code>, the green ones begin at <code class="codeinline">15</code> to <code class="codeinline">22</code>. Okay, so put some green exit grids on the map. Notice that only the red hexagons on the green exit grids do something.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\green exit grids placed.png" alt="">
 			<p>Now it's time to write down some information about your map.</p>
 <li>
@@ -887,7 +881,7 @@
 			<p>Before I explain what the individual information mean, we need to do another step first.</p>
 		<br>
 			<h5>MAPS.TXT</h5>
-			<p>Open MAPS.txt located inside...</p>
+			<p>Open <code class="codeinline">MAPS.txt</code> located inside...</p>
 			<pre><code>E:\Fallout2\data\data</code></pre>
 			<p>Scroll to the bottom and the last entry should look like this.</p>
 <li>
@@ -911,25 +905,21 @@
 </pre>
 </div>
 </li>							
-			<p>'lookup_name=' This is the full name of the map. My map is called 'Testmap number6'. You can take up to 144 characters.</p>
-			<p>'map_name=' Is the name of the file of your map, e.g. arrvillage for Arroyo village. My map is called 'tm_s6' without the extension .map.</p>
+			<p><code class="codeinline">lookup_name=</code> This is the full name of the map. My map is called <code class="codeinline">Testmap number6</code>. You can take up to <code class="codeinline">144</code> characters.</p>
+			<p><code class="codeinline">map_name=</code> Is the name of the file of your map, e.g. <code class="codeinline">arrvillage</code> for <code class="codeinline">Arroyo village</code>. My map is called <code class="codeinline">tm_s6</code> without the extension <code class="codeinline">.map</code>.</p>
 		<br>
 			<p>These following two information are not mandatory to make the map work.</p>
-<li>
-<div class="codebigbox">
-<pre>
-	<span>'music=' Set any music you want in the  (see other entries for examples of what music you can use)</span>
-	<span>'saved=' Change 'saved=No' to 'saved=Yes' (this makes the game save the status of the map when you save the game, so you can drop things and not lose them)</span>
-</pre>
-</div>
-</li>							
+
+	<p><code class="codeinline">music=</code> Set any music you want in the  (see other entries for examples of what music you can use)</p>
+	<p><code class="codeinline">saved=</code> Change <code class="codeinline">saved=No</code> to <code class="codeinline">saved=Yes</code> (this makes the game save the status of the map when you save the game, so you can drop things and not lose them)</p>
+						
 			<p>Save the information.</p>
 		<br>
 			<p>The other information mean this...</p>
-			<p>'map number:' This is the number we gave our map. In this case '151'.</p>
-			<p>'hex number:' This is the number of the hex where you want obj_dude to start after exiting and reentering the new map. I chose hex number '18697'.</p>
-			<p>'map level:' This is the elevation of your map. Inside the mapper you'll see 1, 2 and 3. But the engine handles this differently. 
-				(Mapper)1 = (Engine)0; (Mapper)2 = (Engine)1; (Mapper)3 = (Engine)2. My map is at elevation (Mapper)1 = (Engine)0.</p>
+			<p><code class="codeinline">map number:</code> This is the number we gave our map. In this case <code class="codeinline">151</code>.</p>
+			<p><code class="codeinline">hex number:</code> This is the number of the hex where you want obj_dude to start after exiting and reentering the new map. I chose hex number <code class="codeinline">18697</code>.</p>
+			<p><code class="codeinline">map level:</code> This is the elevation of your map. Inside the mapper you'll see <code class="codeinline">1</code>, <code class="codeinline">2</code> and <code class="codeinline">3</code>. But the engine handles this differently. 
+				<code class="codeinline">(Mapper)1</code> = <code class="codeinline">(Engine)0</code>; <code class="codeinline">(Mapper)2</code> = <code class="codeinline">(Engine)1</code>; <code class="codeinline">(Mapper)3</code> = <code class="codeinline">(Engine)2</code>. My map is at elevation <code class="codeinline">(Mapper)1</code> = <code class="codeinline">(Engine)0</code>.</p>
 		<br>
 			<p>Okay, we have every information we need to be able to do an exit to another map.</p>
 <li>
@@ -944,49 +934,49 @@
 </div>
 </li>							
 			<p>Return to the mapper.</p>
-			<p>Choose 'TOOLS' -> 'Set Exit-Grid Data'.</p>
+			<p>Choose <code class="codeinline">TOOLS</code> => <code class="codeinline">Set Exit-Grid Data</code>.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\Set Exit-Grid Data.png" alt="">
 			<p>Four smaller windows will appear.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Map -1.png" alt="">
-			<p>Exit Grid Dest Map is our map number.</p>
+			<p><code class="codeinline">Exit Grid Dest Map</code> is our map number.</p>
 		<br>
 			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Tile -1.png" alt="">
-			<p>Exit Grid Dest Tile is our hex number.</p>
+			<p><code class="codeinline">Exit Grid Dest Tile #</code> is our hex number.</p>
 		<br>	
 			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Elevation.png" alt="">
-			<p>Exit Grid Dest Elevation is our map level.</p>
+			<p><code class="codeinline">Exit Grid Dest Elevation</code> is our map level.</p>
 		<br>	
 			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Rotation.png" alt="">
-			<p>Exit Grid Dest Roration is the rotation of obj_dude.</p>
+			<p><code class="codeinline">Exit Grid Dest Roration</code> is the rotation of obj_dude.</p>
 		<br>
 			<p>Let's fill in our information.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Map 151.png" alt="">
-			<p>Our map number is 151 which you gave in MAPS.txt.</p>
+			<p>Our map number is <code class="codeinline">151</code> which you gave in <code class="codeinline">MAPS.txt</code>.</p>
 		<br>
 			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Tile 18697.png" alt="">
-			<p>Our hex number is 18697 where obj_dude will be teleported after stepping on the now invisible red hex field on the green exit grid.</p>
+			<p>Our hex number is <code class="codeinline">18697</code> where obj_dude will be teleported after stepping on the now invisible red hex field on the green exit grid.</p>
 		<br>
 			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Elevation.png" alt="">
 			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Rotation.png" alt="">
-			<p>Elevation an rotation can stay at 0. Because our elevation is (Mapper)1 = (Engine)0. And rotation 0 is northeast, that's ok for now.</p>
+			<p>Elevation an rotation can stay at <code class="codeinline">0</code>. Because our elevation is <code class="codeinline">(Mapper)1</code> = <code class="codeinline">(Engine)0</code>. And rotation <code class="codeinline">0</code> is <code class="codeinline">northeast</code>, that's ok for now.</p>
 		<br>
 			<p>Now that we provided our information, we can mark the exit grids.</p>
-			<p>Choose 'TOOLS' -> 'Mark Exit-Grids'.</p>
+			<p>Choose <code class="codeinline">TOOLS</code> => <code class="codeinline">Mark Exit-Grids</code>.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\Mark Exit-Grids.png" alt="">
 			<p>You will see this...</p>
 			<img src="images\mapping\Scroll Blocker and level exits\Entering mark exit_grids mode.png" alt="">
 			<p>You don't need to choose every exit-grid for itself. If you click on one exit grid, all exit grids at a scope of 20x20 will be marked.</p>
-			<p>Once you're done just press ESC. You will see this...</p>
+			<p>Once you're done just press <code class="codeinline">ESC</code>. You will see this...</p>
 			<img src="images\mapping\Scroll Blocker and level exits\Exiting mark exit-grids.png" alt="">
 			<p>Don't test it right away! You need to save your map first, leave the mapper, reenter it and load your map. Now you can test if it works.</p>
 		<br>
 		<br>
 		<br>
-		<div id="""><h5>Map exit to worldmap</h5></div>
+		<div><h5>Map exit to worldmap</h5></div>
 			<p>Let's continue with exit to worldmap.</p>
-			<p>Exit to worldmap is easier because you don't need to change the information asked when hitting 'TOOLS' -> 'Set Exit-Grid Data'.</p>
+			<p>Exit to worldmap is easier because you don't need to change the information asked when hitting <code class="codeinline">TOOLS</code> => <code class="codeinline">Set Exit-Grid Data</code>.</p>
 			<p>Draw your green exit grids where you want them to exit to worldmap.</p>
-			<p>Choose 'TOOLS' -> 'Set Exit-Grid Data'.</p>
+			<p>Choose <code class="codeinline">TOOLS</code> -> <code class="codeinline">Set Exit-Grid Data</code>.</p>
 			<p> Just let them default. Like this...</p>
 			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Map -1.png" alt="">
 		<br>
@@ -995,7 +985,7 @@
 			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Elevation.png" alt="">
 		<br>	
 			<img src="images\mapping\Scroll Blocker and level exits\Exit Grid Dest Rotation.png" alt="">
-			<p>Choose 'TOOLS' -> 'Mark Exit-Grids'.</p>
+			<p>Choose <code class="codeinline">TOOLS</code> -> <code class="codeinline">Mark Exit-Grids</code>.</p>
 			<p>Only choose the exit grids which should lead to the worldmap.</p>
 			<p>Exit the marking mode and save the map and leave the mapper.</p>
 			<p>After you relaunch the mapper you will notice that the green exit grids you chose to exit to worldmap are now brown.</p>
@@ -1008,20 +998,20 @@
 			<img src="images\mapping\Ladders and stairs\Ladder01.webp" alt="">
 			<br>
 			<img src="images\mapping\Ladders and stairs\Ladder02.webp" alt="">
-			<p>I suggest changing your cursor to the arrow ('m' key - press again to change it back) for the next part as it makes selecting ladders easier.</p>
+			<p>I suggest changing your cursor to the arrow (<code class="codeinline">m</code> key - press again to change it back) for the next part as it makes selecting ladders easier.</p>
 			<p>Select the ladder you want to set the info for.</p>
-			<p>Click on the EDIT button, a screen will appear as shown.</p>
+			<p>Click on the <code class="codeinline">EDIT</code> button, a screen will appear as shown.</p>
 			<img src="images\mapping\Ladders and stairs\Ladder03.webp" alt="">
-			<p>Click the button called 'Dest Tile' and put in the hex number you would like the player to 'arrive' on the destination level.</p>
-			<p>To find the hex number, click on the floor near the ladder and look in the grey box in the bottom left corner, it is the number 19902 on the left.</p>
+			<p>Click the button called <code class="codeinline">Dest Tile</code> and put in the hex number you would like the player to arrive on the destination level.</p>
+			<p>To find the hex number, click on the floor near the ladder and look in the grey box in the bottom left corner, it is the number <code class="codeinline">19902</code> on the left.</p>
 			<img src="images\mapping\Ladders and stairs\Ladder04.webp" alt="">
-			<p>Click the button called 'Dest Elev' and put in the number of the 'level' you want the ladder/stairs to go to.</p>
-			<p>Click the button called 'Dest Map'. This is where you put the number of the map you want the ladder to go to.</p>
-			<p>To get it to go to the same map as it is on, you need to give that map a number in the maps.txt file and put it in the 'Dest Map' box.</p>
+			<p>Click the button called <code class="codeinline">Dest Elev</code> and put in the number of the level you want the ladder/stairs to go to.</p>
+			<p>Click the button called <code class="codeinline">Dest Map</code>. This is where you put the number of the map you want the ladder to go to.</p>
+			<p>To get it to go to the same map as it is on, you need to give that map a number in the <code class="codeinline">maps.txt</code> file and put it in the <code class="codeinline">Dest Map</code> box.</p>
 			<p>For my example map, I ended up with the following.</p>
 			<img src="images\mapping\Ladders and stairs\Ladder05.webp" alt="">
-			<p>Click 'Done'.</p>
-			<p>Repeat steps 4 - 11 for the other ladders/stairs.</p>
+			<p>Click <code class="codeinline">Done</code>.</p>
+			<p>Repeat steps <code class="codeinline">4</code> - <code class="codeinline">11</code> for the other ladders/stairs.</p>
 		<br>
 		<hr>			
 	<div id="Worldmap"><h4>Worldmap</h4></div>
@@ -1057,9 +1047,9 @@
 		<p>Save the file.</p> -->
 	<br>
 		<h5>CITY.TXT</h5>
-		<p>You'll probably notice that if you enter your newly created brown exit grid your map is not shown on the worldmap. For this we need to modify CITY.TXT.</p>
-		<p>Open CITY.TXT. This is where you set the 'town map' art that comes up for you to choose a shortcut to a part of the town when you enter the map from the worldmap (green triangle).</p>
-		<p>Scroll to the end and copy / paste the last entry again, so you would have...</p>
+		<p>You'll probably notice that if you enter your newly created brown exit grid your map is not shown on the worldmap. For this we need to modify <code class="codeinline">CITY.TXT</code>.</p>
+		<p>Open <code class="codeinline">CITY.TXT</code>. This is where you set the <code class="codeinline">town map</code> art that comes up for you to choose a shortcut to a part of the town when you enter the map from the worldmap (green triangle).</p>
+		<p>Scroll to the end and copy/paste the last entry again, so you would have...</p>
 <li>
 <div class="codebigbox">
 <pre>
@@ -1075,50 +1065,59 @@
 </pre>
 </div>
 </li>	
-
-		<p>Change the area number to the next in the sequence.</p>
-		<p>So you would get...</p>
+	<p>Change the area number to the next in the sequence.</p>
+	<p>So you would get...</p>
 <li>
 <div class="codebigbox">
 <pre>
-	<span>[Area 49] </span>
-	<span>area_name=Testmap number6 </span>
+	<span>[Area 49]</span>
+	<span>area_name=Testmap number6</span>
 	<span>world_pos=xxx,xxx</span>
 	<span>start_state=On </span>
 	<span>lock_state=on</span>
 	<span>size=Small</span>
 	<span>townmap_art_idx=-1 </span>
-	<span>townmap_label_art_idx=-1 </span>
+	<span>townmap_label_art_idx=-1</span>
 	<span>entrance_0=On,130,410,Testmap Entrance 0,-1,-1,0</span>
-	
-	<span>'area name=' This is the name of your town , city or area. It's equal to 'lookup_name=' in MAPS.TXT.</span>
+	<!--<span>'area name=' This is the name of your town , city or area. It's equal to 'lookup_name=' in MAPS.TXT.</span>
 	<span>'world_pos=' Set the x- and y-coordinates of where you want the town to show up on the worldmap (make sure you don't overlap any existing towns).</span>
 	<span>'start_state=' Set to 'on' so it shows on the worldmap or 'off' so it doesn't show on the worldmap until you change that with a script.</span>
 	<span>'lock_state='</span>
 	<span>'size=' Set to whatever circle size you want. There are 'Small; Medium and Large'.</span>
 	<span>'townmap_art_idx=' Should be left as '-1' (it references an external .txt file to look up the name of the townmap artwork).</span>
 	<span>'townmap_lable_art_idx=' Should be left as '-1' (it references an external .txt file to look up the name of the townmap artwork).</span>
-	
 	<span>'entrance_0=' The first entrance point to your town visible on the townmap graphic (green triangle).</span>
-	
 	<span>'On' States that this entrance is "enabled". It can be picked from the townmap graphic you get when entering a town from worldmap.</span>
 	<span>'130,410' The location of the triangle on the townmap graphic (x- & y- coordinates). </span>
 	<span>'Testmap Entrance 0' Name of the entrance visible on the townmap graphic.</span>
 	<span>'-1,-1,0' The destination elevation, hex, and rotation to place the player on when entering the map (-1 for the map defaults).</span>
-	
-	<span>'entrance_x=' You can add extra entrances in each area for as many maps as make up the town, just add them after 'entrance_0=' and sequentially number them.</span>
+	<span>'entrance_x=' You can add extra entrances in each area for as many maps as make up the town, just add them after 'entrance_0=' and sequentially number them.</span>-->
 </pre>
 </div>
 </li>
-		<p>Save the file.</p>
+	<p><code class="codeinline">area name=</code> This is the name of your town , city or area. Its equal to lookup_name= in MAPS.TXT.</p>
+	<p><code class="codeinline">world_pos=</code> Set the x- and y-coordinates of where you want the town to show up on the worldmap (make sure you dont overlap any existing towns).</p>
+	<p><code class="codeinline">start_state=</code> Set to on so it shows on the worldmap or off so it doesnt show on the worldmap until you change that with a script.</p>
+	<p><code class="codeinline">lock_state=</code>.</p>
+	<p><code class="codeinline">size=</code> Set to whatever circle size you want. There are Small; Medium and Large.</p>
+	<p><code class="codeinline">townmap_art_idx=</code> Should be left as -1 (it references an external .txt file to look up the name of the townmap artwork).</p>
+	<p><code class="codeinline">townmap_lable_art_idx=</code> Should be left as -1 (it references an external .txt file to look up the name of the townmap artwork).</p>
+	<p><code class="codeinline">entrance_0=</code> The first entrance point to your town visible on the townmap graphic (green triangle).</p>
+	<p><code class="codeinline">On</code> States that this entrance is "enabled". It can be picked from the townmap graphic you get when entering a town from worldmap</p>
+	<p><code class="codeinline">130,410</code> The location of the triangle on the townmap graphic (x- & y- coordinates).</p>
+	<p><code class="codeinline">Testmap Entrance 0</code> Name of the entrance visible on the townmap graphic.</p>
+	<p><code class="codeinline">-1,-1,0</code> The destination elevation, hex, and rotation to place the player on when entering the map (-1 for the map defaults).</p>
+	<p><code class="codeinline">entrance_x=</code> You can add extra entrances in each area for as many maps as make up the town, just add them after entrance_0= and sequentially number them.</p>
+	<p>Save the file.</p>
 	<br>
+
 	<h5>MAP.MSG</h5>
-		<p>To make the name of your area under the circle on the worldmap show correctly you need to modify MAP.MSG.</p>
-		<p>Open the file MAP.MSG found in...</p> 
+		<p>To make the name of your area under the circle on the worldmap show correctly you need to modify <code class="codeinline">MAP.MSG</code>.</p>
+		<p>Open the file <code class="codeinline">MAP.MSG</code> found in...</p> 
 				<code>\fallout2\data\text\english\game</code> 
 		<p>and scroll to the end.</p>
 	<br>
-		<p>Copy / paste the last line.</p>
+		<p>Copy/paste the last line.</p>
 <li>
 <div class="codebigbox">
 <pre>
@@ -1145,7 +1144,7 @@
 </li>
 			
 		<br>
-		<p>Find the last entry before the 1500's and start copy / paste below itself.</p>
+		<p>Find the last entry before the 1500's and start copy/paste below itself.</p>
 <li>
 <div class="codebigbox">
 <pre>
@@ -1180,7 +1179,7 @@
 </pre>
 </div>
 </li>
-		<p>So you might have a map of a church with a second floor and a basement so 654 would be "first floor", 655 would be "basement" and 653 the "second floor". It doesn't matter how you do this.</p>
+		<p>So you might have a map of a church with a second floor and a basement so <code class="codeinline">654</code> would be <code class="codeinline">first floor</code>, <code class="codeinline">655</code> would be <code class="codeinline">basement</code> and <code class="codeinline">653</code> the <code class="codeinline">second floor</code>. It doesn't matter how you do this.</p>
 		<p>Save the file.</p>
 	<br>
 	<hr>
@@ -1188,22 +1187,22 @@
 	<div id="New_Critter"><h3>Make new prototype</h3></div>
 	<br>
 		<h4>Critters</h4>
-			<p>Rename patch000.dat inside \Fallout2 so it cannot overwrite \data. If you cannot find patch000.dat the better.</p>
-			<p>Create these directories \dev\proto\critters inside \Fallout2.</p>
+			<p>Rename <code class="codeinline">patch000.dat</code> inside <code class="codeinline">\Fallout2</code> so it cannot overwrite <code class="codeinline">\data</code>. If you cannot find <code class="codeinline">patch000.dat</code> the better.</p>
+			<p>Create these directories <code class="codeinline">\dev\proto\critters</code> inside <code class="codeinline">\Fallout2</code>.</p>
 			<p>Should look like this.</p>
 				<code>E:\Fallout2\dev\proto\critters</code>
 			<br>
-			<p>Open mapper2.cfg inside \BIS mapper and change this</p>
+			<p>Open <code class="codeinline">mapper2.cfg</code> inside <code class="codeinline">\BIS mapper</code>  and change this</p>
 				<code>librarian=0</code>
 			<p>to</p>
 				<code>librarian=1</code>
 			<br>
-			<p>Run mapper2.exe.</p>
-			<p>Choose 'Critters' from the dropdownmenu.</p>
+			<p>Run <code class="codeinline">mapper2.exe</code>.</p>
+			<p>Choose <code class="codeinline">Critters</code> from the dropdownmenu.</p>
 			<img src="images\Make_new_prototype\Critters\2022-05-24 21_16_32-FALLOUT Mapper.png" alt="">
 			<br>
 			<br>
-			<p>Hit 'END' on your keyboard.</p>
+			<p>Hit <code class="codeinline">END</code> on your keyboard.</p>
 			<img src="images\Make_new_prototype\Critters\2022-05-24 21_28_51-FALLOUT Mapper.png" alt="">
 			<br>
 			<br>
@@ -1215,7 +1214,7 @@
 			<img src="images\Make_new_prototype\Critters\2022-05-24 21_29_55-FALLOUT Mapper.png" alt="">
 			<br>
 			<br>
-			<p>Hit 'edit'.</p>
+			<p>Hit <code class="codeinline">EDIT</code>.</p>
 			<img src="images\Make_new_prototype\Critters\2022-05-24 21_30_14-E__Fallout2_data_data_CITY.TXT - Notepad++.png" alt="">
 			<br>
 			<br>
@@ -1223,7 +1222,7 @@
 			<img src="images\Make_new_prototype\Critters\2022-05-24 21_30_40-FALLOUT Mapper.png" alt="">
 			<br>
 			<br>
-			<p>But don't touch anything for now. Just hit 'DONE'.</p>
+			<p>But don't touch anything for now. Just hit <code class="codeinline">DONE</code>.</p>
 			<img src="images\Make_new_prototype\Critters\2022-05-24 21_30_54-FALLOUT Mapper.png" alt="">
 			<br>
 			<br>
@@ -1232,13 +1231,13 @@
 			<br>
 			<br>
 			<p>A bunch of new files have been created.</p>
-			<p>A .txt file here. Called e.g. 00000484.txt.</p>
+			<p>A .txt file here. Called e.g. <code class="codeinline">00000484.txt</code>.</p>
 				<code>E:\Fallout2\dev\proto\critters</code>
 			<br>
-			<p>And a new .pro file here. Called e.g. 00000484.pro.</p>
+			<p>And a new .pro file here. Called e.g. <code class="codeinline">00000484.pro</code>.</p>
 			<code>E:\Fallout2\data\proto\critters</code> 
 			<br>
-			<p>You should also have critters.lst inside this directory. Open critters.lst. Scroll to the very bottom of the file and you should see this.</p>
+			<p>You should also have <code class="codeinline">critters.lst</code> inside this directory. Open <code class="codeinline">critters.lst</code>. Scroll to the very bottom of the file and you should see this.</p>
 <li>
 <div class="codebigbox">
 <pre>
@@ -1254,7 +1253,7 @@
 </li>
 			<p>Your new proto 00000484.pro has been added to the list.</p>
 			<br>
-			<p>If you want to delete your new proto, just delete both newly created files and the entry inside critters.lst and the flaming mannequin should have been disappeared inside the mapper.</p>
+			<p>If you want to delete your new proto, just delete both newly created files and the entry inside <code class="codeinline">critters.lst</code> and the flaming mannequin should have been disappeared inside the mapper.</p>
 <br>
 <hr>
 <hr>
@@ -1348,23 +1347,22 @@
 </pre>
 </div>
 </li>
-		<p>As you can see the suffix of header files is .h.</p>
-		<p>They are located inside the folder "\HEADERS".</p>
+		<p>As you can see the suffix of header files is <code class="codeinline">.h</code>.</p>
+		<p>They are located inside the folder <code class="codeinline">\HEADERS</code>.</p>
 	<br>
 	<br>
 	<hr>
 
 	<div id="define"><h3>Define</h3></div>
-		<p>With #define it is possible to specify strings that will be exchanged for another string before the program is translated. 
-			Again, the # character causes the preprocessor to do its work first before the nascent program is translated by the compiler into machine language.</p>
-		<p>We have two #defines in this example.</p> 
-				<code><span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL</code>
+		<p>With <code class="codeinline">#define</code> it is possible to specify strings that will be exchanged for another string before the program is translated. Again, the <code class="codeinline">#</code> character causes the preprocessor to do its work first before the nascent program is translated by the compiler into machine language.</p>
+		<p>We have two <code class="codeinline">#define</code> in this example.</p> 
+		<code><span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL</code>
 		<p>and</p>
-				<code><span class="dyedefine">#define</span> LVAR_Gave_Xp (<span class="dyedefine">0</span>)</code>	
-		<p>In the #define below NAME is SCRIPT_ASWELL. This means if you want to refer to SCRIPT_ASWELL inside your script you simply can write NAME.</p>
-				<code><span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL</code>
-		<p>If you hover over SCRIPT_ASWELL with your cursor you'll see the description inside the bluegreyish box.</p>
-				
+		<code><span class="dyedefine">#define</span> LVAR_Gave_Xp (<span class="dyedefine">0</span>)</code>	
+		<p>In the <code class="codeinline">#define</code> below NAME is <code class="codeinline">SCRIPT_ASWELL</code>. This means if you want to refer to <code class="codeinline">SCRIPT_ASWELL</code> inside your script you simply can write <code class="codeinline">NAME</code>.</p>
+		<code><span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL</code>
+		<p>If you hover over <code class="codeinline">SCRIPT_ASWELL</code> with your cursor you'll see the description inside the bluegreyish box.</p>
+
 <code><span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
 <li>
 <div class="codepopup">
@@ -1378,7 +1376,7 @@
 </li>
 </code>
 
-		<p>The file SCRIPTS.H is located inside HEADERS\SCRIPTS.H. We'll talk about this later.</p>
+		<p>The file <code class="codeinline">SCRIPTS.H</code> is located inside <code class="codeinline">\HEADERS\SCRIPTS.H</code>. We'll talk about this later.</p>
 		<code><span class="dyedefine">#define</span> SCRIPT_ASWELL &emsp; &emsp; (<span class="dyedefine">217</span>) &emsp; <span class="dyecomment">// ASwell.int</span> &emsp; &emsp; <span class="dyecomment">; Arroyo Well. It's broken. Fix w/ Repair.</span></code>
 	<br>
 	<br>

@@ -96,11 +96,6 @@ ol li::before {
 	content: counters(item, ".") ". ";
 }
 
-.grid-container {
-	/*display: grid;*/
-	grid-template-columns: 1fr;
-}
-
 .item-sidebar {
 	font-size: .75rem;
 	position: absolute;
