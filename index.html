@@ -1200,8 +1200,8 @@
 		<p>In the <code class="codeinline">#define</code> below NAME is <code class="codeinline">SCRIPT_ASWELL</code>. This means if you want to refer to <code class="codeinline">SCRIPT_ASWELL</code> inside your script you simply can write <code class="codeinline">NAME</code>.</p>
 		<code><span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL</code>
 		<p>If you hover over <code class="codeinline">SCRIPT_ASWELL</code> with your cursor you'll see the description inside the bluegreyish box.</p>
-
-<code><span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
+		
+		<code><span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
 <li>
 <div class="codepopup">
 <pre>
@@ -1213,7 +1213,6 @@
 </div>
 </li>
 </code>
-
 		<p>The file <code class="codeinline">SCRIPTS.H</code> is located inside <code class="codeinline">\HEADERS\SCRIPTS.H</code>. We'll talk about this later.</p>
 		<code><span class="dyedefine">#define</span> SCRIPT_ASWELL &emsp; &emsp; (<span class="dyedefine">217</span>) &emsp; <span class="dyecomment">// ASwell.int</span> &emsp; &emsp; <span class="dyecomment">; Arroyo Well. It's broken. Fix w/ Repair.</span></code>
 	<br>
@@ -1222,8 +1221,8 @@
 
 	<div id="procedure"><h3>Procedure</h3></div>
 		<p>Procedures are just like small programs inside your script. They are an essential part of the program and help programmers to keep the script clear, organized, structured and avoid repetitions since they promote code re-use. 
-			A procedure in Fallout scripting language starts with <span class="dyestatement">procedure </span> a name (<span class="dyeprocedure">start</span> in this case) <span class="dyestatement">begin</span>  
-			and ends with an <span class="dyestatement">end</span> statement.</p>
+			A procedure in Fallout scripting language starts with <span class="dyestatement"><code class="codeinline">procedure</code></span> a name (<span class="dyeprocedure"><code class="codeinline">start</code></span> in this case) <span class="dyestatement"><code class="codeinline">begin</code></span>  
+			and ends with an <span class="dyestatement"><code class="codeinline">end</code></span> statement.</p>
 		<p>We have four procedures in this example. start; use_skill_on_p_proc; description_p_proc and look_at_p_proc. There are more but this scripts just uses these four. They are predefinied by the devs but you can also write your own procecures.</p>
 		<p>Every procedure you use inside your script needs to be declared at the top of the script like seen below.</p>
 <li>
