@@ -1216,14 +1216,13 @@
 		<p>The file <code class="codeinline">SCRIPTS.H</code> is located inside <code class="codeinline">\HEADERS\SCRIPTS.H</code>. We'll talk about this later.</p>
 		<code><span class="dyedefine">#define</span> SCRIPT_ASWELL &emsp; &emsp; (<span class="dyedefine">217</span>) &emsp; <span class="dyecomment">// ASwell.int</span> &emsp; &emsp; <span class="dyecomment">; Arroyo Well. It's broken. Fix w/ Repair.</span></code>
 	<br>
-	<br>
 	<hr>
 
 	<div id="procedure"><h3>Procedure</h3></div>
 		<p>Procedures are just like small programs inside your script. They are an essential part of the program and help programmers to keep the script clear, organized, structured and avoid repetitions since they promote code re-use. 
 			A procedure in Fallout scripting language starts with <span class="dyestatement"><code class="codeinline">procedure</code></span> a name (<span class="dyeprocedure"><code class="codeinline">start</code></span> in this case) <span class="dyestatement"><code class="codeinline">begin</code></span>  
 			and ends with an <span class="dyestatement"><code class="codeinline">end</code></span> statement.</p>
-		<p>We have four procedures in this example. start; use_skill_on_p_proc; description_p_proc and look_at_p_proc. There are more but this scripts just uses these four. They are predefinied by the devs but you can also write your own procecures.</p>
+		<p>We have four procedures in this example. <code class="codeinline">start;</code> <code class="codeinline">use_skill_on_p_proc;</code> <code class="codeinline">description_p_proc;</code> and <code class="codeinline">look_at_p_proc;</code>. There are more but this scripts just uses these four. They are predefinied by the devs but you can also write your own procecures.</p>
 		<p>Every procedure you use inside your script needs to be declared at the top of the script like seen below.</p>
 <li>
 <div class="codebigbox">
@@ -1235,10 +1234,10 @@
 </pre>
 </div>
 </li>
-		<p>The space between <span class="dyestatement">begin</span> and <span class="dyestatement">end</span> is called procedure body. Inside the body you write the stuff you want to be executed.
+		<p>The space between <span class="dyestatement"><code class="codeinline">begin</code></span> and <span class="dyestatement"><code class="codeinline">end</code></span> is called procedure body. Inside the body you write the stuff you want to be executed.
 			In the example below the body is empty. An empty procedure body cannot execute anything because there is nothing to execute. 
 			If you call an empty procedure, the procedure starts, sees there's nothing inside the body and ends immediately.</p>
-		<p>The most important procedure of them all is the procedure called "start". The start procedure is the entry point of scripts.
+		<p>The most important procedure of them all is the procedure called <code class="codeinline">start;</code>. The start procedure is the entry point of scripts.
 			Every script has it and every script needs it. If you don't have the start procedure inside you script, it won't work.</p>
 <li>
 <div class="codebigbox">
@@ -1269,8 +1268,6 @@
 		<p> You can call procedures from every corner of your script like this.</p>
 		<code><span class="dyestatement">call</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;</code>
 		<p>You can also export/import procedures.</p>
-	<br>
-	<br>
 	<hr>
 
 	<div id="function"><h3>Function</h3></div>
@@ -1280,8 +1277,6 @@
 		<p>You can also write something more complex like this:</p>
 		<code><span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));</code>
 		<p>As you can see there is a function inside a function and some other stuff. That's also possible.</p>
-	<br>
-	<br>
 	<hr>
 
 	<div id="argument"><h3>Argument</h3></div>
@@ -1290,14 +1285,12 @@
 		<p>An argument is also passed here.</p>
 		<code><span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL); </code>
 		<p>Many functions need to pass a value of some kind. Just hover over the function to know how many arguments and of what kind wants to be passed.</p>
-	<br>
-	<br>
 	<hr>
 
 	<div id="variable"><h3>Variable</h3></div>
-		<p>A variable is like a temporary container. You can save things into it. For example strings, integers, booleans and the result of functions etc.</p>
+		<p>A variable is like a temporary container. You can save things into it. For example <code class="codeinline">strings</code>, <code class="codeinline">integers</code>, <code class="codeinline">booleans</code> and the result of functions etc.</p>
 		<p>There are several types of variables. The ones which get into global namespace and the ones that don't. The global namespace is the place where variables are shared between scripts.
-		<p>	The engine does not see names for variables. It refers to variables by numbers. You can perfectly have...</p>
+		<p>	The engine does not see names for variables. It refers to variables by numbers. You can perfectly have:</p>
 <li>
 <div class="codebigbox">
 <pre>
@@ -1308,17 +1301,14 @@
 </li>
 		<p>And use either in your scripts, it will work. As you can see the name number combination of variables must be unique otherwise the engine gets confused and throws errors.</p>
 			This also means variables that are inside the global namespace are saved and remembered on map change or game load.</p> 
-			The other variables that are not inside the global namespace just run while the script they are defined in is running. They will be forgotten on map change or game load. </p>
+			The other variables that are not inside the global namespace just run while the script they are defined in is running. They will be forgotten on map change or game load.</p>
 		<p>The image below is intended to illustrate the global namespace. The green circles are scripts with variables. The blue circle is the global namespace. 
 			The scripts that are partially in the blue circle have local variables that are not in the global namespace. 
 			The scripts which are fully in the blue circle have global variables which are in the global namespace and therefore must be unique. 
-			As you can see, the global variable MVAR_1 exists twice, which must not occur in the global namespace.</p>
+			As you can see, the global variable <code class="codeinline">MVAR_1</code> exists twice, which must not occur in the global namespace.</p>
 		<img src="images\Scripting (Basics)\Global_namespace_image.jpg" alt="Please stand by">
 	<br>
-	<br>
 		<p>Let's take a look at the different types of variables.</p>
-	<br>
-	<br>
 
 	<h4>Variables of global namespace</h4>
 		<p>Variables getting into global namespace are:</p>
@@ -1335,33 +1325,33 @@
 </li> 
 		<br>
 		<code><span class="dyedefine">#define</span> LVAR_Gave_Xp; &emsp; &emsp; (<span class="dyedefine">0</span>)</code>
-		<p>This variable is of type Local variable (LVAR). It is saved during map change and game load. LVARs are used for circumstances that aren't that significant e.g. "have experience points been given to the player?"
-			LVARs are defined and stored in the header of the script in which they are to be used. All LVARs will be prepended with LVAR_.</p>
+		<p>This variable is of type Local variable (<code class="codeinline">LVAR</code>). It is saved during map change and game load. <code class="codeinline">LVARs</code> are used for circumstances that aren't that significant e.g. "have experience points been given to the player?"
+			<code class="codeinline">LVARs</code> are defined and stored in the header of the script in which they are to be used. All <code class="codeinline">LVARs</code> will be prepended with <code class="codeinline">LVAR_</code>.</p>
 		<br>
 		<code><span class="dyedefine">#define</span> MVAR_Fixed_Well; &emsp; &emsp; (<span class="dyedefine">4</span>)</code>
-		<p>This variable is of type Map variable (MVAR). It is saved during map change and game load. MVARs are stored in the corresponding map script. 
-			In this case MVAR_Fixed_Well is stored inside ARVILLAG.H. 
-		<p> With the include command the MVAR can be used in the script.</p>
+		<p>This variable is of type Map variable (<code class="codeinline">MVAR</code>). It is saved during map change and game load. <code class="codeinline">MVARs</code> are stored in the corresponding map script. 
+			In this case <code class="codeinline">MVAR_Fixed_Well</code> is stored inside <code class="codeinline">ARVILLAG.H</code>. 
+		<p> With the include command the <code class="codeinline">MVAR</code> can be used in the script.</p>
 		<code>#include "..\headers\arvillag.h"</code>
-		<p>	Map variables need to be added to a file called MapName.GAM, e.g. ARVILLAG.GAM, which must be put in the data\maps directory.
-			MVARs are used for circumstances that are significant for a specific map like "has the well been fixed?"
-			All MVARs will be prepended with MVAR_.</p>
+		<p>	Map variables need to be added to a file called <code class="codeinline">MapName.GAM</code>, e.g. <code class="codeinline">ARVILLAG.GAM</code>, which must be put in the <code class="codeinline">data\maps</code> directory.
+			<code class="codeinline">MVARs</code> are used for circumstances that are significant for a specific map like "has the well been fixed?"
+			All <code class="codeinline">MVARs</code> will be prepended with <code class="codeinline">MVAR_</code>.</p>
 		<br>
-		<p>This variable is of type Global variable. It can be used in any script. To use this type of variable, only the file GLOBAL.H must be included into the script. 
-			It is saved during the map change. Any global variables you #define and use must also be put into a file called VAULT13.GAM which is found inside the data\data directory. 
-			GVARs will be stored in a header file called Global.H, located in the \Fallout2\Scripts\Headers\ directory. 
-			All GVARs will be prepended with GVAR_.</p>
 		<code><span class="dyedefine">#define</span> GVAR_DUMAR_STATUS; &emsp; &emsp; (<span class="dyedefine">369</span>)</code>
+		<p>This variable is of type Global variable. It can be used in any script. To use this type of variable, only the file <code class="codeinline">GLOBAL.H</code> must be included into the script. 
+			It is saved during the map change. Any global variables you define and use must also be put into a file called <code class="codeinline">VAULT13.GAM</code> which is found inside the <code class="codeinline">data\data</code> directory. 
+			<code class="codeinline">GVARs</code> will be stored in a header file called <code class="codeinline">Global.H</code>, located in the <code class="codeinline">\Fallout2\Scripts\Headers\</code> directory. 
+			All <code class="codeinline">GVARs</code> will be prepended with <code class="codeinline">GVAR_</code>.</p>
 		<p>The number inside the parenthesis of all three global namespace variables is no value. It serves as a placeholder for the engine. As soon as the script is executed, 
 			the engine replaces the names of the global namespace variables with the number assigned to it.</p>
 		<br>
-		<p>This variable is defined inside script ARCAVES.SSL. The keyword export ensures that the variable can be used in other scripts. 
-			The variable contains the last value that was assigned to it.</p>
 		<code><span class="dyestatement">export variable</span> temple_chest_prt;</code>
+		<p>This variable is defined inside script <code class="codeinline">ARCAVES.SSL</code>. The keyword export ensures that the variable can be used in other scripts. 
+			The variable contains the last value that was assigned to it.</p>
 		<br>
-		<p>The previously exported variable can now be used with the keyword import inside the scripts AITEMCST.SSL and ACTEMVIL.SSL. 
-			The variable contains the value that was last assigned to it.</p>
 		<code><span class="dyestatement">import variable</span> temple_chest_prt;</code>
+		<p>The previously exported variable can now be used with the keyword import inside the scripts <code class="codeinline">AITEMCST.SSL</code> and <code class="codeinline">ACTEMVIL.SSL</code>. 
+			The variable contains the value that was last assigned to it.</p>
 		<p>These global namespace variable types must always be defined at the top of the script like in the sample script.</p>
 	<br>
 
@@ -1376,7 +1366,7 @@
 </div>
 </li>
 		<br>
-		<p> The variable Only_Once is defined outside the procedure and assigned the value <span class="dyedefine">0</span>. 
+		<p> The variable Only_Once is defined outside the procedure and assigned the value <span class="dyedefine"><code class="codeinline">0</code></span>. 
 			This variable can be used in every procedure inside the script. This variable will not be saved when changing the map.</p>
 <li>
 <div class="codebigbox">
@@ -1389,7 +1379,7 @@
 </div>
 </li>
 		<br>
-		<p>The variable item is defined inside the procedure <span class="dyeprocedure">combat_p_proc</span>.
+		<p>The variable item is defined inside the procedure <span class="dyeprocedure"><code class="codeinline">combat_p_proc</code></span>.
 			This variable can only be used inside the procedure. This variable will not be saved when changing the map.</p>
 <li>
 <div class="codebigbox">
@@ -1403,14 +1393,12 @@
 </div>
 </li>
 	<br>
-	<br>
 	<hr>
 
 	<div id="constant"><h3>Constant</h3></div>
 		<p>Constants are variables with fixed unchangeable value (You can change them but you don't want to, thats the reason using constants :P). A good example is give_xp(EXP_FIX_WELL) because EXP_FIX_WELL is a constant which is defined in ExpPoint.H. 
-			If you use EXP_FIX_WELL in several scripts and you want to change the given experience from 100 to 200 you just need to change the value in on place, in ExpPoint.H.</p>
+			If you use <code class="codeinline">EXP_FIX_WELL</code> in several scripts and you want to change the given experience from <code class="codeinline">100</code> to <code class="codeinline">200</code> you just need to change the value in on place, in <code class="codeinline">ExpPoint.H</code>.</p>
 		<code><span class="dyedefine">#define</span> EXP_FIX_WELL; &emsp; &emsp; (<span class="dyedefine">100</span>)</code>
-	<br>
 	<br>
 	<hr>
 
@@ -1418,8 +1406,8 @@
 		<p>A macro is a fragment of code which has been given a name. Whenever the name is used, it is replaced by the contents of the macro. Functions can easily get huge and messy. Macros are shorter and therefore better to read.</p>
 		<p>Let's look at an example.</p>
 		<code><span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL); </code>
-		<p>The macro give_xp(x) is located inside the file EXPPOINT.H.</p>
-		<p>Behind give_xp(x) actually hides:</p>  
+		<p>The macro<code class="codeinline">give_xp(x)</code> is located inside the file <code class="codeinline">EXPPOINT.H</code>.</p>
+		<p>Behind <code class="codeinline">give_xp(x)</code> actually hides:</p>  
 <li>
 <div class="codebigbox">
 <pre>
@@ -1429,21 +1417,17 @@
 </div>
 </li>
 	<br>
-	<br>
 	<hr>
 
 	<div id="operator"><h3>Operator</h3></div>
 		<p>An operator is a symbol that tells the compiler to perform specific mathematical, relational or logical operation and produce final result. </p>
-		<br>
-			<p><span class="dyeoperator">:=</span> (assign value - Assigns the value on the right side to the value on the left side.)</p>
-			<p><span class="dyeoperator">></span> (greater than - Checks if the value on the left side is greater then the value on the right side.)</p>
-			<p><span class="dyeoperator"><</span> (lesser than - Checks if the value on the left side is lesser then the value on the right side.)</p>
-			<p><span class="dyeoperator">>=</span> (greater than or equal to - Checks if the value on the left side is greater then or equal to the value on the right side.)</p>
-			<p><span class="dyeoperator"><=</span> (lesser than or equal to - Checks if the value on the left side is lesser then or equal to the value on the right side.)</p>
-			<p><span class="dyeoperator">==</span> (equals - Checks if the value on the left side is exactly the same as the value on the right side.)</p>
-			<p><span class="dyeoperator">!=</span> (does not equal - Checks if the value on the left side is not exactly the same as the value on the right side.)</p>
-	<br>
-	<br>
+			<p><span class="dyeoperator"><code class="codeinline">:=</code></span> (assign value - Assigns the value on the right side to the value on the left side.)</p>
+			<p><span class="dyeoperator"><code class="codeinline">></code></span> (greater than - Checks if the value on the left side is greater then the value on the right side.)</p>
+			<p><span class="dyeoperator"><code class="codeinline"><</code></span> (lesser than - Checks if the value on the left side is lesser then the value on the right side.)</p>
+			<p><span class="dyeoperator"><code class="codeinline">>=</code></span> (greater than or equal to - Checks if the value on the left side is greater then or equal to the value on the right side.)</p>
+			<p><span class="dyeoperator"><code class="codeinline"><=</code></span> (lesser than or equal to - Checks if the value on the left side is lesser then or equal to the value on the right side.)</p>
+			<p><span class="dyeoperator"><code class="codeinline">==</code></span> (equals - Checks if the value on the left side is exactly the same as the value on the right side.)</p>
+			<p><span class="dyeoperator"><code class="codeinline">!=</code></span> (does not equal - Checks if the value on the left side is not exactly the same as the value on the right side.)</p>
 	<hr>
 
 	<div id="statement"><h3>Statement</h3></div>
@@ -1467,41 +1451,38 @@
 		<p>The above example simply says:</p>
 		<img src="images\Scripting (Basics)\2022-05-30 14_28_19-statement_explained.png" alt="">
 		<p>There is no need to write the related statements on the same column but it helps alot.</p>
-	<br>
-	<br>
 	<hr>
 
 	<div id="semicolon"><h3>Semicolon</h3></div>
 		<p>The semicolon symbol ; is used to tell the compiler where a function ends.</p>
-	<br>
 	<hr>
 
 <div id="advanced"><h2>Scripting (Advanced)</h2></div>
 <br>
 
 	<div id="compiling"><h3>Compiling</h3></div>
-		<p>As you have probably already noticed, the suffix of your script or any script in general is .ssl. For example ASWELL.ssl. 
+		<p>As you have probably already noticed, the suffix of your script or any script in general is <code class="codeinline">.ssl</code>. For example <code class="codeinline">ASWELL.ssl</code>. 
 			However, this suffix is the raw state of a script. To be able to use your script inside the game you need to compile it. What does that mean? 
 			It means the script needs to be translated from human readable code into machine readable code.
-			Decompiled (human readable) scripts have the suffix .ssl, compiled ones (machine readable) have the suffix .int.
+			Decompiled (human readable) scripts have the suffix <code class="codeinline">.ssl</code>, compiled ones (machine readable) have the suffix <code class="codeinline">.int</code>.
 			So the engine knows what to do with the scripts content.</p>
 		<br>
 		<p>But how exactly do we compile scripts? With Sfall script editor this is child's play.</p>
 		<p>Just look at the top center of the Sfall script editor. There you'll find this button.</p>
 		<br>
 		<img src="images\Compiling\compile_button.png" alt="">
-		<p>Press it. Come on, do it! Press it! Or F8...</p>
+		<p>Press it. Come on, do it! Press it! Or <code class="codeinline">F8</code>...</p>
 		<img src="images\Compiling\Compiling_failed_bottom.png" alt="">
 		<br>
 		<img src="images\Compiling\Compiling_failed_top.png" alt="">
-		<p>ヾ( ๑´д`๑)ﾂ oh noez! What happened? It didn't compile... You get some unique and some cryptic error messages. But all in all it didn't compile. But how do we get our script correctly compiled?
-			I'm glad you ask. Maybe you noticed some little detail inside ASWELL.SSL.</p>
+		<p>What happened? It didn't compile... You get some unique and some cryptic error messages. But all in all it didn't compile. But how do we get our script correctly compiled?
+			I'm glad you ask. Maybe you noticed some little detail inside <code class="codeinline">ASWELL.SSL</code>.</p>
 		<code><span class="dyedefine">#define</span> NAME                    SCRIPT_ASWELL</code>
-	<br>
 	
 	<div id="Scripts.h"><h4>SCRIPTS.H</h4></div>
-		<p>In order to compile your script correctly, it must be listed inside SCRIPTS.H. Let's take a look at SCRIPTS.H located here:</p>
+		<p>In order to compile your script correctly, it must be listed inside <code class="codeinline">SCRIPTS.H</code>. Let's take a look at <code class="codeinline">SCRIPTS.H</code> located here:</p>
 		<code>E:\Fallout2\data\scripts\decompiled\HEADERS</code>
+		<br>
 <li>
 <div class="codebigbox">
 <pre>
@@ -1537,106 +1518,96 @@
 </pre>
 </div>
 </li>
-		<p>What the heck is this?! You might ask. This is SCRIPTS.H or a itsy bitsy tiny part of it (I shorted it because of reasons ;-)). Ok, let's take a look at the framework of this file.</p>
-		<p>#define SCRIPT_... looks familiar. So there needs to be something like #define SCRIPT_ASWELL inside SCRIPTS.H. Let's seek for it.</p>
+		<p>What the heck is this?! You might ask. This is <code class="codeinline">SCRIPTS.H</code> or a itsy bitsy tiny part of it (I shorted it because of reasons). Ok, let's take a look at the framework of this file.</p>
+		<p><code class="codeinline">#define SCRIPT_</code> looks familiar. So there needs to be something like <code class="codeinline">#define SCRIPT_ASWELL</code> inside <code class="codeinline">SCRIPTS.H</code>. Let's seek for it.</p>
 		<code>//#define SCRIPT_ASWELL           (217)   // ASWell.int      ; Arroyo Well. It's broken. Fix w/ Repair</code>
-		<p>There it is! Line 236! It didn't work because someone put double slash before it to make it a comment... (；￣Д￣）</p>
+		<p>There it is! Line <code class="codeinline">236</code>! It didn't work because someone put double slash before it to make it a comment.</p>
 		<p>Just remove the double slash. It'd now look like this.</p>
 		<code>#define SCRIPT_ASWELL           (217)   // ASWell.int      ; Arroyo Well. It's broken. Fix w/ Repair</code>
-		<p>Okay. Now you should more or less understand #define SCRIPT_ASWELL. But what's up with (217)? It serves the purpose of a placeholder or some kind of link. So, to make things short SCRIPT_ASWELL = 217.
-			Humans use SCRIPT_ASWELL because it's easier to read and engines work with numbers so 217 is easier for the engine to understand. Every script has its unique number. Every number is assigned once.
-			Explore SCRIPTS.H to understand this procedure better.</p>
-		<p>Now give it another try. Save the file SCRIPTS.H. Push the compile button.</p>
+		<p>Okay. Now you should more or less understand <code class="codeinline">#define SCRIPT_ASWELL</code>. But what's up with <code class="codeinline">217</code>? It serves the purpose of a placeholder or some kind of link. So, to make things short <code class="codeinline">SCRIPT_ASWELL</code> = <code class="codeinline">217</code>.
+			Humans use <code class="codeinline">SCRIPT_ASWELL</code> because it's easier to read and engines work with numbers so <code class="codeinline">217</code> is easier for the engine to understand. Every script has its unique number. Every number is assigned once.
+			Explore <code class="codeinline">SCRIPTS.H</code> to understand this procedure better.</p>
+		<p>Now give it another try. Save the file <code class="codeinline">SCRIPTS.H</code>. Push the compile button.</p>
 		<img src="images\Compiling\compiling_success.png" alt="">
 		<p>Yes! You did it!</p>
 		<img src="images\Compiling\ssl_and_int.png" alt="">
-		<p>You compiled a .ssl script into a .int one. The compiled script will be created at the same place your decompiled script lies. You can be proud of yourself.</p>
+		<p>You compiled a <code class="codeinline">.ssl</code> script into a <code class="codeinline">.int</code> one. The compiled script will be created at the same place your decompiled script lies. You can be proud of yourself.</p>
 	<br>
 		<h5>Notice</h5>
-			<p>* You can choose whatever name your script has. It doesn't matter if it's called ASWELL.ssl, WELL.ssl or MYSCRIPT.ssl. 
-				But remember, and this is important, a scripts name mustn't be longer than 8 characters, the suffix .ssl not counted.
-				It mustn't be exactly 8 characters long either. Just pick a name between min. 1 and max. 8 chars long.
+			<p>* You can choose whatever name your script has. It doesn't matter if it's called <code class="codeinline">ASWELL.ssl</code>, <code class="codeinline">WELL.ssl</code> or <code class="codeinline">MYSCRIPT.ssl</code>. 
+				But remember, and this is important, a scripts name mustn't be longer than <code class="codeinline">8</code> characters, the suffix <code class="codeinline">.ssl</code> not counted.
+				It mustn't be exactly <code class="codeinline">8</code> characters long either. Just pick a name between min. <code class="codeinline">1</code> and max. <code class="codeinline">8</code> chars long.
 				If you don't follow this rule you'll burn in hell for all eternity!!! And your sleeves slip down every time washing your hands!!!
-				The truth is the engine can't handle more than 8 chars and will probably crash. ¯\_(ツ)_/¯</p>
-			<p>* Script names and the suffix aren't case sensitive. It doesn't matter if you write ASWELL.SSL, ASWELL.int, aswell.SSL, aswell.INT, aSwElL.sSl... you're getting the point.</p>
-	<br>
+				The truth is the engine can't handle more than <code class="codeinline">8</code> chars and will probably crash. ¯\_(ツ)_/¯</p>
+			<p>* Script names and the suffix aren't case sensitive. It doesn't matter if you write <code class="codeinline">ASWELL.SSL</code>, <code class="codeinline">ASWELL.int</code>, <code class="codeinline">aswell.SSL</code>, <code class="codeinline">aswell.INT</code>, <code class="codeinline">aSwElL.sSl</code>... you're getting the point.</p>
 	<hr>
 
 	<div id="TestScript"><h3>Test your script</h3></div>
-	<br>
-
 		<div id="Scripts.lst"></div><h4>SCRIPTS.LST</h4>
-			<p>Now that you've got a compiled script you certainly want to test it. One way to test it is within the BIS Mapper. But first we have to add the script into SCRIPTS.LST.
+			<p>Now that you've got a compiled script you certainly want to test it. One way to test it is within the BIS Mapper. But first we have to add the script into <code class="codeinline">SCRIPTS.LST</code>.
 				We need to do this so that the mapper is able to find the script. Locate the file and open it with whatever editor you like. Jump at the end of the file and add your script like this:</p>
-			<code>HCPAVEL.int		;Pavel the former scout of Hock.				# local_vars=3</code>
-			<p>HCPAVEL.int is the name of your compiled script how you of course already noticed. The text after the semicolon is a descriptive text. 
-				The text after the hashtag is the amount of LVARs used inside your script. In this example you see that script HCPAVEL.int uses 3 LVARs. 
-				If you use 0 LVARs then you write # local_vars=0. If you use 5 but write # local_vars=7 nobody will tear your head off the script will work anyways.
-				The important thing is that you add your script at the same line number as the entry inside SCRIPTS.H corresponds.
-				E.g. inside SCRIPTS.H SCRIPT_HCPAVEL has number (1304) so your entry inside SCRIPTS.LST needs to be on line number 1304.</p>
-		<br>
+			<code>HCPAVEL.int &emsp; ;Pavel the former scout of Hock. &emsp; # local_vars=3</code>
+			<p><code class="codeinline">HCPAVEL.int</code> is the name of your compiled script how you of course already noticed. The text after the semicolon is a descriptive text. 
+				The text after the hashtag is the amount of <code class="codeinline">LVARs</code> used inside your script. In this example you see that script <code class="codeinline">HCPAVEL.int</code> uses <code class="codeinline">3</code> <code class="codeinline">LVARs</code>. 
+				If you use <code class="codeinline">0</code> <code class="codeinline">LVARs</code> then you write <code class="codeinline"># local_vars=0</code>. If you use <code class="codeinline">5</code> but write <code class="codeinline"># local_vars=7</code> nobody will tear your head off the script will work anyways.
+				The important thing is that you add your script at the same line number as the entry inside <code class="codeinline">SCRIPTS.H</code> corresponds.
+				E.g. inside <code class="codeinline">SCRIPTS.H</code> <code class="codeinline">SCRIPT_HCPAVEL</code> has number <code class="codeinline">1304</code> so your entry inside <code class="codeinline">SCRIPTS.LST</code> needs to be on line number <code class="codeinline">1304</code>.</p>
 		<div id="F8Mode"></div><h4>F8 mode</h4>
-			<p>Open the BIS mapper and just press F8. You'll entering some sort of Fallout2 "light". 
-				You can exit it by pressing F8 again then you'll return to the mapper editing interface.</p>
-		<br>
+			<p>Open the BIS mapper and just press <code class="codeinline">F8</code>. You'll entering some sort of Fallout2 "light". 
+				You can exit it by pressing <code class="codeinline">F8</code> again then you'll return to the mapper editing interface.</p>
 		<div id="GameMode"></div><h4>Game mode</h4>
-			<p>Navigate to the Fallout2 game folder located here...</p>
+			<p>Navigate to the Fallout2 game folder located here:</p>
 			<code>E:\Fallout2\</code>
-			<p>Open file ddraw.ini and navigate to line 167 called 'StartingMap='. It could be commented out with a semicolon (;) but just uncomment it by deleting the semicolon.</p>
-			<p>Write your map name after the equals symbol (=). E.g. #StartingMap=ABCDEFG.map'.</p>
-			<p>Save the file and hit fallout2.exe. Start a new game with any character and you'll notice that you'll start on your map.</p>
+			<p>Open file <code class="codeinline">ddraw.ini</code> and navigate to line <code class="codeinline">167</code> called <code class="codeinline">StartingMap=</code>. It could be commented out with a semicolon <code class="codeinline">;</code> but just uncomment it by deleting the semicolon.</p>
+			<p>Write your map name after the equals symbol <code class="codeinline">=</code>. E.g. <code class="codeinline">#StartingMap=ABCDEFG.map</code>.</p>
+			<p>Save the file and hit <code class="codeinline">fallout2.exe</code>. Start a new game with any character and you'll notice that you'll start on your map.</p>
 		<br>
 			<h5>Notice</h5>
 				<p>When you face the strange behavior inside the BIS mapper that you can choose all your self written scripts but the last entry overwrites your presious scripts inside the list.
-					Then your facing a bug. I got rid of this bug by shuffling around a few of the vanilla scripts already located inside SCRIPTS.LST 
+					Then your facing a bug. I got rid of this bug by shuffling around a few of the vanilla scripts already located inside <code class="codeinline">SCRIPTS.LST</code> 
 					and putting some of my self written scripts between the vanilla scripts but not behind each other.</p>
-		<br>
 		<hr>	
 		<div id="AssignScript"><h4>Assign script to object</h4></div>
 			<p>Open the mapper and load your map of choice. There should be at least one object on the map.</p>
 			<img src="images\Scripting (Advanced)\AssignScript\AssignScript.png" alt="" height="80%" width="80%">
-			<p>Choose 'Critters' in dropdown menu, otherwise you cannot mark Critters.</p>
+			<p>Choose <code class="codeinline">Critters</code> in dropdown menu, otherwise you cannot mark Critters.</p>
 			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCritters.png" alt="">
-			<p>Press 'm' to change the cursor from hex to pointer. Left-click the Critter.</p>
+			<p>Press <code class="codeinline">m</code> to change the cursor from hex to pointer. Left-click the Critter.</p>
 			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersChoose.png" alt="" height="60%" width="40%">
-			<p>Press 'Edit' on the bottom button panel.</p>
+			<p>Press <code class="codeinline">Edit</code> on the bottom button panel.</p>
 			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersEdit.png" alt="" height="60%" width="40%">
-			<p>Choose 'New Script'.</p>
+			<p>Choose <code class="codeinline">New Script</code>.</p>
 			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersNewScript.png" alt="" height="50%" width="50%">
-			<p>A window with all available .int scripts appears.</p>
+			<p>A window with all available <code class="codeinline">.int</code> scripts appears.</p>
 			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersChooseScript.png" alt="" height="50%" width="50%">
 			<p>Navigate to the script you want to assign to the object.</p>
 			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersChooseScriptHCPAVEL.png" alt="" height="50%" width="50%">
 			<p>After you chose the script the window closes and gets back to the edit window.</p>
 			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersChooseScriptHCPAVELChosen.png" alt="" height="50%" width="50%">
-			<p>When you're satisfied click on 'Done'.</p>
+			<p>When you're satisfied click on <code class="codeinline">Done</code>.</p>
 			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersEditDone.png" alt="" height="50%" width="50%">
-			<p>To see if it has really been assigned just go to 'SCRIPTS' and choose 'List all Scripts'.</p>
+			<p>To see if it has really been assigned just go to <code class="codeinline">SCRIPTS</code> and choose <code class="codeinline">List all Scripts</code>.</p>
 			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptListAllScripts.png" alt="">
 			<p>As you can see, our chosen script has successfully been assigned.</p>
 			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptListAllScriptsSeeScripts.png" alt="" height="80%" width="80%">
-			<p>Press 'F8' to test if your script works.</p>
-		<br>
+			<p>Press <code class="codeinline">F8</code> to test if your script works.</p>
 			<h5>Notice</h5>
 				<p>* If you see your script inside the mapper and attach it to a critter but you cannot interact with the critter how you've supposed it with your script then the error could be following:</p>
-				<p>&nbsp; * Your script isn't located inside the same folder as SCRIPTS.LST.</p>        
-				<p>&nbsp; * The entry of your script inside SCRIPTS.LST doesn't correspond with the entry inside SCRIPTS.H.</p>        
-		<br>
+				<p>&nbsp;* Your script isn't located inside the same folder as <code class="codeinline">SCRIPTS.LST</code>.</p>        
+				<p>&nbsp;* The entry of your script inside <code class="codeinline">SCRIPTS.LST</code> doesn't correspond with the entry inside <code class="codeinline">SCRIPTS.H</code>.</p>        
 		<hr>
 		
 	<div id="dialog"><h3>Dialog</h3></div>
-	<br>
-
 		<h4>Let's talk about...</h4>
 			<p>Do you remember this guy?</p>
 			<img src="images\Dialog\Talk_to_Klint_remember.png" alt="">
 			<p>It's Klint. Say hi to Klint.</p>
 			<img src="images\Dialog\Talk_to_Klint.png" alt="">
-			<p>The mouth symbol is the procedure talk_p_proc.</p>
+			<p>The mouth symbol is the procedure <code class="codeinline">talk_p_proc;</code>.</p>
 			<img src="images\Dialog\Talk_to_Klint_dialogsystem.png" alt="">
 			<p>The conversation has been initiated and the dialog system appears. Now you see two lines of text. But how does the engine know when which text to say?
-				Well to understand how it works, we need to dig down deeper and take a look at two files ACKLINT.SSL and ACKLINT.MSG.</p>
-			<p>First file is ACKLINT.SSL located here:</p>
+				Well to understand how it works, we need to dig down deeper and take a look at two files <code class="codeinline">ACKLINT.SSL</code> and <code class="codeinline">ACKLINT.MSG</code>.</p>
+			<p>First file is <code class="codeinline">ACKLINT.SSL</code> located here:</p>
 			<code>E:\Fallout2\data\scripts\decompiled\ARROYO</code>
 <li>
 <div class="codebigbox">
@@ -1662,8 +1633,8 @@
 </pre>
 </div>
 </li>
-			<p>This is procedure talk_p_proc or at least a part of it. Dialog begins here but we are only interested in call Node006; the rest is unimportant for now.</p>
-			<p>Let's jump to call Node006.</p>
+			<p>This is procedure <code class="codeinline">talk_p_proc;</code> or at least a part of it. Dialog begins here but we are only interested in call <code class="codeinline">Node006;</code> the rest is unimportant for now.</p>
+			<p>Let's jump to call <code class="codeinline">Node006;</code>.</p>
 <li>
 <div class="codebigbox">
 <pre>
@@ -1676,8 +1647,8 @@
 </pre>
 </div>
 </li>
-			<p>You can probably guess that 121 and 123 are the two lines we've seen at the screenshots when you started talking to Klint and the dialog window appeared. 
-				But where do they come from? Let's take a look at ACKLINT.MSG located here:</p>
+			<p>You can probably guess that <code class="codeinline">121</code> and <code class="codeinline">123</code> are the two lines we've seen at the screenshots when you started talking to Klint and the dialog window appeared. 
+				But where do they come from? Let's take a look at <code class="codeinline">ACKLINT.MSG</code> located here:</p>
 			<code>E:\Fallout2\data\text\english\dialog</code>
 			<p>Try and open the file with notepad, notepad++, Sfall script editor or whatever you prefer. After you opened the file, it will look like this:</p>
 <li>
@@ -1711,14 +1682,12 @@
 </pre>
 </div>
 </li>
-			<p>Every piece of text related to Klint. As you can see lines 121 and 123 are located inside this message file. So, when dialog jumps to Node006 and lines 121 and 123 are requested, 
-				the engine looks inside ACKLINT.MSG finds and returns the necessary text lines.</p>
-			<p>You might have noticed that line 100, 101 and 102 contain descriptive text. They are used by the procedures look_at_p_proc and description_p_proc.</p>
-			<p>left: look_at_p_proc; right: description_p_proc</p>
+			<p>Every piece of text related to Klint. As you can see lines <code class="codeinline">121</code> and <code class="codeinline">123</code> are located inside this message file. So, when dialog jumps to <code class="codeinline">Node006;</code> and lines <code class="codeinline">121</code> and <code class="codeinline">123</code> are requested, 
+				the engine looks inside <code class="codeinline">ACKLINT.MSG</code> finds and returns the necessary text lines.</p>
+			<p>You might have noticed that line <code class="codeinline">100</code>, <code class="codeinline">101</code> and <code class="codeinline">102</code> contain descriptive text. They are used by the procedures <code class="codeinline">look_at_p_proc;</code> and <code class="codeinline">description_p_proc;</code>.</p>
+			<p>left: <code class="codeinline">look_at_p_proc;</code> right: <code class="codeinline">description_p_proc;</code></p>
 			<img src="images\Dialog\look_at_p_proc.png" alt="">
 			<img src="images\Dialog\description_p_proc.png" alt="">
-		<br>
-		<br>
 		<br>
 
 		<h4>Message file basic framework</h4>
@@ -1732,7 +1701,7 @@
 			<p>Comments are written like this:</p>
 			<code>#MyComment</code>
 			<p>Everything behind the hashtag is interpreted as a comment.</p>
-			<p>I like my message files a bit more organized. Like this...</p>
+			<p>I like my message files a bit more organized. Like this:</p>
 <li>
 <div class="codebigbox">
 <pre>
@@ -1855,15 +1824,11 @@
 </div>
 </li>
 			<p>But you can organize your message files as you like.</p>
-			<br>
 			<h5>Notice</h5>    
-				<p>* Message files do always have the suffix .MSG. For example ACKLINT.MSG.</p>
-	<br>
+			<p>* Message files do always have the suffix <code class="codeinline">.MSG</code>. For example <code class="codeinline">ACKLINT.MSG</code>.</p>
 	<hr>
 
 	<div id="pipboy"><h3>Add quest to pipboy</h3></div>
-	<br>
-
 		<h4>What do you need</h4>
 <li>
 <div class="codebigbox">
@@ -1877,9 +1842,6 @@
 </div>
 </li>
 		<p>Lets take a look at the internal of these files.</p>
-		<br>
-		<br>
-
 		<h4>VAULT13.GAM</h4>
 <li>
 <div class="codebigbox">
@@ -1900,13 +1862,10 @@
 </pre>
 </div>
 </li>
-			<p>This file contains every GVAR defined.</p>
-			<p>GVAR_x is the GVARs name as you already know.</p>
-			<p>:=0; assigns a starting value to the GVAR. In this case 0.</p>
-			<p>(0) is the placeholder for the GVARs name as you already know.</p>
-		<br>
-		<br>
-
+		<p>This file contains every <code class="codeinline">GVAR</code> defined.</p>
+		<p><code class="codeinline">GVAR_x</code> is the GVARs name as you already know.</p>
+		<p><code class="codeinline">:=0</code>; assigns a starting value to the <code class="codeinline">GVAR</code>. In this case <code class="codeinline">0</code>.</p>
+		<p><code class="codeinline">(0)</code> is the placeholder for the <code class="codeinline">GVARs</code> name as you already know.</p>
 		<h4>QUEST.TXT</h4>
 <li>
 <div class="codebigbox">
@@ -1922,16 +1881,13 @@
 </pre>
 </div>
 </li>
-			<p>Here are all the quests with their conditions.</p>
-			<p>Everything after # is a comment.</p>
-			<p>The 1500 retrieves the place name from the MAP.MSG. So in this example it stands for the desert.</p>
-			<p>The 100 refers to the QUESTS.MSG. There you will find the names of the quests.</p>
-			<p>The 9 refers to the global variable from the VAULT13.GAM.</p>
-			<p>2 is the minimum value that the global variable must contain to be displayed in Pipboy.</p>
-			<p>6 is the minimum value that the global variable must contain in order to be displayed as Done in Pipboy.</p>
-		<br>
-		<br>
-
+		<p>Here are all the quests with their conditions.</p>
+		<p>Everything after <code class="codeinline">#</code> is a comment.</p>
+		<p>The <code class="codeinline">1500</code> retrieves the place name from the <code class="codeinline">MAP.MSG</code>. So in this example it stands for the desert.</p>
+		<p>The <code class="codeinline">100</code> refers to the <code class="codeinline">QUESTS.MSG</code>. There you will find the names of the quests.</p>
+		<p>The <code class="codeinline">9</code> refers to the global variable from the <code class="codeinline">VAULT13.GAM</code>.</p>
+		<p><code class="codeinline">2</code> is the minimum value that the global variable must contain to be displayed in Pipboy.</p>
+		<p><code class="codeinline">6</code> is the minimum value that the global variable must contain in order to be displayed as done in Pipboy.</p>
 		<h4>QUESTS.MSG</h4>
 <li>
 <div class="codebigbox">
@@ -1948,27 +1904,25 @@
 </pre>
 </div>
 </li>
-			<p>This file contains every quest description.</p>
-			<p>Everything after # is a comment.</p>
-			<p>100 is the quests linenumber.</p>
-			<p>The text behind is the quests description.</p>
-	<br>
+		<p>This file contains every quest description.</p>
+		<p>Everything after <code class="codeinline">#</code> is a comment.</p>
+		<p><code class="codeinline">100</code> is the quests linenumber.</p>
+		<p>The text behind is the quests description.</p>
 	<hr>
 
 	<div id="MakeTrader"><h3>Make trader</h3></div>
-		<br>
 			<p>In this tutorial I shall attempt to explain how traders work and how to script you own. I will not be covering the actual script compiling or conversation nodes or basic script structure, just the trading part.</p>
 			<p>Traders don't carry their shop inventory, they store it in shelves or other containers, sometimes visible and sometimes not.</p>
 			<p>As we can see from Vault City, Randal and two others keep their stock in lockers that are outside the scroll edges of the map.</p>
 			<img src="images\Scripting (Advanced)\Make_Trader\Tradertut1.webp" alt="">
 			<p>As seen in San Fransisco and other maps, traders can have several tables or shelves to choose from. </p>
 			<img src="images\Scripting (Advanced)\Make_Trader\Tradertut2.webp" alt="">
-			<p>Traders actually use 2 boxes and 4 scripts to deal with swapping their inventory.</p>
-			<p>First create a container somewhere off the edge of the map and give it the script 'ZITMPBOX.int'. 
+			<p>Traders actually use <code class="codeinline">2</code> boxes and <code class="codeinline">4</code> scripts to deal with swapping their inventory.</p>
+			<p>First create a container somewhere off the edge of the map and give it the script <code class="codeinline">ZITMPBOX.int</code>. 
 				This is the temporary box for swapping the inventories. Think of it as the table you need to swap a glass of beer and a glass of wine between hands. 
 				You have to put down one glass to pass the other from hand to hand.</p>
 			<p>To use this box, you must put the following line in the map script after the procedure list at the start: </p>
-<code>export variable generic_temp_box;</code>
+			<code>export variable generic_temp_box;</code>
 			<p>Each trader will also need a variable for their store box such as these listed in the Den's map script for the various traders. </p>
 <li>
 <div class="codebigbox">
@@ -1982,7 +1936,7 @@
 </div>
 </li>
 			<p>For the sake of this tutorial we'll be using Tubby in the den as our example. </p>	
-			<p>In the trader's script you need to import the variables for the temporary box and the store box(s). Add the following lines after the #DEFINE's but before the procedures. </p>
+			<p>In the traders script you need to import the variables for the temporary box and the store boxes. Add the following lines after the <code class="codeinline">#defines</code> but before the <code class="codeinline">procedures</code>. </p>
 <li>
 <div class="codebigbox">
 <pre>
@@ -1992,7 +1946,7 @@
 </div>
 </li>
 			<p>This brings in pointers to the temporary box and Tubby's store box to this script. </p>
-			<p>To actually swap the contents of the trader's inventory with the store inventory, you use the following 2 lines (modified with the right variable name for the trader's box of course).</p>
+			<p>To actually swap the contents of the traders inventory with the store inventory, you use the following <code class="codeinline">2</code> lines (modified with the right variable name for the traders box of course).</p>
 <li>
 <div class="codebigbox">
 <pre>
@@ -2001,7 +1955,7 @@
 </pre>
 </div>
 </li>
-			<p>This (in order) moves the trader's personal inventory to the temporary box, and then moves the store box inventory to the trader. 
+			<p>This (in order) moves the traders personal inventory to the temporary box, and then moves the store box inventory to the trader. 
 				This is usually initiated as a conversation node, but can be done as soon as you talk to him before the nodes start! 
 				Next, once trading is complete and you say goodbye, the contents are swapped back by reversing the sequence like so:</p>
 <li>
@@ -2012,15 +1966,14 @@
 </pre>
 </div>
 </li>
-			<p>This (in order) moves Tubby's inventory (which is his store inventory at this point) back to the store's box, and the contents of the temp box (Tubby's personal inventory) back to Tubby. </p>
-			<p>Swapping back is usually done as part of the exit node(s) of a conversation (there may be more than one exit node such as "Thanks, bye", 
+			<p>This (in order) moves Tubbys inventory (which is his store inventory at this point) back to the stores box, and the contents of the temp box (Tubbys personal inventory) back to Tubby. </p>
+			<p>Swapping back is usually done as part of the exit nodes of a conversation (there may be more than one exit node such as "Thanks, bye", 
 				where you walk away a happy customer, and "Screw you, you ripped me off" for example where he would end the conversation and start combat.) </p>
-			<p>This deals with the trader script and it would work at that, but the stores stock would be limited to whatever you put in the store box and/or sold to the trader and once depleted would not re-stock. 
+			<p>This deals with the traders script and it would work at that, but the stores stock would be limited to whatever you put in the store box and/or sold to the trader and once depleted would not re-stock. 
 				For this you need a script on the store box to replenish the stock over time. </p>
-		<br>
 
 		<div id="StoreRestock"><h4>Store restock</h4></div>
-			<p>Here is Tubby's store box for example on re-stocking over time: </p>
+			<p>Here is Tubbys store box for example on re-stocking over time: </p>
 <li>
 <div class="codebigbox">
 <pre>
@@ -2066,19 +2019,19 @@
 </div>
 </li>
 		<br>
-			<p>The map_enter_p_proc gets called every time you enter the map.</p>
+			<p>The <code class="codeinline">map_enter_p_proc;</code> gets called every time you enter the map.</p>
 <code>procedure map_enter_p_proc begin</code>
 		<br>
 			<p>It's been checked if you're loading a savefile. If yes skip entire procedure. If no proceed with next step.</p>
 <code>if (is_loading_game == false) then begin</code>
 		<br>
-			<p>It's been checked if the local variable LVAR_RESTOCK_TIME is smaller than the game time. In this case LVAR_RESTOCK_TIME = 0. Proceed with next step.</p>
+			<p>It's been checked if the local variable <code class="codeinline">LVAR_RESTOCK_TIME</code> is smaller than the game time. In this case <code class="codeinline">LVAR_RESTOCK_TIME = 0</code>. Proceed with next step.</p>
 <code>if (local_var(LVAR_RESTOCK_TIME) < game_time) then begin</code>
 		<br>
-			<p>A random amount of caps will be added to the store box(between 151 and 161 inclusive). The chosen random amount of caps will be subtracted from the already contained caps inside the store box.</p>
+			<p>A random amount of caps will be added to the store box(between <code class="codeinline">151</code> and <code class="codeinline">161</code> inclusive). The chosen random amount of caps will be subtracted from the already contained caps inside the store box.</p>
 <code>item_caps_adjust(self_obj, random(151, 161) - self_caps);</code>
 		<br>
-			<p>Different items will be added to the store box. E.g. PID_JET is the proto ID Jet (the drug); 5 is minimum amount; 10 maxmimum amount and 100 is the percentage probability of the item to restock.</p>
+			<p>Different items will be added to the store box. E.g. <code class="codeinline">PID_JET</code> is the proto ID for Jet (the drug); <code class="codeinline">5</code> is minimum amount; <code class="codeinline">10</code> maxmimum amount and <code class="codeinline">100</code> is the percentage probability of the item to restock.</p>
 <li>
 <div class="codebigbox">
 <pre>
@@ -2099,7 +2052,7 @@
 </div>
 </li>
 		<br>
-			<p>After it has finished restocking, it sets the local variable LVAR_RESTOCK_TIME. A random number between 1 and 2 inclusive is taken. It multiplies the random number with one game day
+			<p>After it has finished restocking, it sets the local variable <code class="codeinline">LVAR_RESTOCK_TIME</code>. A random number between <code class="codeinline">1</code> and <code class="codeinline">2</code> inclusive is taken. It multiplies the random number with one game day
 				and adds the result with the elapsed game time.</p>
 <li>
 <div class="codebigbox">
@@ -2115,18 +2068,14 @@
 </pre>
 </div>
 </li>
-			<p>This makes it re-stock every time you come back if it's been more than 1 or 2 days (depending on the random roll).</p>
-		<br>
+			<p>This makes it re-stock every time you come back if it's been more than <code class="codeinline">1</code> or <code class="codeinline">2</code> days (depending on the random roll).</p>
 			<h5>Notice</h5>
-				<p>The critter you want to be a trader must have the proto flag 'Barter = YES' otherwise you will face bugs.</p>
-				<p>If you want to test your trading scripts you must test them inside game. The F8 mode won't execute the inventory swap.</p>
-<br>	
+			<p>The critter you want to be a trader must have the proto flag <code class="codeinline">Barter = YES</code> otherwise you will face bugs.</p>
+			<p>If you want to test your trading scripts you must test them inside game. The <code class="codeinline">F8</code> mode won't execute the inventory swap.</p>	
 <hr>
 <hr>
 
 <div id="complex"><h2>Scripting (Complex)</h2></div>
-	<br>
-	
 		<h3>Fix the well for Feargus - Arroyo</h3>
 			<img src="images\Scripting (Complex)\FO2_Arroyo_Feargus.jpg" alt="FO2 Arroyo Feargus">
 			<p>At the center of the Arroyo village there is a well, and Feargus, the Chosen One's nephew, is standing next to it, 
@@ -2147,10 +2096,8 @@
 </pre>
 </div>
 </li>
-			<br>
-
-			<h4>How does this work in detail? Let’s break it down.</h4> 
-				<p>The procedures use_skill_on_p_proc is called.</p>
+			<h4>How does this work in detail? Lets break it down.</h4> 
+				<p>The procedures <code class="codeinline">use_skill_on_p_proc;</code> is called.</p>
 <li>
 <div class="codebigbox">
 <pre>
@@ -2159,19 +2106,19 @@
 </pre>
 </div>
 </li>
-				<p>The first function action_being_used checks if the repair skill, written as SKILL_REPAIR, is used on the well. 
-					The second one local_var checks if the local variable  LVAR_Gave_Xp is equal 0. 
+				<p>The first function <code class="codeinline">action_being_used</code> checks if the repair skill, written as <code class="codeinline">SKILL_REPAIR</code>, is used on the well. 
+					The second one <code class="codeinline">local_var</code> checks if the local variable <code class="codeinline">LVAR_Gave_Xp</code> is equal <code class="codeinline">0</code>. 
 					If both conditions match the following code is executed, else the procedure ends without anything been done.</p>
-<code><span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>)) <span class="dyestatement">then begin</span></code>
+				<code><span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>)) <span class="dyestatement">then begin</span></code>
 				<p>For certain procedures in the game there are default functions that are called when nothing is written inside these procedures. 
-					To prevent these default functions to happen when something is indeed written inside the procedures the function script_overrides is used.</p>
-<code><span class="dyefunction">script_overrides</span>;</code>
-				<p>Show message line 1005 of file GENERIC.msg.</p>
-				<p>The function display_msg invokes the functionality to display a message. The function message_str has two arguments in this case. 
-					SCRIPT_GENERIC is the message file (.msg) that contains all lines of text that should be used for generic purposes. 
-					This file is actually named GENERIC.msg and is located at \text\english\dialog\GENERIC.msg. 100 and 101 are the lines which are contained inside the file GENERIC.msg.</p>
-<code><span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));</code>
-				<p>Inside EXPPOINT.H you’ll find the definition of the macro give_xp(x).</p>
+					To prevent these default functions to happen when something is indeed written inside the procedures the function <code class="codeinline">script_overrides</code> is used.</p>
+				<code><span class="dyefunction">script_overrides</span>;</code>
+				<p>Show message line <code class="codeinline">1005</code> of file <code class="codeinline">GENERIC.msg</code>.</p>
+				<p>The function <code class="codeinline">display_msg</code> invokes the functionality to display a message. The function <code class="codeinline">message_str</code> has two arguments in this case. 
+					<code class="codeinline">SCRIPT_GENERIC</code> is the message file (<code class="codeinline">.msg</code>) that contains all lines of text that should be used for generic purposes. 
+					This file is actually named <code class="codeinline">GENERIC.msg</code> and is located at <code class="codeinline">\text\english\dialog\GENERIC.msg</code>. <code class="codeinline">100</code> and <code class="codeinline">101</code> are the lines which are contained inside the file <code class="codeinline">GENERIC.msg</code>.</p>
+				<code><span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));</code>
+				<p>Inside <code class="codeinline">EXPPOINT.H</code> you’ll find the definition of the macro <code class="codeinline">give_xp(x)</code>.</p>
 <li>
 <div class="codebigbox">
 <pre>
@@ -2180,19 +2127,19 @@
 </pre>
 </div>
 </li>
-				<p>You can also define the amount of given exp points in the file EXPPOINT.H. In this example it’s EXP_FIX_WELL. 100 means 100 exp points given.</p>
-<code><span class="dyedefine">#define</span> EXP_FIX_WELL &emsp; &emsp; &emsp; (<span class="dyedefine">100</span>)</code>
-				<p>As you can see in the file ASWELL.SSL the macro give_xp is used with the defined argument EXP_FIX_WELL. 
-					So, if you want to change the amount of exp points given. You just can change the defined argument in the file EXPPOINT.H.</p>
-				<p>This give_xp(x) gives a certain amount of experience points to the player and displays a message to the player so he is informed how many exp points he received.</p>
-<code><span class="dyedevelopermacro"">give_xp</span>(EXP_FIX_WELL);</code>
-				<p>The function set_map_var sets the map variable MVAR_Fixed_Well to 1. The game remembers that the well has been fixed even if you change the map. 
+				<p>You can also define the amount of given exp points in the file <code class="codeinline">EXPPOINT.H</code>. In this example it’s <code class="codeinline">EXP_FIX_WELL</code>. <code class="codeinline">100</code> means <code class="codeinline">100</code> exp points given.</p>
+				<code><span class="dyedefine">#define</span> EXP_FIX_WELL &emsp; &emsp; &emsp; (<span class="dyedefine">100</span>)</code>
+				<p>As you can see in the file <code class="codeinline">ASWELL.SSL</code> the macro <code class="codeinline">give_xp</code> is used with the defined argument <code class="codeinline">EXP_FIX_WELL</code>. 
+					So, if you want to change the amount of exp points given. You just can change the defined argument in the file <code class="codeinline">EXPPOINT.H</code>.</p>
+				<p>This <code class="codeinline">give_xp(x)</code> gives a certain amount of experience points to the player and displays a message to the player so he is informed how many exp points he received.</p>
+				<code><span class="dyedevelopermacro"">give_xp</span>(EXP_FIX_WELL);</code>
+				<p>The function <code class="codeinline">set_map_var</code> sets the map variable <code class="codeinline">MVAR_Fixed_Well</code> to <code class="codeinline">1</code>. The game remembers that the well has been fixed even if you change the map. 
 					So, it’s not possible to trick the game and invoking this quest again.</p>
-<code><span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,</span><span class="dyedefine">1</span>);</code>
-				<p>The map variable MVAR_Fixed_Well is located in the ARVILLAG.H file inside the header folder.</p>
-<code><span class="dyedefine">#define</span> MVAR_Fixed_Well</span> &emsp; &emsp; (<span class="dyedefine">4</span>)</code>
-				<p>The set_local_var function sets the local variable LVAR_Gave_Xp to 1.
-					So, if the player tries to invoke the procedure use_skill_on_p_proc again on the well, nothing happens.</p>
+				<code><span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,</span><span class="dyedefine">1</span>);</code>
+				<p>The map variable <code class="codeinline">MVAR_Fixed_Well</code> is located in the <code class="codeinline">ARVILLAG.H</code> file inside the header folder.</p>
+				<code><span class="dyedefine">#define</span> MVAR_Fixed_Well</span> &emsp; &emsp; (<span class="dyedefine">4</span>)</code>
+				<p>The <code class="codeinline">set_local_var</code> function sets the local variable <code class="codeinline">LVAR_Gave_Xp</code> to <code class="codeinline">1</code>.
+					So, if the player tries to invoke the procedure <code class="codeinline">use_skill_on_p_proc</code> again on the well, nothing happens.</p>
 <code><span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,</span><span class="dyedefine">1</span>);</code>
 <br>
 <hr>
