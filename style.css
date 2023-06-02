@@ -64,6 +64,14 @@ ol li::before {
 	} 
 }
 
+.dashedline {
+  border-style:dashed;
+}
+
+.dottedline {
+  border-style: dotted;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -80,7 +88,7 @@ code {
 
 .codebigbox {
   background-color: #3a3b3c;
-  padding: 2px;
+  padding: 0px;
 }
 
 .codeinline {

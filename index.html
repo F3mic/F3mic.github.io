@@ -28,6 +28,7 @@
 			<ol>
 				<li><a href="index.html#BIS_Mapper_explained">BIS Mapper explained</a></li>
 				<ol>
+					<li><a href="index.html#BIS_GUI">Graphical interface</a></li>
 					<li><a href="index.html#hotkeys">Hotkeys</a></li>
 				</ol>
 				<li><a href="index.html#BuildMap">How to build a map</a></li>
@@ -135,37 +136,34 @@
 
 	<div id="Fallout2_.dat_files"><h3>File handling - .dat files</h3></div>
 		<p>Inside the games folder you'll find .dat files. We need three of them.</p>
-		<p>These are...</p> 
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span>master.dat</span>
-	<span>critter.dat</span>
-	</pre>
-	</div>
-	</li>
+		<p>These are:</p> 
+		<div>
+			<code>
+				master.dat
+				<br>
+				critter.dat
+			</code>
+		</div>
 		<p>and if your version of FO2 is patched, then it should also contain following...</p>
 		<code>patch000.dat</code>
 		<p>These three files contain all the various audio, graphic, dialogue, script, font, map, etc. files used in FO2.</p>
 		<p>To be able to edit any of the files inside the .dat files you need to unpack the .dat files first. It's like having a .zip file that needs to be unzipped first. It's obligatory to do this before you do any sort of modding of FO2.</p>
 		<p>Just save them at a place of your choice.</p>
 		<p>Mine looks like this...</p>
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span>E:\dev\Ressources</span>
-			<span>|</span>
-			<span>|->master.dat</span>
-			<span>|->critter.dat</span>
-			<span>|->patch000.dat</span>
-	</pre>
-	</div>
-	</li>
+		<div>
+			<code>
+				E:\dev\Ressources
+				<div style="text-indent: 8em;">|</div>
+				<div style="text-indent: 8em;">|->master.dat</div>
+				<div style="text-indent: 8em;">|->critter.dat</div>
+				<div style="text-indent: 8em;">|->patch000.dat</div>
+			</code>
+		</div>
 	<br>
 	<hr>
 
 	<div id="Tools_Data_Exploring"><h3>Tools - .dat Extractor</h3></div>
-		<p>Download <a href="https://www.nma-fallout.com/resources/dat-explorer-by-dims.56/">Dat Explorer by Dims 1.43</a> from NMA.</p>
+		<p>Download <a href="https://www.nma-fallout.com/resources/dat-explorer-by-dims.56/"><code class="codeinline">Dat Explorer by Dims 1.43</code></a> from NMA.</p>
 		<p>Unpack the file inside it wherever you like. Should look like this.</p> 
 		<img src="images\Preparations\ToolsDATExplorer\2022-04-20 20_47_40-Fallout 2 Dat Explorer 1.43 by Dims.png" alt="">
 		<p>Luckily, it doesn't require installation on your computer as such, so it can be run straight out of the box.</p>
@@ -191,23 +189,24 @@
 		<p>When DatExplorer is finished, minimise it, cut the <code class="codeinline">data</code> folder and paste it into the root of your backuped <code class="codeinline">\Fallout2</code> directory. Hit <code class="codeinline">Yes To All</code> in the window that comes up, to replace any old files in the directory with the new, extracted ones.</p>
 		<p>If you're tired of reading and rather want to listen to someone executing the task, our friend QuantumApprentice has made a video especially for this case :)</p>
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/vCPc1gxPtKk?start=438" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<hr class="dottedline">
 		<h5>Note</h5>
-		<p>Why the extracted files go into <code class="codeinline">...\Fallout2\data</code> instead of the Fallout2 root directory? (Thanks Red)</p>
+		<p>Why the extracted files go into <code class="codeinline">...\Fallout2\data</code> instead of the Fallout2 root directory?</p>
 		<p>The engine is actually built to read the data files from <code class="codeinline">...\Fallout2\data</code> first (Well, that's how fallout2.cfg sets it by default...) and failing that, will read the <code class="codeinline">...\Fallout2\</code> root directory.</p>
 		<p>Of course, this causes problems since you put the extracted files in <code class="codeinline">...\Fallout2\data</code>, Fallout2 likes to delete most if not all the files inside <code class="codeinline">...\Fallout2\data\proto</code>, so you need to make them read-only. Yet if you want to be able to edit them, they should NOT be read-only... Quite a pain in the ass huh?</p>
 		<p>There hasn't been found any clever workarounds...The danger in putting the extracted files in the root instead of in <code class="codeinline">...\Fallout2\data</code> is that I think the original .dat files would actually have priority over them. While the extracted files in <code class="codeinline">...\Fallout2\data</code> have priority over the .dat files.</p>
 	<hr>
 
 	<div id="Tools_Scripting"><h3>Tools - Scripting</h3></div>
-		<p>You can take a simple text editor like notepad or notepad++ with or without <a href="https://nma-fallout.com/threads/vscode-ssl-support.217033/">Burns VScode SSL support</a> to write scripts. But we take a more dedicated tool for this task. The tool we're going to use is called 
-		<a href="https://github.com/F3mic/F3mic.github.io/blob/main/Fallout%20sFall%20Script%20Editor%20v4.1.7.RC1.rar">SFall Script Editor</a> by Mr. Stalin. This tool is gold and will save us a lot of work.</p>
+		<p>You can take a simple text editor like notepad or notepad++ with or without <a href="https://nma-fallout.com/threads/vscode-ssl-support.217033/"><code class="codeinline">Burns VScode SSL support</code></a> to write scripts. But we take a more dedicated tool for this task. The tool we're going to use is called 
+		<a href="https://github.com/F3mic/F3mic.github.io/blob/main/Fallout%20sFall%20Script%20Editor%20v4.1.7.RC1.rar"><code class="codeinline">SFall Script Editor</code></a> by Mr. Stalin. This tool is gold and will save us a lot of work.</p>
 		<p>Download and extract the file <code class="codeinline">Fallout sFall Script Editor v4.1.7.RC1.rar</code>. Execute the installer. Install it wherever you want.</p>
 		<p>My installed sFall Script Editor folder looks like this...</p>
 		<pre><code>E:\dev\Tools\Fallout sFall Script Editor v4.1.7.RC1</code></pre>
 		<img src="images\Preparations\ToolsScripting\2022-04-21 08_29_43-Fallout sFall Script Editor v4.1.7.RC1.png" alt="">
 		<p>If you're tired of reading and rather want to listen to someone executing the task, our friend QuantumApprentice has made a video especially for this case :)</p>
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/vCPc1gxPtKk?start=534" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		<p>We need one more tool and some files that come with it. It's the good old <a href="https://www.nma-fallout.com/resources/bis-mapper.55/">Black Isle Studio (BIS) Mapper</a>.</p>
+		<p>We need one more tool and some files that come with it. It's the good old <a href="https://www.nma-fallout.com/resources/bis-mapper.55/"><code class="codeinline">Black Isle Studio (BIS) Mapper</code></a>.</p>
 		<p>Download and extract the BIS Mapper wherever you want.</p> 
 		<p>Mine looks like this...</p>
 		<pre><code>E:\dev\Tools\BIS mapper patched (+complementary ressources)</code></pre>
@@ -234,8 +233,8 @@
 
 	<div id="Tools_Mapping"><h3>Tools - Mapping</h3></div>
 		<p>If you want to map you'd use the before mentioned BIS Mapper. You can also use 
-		<a href="https://www.mediafire.com/folder/2aheaguwymint/Welcome_to_Fallout_Database#jhjy1cz6dbklg">Dims Mapper (Fallout Database by Dobrovik)</a> or
-		<a href="https://www.nuclear-city.com/index.php/topic/1054-%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%BE%D1%80-%D0%BA%D0%B0%D1%80%D1%82-bis-%D0%B8-dims-fallout-1-2/"> Dims Mapper (Nuclear-city.com russian speaking site)</a> as complentary. You'll also find a modified version of BIS Mapper under the russian link.</p>
+		<a href="https://www.mediafire.com/folder/2aheaguwymint/Welcome_to_Fallout_Database#jhjy1cz6dbklg"><code class="codeinline">Dims Mapper (Fallout Database by Dobrovik)</code></a> or
+		<a href="https://www.nuclear-city.com/index.php/topic/1054-%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%BE%D1%80-%D0%BA%D0%B0%D1%80%D1%82-bis-%D0%B8-dims-fallout-1-2/"> <code class="codeinline">Dims Mapper (Nuclear-city.com russian speaking site)</code></a> as complentary. You'll also find a modified version of BIS Mapper under the russian link.</p>
 	<hr>
 
 	<div id="Config_BIS_Mapper"><h3>Config - BIS Mapper</h3></div>
@@ -243,59 +242,53 @@
 		<img src="images\Preparations\ToolsMapping\2022-04-21 14_09_35-Fehler.png" alt="">
 		<p>Open <code class="codeinline">mapper2.cfg</code> with a text-editor of your choice.</p>
 		<p>Let's take a look at lines 58 to 74 looking like this...</p>
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span>[...]</span>
-	<span>[system]</span>
-	<span>art_cache_size=261</span>
-	<span>cdlock=</span>
-	<span>color_cycling=1</span>
-	<span>critter_dat=</span>
-	<span>critter_patches=</span>
-	<span>cycle_speed_factor=1</span>
-	<span>executable=mapper</span>
-	<span>free_space=0</span>
-	<span>hashing=1</span>
-	<span>interrupt_walk=1</span>
-	<span>language=english</span>
-	<span>master_dat=</span>
-	<span>master_patches=</span>
-	<span>scroll_lock=0</span>
-	<span>splash=1</span>
-	<span>times_run=1</span>
-	</pre>
-	</div>
-	</li>
-		<p>We need to take a closer look at these files...</p>		
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span>[...]</span>
-	<span>critter_dat=</span>
-	<span>critter_patches=</span>
-	<span>[...]</span>
-	<span>master_dat=</span>
-	<span>master_dat=</span>
-	<span>master_patches=</span>
-	<span>[...]</span>
-	</pre>
-	</div>
-	</li>
+		<div>
+			<code>
+				<div>[...]</div>
+				<div>[system]</div>
+				<div>art_cache_size=261</div>
+				<div>cdlock=</div>
+				<div>color_cycling=1</div>
+				<div>critter_dat=</div>
+				<div>critter_patches=</div>
+				<div>cycle_speed_factor=1</div>
+				<div>executable=mapper</div>
+				<div>free_space=0</div>
+				<div>hashing=1</div>
+				<div>interrupt_walk=1</div>
+				<div>language=english</div>
+				<div>master_dat=</div>
+				<div>master_patches=</div>
+				<div>scroll_lock=0</div>
+				<div>splash=1</div>
+				<div>times_run=1</div>
+			</code>
+		</div>
+		<p>We need to take a closer look at these files...</p>	
+		<div>
+			<code>
+				<div><span>[...]</div>
+				<div><span>critter_dat=</div>
+				<div><span>critter_patches=</div>
+				<div><span>[...]</div>
+				<div><span>master_dat=</div>
+				<div><span>master_dat=</div>
+				<div><span>master_patches=</div>
+				<div><span>[...]</div>
+			</code>
+		</div>	
 		<p>The mapper is looking for files to work with. Because these lines are empty the mapper cannot start. We need to tell the mapper where the files are located  it's looking for. Fill in the lines like this...</p>
-<li>
-<div class="codebigbox">
-<pre>
-	<span>[...]</span>
-	<span>critter_dat=E:\Fallout2\critter.dat</span>
-	<span>critter_patches=E:\Fallout2\data</span>
-	<span>[...]</span>
-	<span>master_dat=E:\Fallout2\master.dat</span>
-	<span>master_patches=E:\Fallout2\data</span>
-	<span>[...]</span>
-</pre>
-</div>
-</li>					
+		<div>
+			<code>
+				<div>[...]</div>
+				<div>critter_dat=E:\Fallout2\critter.dat</div>
+				<div>critter_patches=E:\Fallout2\data</div>
+				<div>[...]</div>
+				<div>master_dat=E:\Fallout2\master.dat</div>
+				<div>master_patches=E:\Fallout2\data</div>
+				<div>[...]</div>
+			</code>
+		</div>				
 		<p>Save <code class="codeinline">mapper2.cfg</code> and close it. Now run <code class="codeinline">mapper2.exe</code> again and it should start.</p>
 		<p>First time running BIS Mapper should look like this...</p>
 		<img src="images\Preparations\ToolsMapping\2022-04-21 14_21_45-Greenshot.png" alt="">
@@ -304,123 +297,126 @@
 	<hr>
 
 	<div id="mapping"><h2>Mapping</h2></div>
+		<p>In this chapter we will learn what mapping for Fallout2 actually is and how it works.</p>
 		<div id="BIS_Mapper_explained"><h3>BIS Mapper explained</h3></div>
-			<p>Let's take a look at the interface and it's buttons.</p>
-			<img src="images\Preparations\ToolsMapping\2022-04-21 14_21_45-Greenshot - Kopie.png" alt="">
-			<br>
-			<br>
-			<img src="images\Preparations\ToolsMapping\2022-04-21 20_59_01-Tiles.png" alt="">
-			<p>This is a dropdown menu. Tiles are currently selected.</p>
-			<img src="images\Preparations\ToolsMapping\2022-04-22 11_54_06-Hex.png" alt="">
-			<p>The left dark grey field shows the number of the hexagonal area when an object is placed and selected.</p>	
-			<br>
-			<br>
-			<img src="images\Preparations\ToolsMapping\2022-04-21 21_13_39-Object_bar.png" alt="">
-			<p>This bar shows the objects of the current chosen object category.</p>
-			<br>
-			<br>
-			<img src="images\Preparations\ToolsMapping\2022-04-21 20_59_10-Navigate_left.png" alt="">
-			<img src="images\Preparations\ToolsMapping\2022-04-21 20_59_22-Navigate_right.png" alt="">
-			<p>These are the navigation panels to scroll left or right through the currently chosen object category.</p>
-			<br>
-			<br>
-			<img src="images\Preparations\ToolsMapping\2022-04-21 20_59_54-Visible.png" alt=""><p>With this panel you can toggle the visibility of a certain object category.</p>
-			<br>
-			<br>
-			<img src="images\Preparations\ToolsMapping\2022-04-21 20_59_45-Elevation_1.png" alt="">
-			<img src="images\Preparations\ToolsMapping\2022-04-21 21_50_14-Elevation_2.png" alt="">
-			<img src="images\Preparations\ToolsMapping\2022-04-21 21_50_44-Elevation_3.png" alt="">
-			<p>Here you can choose the map elevation.</p>
-			<br>
-			<br>
-			<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_01-Direction_Northeast.png" alt="">
-			<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_01-Direction_East.png" alt="">
-			<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_01-Direction_Southeast.png" alt="">
-			<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_01-Direction_Southwest.png" alt="">
-			<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_01-Direction_West.png" alt="">
-			<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_01-Direction_Northwest.png" alt="">
-			<p>This clock looking thing shows the directions a critter can turn. <code class="codeinline">Northeast</code>; <code class="codeinline">East</code>; <code class="codeinline">Southeast</code>; <code class="codeinline">Southwest</code>; <code class="codeinline">West</code> and <code class="codeinline">Northwest</code>.</p>
-			<br>
-			<br>
-			<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_09-Multifunctional.png" alt="">
-			<p>This panel has multiple buttons that serve multiple purposes. <code class="codeinline">COPY</code>; <code class="codeinline">COPY ALL</code>; <code class="codeinline">DELETE</code> should be clear. <code class="codeinline">EDIT</code> is used to edit an objects properties.</p>
-			<p><code class="codeinline">TBOV</code> stands for <code class="codeinline">Toggle Block Object View</code> and it turns special tiles that are normally invisible to visible.</p>
-			<p><code class="codeinline">EDG</code> stands for <code class="codeinline">Edge</code> and it allows to set the viewable region for the player when they're on the map. But you need your map first.</p>
-			<p>The <code class="codeinline">*</code> symbol toggles the players viewable region on or off while editing a map.</p>
-			<br>
-			<br>
-			<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_16-Description.png" alt="">
-			<p>This panel shows a description of a currently selected object.</p>
-			<p>For example...</p>
-			<img src="images\Preparations\ToolsMapping\2022-04-21 21_32_54-Description_selected_Object.png" alt="">
-			<br>
-			<br>
-			<img src="images\Preparations\ToolsMapping\2022-04-22 11_49_56-Description_reselected_Object.png" alt="">
-			<p>If you already placed an object and you reselect it, the description panel will show you a shortened description.</p>
-			<br>
-			<br>
-			<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_27-Function_bar.png" alt="">
-			<p>When you bump the edge of the top screen with the mouse pointer, this panel will appear.</p>
-			<img src="images\Preparations\ToolsMapping\2022-04-21 21_31_32-Functionbar_File.png" alt="">
-			<h5>New</h5>
-			<p>Create a new map (No way!)</p>
-			<h5>Open</h5>
-			<p>Open an existing map (Really?!)</p>
-			<h5>Save</h5>
-			<p>Save the status of the currently open map.</p>
-			<h5>Save As...</h5>
-			<p>Save the status to a specific map.</p>
-			<h5>Info</h5>
-			<p>Does nothing (Maybe anybody knows more.).</p>
-			<h5>Open From Text</h5>
-			<p>You get an error message (Maybe anybody knows more.).</p>
-			<h5>Quit</h5>
-			<p>Terminate the mapper (Didn't expect that.)</p>
-			<br>
-			<img src="images\Preparations\ToolsMapping\2022-04-21 21_31_50-Functionbar_Tools.png" alt="">
-			<h5>Create Pattern</h5>
-			<h5>Use Pattern</h5>
-			<h5>Move Map</h5>
-			<h5>Move Map Elev</h5>
-			<h5>Copy Map Elev</h5>
-			<h5>Edit Obj_dude</h5>
-			<h5>Flush Cache</h5>
-			<h5>Toggle Anim Stepping</h5>
-			<h5>Fix map-objects to pids</h5>
-			<h5>Set Bookmark</h5>
-			<h5>Toggle Block Obj View</h5>
-			<h5>Toggle Click-To-Scroll</h5>
-			<h5>Set Exit-Grid Data</h5>
-			<h5>Mark Exit-Grids</h5>
-			<h5>Mark *ALL* Exit Grids</h5>
-			<h5>*Clear Map Level*</h5>
-			<h5>Create ALL MAP TEXTS</h5>
-			<h5>Rebuild ALL MAPS</h5>
-			<br>
-			<img src="images\Preparations\ToolsMapping\2022-04-21 21_32_03-Functionbar_Scripts.png" alt="">
-			<h5>List all Scripts</h5>
-			<h5>Set Start Hex</h5>
-			<h5>Place Spatial Script</h5>
-			<h5>Delete Spatial Script</h5>
-			<h5>Delete *ALL* Spatial SCRIPTS!</h5>
-			<h5>Create Script</h5>
-			<h5>Set Map Script</h5>
-			<h5>Show Map Script</h5>
-			<br>
-			<img src="images\Preparations\ToolsMapping\2022-04-21 21_33_17-Functionbar_Settings.png" alt="">
-			<h5>Scroll Blocker Mode</h5>
-			<h5>Screen Settings</h5>
-			<h5>Set Hi-Res Map Edges</h5>
-			<h5>Set Hi-Res Angled Edges</h5>
-		<br>
-
+			<p>The BIS mapper is the primary tool you will use for mapping. It has everything you need. Lets dive into it.</p>
+			<div id="BIS_GUI"><h4>Graphical interface</h4></div>
+				<p>Let's take a look at the interface and its buttons.</p>
+				<img src="images\Preparations\ToolsMapping\2022-04-21 14_21_45-Greenshot - Kopie.png" alt="">
+				<br>
+				<br>
+				<img src="images\Preparations\ToolsMapping\2022-04-21 20_59_01-Tiles.png" alt="">
+				<p>This is a dropdown menu. Tiles are currently selected.</p>
+				<img src="images\Preparations\ToolsMapping\2022-04-22 11_54_06-Hex.png" alt="">
+				<p>The left dark grey field shows the number of the hexagonal area when an object is placed and selected.</p>	
+				<br>
+				<br>
+				<img src="images\Preparations\ToolsMapping\2022-04-21 21_13_39-Object_bar.png" alt="">
+				<p>This bar shows the objects of the current chosen object category.</p>
+				<br>
+				<br>
+				<img src="images\Preparations\ToolsMapping\2022-04-21 20_59_10-Navigate_left.png" alt="">
+				<img src="images\Preparations\ToolsMapping\2022-04-21 20_59_22-Navigate_right.png" alt="">
+				<p>These are the navigation panels to scroll left or right through the currently chosen object category.</p>
+				<br>
+				<br>
+				<img src="images\Preparations\ToolsMapping\2022-04-21 20_59_54-Visible.png" alt=""><p>With this panel you can toggle the visibility of a certain object category.</p>
+				<br>
+				<br>
+				<img src="images\Preparations\ToolsMapping\2022-04-21 20_59_45-Elevation_1.png" alt="">
+				<img src="images\Preparations\ToolsMapping\2022-04-21 21_50_14-Elevation_2.png" alt="">
+				<img src="images\Preparations\ToolsMapping\2022-04-21 21_50_44-Elevation_3.png" alt="">
+				<p>Here you can choose the map elevation.</p>
+				<br>
+				<br>
+				<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_01-Direction_Northeast.png" alt="">
+				<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_01-Direction_East.png" alt="">
+				<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_01-Direction_Southeast.png" alt="">
+				<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_01-Direction_Southwest.png" alt="">
+				<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_01-Direction_West.png" alt="">
+				<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_01-Direction_Northwest.png" alt="">
+				<p>This clock looking thing shows the directions a critter can turn. <code class="codeinline">Northeast</code>; <code class="codeinline">East</code>; <code class="codeinline">Southeast</code>; <code class="codeinline">Southwest</code>; <code class="codeinline">West</code> and <code class="codeinline">Northwest</code>.</p>
+				<br>
+				<br>
+				<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_09-Multifunctional.png" alt="">
+				<p>This panel has multiple buttons that serve multiple purposes. <code class="codeinline">COPY</code>; <code class="codeinline">COPY ALL</code>; <code class="codeinline">DELETE</code> should be clear. <code class="codeinline">EDIT</code> is used to edit an objects properties.</p>
+				<p><code class="codeinline">TBOV</code> stands for <code class="codeinline">Toggle Block Object View</code> and it turns special tiles that are normally invisible to visible.</p>
+				<p><code class="codeinline">EDG</code> stands for <code class="codeinline">Edge</code> and it allows to set the viewable region for the player when they're on the map. But you need your map first.</p>
+				<p>The <code class="codeinline">*</code> symbol toggles the players viewable region on or off while editing a map.</p>
+				<br>
+				<br>
+				<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_16-Description.png" alt="">
+				<p>This panel shows a description of a currently selected object.</p>
+				<p>For example...</p>
+				<img src="images\Preparations\ToolsMapping\2022-04-21 21_32_54-Description_selected_Object.png" alt="">
+				<br>
+				<br>
+				<img src="images\Preparations\ToolsMapping\2022-04-22 11_49_56-Description_reselected_Object.png" alt="">
+				<p>If you already placed an object and you reselect it, the description panel will show you a shortened description.</p>
+				<br>
+				<br>
+				<img src="images\Preparations\ToolsMapping\2022-04-21 21_00_27-Function_bar.png" alt="">
+				<p>When you bump the edge of the top screen with the mouse pointer, this panel will appear.</p>
+				<img src="images\Preparations\ToolsMapping\2022-04-21 21_31_32-Functionbar_File.png" alt="">
+				<h5>New</h5>
+				<p>Create a new map (No way!)</p>
+				<h5>Open</h5>
+				<p>Open an existing map (Really?!)</p>
+				<h5>Save</h5>
+				<p>Save the status of the currently open map.</p>
+				<h5>Save As...</h5>
+				<p>Save the status to a specific map.</p>
+				<h5>Info</h5>
+				<p>Does nothing (Maybe anybody knows more.).</p>
+				<h5>Open From Text</h5>
+				<p>You get an error message (Maybe anybody knows more.).</p>
+				<h5>Quit</h5>
+				<p>Terminate the mapper (Didn't expect that.)</p>
+				<br>
+				<img src="images\Preparations\ToolsMapping\2022-04-21 21_31_50-Functionbar_Tools.png" alt="">
+				<h5>Create Pattern</h5>
+				<h5>Use Pattern</h5>
+				<h5>Move Map</h5>
+				<h5>Move Map Elev</h5>
+				<h5>Copy Map Elev</h5>
+				<h5>Edit Obj_dude</h5>
+				<h5>Flush Cache</h5>
+				<h5>Toggle Anim Stepping</h5>
+				<h5>Fix map-objects to pids</h5>
+				<h5>Set Bookmark</h5>
+				<h5>Toggle Block Obj View</h5>
+				<h5>Toggle Click-To-Scroll</h5>
+				<h5>Set Exit-Grid Data</h5>
+				<h5>Mark Exit-Grids</h5>
+				<h5>Mark *ALL* Exit Grids</h5>
+				<h5>*Clear Map Level*</h5>
+				<h5>Create ALL MAP TEXTS</h5>
+				<h5>Rebuild ALL MAPS</h5>
+				<br>
+				<img src="images\Preparations\ToolsMapping\2022-04-21 21_32_03-Functionbar_Scripts.png" alt="">
+				<h5>List all Scripts</h5>
+				<h5>Set Start Hex</h5>
+				<h5>Place Spatial Script</h5>
+				<h5>Delete Spatial Script</h5>
+				<h5>Delete *ALL* Spatial SCRIPTS!</h5>
+				<h5>Create Script</h5>
+				<h5>Set Map Script</h5>
+				<h5>Show Map Script</h5>
+				<br>
+				<img src="images\Preparations\ToolsMapping\2022-04-21 21_33_17-Functionbar_Settings.png" alt="">
+				<h5>Scroll Blocker Mode</h5>
+				<h5>Screen Settings</h5>
+				<h5>Set Hi-Res Map Edges</h5>
+				<h5>Set Hi-Res Angled Edges</h5>
+			
+		<hr class="dashedline">
 		<div id="hotkeys"><h4>Hotkeys</h4></div>
 			<h5>Introduction</h5>
 			<p>When there's a slash  <code class="codeinline">/</code> , the left part is in game mode (<code class="codeinline">F8</code>, and usually works in the normal game) while the right is in the editor. Most of the normal game functions still work in the editor - moreso in the game mode of course. The M key is especially useful for selecting critters as it doesn't have the issue of "clicking a bunch of time until you hit the critter" problem mentioned in the documentation since you know exactly where you click. If there's a third slash in the command then these are commands available in the dialog windows. When there's a slash with nothing in front or after it, it means the command isn't available in that mode.</p>
 			<p>	Fallout2/Mapper2 does not block out any of the windows key combinations so all Windows-specific keys will work (<code class="codeinline">Win</code>, <code class="codeinline">Win-B</code>, <code class="codeinline">Win-D</code>, <code class="codeinline">Win-E</code>, <code class="codeinline">Win-F</code>, <code class="codeinline">Win-L</code>, <code class="codeinline">Win-M</code>,
 			<code class="codeinline">Win-U</code>, <code class="codeinline">Win-Pause</code>, <code class="codeinline">Alt-Tab</code>, <code class="codeinline">Alt-Shift-Tab</code>, <code class="codeinline">Alt-Esc</code>, <code class="codeinline">Alt-Shift-Esc</code>, <code class="codeinline">Ctrl-Alt-Del</code>,
 			<code class="codeinline">Ctrl-Esc</code> - Some of the listed combinations might not work depending on you OS version). Additionally, keyboard with extra <code class="codeinline">"Multimedia"</code> or <code class="codeinline">"Internet"</code> keys handle those keys as should be. External <code class="codeinline">"HotKey"</code> programs should work as expected in the game given that there is no special handling done on the keyboard input.</p>
-			<br>
+			<hr class="dottedline">
 			<h5>Key mappings</h5>
 			<p>[ A ]: Attack/</p>
 			<p>[ B ]: Switch attack weapon/Fix map objects to PIDs (same as menu)/Barter</p>	
@@ -444,7 +440,7 @@
 			<p>[ Z on QWERTY, Y on QWERTZ ]: Rest/</p>
 			<br>
 			<p>[ ? on QWERTY, - (hyphen) on QWERTZ ]: Display game time</p>
-			<!--<p>[ , ]: /One step change of daylight</p>-->
+			<p>[ , ]: /One step change of daylight</p>
 			<p>[ + (plus) & - (minus) ]: Adjust brightness level/Move proto list right and left; if you selected apattern, it allows you to "paste" a greater region of the pattern</p>
 			<p>[ , & . ]: Rotate OBJ_DUDE left and right/</p>
 			<br>
@@ -522,7 +518,7 @@
 			<p>[ F10 ]: Quit/Rebuild proto lists (Librarian menu - need librarian=1 in .cfg)</p>
 			<p>[ F11 ]: /Rebuild all (Librarian menu - need librarian=1 in .cfg)</p>
 			<p>[ F12 ]: Screenshot</p>
-			<br>
+			<hr class="dottedline">
 			<h5>Shift commands</h5>
 			<p>Note: If a command is assigned in the game with the normal key, then using it with the Shift key ends up using that command as in the game. If isn't used in the game but is in the editor, then it will use the editor command.</p>
 			<h5>Except for</h5>
@@ -535,35 +531,35 @@
 			<p>[ Shift-F9 ]: Edit AI packet for critter (Note: Crashes on second try, you'll need to know the packet AI number as the game always pops up the same,  when selecting "Done" without selecting any item in the various lists it usually pops up a dialog which permits you to type the string instead of selecting it in the menu. If you type a non-existing string, the editor will create a new entry for you. You cannot add or remove new AI scripts without modifying the executable. You can edit more then one AI entity while in the menu by changing the AI number before pressing done)</p>
 			<p>[ Shift-F11 ]: Edit stats for critter</p>
 			<p>[ Shift-+ or Keypad +, Shift-- ]: /Move proto list right or left by 10</p>
-			<br>
+			<hr class="dottedline">
 			<h5>Map keys</h5>
 			<p>You can use the <code class="codeinline">0</code> through <code class="codeinline">9</code> keys to access any of the defined entrances on a map (accessed from the worldmap on any other occasion then the first). This will work regardless of whether you can see the entry point on the map or not and also works in the normal game (sadly).</p>
-			<br>
+			<hr class="dottedline">
 			<h5>Generic Keys</h5>
 			<p>The options menu can be driven using the first letter of the button you wish to select. The same can be said with <code class="codeinline">Yes/No</code> dialogs, as well as the real games main menu and various sub-menus (e.g. <code class="codeinline">load menu</code>, <code class="codeinline">create new char menu</code>, etc.)Lists can be handled with <code class="codeinline">Up/Down</code> buttons, as well as <code class="codeinline">Page Up</code> and <code class="codeinline">Page Down</code> when the list has more items then the area can display. In addition, various element lists (such as a file list) can be controlled by typing the first letter of the item you're looking for (for example, type <code class="codeinline">D</code> to skip to the first <code class="codeinline">D</code> file in the map list when loading a map). Pressing <code class="codeinline">Enter</code> is equivalent to clicking <code class="codeinline">OK</code>. Pressing <code class="codeinline">Escape</code> cancels the dialogs.</p>
-			<br>
+			<hr class="dottedline">
 			<h5>Librarian mode</h5>
 			<p>The librarian menu can be toggled on with <code class="codeinline">override_librarian=1</code> in the <code class="codeinline">.cfg</code>, note that while it's enabled you can't save your map.</p>
-			<br>
+			<hr class="dottedline">
 			<h5>Loading saved games</h5>
 			<p>You can load saved games into the editor, note however that the games files are used instead of the ones found in the directories and/or the DATs when possible. Also note that if you extracted and modified PRO files in your <code class="codeinline">"working"</code> directory, chances are loading the savegame will delete them so you'd need to make them read-only - also see the W key above about this. Additionally there seems to be problems in using edited PROs in savegames as their map properties are not updated in the actual savegame.</p>
-			<br>
+			<hr class="dottedline">
 			<h5>Editing PRO files</h5>
 			<p>To get the PRO files to be editable, on the same drive that you run the mapper, create <code class="codeinline">/fallout2/dev/proto</code>, and in it place the directories <code class="codeinline">critters</code>, <code class="codeinline">items</code>, <code class="codeinline">scenery</code>, <code class="codeinline">tiles</code>, <code class="codeinline">walls</code> and <code class="codeinline">misc</code>. Once that's done you can edit the PRO files by simply Right-Clicking on them with the mouse and Clicking the <code class="codeinline">Edit</code> button (or pressing <code class="codeinline">E</code>). You also need to make sure that <code class="codeinline">librarian</code> is set to <code class="codeinline">1</code> in the <code class="codeinline">.cfg</code> (and preferably <code class="codeinline">librarian_override</code> still set to <code class="codeinline">0</code> if you still want to be able to save maps).</p>
 			<p>An important note is that each PRO contains its own PID in the file. If you copy a PRO file to overwrite another one or create a new one at the end of the list, you'll need to make sure the internally contained PID matches the its own <code class="codeinline">critter.lst</code> line number. You could hex edit it, or:</p>
 			<p>* edit the proto, thus creating the text file reference.</p>	
 			<p>* rebuild the protos (<code class="codeinline">F9</code>, see above, though you might need to use <code class="codeinline">F11</code>).</p>	
-			<br>
+			<hr class="dottedline">
 			<h5>Bookmarks</h5>
 			<p>Bookmarks deserve a special entry: they are saved right beside the map in the same name as the maps but with the <code class="codeinline">.cfg</code> extention when you save your game. When loading the map it will automatically load the bookmarks. If none exist, the mapper will keep the current bookmark set in memory for any new map and use it.This means that if you edited a map and are rather happy with your bookmarks, you can first load that map to read the bookmarks and then load the map you wish to edit. If the bookmarks aren't working then it's most probably because you've already toyed with the map and the <code class="codeinline">.cfg</code> already exists and is thus read (with no bookmarks set); as such you should probably delete it's <code class="codeinline">.cfg</code> file to import your favorite bookmarks.</p>
-			<br>
+			<hr class="dottedline">
 			<h5>Recording mode</h5>
 			<p>In the games main menu hit <code class="codeinline">Ctrl-R</code>. This will ask you to load a map and then select a name (for the recording). You've now started a recording and to exit you'll need to hit <code class="codeinline">Ctrl-R</code> again. Once recorded, Fallout2 will play the recording every other time instead of the main movie. If there's more then one recording it'll iterate through each of them (as well as the main movie). You can also use this trick to load the map you wish and play it in the real game by saving the game, quitting the recording and loading your recently saved game.</p>
-			<br>
+			<hr class="dottedline">
 			<h5>Debug Mode</h5>
 			<p>The mapper, like the game, can be run in debug mode. Unlike the game, the mapper doesn't need to be hacked to access it. All you need is to set the <code class="codeinline">DEBUGACTIVE</code> environment variable to <code class="codeinline">GNW</code> (For a debug right on the screen) or <code class="codeinline">LOG</code> to create the file <code class="codeinline">debug.log</code> in your Fallout2 directory.</p>
 			<p>See said patch for further informations about the options available in the <code class="codeinline">.cfg</code>.</p> 
-			<br>
+			<hr class="dottedline">
 			<h5>Editor UI Specific Keys</h5>
 			<p>Slashes  <code class="codeinline">/</code>  seperate here the proto editing (left side) and the instance editing (right side). Note that usually the same command works for the instance when availble then it is for the proto. For sakes of simplicity commands which were similar (ie: at worst, press or release <code class="codeinline">shift</code> in relation to the protos) were omitted.</p>
 			<p>These are keys which can be used in various dialogs which pop up in the editor, mostly for editing protos:</p>
@@ -572,12 +568,12 @@
 			<p>[ Enter or Ctrl-M ]: Done (Ctrl-M is the usual keycode used to represent Enter)</p>
 			<p>[ Esc ]: Cancel</p>
 			<p>[ Shift- ]: Scroll left-right <code class="codeinline">10</code> in <code class="codeinline">SCENERY</code> list (regardless of wether your're editing a scenery). This can be used to your advantage if you have the version of the game where kids are removed aswhen reaching the kid, the UI doesn't go further using the left/right button. Simply use <code class="codeinline">Shift-]</code> to skip over it and scroll back using the left button. If you set a item (forexample) to a scenery reference, the graphic will still act as a scenery, not as an item. So you can't abuse this feature to make other proto types out of sceneries.</p>
-			<br>
+			<hr class="dottedline">
 			<h5>Tiles</h5>
 			<p>[ M ]: Material</p>
 			<p>[ N ]: Name</p>
 			<p>[ F ]: Flags (Saved, but are they even used?)</p>
-			<br>
+			<hr class="dottedline">
 			<h5>Scenery</h5>
 			<p>[ D ]: Description</p>
 			<p>[ E ]: /Set destination elevation</p>
@@ -591,7 +587,7 @@
 			<br>
 			<p>[ Shift-S ]: Script</p>
 			<p>[ Shift-W ]: Walkthrough</p>
-			<br>
+			<hr class="dottedline">
 			<h5>Critters</h5>
 			<p>[ 1 ]: Stats screen for critter</p>
 			<p>[ 2 ]: Stats screen for OBJ_DUDE. Note that when done it returns to the map instead. You'll need to press esc to return to the editing UI.</p>
@@ -620,7 +616,7 @@
 			<p>[ Shift-T ]: Team number</p>
 			<p>[ Shift-U ]: Action flags (Useable)</p>	
 			<p>[ Shift-X ]: Experience</p>
-			<br>
+			<hr class="dottedline">
 			<h5>Walls</h5>
 			<p>[ D ]: Description</p>
 			<p>[ F ]: Flags</p>
@@ -629,14 +625,14 @@
 			<br>
 			<p>[ Shift-U ]: Action flags (useable)</p>
 			<p>[ Shift-S ]: Script</p>
-			<br>
+			<hr class="dottedline">
 			<h5>Misc</h5>
 			<p>[ F ]: Flags</p>
 			<p>[ D ]: Description</p>
 			<p>[ N ]: Name</p>
-			<br>
+			<hr class="dottedline">
 			<h5>Items</h5>
-				<p>[ 1 - 9, Shift-1 - Shift-9 ]: Specific item type options. Note that the drugs type has the keys separated into an upper and lower part.</p>
+			<p>[ 1 - 9, Shift-1 - Shift-9 ]: Specific item type options. Note that the drugs type has the keys separated into an upper and lower part.</p>
 			<br>
 			<p>[ W ]: Weight</p>
 			<p>[ T ]: Item Type</p>
@@ -652,7 +648,7 @@
 			<p>[ Shift-U ]: Action flags (Useable)</p>
 			<p>[ Shift-I ]: Inventory FID</p>
 			<p>[ Shift-S ]: Script</p>
-			<br>
+			<hr class="dottedline">
 			<h5>Flags</h5> <p>(whenever in an edit flags menu)</p>
 			<p>[ 1 - 0, - (hyphen) on QWERTY, ? on QWERTZ, (NUM-Block) Shift--, Shift-0 - Shift-9 ]: Toggle options. Note that some options which are not displayed can be toggled but who knows what they do and what happens if you toggle them.</p>
 	<hr>
@@ -697,7 +693,7 @@
 			<p>Have placed the tiles plus all walls plus roof and filling up the holes looks like this.</p>
 			<img src="images\mapping\Floors_and_walls\All walls + roof small.png" alt="" width="700" height="500">
 		<br>
-		<hr>
+		<hr class="dashedline">
 
 		<div id="SceneryCritter"><h4>Scenery and critters</h4></div>
 			<p>Our basic map should now be ready. Now place the objects (<code class="codeinline">Scenery</code>). We place some objects that we think fit into the current scene. But be careful... sometimes less is more! Don't try to put the same scenery elements several times in the map so that you get them on one screen. Otherwise you will get the impression that everything is always repeated. And that usually looks ugly or boring.</p>
@@ -712,8 +708,7 @@
 		<br>
 			<img src="images\mapping\Scenery and critters\Light source small.png" alt="" width="700" height="500">
 			<p>If we now press <code class="codeinline">F8</code> (<code class="codeinline">default_f8_as_game=</code> must be set to <code class="codeinline">1</code> in <code class="codeinline">mapper.cfg</code>), we enter the test game and we can walk around. The critters don't do much yet, since we haven't assigned them a script. If we press the <code class="codeinline">D</code> key, we change the time of day and can see how our placed light sources work. The map is not 100% finished yet. Still missing are the so-called scroll blockers, which limit the scroll radius of the player and the exit points, which bring the player to the world map etc. This will follow in the next tutorial.</p>
-		<br>
-		<hr>
+		<hr class="dashedline">
 
 		<div id="ScrollBlocker"><h4>Scroll blocker</h4></div>
 			<p>When you're finished to build your map, you need to put Scroll Blockers to limitate until where the screen can scroll.</p>
@@ -732,7 +727,7 @@
 			<p>That's the result in game.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\EDG scroll block.png" alt="">
 		<br>
-		<hr>
+		<hr class="dashedline">
 
 		<div id="MapExit"><h4>Map exits</h4></div>
 			<p>If you want to exit the map you're currently on, there are two possibilities how to leave it. Exit to the next map or exit to the worldmap.</p>
@@ -756,7 +751,8 @@
 	</div>
 	</li>
 			<p>Before I explain what the individual information mean, we need to do another step first.</p>
-			<br>
+			<hr class="dashedline">
+
 			<h5>MAPS.TXT</h5>
 			<p>Open <code class="codeinline">MAPS.txt</code> located inside...</p>
 			<pre><code>E:\Fallout2\data\data</code></pre>
@@ -789,7 +785,7 @@
 
 	<p><code class="codeinline">music=</code> Set any music you want in the  (see other entries for examples of what music you can use)</p>
 	<p><code class="codeinline">saved=</code> Change <code class="codeinline">saved=No</code> to <code class="codeinline">saved=Yes</code> (this makes the game save the status of the map when you save the game, so you can drop things and not lose them)</p>
-						
+
 			<p>Save the information.</p>
 		<br>
 			<p>The other information mean this...</p>
@@ -846,7 +842,8 @@
 			<p>Once you're done just press <code class="codeinline">ESC</code>. You will see this...</p>
 			<img src="images\mapping\Scroll Blocker and level exits\Exiting mark exit-grids.png" alt="">
 			<p>Don't test it right away! You need to save your map first, leave the mapper, reenter it and load your map. Now you can test if it works.</p>
-		<br>
+		<hr class="dashedline">
+
 		<div><h5>Map exit to worldmap</h5></div>
 			<p>Let's continue with exit to worldmap.</p>
 			<p>Exit to worldmap is easier because you don't need to change the information asked when hitting <code class="codeinline">TOOLS</code> => <code class="codeinline">Set Exit-Grid Data</code>.</p>
@@ -1309,6 +1306,7 @@
 		<img src="images\Scripting (Basics)\Global_namespace_image.jpg" alt="Please stand by">
 	<br>
 		<p>Let's take a look at the different types of variables.</p>
+	<hr class="dashedline">
 
 	<h4>Variables of global namespace</h4>
 		<p>Variables getting into global namespace are:</p>
@@ -1353,7 +1351,7 @@
 		<p>The previously exported variable can now be used with the keyword import inside the scripts <code class="codeinline">AITEMCST.SSL</code> and <code class="codeinline">ACTEMVIL.SSL</code>. 
 			The variable contains the value that was last assigned to it.</p>
 		<p>These global namespace variable types must always be defined at the top of the script like in the sample script.</p>
-	<br>
+	<hr class="dashedline">
 
 	<h4>Variables not of global namespace</h4>
 		<p>Variables not getting into global namespace are:</p>
