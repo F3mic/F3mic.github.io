@@ -88,7 +88,7 @@ code {
 
 .codebigbox {
   background-color: #3a3b3c;
-  padding: 0px;
+  padding: 1px;
 }
 
 .codeinline {
@@ -98,9 +98,8 @@ code {
 }
 
 .codepopup {
-  white-space: pre-line;
   background-color: #474757;
-  padding: auto;
+  padding: 1em;
   margin-inline-start: 10em;
   margin-inline-end: 1em;
 }

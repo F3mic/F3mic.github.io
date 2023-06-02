@@ -137,20 +137,17 @@
 	<div id="Fallout2_.dat_files"><h3>File handling - .dat files</h3></div>
 		<p>Inside the games folder you'll find .dat files. We need three of them.</p>
 		<p>These are:</p> 
-		<div>
 			<code>
 				master.dat
 				<br>
 				critter.dat
 			</code>
-		</div>
 		<p>and if your version of FO2 is patched, then it should also contain following...</p>
 		<code>patch000.dat</code>
 		<p>These three files contain all the various audio, graphic, dialogue, script, font, map, etc. files used in FO2.</p>
 		<p>To be able to edit any of the files inside the .dat files you need to unpack the .dat files first. It's like having a .zip file that needs to be unzipped first. It's obligatory to do this before you do any sort of modding of FO2.</p>
 		<p>Just save them at a place of your choice.</p>
 		<p>Mine looks like this...</p>
-		<div>
 			<code>
 				E:\dev\Ressources
 				<div style="text-indent: 8em;">|</div>
@@ -158,7 +155,6 @@
 				<div style="text-indent: 8em;">|->critter.dat</div>
 				<div style="text-indent: 8em;">|->patch000.dat</div>
 			</code>
-		</div>
 	<br>
 	<hr>
 
@@ -167,7 +163,7 @@
 		<p>Unpack the file inside it wherever you like. Should look like this.</p> 
 		<img src="images\Preparations\ToolsDATExplorer\2022-04-20 20_47_40-Fallout 2 Dat Explorer 1.43 by Dims.png" alt="">
 		<p>Luckily, it doesn't require installation on your computer as such, so it can be run straight out of the box.</p>
-		<p>Start <code class="codeinline">Dat Explorer 1.43.exe</code></p>
+		<p>Start <code class="codeinline">Dat Explorer 1.43.exe</code>.</p>
 		<img src="images\Preparations\ToolsDATExplorer\2022-04-20 20_53-Dat Explorer_1.43.exe.png" alt="">
 		<p>If you're tired of reading and rather want to listen to someone executing the task, our friend QuantumApprentice has made a video especially for this case :)</p>
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/vCPc1gxPtKk?start=380" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -242,7 +238,6 @@
 		<img src="images\Preparations\ToolsMapping\2022-04-21 14_09_35-Fehler.png" alt="">
 		<p>Open <code class="codeinline">mapper2.cfg</code> with a text-editor of your choice.</p>
 		<p>Let's take a look at lines 58 to 74 looking like this...</p>
-		<div>
 			<code>
 				<div>[...]</div>
 				<div>[system]</div>
@@ -263,9 +258,7 @@
 				<div>splash=1</div>
 				<div>times_run=1</div>
 			</code>
-		</div>
 		<p>We need to take a closer look at these files...</p>	
-		<div>
 			<code>
 				<div><span>[...]</div>
 				<div><span>critter_dat=</div>
@@ -276,9 +269,7 @@
 				<div><span>master_patches=</div>
 				<div><span>[...]</div>
 			</code>
-		</div>	
 		<p>The mapper is looking for files to work with. Because these lines are empty the mapper cannot start. We need to tell the mapper where the files are located  it's looking for. Fill in the lines like this...</p>
-		<div>
 			<code>
 				<div>[...]</div>
 				<div>critter_dat=E:\Fallout2\critter.dat</div>
@@ -288,7 +279,6 @@
 				<div>master_patches=E:\Fallout2\data</div>
 				<div>[...]</div>
 			</code>
-		</div>				
 		<p>Save <code class="codeinline">mapper2.cfg</code> and close it. Now run <code class="codeinline">mapper2.exe</code> again and it should start.</p>
 		<p>First time running BIS Mapper should look like this...</p>
 		<img src="images\Preparations\ToolsMapping\2022-04-21 14_21_45-Greenshot.png" alt="">
@@ -739,17 +729,13 @@
 			<p>Choose <code class="codeinline">Misc</code>, the green ones begin at <code class="codeinline">15</code> to <code class="codeinline">22</code>. Okay, so put some green exit grids on the map. Notice that only the red hexagons on the green exit grids do something.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\green exit grids placed.png" alt="">
 			<p>Now it's time to write down some information about your map.</p>
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span>map name:</span>
-	<span>map number:</span>
-	<span>lookup name:</span>
-	<span>hex number:</span>
-	<span>map level:</span>
-	</pre>
-	</div>
-	</li>
+			<code>
+				<div>map name:</div>
+				<div>map number:</div>
+				<div>lookup name:</div>
+				<div>hex number:</div>
+				<div>map level:</div>
+			</code>
 			<p>Before I explain what the individual information mean, we need to do another step first.</p>
 			<hr class="dashedline">
 
@@ -757,55 +743,41 @@
 			<p>Open <code class="codeinline">MAPS.txt</code> located inside...</p>
 			<pre><code>E:\Fallout2\data\data</code></pre>
 			<p>Scroll to the bottom and the last entry should look like this.</p>
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span>[Map 150]</span>
-	<span>lookup_name=Bess Dead</span>
-	<span>map_name=rndbess</span>
-	<span>music=07desert</span>
-	<span>saved=No</span>
-	</pre>
-	</div>
-	</li>
+			<code>
+				<div>[Map 150]</div>
+				<div>lookup_name=Bess Dead</div>
+				<div>map_name=rndbess</div>
+				<div>music=07desert</div>
+				<div>saved=No</div>
+			</code>
 			<p>Now fill in your map information like this.</p>
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span>[Map 151]</span>
-	<span>lookup_name=Testmap number6</span>
-	<span>map_name=tm_s6</span>
-	</pre>
-	</div>
-	</li>							
+			<code>
+				<div>[Map 151]</div>
+				<div>lookup_name=Testmap number6</div>
+				<div>map_name=tm_s6</div>
+			</code>					
 			<p><code class="codeinline">lookup_name=</code> This is the full name of the map. My map is called <code class="codeinline">Testmap number6</code>. You can take up to <code class="codeinline">144</code> characters.</p>
 			<p><code class="codeinline">map_name=</code> Is the name of the file of your map, e.g. <code class="codeinline">arrvillage</code> for <code class="codeinline">Arroyo village</code>. My map is called <code class="codeinline">tm_s6</code> without the extension <code class="codeinline">.map</code>.</p>
 			<br>
 			<p>These following two information are not mandatory to make the map work.</p>
-
-	<p><code class="codeinline">music=</code> Set any music you want in the  (see other entries for examples of what music you can use)</p>
-	<p><code class="codeinline">saved=</code> Change <code class="codeinline">saved=No</code> to <code class="codeinline">saved=Yes</code> (this makes the game save the status of the map when you save the game, so you can drop things and not lose them)</p>
-
+			<p><code class="codeinline">music=</code> Set any music you want in the  (see other entries for examples of what music you can use)</p>
+			<p><code class="codeinline">saved=</code> Change <code class="codeinline">saved=No</code> to <code class="codeinline">saved=Yes</code> (this makes the game save the status of the map when you save the game, so you can drop things and not lose them)</p>
 			<p>Save the information.</p>
-		<br>
+			<br>
 			<p>The other information mean this...</p>
 			<p><code class="codeinline">map number:</code> This is the number we gave our map. In this case <code class="codeinline">151</code>.</p>
 			<p><code class="codeinline">hex number:</code> This is the number of the hex where you want obj_dude to start after exiting and reentering the new map. I chose hex number <code class="codeinline">18697</code>.</p>
 			<p><code class="codeinline">map level:</code> This is the elevation of your map. Inside the mapper you'll see <code class="codeinline">1</code>, <code class="codeinline">2</code> and <code class="codeinline">3</code>. But the engine handles this differently. 
 				<code class="codeinline">(Mapper)1</code> = <code class="codeinline">(Engine)0</code>; <code class="codeinline">(Mapper)2</code> = <code class="codeinline">(Engine)1</code>; <code class="codeinline">(Mapper)3</code> = <code class="codeinline">(Engine)2</code>. My map is at elevation <code class="codeinline">(Mapper)1</code> = <code class="codeinline">(Engine)0</code>.</p>
-		<br>
+			<br>
 			<p>Okay, we have every information we need to be able to do an exit to another map.</p>
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span>map name: 	tm_s6</span>
-	<span>map number: 	151</span>
-	<span>lookup name:	Testmap number6</span>
-	<span>hex number:	18697</span>
-	<span>map level:	0</span>
-	</pre>
-	</div>
-	</li>							
+			<code>
+				<div>map name: tm_s6</div>
+				<div>map number: 151</div>
+				<div>lookup name: Testmap number6</div>
+				<div>hex number: 18697</div>
+				<div>map level: 0</div>
+			</code>						
 			<p>Return to the mapper.</p>
 			<p>Choose <code class="codeinline">TOOLS</code> => <code class="codeinline">Set Exit-Grid Data</code>.</p>
 			<img src="images\mapping\Scroll Blocker and level exits\Set Exit-Grid Data.png" alt="">
@@ -920,38 +892,30 @@
 			<p>You'll probably notice that if you enter your newly created brown exit grid your map is not shown on the worldmap. For this we need to modify <code class="codeinline">CITY.TXT</code>.</p>
 			<p>Open <code class="codeinline">CITY.TXT</code>. This is where you set the <code class="codeinline">town map</code> art that comes up for you to choose a shortcut to a part of the town when you enter the map from the worldmap (green triangle).</p>
 			<p>Scroll to the end and copy/paste the last entry again, so you would have...</p>
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span>[Area 48] </span>
-	<span>area_name=Reno Stables </span>
-	<span>world_pos=953,882 </span>
-	<span>start_state=Off</span>
-	<span>lock_state=on</span>
-	<span>size=Small</span>
-	<span>townmap_art_idx=-1</span>
-	<span>townmap_label_art_idx=-1</span>
-	<span>entrance_0=On,130,410,New Reno Stables,-1,-1,0</span>
-	</pre>
-	</div>
-	</li>	
+			<code>
+				<div>[Area 48] </div>
+				<div>area_name=Reno Stables </div>
+				<div>world_pos=953,882 </div>
+				<div>start_state=Off</div>
+				<div>lock_state=on</div>
+				<div>size=Small</div>
+				<div>townmap_art_idx=-1</div>
+				<div>townmap_label_art_idx=-1</div>
+				<div>entrance_0=On,130,410,New Reno Stables,-1,-1,0</div>
+			</code>
 			<p>Change the area number to the next in the sequence.</p>
 			<p>So you would get...</p>
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span>[Area 49]</span>
-	<span>area_name=Testmap number6</span>
-	<span>world_pos=xxx,xxx</span>
-	<span>start_state=On </span>
-	<span>lock_state=on</span>
-	<span>size=Small</span>
-	<span>townmap_art_idx=-1 </span>
-	<span>townmap_label_art_idx=-1</span>
-	<span>entrance_0=On,130,410,Testmap Entrance 0,-1,-1,0</span>
-	</pre>
-	</div>
-	</li>
+			<code>
+				<div>[Area 49]</div>
+				<div>area_name=Testmap number6</div>
+				<div>world_pos=xxx,xxx</div>
+				<div>start_state=On </div>
+				<div>lock_state=on</div>
+				<div>size=Small</div>
+				<div>townmap_art_idx=-1 </div>
+				<div>townmap_label_art_idx=-1</div>
+				<div>entrance_0=On,130,410,Testmap Entrance 0,-1,-1,0</div>
+			</code>
 			<p><code class="codeinline">area name=</code> This is the name of your town , city or area. Its equal to lookup_name= in MAPS.TXT.</p>
 			<p><code class="codeinline">world_pos=</code> Set the x- and y-coordinates of where you want the town to show up on the worldmap (make sure you dont overlap any existing towns).</p>
 			<p><code class="codeinline">start_state=</code> Set to on so it shows on the worldmap or off so it doesnt show on the worldmap until you change that with a script.</p>
@@ -966,7 +930,7 @@
 			<p><code class="codeinline">-1,-1,0</code> The destination elevation, hex, and rotation to place the player on when entering the map (-1 for the map defaults).</p>
 			<p><code class="codeinline">entrance_x=</code> You can add extra entrances in each area for as many maps as make up the town, just add them after entrance_0= and sequentially number them.</p>
 			<p>Save the file.</p>
-			<br>
+			<hr class="dottedline">
 			<h5>MAP.MSG</h5>
 			<p>To make the name of your area under the circle on the worldmap show correctly you need to modify <code class="codeinline">MAP.MSG</code>.</p>
 			<p>Open the file <code class="codeinline">MAP.MSG</code> found in...</p> 
@@ -974,66 +938,46 @@
 			<p>and scroll to the end.</p>
 			<br>
 			<p>Copy/paste the last line.</p>
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span>[...]</span>
-	<span>{1546}{}{Fake Vault 13}</span>
-	<span>{1547}{}{Random Encounter}</span>
-	<span>{1548}{}{Stables}</span>
-	</pre>
-	</div>
-	</li>
+			<code>
+				<div>[...]</div>
+				<div>{1546}{}{Fake Vault 13}</div>
+				<div>{1547}{}{Random Encounter}</div>
+				<div>{1548}{}{Stables}</div>
+			</code>
 			<br>
 			<p>Renumber the line you just pasted to the next number and change the name to your townmap name.</p>
 			<p>So you would get...</p>
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span>[...]</span>
-	<span>{1546}{}{Fake Vault 13}</span>
-	<span>{1547}{}{Random Encounter}</span>
-	<span>{1548}{}{Stables}</span>
-	<span>{1549}{}{My Cool Map}</span>
-	</pre>
-	</div>
-	</li>
+			<code>
+				<div>[...]</div>
+				<div>{1546}{}{Fake Vault 13}</div>
+				<div>{1547}{}{Random Encounter}</div>
+				<div>{1548}{}{Stables}</div>
+				<div>{1549}{}{My Cool Map}</div>
+			</code>
 			<br>
 			<p>Find the last entry before the 1500's and start copy/paste below itself.</p>
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span>150. RndBess</span>
-	<span>{650}{}{Desert}</span>
-	<span>{651}{}{Desert}</span>
-	<span>{652}{}{Desert}</span>
-	</pre>
-	</div>
-	</li>
+			<code>
+				<div>150. RndBess</div>
+				<div>{650}{}{Desert}</div>
+				<div>{651}{}{Desert}</div>
+				<div>{652}{}{Desert}</div>
+			</code>
 			<br>
 			<p>Renumber the entry you just pasted to the next number/s (as shown below, easy to figure out) and change the name to your map name.</p>
 			<p>So you would get...</p>
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span>151. yourmap</span>
-	<span>{653}{}{Desert}</span>
-	<span>{654}{}{Desert}</span>
-	<span>{655}{}{Desert}</span>
-	</pre>
-	</div>
-	</li>
+			<code>
+				<div>151. yourmap</div>
+				<div>{653}{}{Desert}</div>
+				<div>{654}{}{Desert}</div>
+				<div>{655}{}{Desert}</div>
+			</code>
 			<p>A little explanation.</p>
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span>151. yourmap 	 - The name of the map file.</span>
-	<span>{653}{}{Desert}  - Name to display for elevation 0 of your map (mapper level 1).</span>
-	<span>{654}{}{Desert}  - Name to display for elevation 1 of your map (mapper level 2).</span>
-	<span>{655}{}{Desert}  - Name to display for elevation 2 of your map (mapper level 3).</span>
-	</pre>
-	</div>
-	</li>
+			<code>
+				<div>151. yourmap 	 - The name of the map file.</div>
+				<div>{653}{}{Desert}  - Name to display for elevation 0 of your map (mapper level 1).</div>
+				<div>{654}{}{Desert}  - Name to display for elevation 1 of your map (mapper level 2).</div>
+				<div>{655}{}{Desert}  - Name to display for elevation 2 of your map (mapper level 3).</div>
+			</code>
 			<p>So you might have a map of a church with a second floor and a basement so <code class="codeinline">654</code> would be <code class="codeinline">first floor</code>, <code class="codeinline">655</code> would be <code class="codeinline">basement</code> and <code class="codeinline">653</code> the <code class="codeinline">second floor</code>. It doesn't matter how you do this.</p>
 			<p>Save the file.</p>
 	<hr>
@@ -1091,22 +1035,17 @@
 			<code>E:\Fallout2\data\proto\critters</code> 
 			<br>
 			<p>You should also have <code class="codeinline">critters.lst</code> inside this directory. Open <code class="codeinline">critters.lst</code>. Scroll to the very bottom of the file and you should see this.</p>
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span>[...]</span>
-	<span>00000479.pro</span>
-	<span>00000480.pro</span>
-	<span>00000481.pro</span>
-	<span>00000482.pro</span>
-	<span>00000483.pro</span>
-	<span>00000484.pro</span>
-	</pre>
-	</div>
-	</li>
-			<p>Your new proto 00000484.pro has been added to the list.</p>
+			<code>
+				<div>[...]</div>
+				<div>00000479.pro</div>
+				<div>00000480.pro</div>
+				<div>00000481.pro</div>
+				<div>00000482.pro</div>
+				<div>00000483.pro</div>
+				<div>00000484.pro</div>
+			</code>
+			<p>Your new proto <code class="codeinline">00000484.pro</code> has been added to the list.</p>
 			<p>If you want to delete your new proto, just delete both newly created files and the entry inside <code class="codeinline">critters.lst</code> and the flaming mannequin should have been disappeared inside the mapper.</p>
-	<br>
 	<hr>
 	<hr>
 
@@ -1118,72 +1057,68 @@
 	<div id="script"><h3>Script</h3></div>
 		<p>A script is just a file that contains the source code of the Fallout scripting language. Any object in the game can have a script. Scripts are needed to assign a certain behavior to an object (critter, scenery, items etc.), so that it can be interacted with. They breathe life into the game world and its inhabitants.Not only the player can interact with scripts,but even scripts can interact with eachother. You could also build a map and place critters, scenery and stuff without assigning scripts to them.You could nevertheless interact with them but not that much.What does it mean "not that much"?Well, the game uses default scripts if you don't assign any like combat, push, look, description etc.</p>
 		<p>Let’s see how a script can look like. The following is the script for the well found in Arroyo village.</p>   
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span class="dyeheader">/* Include Files */</span>
-	<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\define.h"</span>
-	<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\arvillag.h"</span>
-	<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\command.h"</span>
-	
-	<span class="dyedefine">#define</span> NAME                    SCRIPT_ASWELL
-	
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span>;
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span>;
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span>;
-	
-	<span class="dyedefine">#define</span> LVAR_Gave_Xp            (<span class="dyedefine">0</span>)
-	
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span> <span class="dyestatement">begin</span>
-	<span class="dyestatement">end</span>
-	
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span> <span class="dyestatement">begin</span>
-		<span class="dyefunction">script_overrides</span>;                                     
-		<span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>         
-			<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));                           
-		<span class="dyestatement">end</span>
-		<span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
-			<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));                           
-		<span class="dyestatement">end</span>
-	<span class="dyestatement">end</span>
-	
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
-		<span class="dyefunction">script_overrides</span>;
-		<span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span> 
-			<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));
-		<span class="dyestatement">end</span>
-		<span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
-			<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));
-		<span class="dyestatement">end</span>
-	<span class="dyestatement">end</span>
-	
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span> 
-		<span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) == <span class="dyedefine">0</span>)) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>        
-			<span class="dyefunction">script_overrides</span>;
-			<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));                                           
-			<span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL);                                                                   
-			<span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,<span class="dyedefine">1</span>);                                                          
-			<span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,<span class="dyedefine">1</span>);                                                           
-		<span class="dyestatement">end</span>
-	<span class="dyestatement">end</span>
-	</pre>
-	</div>
-	</li>
+		<code>
+			<div><span class="dyeheader">/* Include Files */</span></div>
+			<div><span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\define.h"</span></div>
+			<div><span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\arvillag.h"</span></div>
+			<div><span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\command.h"</span></div>
+			<br>
+			<span class="dyedefine">#define</span> NAME<div style="text-indent: 9.4em; display: inline-block;">SCRIPT_ASWELL</div>
+			<br>
+			<br>
+			<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span>;</div>
+			<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;</div>
+			<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span>;</div>
+			<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span>;</div>
+			<br>
+			<span class="dyedefine">#define</span> LVAR_Gave_Xp<div style="text-indent: 5em; display: inline-block;">(<span class="dyedefine">0</span>)</div>
+			<br>
+			<br>
+			<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span> <span class="dyestatement">begin</span></div>
+			<div><span class="dyestatement">end</span></div>
+			<br>
+			<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span> <span class="dyestatement">begin</span>
+			<div style="text-indent: 4em;"><span class="dyefunction">script_overrides</span>;</div>
+			<div style="text-indent: 4em;"><span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span></div>
+			<div style="text-indent: 9em;"><span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));</div>
+			<div style="text-indent: 4em;"><span class="dyestatement">end</span></div>
+			<div style="text-indent: 4em;"><span class="dyestatement">else</span> <span class="dyestatement">begin</span></div>
+			<div style="text-indent: 9em;"><span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));</div>
+			<div style="text-indent: 4em;"><span class="dyestatement">end</span></div>
+			<span class="dyestatement">end</span>
+			<br>
+			<br>
+			<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
+			<div style="text-indent: 4em;"><span class="dyefunction">script_overrides</span>;</div>
+			<div style="text-indent: 4em;"><span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span></div>
+			<div style="text-indent: 9em;"><span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));</div>
+			<div style="text-indent: 4em;"><span class="dyestatement">end</span></div>
+			<div style="text-indent: 4em;"><span class="dyestatement">else</span> <span class="dyestatement">begin</span></div>
+			<div style="text-indent: 9em;"><span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));</div>
+			<div style="text-indent: 4em;"><span class="dyestatement">end</span></div>
+			<span class="dyestatement">end</span>
+			<br>
+			<br>
+			<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span> 
+			<div style="text-indent: 4em;"><span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) == <span class="dyedefine">0</span>)) <span class="dyestatement">then</span> <span class="dyestatement">begin</span></div>
+			<div style="text-indent: 9em;"><span class="dyefunction">script_overrides</span>;</div>
+			<div style="text-indent: 9em;"><span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));</div>
+			<div style="text-indent: 9em;"><span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL);</div>
+			<div style="text-indent: 9em;"><span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,<span class="dyedefine">1</span>);</div>
+			<div style="text-indent: 9em;"><span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,<span class="dyedefine">1</span>);</div>
+			<div style="text-indent: 4em;"><span class="dyestatement">end</span></div>
+			<span class="dyestatement">end</span>
+		</code>
 		<p>At first glance it can look overwhelming even intimidating. But fear not! We will go through this step by step. First of all we will look at the structure. We'll go more indepth later.</p>
 	<hr>
 
 	<div id="header"><h3>Header File</h3></div>
 		<p>Header files are files that store information that is used repeatedly in every script. So, you don’t have to rewrite the same code over and over again in every script. Once written inside a header File and just included at the top of a script where you want to use the code and you’re good to go.</p>
-	<li>
-	<div class="codebigbox">
-	<pre>
-	<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\define.h"</span>
-	<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\arvillag.h"</span>
-	<span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\command.h"</span>
-	</pre>
-	</div>
-	</li>
+		<code>
+			<div><span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\define.h"</span></div>
+			<div><span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\arvillag.h"</span></div>
+			<div><span class="dyedefine">#include</span> <span class="dyeheader">"..\headers\command.h"</span></div>
+		</code>
 		<p>As you can see the suffix of header files is <code class="codeinline">.h</code>.</p>
 		<p>They are located inside the folder <code class="codeinline">\HEADERS</code>.</p>
 	<hr>
@@ -1197,19 +1132,15 @@
 		<p>In the <code class="codeinline">#define</code> below NAME is <code class="codeinline">SCRIPT_ASWELL</code>. This means if you want to refer to <code class="codeinline">SCRIPT_ASWELL</code> inside your script you simply can write <code class="codeinline">NAME</code>.</p>
 		<code><span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL</code>
 		<p>If you hover over <code class="codeinline">SCRIPT_ASWELL</code> with your cursor you'll see the description inside the bluegreyish box.</p>
-		
-		<code><span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
-<li>
-<div class="codepopup">
-<pre>
-	<span>Define: SCRIPT_ASWELL</span>
-	<span>(217) //ASWell.int  :Arroyo Well. It's broken. Fix w/ Repair.</span>
-	
-	<span>Declare file: scripts.</span>
-</pre>
-</div>
-</li>
-</code>
+		<code>
+			<span class="dyedefine">#define</span> NAME &emsp; &emsp; SCRIPT_ASWELL
+			<div class="codepopup">
+			<div style="text-indent: 4.5em;"><span>Define: SCRIPT_ASWELL</span></div>
+			<div style="text-indent: 4.5em;"><span>(217) //ASWell.int  :Arroyo Well. It's broken. Fix w/ Repair.</span></div>
+			<br>
+			<div style="text-indent: 4.5em;"><span>Declare file: scripts.</span></div>
+			</div>
+		</code>
 		<p>The file <code class="codeinline">SCRIPTS.H</code> is located inside <code class="codeinline">\HEADERS\SCRIPTS.H</code>. We'll talk about this later.</p>
 		<code><span class="dyedefine">#define</span> SCRIPT_ASWELL &emsp; &emsp; (<span class="dyedefine">217</span>) &emsp; <span class="dyecomment">// ASwell.int</span> &emsp; &emsp; <span class="dyecomment">; Arroyo Well. It's broken. Fix w/ Repair.</span></code>
 	<br>
