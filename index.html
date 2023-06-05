@@ -1147,52 +1147,35 @@
 	<hr>
 
 	<div id="procedure"><h3>Procedure</h3></div>
-		<p>Procedures are just like small programs inside your script. They are an essential part of the program and help programmers to keep the script clear, organized, structured and avoid repetitions since they promote code re-use. 
-			A procedure in Fallout scripting language starts with <span class="dyestatement"><code class="codeinline">procedure</code></span> a name (<span class="dyeprocedure"><code class="codeinline">start</code></span> in this case) <span class="dyestatement"><code class="codeinline">begin</code></span>  
-			and ends with an <span class="dyestatement"><code class="codeinline">end</code></span> statement.</p>
+		<p>Procedures are just like small programs inside your script. They are an essential part of the program and help programmers to keep the script clear, organized, structured and avoid repetitions since they promote code re-use. A procedure in Fallout scripting language starts with <span class="dyestatement"><code class="codeinline">procedure</code></span> a name (<span class="dyeprocedure"><code class="codeinline">start</code></span> in this case) <span class="dyestatement"><code class="codeinline">begin</code></span> and ends with an <span class="dyestatement"><code class="codeinline">end</code></span> statement.</p>
 		<p>We have four procedures in this example. <code class="codeinline">start;</code> <code class="codeinline">use_skill_on_p_proc;</code> <code class="codeinline">description_p_proc;</code> and <code class="codeinline">look_at_p_proc;</code>. There are more but this scripts just uses these four. They are predefinied by the devs but you can also write your own procecures.</p>
 		<p>Every procedure you use inside your script needs to be declared at the top of the script like seen below.</p>
-<li>
-<div class="codebigbox">
-<pre>
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span>;
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span>;
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span>;
-</pre>
-</div>
-</li>
-		<p>The space between <span class="dyestatement"><code class="codeinline">begin</code></span> and <span class="dyestatement"><code class="codeinline">end</code></span> is called procedure body. Inside the body you write the stuff you want to be executed.
-			In the example below the body is empty. An empty procedure body cannot execute anything because there is nothing to execute. 
-			If you call an empty procedure, the procedure starts, sees there's nothing inside the body and ends immediately.</p>
-		<p>The most important procedure of them all is the procedure called <code class="codeinline">start;</code>. The start procedure is the entry point of scripts.
-			Every script has it and every script needs it. If you don't have the start procedure inside you script, it won't work.</p>
-<li>
-<div class="codebigbox">
-<pre>
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span> <span class="dyestatement">begin</span>
-	<span class="dyestatement">end</span>
-</pre>
-</div>
-</li>
+		<code>
+			<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span>;</div>
+			<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;</div>
+			<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span>;</div>
+			<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span>;</div>
+		</code>
+		<p>The space between <span class="dyestatement"><code class="codeinline">begin</code></span> and <span class="dyestatement"><code class="codeinline">end</code></span> is called procedure body. Inside the body you write the stuff you want to be executed. In the example below the body is empty. An empty procedure body cannot execute anything because there is nothing to execute. If you call an empty procedure, the procedure starts, sees there's nothing inside the body and ends immediately.</p>
+		<p>The most important procedure of them all is the procedure called <code class="codeinline">start;</code>. The start procedure is the entry point of scripts. Every script has it and every script needs it. If you don't have the start procedure inside you script, it won't work.</p>
+		<code>
+			<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">start</span> <span class="dyestatement">begin</span></div>
+			<div><span class="dyestatement">end</span></div>
+		</code>
 		<p>The other three procedures inside the example script are these.</p>
-<li>
-<div class="codebigbox">
-<pre>
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span> <span class="dyestatement">begin</span>
-	<span>[...]</span>
-	<span class="dyestatement">end</span>
-
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
-	<span>[...]</span>
-	<span class="dyestatement">end</span>
-
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span> 
-	<span>[...]</span>
-	<span class="dyestatement">end</span>			
-</pre>
-</div>
-</li>
+		<code>
+			<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">description_p_proc</span> <span class="dyestatement">begin</span></div>
+			<div><span>[...]</span></div>
+			<div><span class="dyestatement">end</span></div>
+			<br>
+			<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> </div>
+			<div><span>[...]</span></div>
+			<div><span class="dyestatement">end</span></div>
+			<br>
+			<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span> </div>
+			<div><span>[...]</span></div>
+			<div><span class="dyestatement">end</span>	</div>
+		</code>
 		<p> You can call procedures from every corner of your script like this.</p>
 		<code><span class="dyestatement">call</span> <span class="dyeprocedure">use_skill_on_p_proc</span>;</code>
 		<p>You can also export/import procedures.</p>
@@ -1219,39 +1202,31 @@
 		<p>A variable is like a temporary container. You can save things into it. For example <code class="codeinline">strings</code>, <code class="codeinline">integers</code>, <code class="codeinline">booleans</code> and the result of functions etc.</p>
 		<p>There are several types of variables. The ones which get into global namespace and the ones that don't. The global namespace is the place where variables are shared between scripts.
 		<p>	The engine does not see names for variables. It refers to variables by numbers. You can perfectly have:</p>
-<li>
-<div class="codebigbox">
-<pre>
-	<span>#define GVAR_1 120</span>
-	<span>#define GVAR_2 120</span>		
-</pre>
-</div>
-</li>
+		<code>
+			<div><span>#define GVAR_1 120</span></div>
+			<div><span>#define GVAR_2 120</span></div>
+		</code>
 		<p>And use either in your scripts, it will work. As you can see the name number combination of variables must be unique otherwise the engine gets confused and throws errors.</p>
-			This also means variables that are inside the global namespace are saved and remembered on map change or game load.</p> 
-			The other variables that are not inside the global namespace just run while the script they are defined in is running. They will be forgotten on map change or game load.</p>
+		<p>This also means variables that are inside the global namespace are saved and remembered on map change or game load.</p> 
+		<p>The other variables that are not inside the global namespace just run while the script they are defined in is running. They will be forgotten on map change or game load.</p>
 		<p>The image below is intended to illustrate the global namespace. The green circles are scripts with variables. The blue circle is the global namespace. 
-			The scripts that are partially in the blue circle have local variables that are not in the global namespace. 
-			The scripts which are fully in the blue circle have global variables which are in the global namespace and therefore must be unique. 
-			As you can see, the global variable <code class="codeinline">MVAR_1</code> exists twice, which must not occur in the global namespace.</p>
+		<p>	The scripts that are partially in the blue circle have local variables that are not in the global namespace.</p>
+		<p>	The scripts which are fully in the blue circle have global variables which are in the global namespace and therefore must be unique.</p>
+		<p>As you can see, the global variable <code class="codeinline">MVAR_1</code> exists twice, which must not occur in the global namespace.</p>
 		<img src="images\Scripting (Basics)\Global_namespace_image.jpg" alt="Please stand by">
-	<br>
+		<br>
 		<p>Let's take a look at the different types of variables.</p>
 	<hr class="dashedline">
 
 	<h4>Variables of global namespace</h4>
 		<p>Variables getting into global namespace are:</p>
-<li>
-<div class="codebigbox">
-<pre>
-	<span>LVAR_; </span>
-	<span>MVAR_; </span>
-	<span>GVAR_;</span>
-	<span>export variable;</span>
-	<span>import variable;</span>
-</pre>
-</div>
-</li> 
+		<code>
+			<div><span>LVAR_; </span></div>	
+			<div><span>MVAR_; </span></div>
+			<div><span>GVAR_;</span></div>
+			<div><span>export variable;</span></div>
+			<div><span>import variable;</span></div>
+		</code>
 		<br>
 		<code><span class="dyedefine">#define</span> LVAR_Gave_Xp; &emsp; &emsp; (<span class="dyedefine">0</span>)</code>
 		<p>This variable is of type Local variable (<code class="codeinline">LVAR</code>). It is saved during map change and game load. <code class="codeinline">LVARs</code> are used for circumstances that aren't that significant e.g. "have experience points been given to the player?"
@@ -1286,41 +1261,29 @@
 
 	<h4>Variables not of global namespace</h4>
 		<p>Variables not getting into global namespace are:</p>
-<li>
-<div class="codebigbox">
-<pre>
-	<span>Local variables e.g.</span>
-	<span class="dyestatement">variable</span> Only_Once <span class="dyeoperator">:=</span> <span class="dyedefine">0</span>;
-</pre>
-</div>
-</li>
+		<code>
+			<div><span>Local variables e.g.</span></div>
+			<div><span class="dyestatement">variable</span> Only_Once <span class="dyeoperator">:=</span> <span class="dyedefine">0</span>;</div>
+		</code>
 		<br>
-		<p> The variable Only_Once is defined outside the procedure and assigned the value <span class="dyedefine"><code class="codeinline">0</code></span>. 
-			This variable can be used in every procedure inside the script. This variable will not be saved when changing the map.</p>
-<li>
-<div class="codebigbox">
-<pre>
-	<span class="dyestatement">variable</span> Only_Once <span class="dyeoperator">:=</span> <span class="dyedefine">0</span>;
-
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">map_enter_p_proc</span> <span class="dyestatement">begin</span>
-	Only_Once <span class="dyeoperator">:=</span> <span class="dyedefine">0</span>;
-</pre>
-</div>
-</li>
+		<p>The variable Only_Once is defined outside the procedure and assigned the value <span class="dyedefine"><code class="codeinline">0</code></span>.</p>
+		<p>This variable can be used in every procedure inside the script. This variable will not be saved when changing the map.</p>
+		<code>
+			<div><span class="dyestatement">variable</span> Only_Once <span class="dyeoperator">:=</span> <span class="dyedefine">0</span>;</div>
+			<br>
+			<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">map_enter_p_proc</span> <span class="dyestatement">begin</span></div>
+			<div>Only_Once <span class="dyeoperator">:=</span> <span class="dyedefine">0</span>;</div>
+		</code>
 		<br>
-		<p>The variable item is defined inside the procedure <span class="dyeprocedure"><code class="codeinline">combat_p_proc</code></span>.
-			This variable can only be used inside the procedure. This variable will not be saved when changing the map.</p>
-<li>
-<div class="codebigbox">
-<pre>
-	<span class="dyestatement">procedure</span><span class="dyeprocedure"> combat_p_proc</span> <span class="dyestatement">begin</span>
-	<span class="dyestatement">variable</span> item;
-
-	item <span class="dyeoperator">:=</span> <span class="dyestandardmacro">create_object</span>(PID_HEALING_POWDER),<span class="dyedefine">0</span>,<span class="dyedefine">0</span>);
-	<span class="dyefunction">use_obj_on_obj</span>(item,<span class="dyefunction">self_obj</span>);
-</pre>
-</div>
-</li>
+		<p>The variable item is defined inside the procedure <span class="dyeprocedure"><code class="codeinline">combat_p_proc</code></span>.</p>
+		<p>This variable can only be used inside the procedure. This variable will not be saved when changing the map.</p>
+		<code>
+			<div><span class="dyestatement">procedure</span><span class="dyeprocedure"> combat_p_proc</span> <span class="dyestatement">begin</span></div>
+			<div><span class="dyestatement">variable</span> item;</div>
+			<br>
+			<div>item <span class="dyeoperator">:=</span> <span class="dyestandardmacro">create_object</span>(PID_HEALING_POWDER),<span class="dyedefine">0</span>,<span class="dyedefine">0</span>);</div>
+			<div><span class="dyefunction">use_obj_on_obj</span>(item,<span class="dyefunction">self_obj</span>);</div>
+		</code>
 	<br>
 	<hr>
 
@@ -1337,14 +1300,10 @@
 		<code><span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL); </code>
 		<p>The macro<code class="codeinline">give_xp(x)</code> is located inside the file <code class="codeinline">EXPPOINT.H</code>.</p>
 		<p>Behind <code class="codeinline">give_xp(x)</code> actually hides:</p>  
-<li>
-<div class="codebigbox">
-<pre>
-	<span class="dyefunction">give_exp_points</span>(x);
-	<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">100</span>)<span class="dyeoperator">+</span>x<span class="dyeoperator">+</span><span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">101</span>))
-</pre>
-</div>
-</li>
+		<code>
+			<div><span class="dyefunction">give_exp_points</span>(x);</div>
+			<div><span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">100</span>)<span class="dyeoperator">+</span>x<span class="dyeoperator">+</span><span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">101</span>))</div>
+		</code>
 	<br>
 	<hr>
 
@@ -1362,21 +1321,18 @@
 	<div id="statement"><h3>Statement</h3></div>
 		<p>Statements are used to build and subdivide blocks of logic.</p>
 		<p>For example:</p>
-<li>
-<div class="codebigbox">
-<pre>
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> 
-		<span class="dyefunction">script_overrides</span>;
-		<span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>
-			<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));
-		<span class="dyestatement">end</span>
-		<span class="dyestatement">else</span> <span class="dyestatement">begin</span> 
-			<span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));
-		<span class="dyestatement">end</span>
-	<span class="dyestatement">end</span>						
-</pre>
-</div>
-</li>
+
+		<code>
+			<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">look_at_p_proc</span> <span class="dyestatement">begin</span> </div>
+			<div style="text-indent: 4.5em;"><span class="dyefunction">script_overrides</span>;</div>
+			<div style="text-indent: 4.5em;"><span class="dyestatement">if</span> (<span class="dyefunction">map_var</span>(MVAR_Fixed_Well) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>) <span class="dyestatement">then</span> <span class="dyestatement">begin</span></div>
+			<div style="text-indent: 9em;"><span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">100</span>));</div>
+			<div style="text-indent: 4.5em;"><span class="dyestatement">end</span></div>
+			<div style="text-indent: 4.5em;"><span class="dyestatement">else</span> <span class="dyestatement">begin</span> </div>
+			<div style="text-indent: 9em;"><span class="dyefunction">display_msg</span>(<span class="dyestandardmacro">mstr</span>(<span class="dyedefine">101</span>));</div>
+			<div style="text-indent: 4.5em;"><span class="dyestatement">end</span></div>
+			<div><span class="dyestatement">end</span></div>
+		</code>
 		<p>The above example simply says:</p>
 		<img src="images\Scripting (Basics)\2022-05-30 14_28_19-statement_explained.png" alt="">
 		<p>There is no need to write the related statements on the same column but it helps alot.</p>
@@ -1386,67 +1342,60 @@
 		<p>The semicolon symbol ; is used to tell the compiler where a function ends.</p>
 	<hr>
 
-<div id="advanced"><h2>Scripting (Advanced)</h2></div>
-<br>
+	<div id="advanced"><h2>Scripting (Advanced)</h2></div>
+		<div id="compiling"><h3>Compiling</h3></div>
+			<p>As you have probably already noticed, the suffix of your script or any script in general is <code class="codeinline">.ssl</code>. For example <code class="codeinline">ASWELL.ssl</code>. 
+				However, this suffix is the raw state of a script. To be able to use your script inside the game you need to compile it. What does that mean? 
+				It means the script needs to be translated from human readable code into machine readable code.
+				Decompiled (human readable) scripts have the suffix <code class="codeinline">.ssl</code>, compiled ones (machine readable) have the suffix <code class="codeinline">.int</code>.
+				So the engine knows what to do with the scripts content.</p>
+			<p>But how exactly do we compile scripts? With Sfall script editor this is child's play.</p>
+			<p>Just look at the top center of the Sfall script editor. There you'll find this button.</p>
+			<img src="images\Compiling\compile_button.png" alt="">
+			<p>Press it. Come on, do it! Press it! Or <code class="codeinline">F8</code>...</p>
+			<img src="images\Compiling\Compiling_failed_bottom.png" alt="">
+			<br>
+			<img src="images\Compiling\Compiling_failed_top.png" alt="">
+			<p>What happened? It didn't compile... You get some unique and some cryptic error messages. But all in all it didn't compile. But how do we get our script correctly compiled? I'm glad you ask. Maybe you noticed some little detail inside <code class="codeinline">ASWELL.SSL</code>.</p>
+			<code><span class="dyedefine">#define</span> NAME<div style="text-indent: 9.4em; display: inline-block;">SCRIPT_ASWELL</div></code>
+	<br>
+	<hr class="dashedline">
 
-	<div id="compiling"><h3>Compiling</h3></div>
-		<p>As you have probably already noticed, the suffix of your script or any script in general is <code class="codeinline">.ssl</code>. For example <code class="codeinline">ASWELL.ssl</code>. 
-			However, this suffix is the raw state of a script. To be able to use your script inside the game you need to compile it. What does that mean? 
-			It means the script needs to be translated from human readable code into machine readable code.
-			Decompiled (human readable) scripts have the suffix <code class="codeinline">.ssl</code>, compiled ones (machine readable) have the suffix <code class="codeinline">.int</code>.
-			So the engine knows what to do with the scripts content.</p>
-		<br>
-		<p>But how exactly do we compile scripts? With Sfall script editor this is child's play.</p>
-		<p>Just look at the top center of the Sfall script editor. There you'll find this button.</p>
-		<br>
-		<img src="images\Compiling\compile_button.png" alt="">
-		<p>Press it. Come on, do it! Press it! Or <code class="codeinline">F8</code>...</p>
-		<img src="images\Compiling\Compiling_failed_bottom.png" alt="">
-		<br>
-		<img src="images\Compiling\Compiling_failed_top.png" alt="">
-		<p>What happened? It didn't compile... You get some unique and some cryptic error messages. But all in all it didn't compile. But how do we get our script correctly compiled?
-			I'm glad you ask. Maybe you noticed some little detail inside <code class="codeinline">ASWELL.SSL</code>.</p>
-		<code><span class="dyedefine">#define</span> NAME                    SCRIPT_ASWELL</code>
-	
 	<div id="Scripts.h"><h4>SCRIPTS.H</h4></div>
 		<p>In order to compile your script correctly, it must be listed inside <code class="codeinline">SCRIPTS.H</code>. Let's take a look at <code class="codeinline">SCRIPTS.H</code> located here:</p>
 		<code>E:\Fallout2\data\scripts\decompiled\HEADERS</code>
 		<br>
-<li>
-<div class="codebigbox">
-<pre>
-	<span>/*</span>
-	<span>	Copyright 1998-2003 Interplay Entertainment Corp.  All rights reserved.</span>
-	<span>*/</span>
-	<span></span>
-	<span>#ifndef SCRIPTS_H</span>
-	<span>#define SCRIPTS_H</span>
-	<span></span>
-	<span>/******************************************************************</span>
-	<span>File Name: Scripts.h</span>
-	<span></span>
-	<span>Purpose: This file contains defines for all of the scripts in</span>
-	<span>			scripts.lst. This is an ordered list and needs to</span>
-	<span>			conform exactly to scripts list. All defines in here</span>
-	<span>			need to be prepended with SCRIPT_ as a naming</span>
-	<span>			convention.</span>
-	<span></span>
-	<span>Created: October 06, 1997</span>
-	<span>******************************************************************/</span>
-	<span></span>
-	<span>#define SCRIPT_OBJ_DUDE         (1)     // obj_dude.int    ; Player script.</span>
-	<span>#define SCRIPT_TEST0            (2)     // Test0.int       ; Used to Test Scripts</span>
-	<span>#define SCRIPT_TEST1            (3)     // Test1.int       ; Used to Test Scripts</span>
-	<span>#define SCRIPT_TEST2            (4)     // Test2.int       ; Used to Test Scripts</span>
-	<span>#define SCRIPT_TEST3            (5)     // Test3.int       ; Used to Test Scripts</span>
-	<span>#define SCRIPT_TEST4            (6)     // Test4.int       ; Used to Test Scripts</span>
-	<span>#define SCRIPT_TEST5            (7)     // Test5.int       ; Used to Test Scripts</span>
-	<span>#define SCRIPT_ACWARIOR         (8)     // ACWarior.int    ; Generic Warrior in Arroyo</span>
-	<span>#define SCRIPT_ACVILLGR         (9)     // ACVillgr.int    ; Generic Villager of Arroyo</span>
-	<span>[...]</span>					
-</pre>
-</div>
-</li>
+		<code>
+			<div><span>/*</span></div>
+			<div><span>	Copyright 1998-2003 Interplay Entertainment Corp.  All rights reserved.</span></div>
+			<div><span>*/</span></div>
+			<div><span></span></div>
+			<div><span>#ifndef SCRIPTS_H</span></div>
+			<div><span>#define SCRIPTS_H</span></div>
+			<div><span></span></div>
+			<div><span>/******************************************************************</span></div>
+			<div><span>File Name: Scripts.h</span></div>
+			<div><span></span></div>
+			<div><span>Purpose: This file contains defines for all of the scripts in</span></div>
+			<div><span>			scripts.lst. This is an ordered list and needs to</span></div>
+			<div><span>			conform exactly to scripts list. All defines in here</span></div>
+			<div><span>			need to be prepended with SCRIPT_ as a naming</span></div>
+			<div><span>			convention.</span></div>
+			<div><span></span></div>
+			<div><span>Created: October 06, 1997</span></div>
+			<div><span>******************************************************************/</span></div>
+			<div><span></span></div>
+			<div><span>#define SCRIPT_OBJ_DUDE         (1)     // obj_dude.int    ; Player script.</span></div>
+			<div><span>#define SCRIPT_TEST0            (2)     // Test0.int       ; Used to Test Scripts</span></div>
+			<div><span>#define SCRIPT_TEST1            (3)     // Test1.int       ; Used to Test Scripts</span></div>
+			<div><span>#define SCRIPT_TEST2            (4)     // Test2.int       ; Used to Test Scripts</span></div>
+			<div><span>#define SCRIPT_TEST3            (5)     // Test3.int       ; Used to Test Scripts</span></div>
+			<div><span>#define SCRIPT_TEST4            (6)     // Test4.int       ; Used to Test Scripts</span></div>
+			<div><span>#define SCRIPT_TEST5            (7)     // Test5.int       ; Used to Test Scripts</span></div>
+			<div><span>#define SCRIPT_ACWARIOR         (8)     // ACWarior.int    ; Generic Warrior in Arroyo</span></div>
+			<div><span>#define SCRIPT_ACVILLGR         (9)     // ACVillgr.int    ; Generic Villager of Arroyo</span></div>
+		<div><span>[...]</span>	</div>
+		</code>
 		<p>What the heck is this?! You might ask. This is <code class="codeinline">SCRIPTS.H</code> or a itsy bitsy tiny part of it (I shorted it because of reasons). Ok, let's take a look at the framework of this file.</p>
 		<p><code class="codeinline">#define SCRIPT_</code> looks familiar. So there needs to be something like <code class="codeinline">#define SCRIPT_ASWELL</code> inside <code class="codeinline">SCRIPTS.H</code>. Let's seek for it.</p>
 		<code>//#define SCRIPT_ASWELL           (217)   // ASWell.int      ; Arroyo Well. It's broken. Fix w/ Repair</code>
@@ -1461,13 +1410,13 @@
 		<p>Yes! You did it!</p>
 		<img src="images\Compiling\ssl_and_int.png" alt="">
 		<p>You compiled a <code class="codeinline">.ssl</code> script into a <code class="codeinline">.int</code> one. The compiled script will be created at the same place your decompiled script lies. You can be proud of yourself.</p>
-	<br>
-		<h5>Notice</h5>
+	<hr class="dottedline">
+		<h5>Note</h5>
 			<p>* You can choose whatever name your script has. It doesn't matter if it's called <code class="codeinline">ASWELL.ssl</code>, <code class="codeinline">WELL.ssl</code> or <code class="codeinline">MYSCRIPT.ssl</code>. 
 				But remember, and this is important, a scripts name mustn't be longer than <code class="codeinline">8</code> characters, the suffix <code class="codeinline">.ssl</code> not counted.
 				It mustn't be exactly <code class="codeinline">8</code> characters long either. Just pick a name between min. <code class="codeinline">1</code> and max. <code class="codeinline">8</code> chars long.
 				If you don't follow this rule you'll burn in hell for all eternity!!! And your sleeves slip down every time washing your hands!!!
-				The truth is the engine can't handle more than <code class="codeinline">8</code> chars and will probably crash. ¯\_(ツ)_/¯</p>
+				The truth is the engine can't handle more than <code class="codeinline">8</code> chars and will probably crash.</p>
 			<p>* Script names and the suffix aren't case sensitive. It doesn't matter if you write <code class="codeinline">ASWELL.SSL</code>, <code class="codeinline">ASWELL.int</code>, <code class="codeinline">aswell.SSL</code>, <code class="codeinline">aswell.INT</code>, <code class="codeinline">aSwElL.sSl</code>... you're getting the point.</p>
 	<hr>
 
@@ -1481,50 +1430,54 @@
 				If you use <code class="codeinline">0</code> <code class="codeinline">LVARs</code> then you write <code class="codeinline"># local_vars=0</code>. If you use <code class="codeinline">5</code> but write <code class="codeinline"># local_vars=7</code> nobody will tear your head off the script will work anyways.
 				The important thing is that you add your script at the same line number as the entry inside <code class="codeinline">SCRIPTS.H</code> corresponds.
 				E.g. inside <code class="codeinline">SCRIPTS.H</code> <code class="codeinline">SCRIPT_HCPAVEL</code> has number <code class="codeinline">1304</code> so your entry inside <code class="codeinline">SCRIPTS.LST</code> needs to be on line number <code class="codeinline">1304</code>.</p>
-		<div id="F8Mode"></div><h4>F8 mode</h4>
+			<hr class="dottedline">
+				<div id="F8Mode"></div><h4>F8 mode</h4>
 			<p>Open the BIS mapper and just press <code class="codeinline">F8</code>. You'll entering some sort of Fallout2 "light". 
 				You can exit it by pressing <code class="codeinline">F8</code> again then you'll return to the mapper editing interface.</p>
-		<div id="GameMode"></div><h4>Game mode</h4>
+			<hr class="dottedline">				
+			<div id="GameMode"></div><h4>Game mode</h4>
 			<p>Navigate to the Fallout2 game folder located here:</p>
 			<code>E:\Fallout2\</code>
 			<p>Open file <code class="codeinline">ddraw.ini</code> and navigate to line <code class="codeinline">167</code> called <code class="codeinline">StartingMap=</code>. It could be commented out with a semicolon <code class="codeinline">;</code> but just uncomment it by deleting the semicolon.</p>
 			<p>Write your map name after the equals symbol <code class="codeinline">=</code>. E.g. <code class="codeinline">#StartingMap=ABCDEFG.map</code>.</p>
 			<p>Save the file and hit <code class="codeinline">fallout2.exe</code>. Start a new game with any character and you'll notice that you'll start on your map.</p>
-		<br>
-			<h5>Notice</h5>
+			<hr class="dottedline">
+			<h5>Note</h5>
 				<p>When you face the strange behavior inside the BIS mapper that you can choose all your self written scripts but the last entry overwrites your presious scripts inside the list.
 					Then your facing a bug. I got rid of this bug by shuffling around a few of the vanilla scripts already located inside <code class="codeinline">SCRIPTS.LST</code> 
 					and putting some of my self written scripts between the vanilla scripts but not behind each other.</p>
 		<hr>	
-		<div id="AssignScript"><h4>Assign script to object</h4></div>
-			<p>Open the mapper and load your map of choice. There should be at least one object on the map.</p>
-			<img src="images\Scripting (Advanced)\AssignScript\AssignScript.png" alt="" height="80%" width="80%">
-			<p>Choose <code class="codeinline">Critters</code> in dropdown menu, otherwise you cannot mark Critters.</p>
-			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCritters.png" alt="">
-			<p>Press <code class="codeinline">m</code> to change the cursor from hex to pointer. Left-click the Critter.</p>
-			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersChoose.png" alt="" height="60%" width="40%">
-			<p>Press <code class="codeinline">Edit</code> on the bottom button panel.</p>
-			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersEdit.png" alt="" height="60%" width="40%">
-			<p>Choose <code class="codeinline">New Script</code>.</p>
-			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersNewScript.png" alt="" height="50%" width="50%">
-			<p>A window with all available <code class="codeinline">.int</code> scripts appears.</p>
-			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersChooseScript.png" alt="" height="50%" width="50%">
-			<p>Navigate to the script you want to assign to the object.</p>
-			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersChooseScriptHCPAVEL.png" alt="" height="50%" width="50%">
-			<p>After you chose the script the window closes and gets back to the edit window.</p>
-			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersChooseScriptHCPAVELChosen.png" alt="" height="50%" width="50%">
-			<p>When you're satisfied click on <code class="codeinline">Done</code>.</p>
-			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersEditDone.png" alt="" height="50%" width="50%">
-			<p>To see if it has really been assigned just go to <code class="codeinline">SCRIPTS</code> and choose <code class="codeinline">List all Scripts</code>.</p>
-			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptListAllScripts.png" alt="">
-			<p>As you can see, our chosen script has successfully been assigned.</p>
-			<img src="images\Scripting (Advanced)\AssignScript\AssignScriptListAllScriptsSeeScripts.png" alt="" height="80%" width="80%">
-			<p>Press <code class="codeinline">F8</code> to test if your script works.</p>
-			<h5>Notice</h5>
-				<p>* If you see your script inside the mapper and attach it to a critter but you cannot interact with the critter how you've supposed it with your script then the error could be following:</p>
-				<p>&nbsp;* Your script isn't located inside the same folder as <code class="codeinline">SCRIPTS.LST</code>.</p>        
-				<p>&nbsp;* The entry of your script inside <code class="codeinline">SCRIPTS.LST</code> doesn't correspond with the entry inside <code class="codeinline">SCRIPTS.H</code>.</p>        
-		<hr>
+
+	<div id="AssignScript"><h4>Assign script to object</h4></div>
+		<p>Open the mapper and load your map of choice. There should be at least one object on the map.</p>
+		<img src="images\Scripting (Advanced)\AssignScript\AssignScript.png" alt="" height="80%" width="80%">
+		<p>Choose <code class="codeinline">Critters</code> in dropdown menu, otherwise you cannot mark Critters.</p>
+		<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCritters.png" alt="">
+		<p>Press <code class="codeinline">m</code> to change the cursor from hex to pointer. Left-click the Critter.</p>
+		<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersChoose.png" alt="" height="60%" width="40%">
+		<p>Press <code class="codeinline">Edit</code> on the bottom button panel.</p>
+		<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersEdit.png" alt="" height="60%" width="40%">
+		<p>Choose <code class="codeinline">New Script</code>.</p>
+		<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersNewScript.png" alt="" height="50%" width="50%">
+		<p>A window with all available <code class="codeinline">.int</code> scripts appears.</p>
+		<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersChooseScript.png" alt="" height="50%" width="50%">
+		<p>Navigate to the script you want to assign to the object.</p>
+		<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersChooseScriptHCPAVEL.png" alt="" height="50%" width="50%">
+		<p>After you chose the script the window closes and gets back to the edit window.</p>
+		<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersChooseScriptHCPAVELChosen.png" alt="" height="50%" width="50%">
+		<p>When you're satisfied click on <code class="codeinline">Done</code>.</p>
+		<img src="images\Scripting (Advanced)\AssignScript\AssignScriptCrittersEditDone.png" alt="" height="50%" width="50%">
+		<p>To see if it has really been assigned just go to <code class="codeinline">SCRIPTS</code> and choose <code class="codeinline">List all Scripts</code>.</p>
+		<img src="images\Scripting (Advanced)\AssignScript\AssignScriptListAllScripts.png" alt="">
+		<p>As you can see, our chosen script has successfully been assigned.</p>
+		<img src="images\Scripting (Advanced)\AssignScript\AssignScriptListAllScriptsSeeScripts.png" alt="" height="80%" width="80%">
+		<p>Press <code class="codeinline">F8</code> to test if your script works.</p>
+		<hr class="dottedline">
+		<h5>Note</h5>
+		<p>* If you see your script inside the mapper and attach it to a critter but you cannot interact with the critter how you've supposed it with your script then the error could be following:</p>
+		<p>&nbsp;* Your script isn't located inside the same folder as <code class="codeinline">SCRIPTS.LST</code>.</p>        
+		<p>&nbsp;* The entry of your script inside <code class="codeinline">SCRIPTS.LST</code> doesn't correspond with the entry inside <code class="codeinline">SCRIPTS.H</code>.</p>        
+	<hr>
 		
 	<div id="dialog"><h3>Dialog</h3></div>
 		<h4>Let's talk about...</h4>
@@ -1538,86 +1491,75 @@
 				Well to understand how it works, we need to dig down deeper and take a look at two files <code class="codeinline">ACKLINT.SSL</code> and <code class="codeinline">ACKLINT.MSG</code>.</p>
 			<p>First file is <code class="codeinline">ACKLINT.SSL</code> located here:</p>
 			<code>E:\Fallout2\data\scripts\decompiled\ARROYO</code>
-<li>
-<div class="codebigbox">
-<pre>
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">talk_p_proc</span> <span class="dyestatement">begin</span>
-	[...]
-	<span class="dyestatement">if</span> ((<span class="dyefunction">obj_art_fid</span>(<span class="dyefunction">dude_obj</span>) <span class="dyeoperator">==</span> FID_HMWARR) <span class="dyestatement">or</span> (<span class="dyefunction">obj_art_fid</span>(<span class="dyefunction">dude_obj</span>) <span class="dyeoperator">==</span> FID_HFPRIM)) <span class="dyestatement">then</span> <span class="dyestatement">begin</span>
-		<span class="dyefunction">start_gdialog</span>(NAME,<span class="dyefunction">self_obj</span>,<span class="dyedefine">4</span>,<span class="dyedefine">-1</span>,<span class="dyedefine">-1</span>);
-		<span class="dyefunction">gSay_Start</span>;
-			<span class="dyestatement">call</span> <span class="dyeprocedure">Node001</span>;
-		<span class="dyefunction">gSay_End</span>;
-		<span class="dyefunction">end_dialogue</span>;
-	<span class="dyestatement">end</span>
-
-	<span class="dyestatement">else</span> <span class="dyestatement">begin</span>
-		<span class="dyefunction">start_gdialog</span>(NAME,<span class="dyefunction">self_obj</span>,<span class="dyedefine">4</span>,<span class="dyedefine">-1</span>,<span class="dyedefine">-1</span>);
-		<span class="dyefunction">gSay_Start</span>;
-			<span class="dyestatement">call</span> <span class="dyeprocedure">Node006</span>;
-		<span class="dyefunction">gSay_End</span>;
-		<span class="dyefunction">end_dialogue</span>;
-	<span class="dyestatement">end</span>
-	<span class="dyestatement">end</span>				
-</pre>
-</div>
-</li>
+			<br>
+			<code>
+				<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">talk_p_proc</span> <span class="dyestatement">begin</span></div>
+				<div>[...]</div>
+				<div><span class="dyestatement">if</span> ((<span class="dyefunction">obj_art_fid</span>(<span class="dyefunction">dude_obj</span>) <span class="dyeoperator">==</span> FID_HMWARR) <span class="dyestatement">or</span> (<span class="dyefunction">obj_art_fid</span>(<span class="dyefunction">dude_obj</span>) <span class="dyeoperator">==</span> FID_HFPRIM)) <span class="dyestatement">then</span> <span class="dyestatement">begin</span></div>
+				<div style="text-indent: 4.5em;"><span class="dyefunction">start_gdialog</span>(NAME,<span class="dyefunction">self_obj</span>,<span class="dyedefine">4</span>,<span class="dyedefine">-1</span>,<span class="dyedefine">-1</span>);</div>
+				<div style="text-indent: 4.5em;"><span class="dyefunction">gSay_Start</span>;</div>
+				<div style="text-indent: 9em;"><span class="dyestatement">call</span> <span class="dyeprocedure">Node001</span>;</div>
+				<div style="text-indent: 4.5em;"><span class="dyefunction">gSay_End</span>;</div>
+				<div style="text-indent: 4.5em;"><span class="dyefunction">end_dialogue</span>;</div>
+				<div><span class="dyestatement">end</span></div>
+				<br>
+				<div><span class="dyestatement">else</span> <span class="dyestatement">begin</span></div>
+				<div style="text-indent: 4.5em;"><span class="dyefunction">start_gdialog</span>(NAME,<span class="dyefunction">self_obj</span>,<span class="dyedefine">4</span>,<span class="dyedefine">-1</span>,<span class="dyedefine">-1</span>);</div>
+				<div style="text-indent: 4.5em;"><span class="dyefunction">gSay_Start</span>;</div>
+				<div style="text-indent: 9em;"><span class="dyestatement">call</span> <span class="dyeprocedure">Node006</span>;</div>
+				<div style="text-indent: 4.5em;"><span class="dyefunction">gSay_End</span>;</div>
+				<div style="text-indent: 4.5em;"><span class="dyefunction">end_dialogue</span>;</div>
+				<div><span class="dyestatement">end</span></div>
+				<div><span class="dyestatement">end</span></div>
+			</code>
 			<p>This is procedure <code class="codeinline">talk_p_proc;</code> or at least a part of it. Dialog begins here but we are only interested in call <code class="codeinline">Node006;</code> the rest is unimportant for now.</p>
 			<p>Let's jump to call <code class="codeinline">Node006;</code>.</p>
-<li>
-<div class="codebigbox">
-<pre>
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">Node006</span> <span class="dyestatement">begin</span>
-		<span class="dyestandardmacro">Reply</span>(<span class="dyedefine">121</span>);
-
-		[...]
-		<span class="dyestandardmacro">NOption</span>(<span class="dyedefine">123</span>,<span class="dyeprocedure">Node007</span>,<span class="dyedefine">004</span>);
-	<span class="dyestatement">end</span>			
-</pre>
-</div>
-</li>
-			<p>You can probably guess that <code class="codeinline">121</code> and <code class="codeinline">123</code> are the two lines we've seen at the screenshots when you started talking to Klint and the dialog window appeared. 
-				But where do they come from? Let's take a look at <code class="codeinline">ACKLINT.MSG</code> located here:</p>
+			<code>
+				<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">Node006</span> <span class="dyestatement">begin</span></div>
+				<div style="text-indent: 4.5em;"><span class="dyestandardmacro">Reply</span>(<span class="dyedefine">121</span>);</div>
+				<br>
+				<div style="text-indent: 4.5em;">[...]</div>
+				<div style="text-indent: 4.5em;"><span class="dyestandardmacro">NOption</span>(<span class="dyedefine">123</span>,<span class="dyeprocedure">Node007</span>,<span class="dyedefine">004</span>);</div>
+				<div><span class="dyestatement">end</span>	</div>
+			</code>
+			<p>You can probably guess that <code class="codeinline">121</code> and <code class="codeinline">123</code> are the two lines we've seen at the screenshots when you started talking to Klint and the dialog window appeared. But where do they come from? Let's take a look at <code class="codeinline">ACKLINT.MSG</code> located here:</p>
 			<code>E:\Fallout2\data\text\english\dialog</code>
 			<p>Try and open the file with notepad, notepad++, Sfall script editor or whatever you prefer. After you opened the file, it will look like this:</p>
-<li>
-<div class="codebigbox">
-<pre>
-	{100}{}{You see Klint, a fellow tribesman.}
-	{101}{}{You see Klint.}
-	{102}{}{You see a young man with bulging muscles and a very confident air about him.}
-	{103}{}{Good day to you, }
-	{104}{}{. You have not completed the trial of the Elder and may not pass.}
-	{105}{}{Uh...}
-	{106}{}{I need to go back to the village.}
-	{107}{}{I have some questions of you.}
-	{108}{}{All right, I'm off to take the test.}
-	{109}{}{(sigh) }
-	{110}{}{. You go temple. You take test. You not come back here until take test. Obey Elder. Go!}
-	{111}{}{Me go.}
-	{112}{}{Forgive me, }
-	{113}{}{, but I can not allow you to pass. If you wish to return to the village you may do so only by passing the trial set before you.}
-	{114}{}{I see. I guess I'll be going then.}
-	{115}{}{Can I ask you some questions then?}
-	{116}{}{I could kick your ass and just walk out of here.}
-	{117}{}{Forgive me, but I have no answers to your questions. Take the trial set before you by the Elder and prove yourself worthy to lead our people.}
-	{118}{}{Very well.}
-	{119}{}{Two people working together can move the obelisk that blocks the path. Alone, you would fail. I have no intention of helping you until you pass the trial of the Elder.}
-	{120}{}{Uh-huh. I get the picture.}
-	{121}{}{Greetings, Chosen One! It is good to see you. How may I serve you?}
-	{122}{}{Me say hi. That all.}
-	{123}{}{Just thought I'd say hello. I'll be leaving on my quest soon.}
-	{124}{}{May the spirits of our ancestors protect you, Chosen One. I wish you well on your journey.}		
-</pre>
-</div>
-</li>
+			<code>
+				<div>{100}{}{You see Klint, a fellow tribesman.}</div>
+				<div>{101}{}{You see Klint.}</div>
+				<div>{102}{}{You see a young man with bulging muscles and a very confident air about him.}</div>
+				<div>{103}{}{Good day to you, }</div>
+				<div>{104}{}{. You have not completed the trial of the Elder and may not pass.}</div>
+				<div>{105}{}{Uh...}</div>
+				<div>{106}{}{I need to go back to the village.}</div>
+				<div>{107}{}{I have some questions of you.}</div>
+				<div>{108}{}{All right, I'm off to take the test.}</div>
+				<div>{109}{}{(sigh) }</div>
+				<div>{110}{}{. You go temple. You take test. You not come back here until take test. Obey Elder. Go!}</div>
+				<div>{111}{}{Me go.}</div>
+				<div>{112}{}{Forgive me, }</div>
+				<div>{113}{}{, but I can not allow you to pass. If you wish to return to the village you may do so only by passing the trial set before you.}</div>
+				<div>{114}{}{I see. I guess I'll be going then.}</div>
+				<div>{115}{}{Can I ask you some questions then?}</div>
+				<div>{116}{}{I could kick your ass and just walk out of here.}</div>
+				<div>{117}{}{Forgive me, but I have no answers to your questions. Take the trial set before you by the Elder and prove yourself worthy to lead our people.}</div>
+				<div>{118}{}{Very well.}</div>
+				<div>{119}{}{Two people working together can move the obelisk that blocks the path. Alone, you would fail. I have no intention of helping you until you pass the trial of the Elder.}</div>
+				<div>{120}{}{Uh-huh. I get the picture.}</div>
+				<div>{121}{}{Greetings, Chosen One! It is good to see you. How may I serve you?}</div>
+				<div>{122}{}{Me say hi. That all.}</div>
+				<div>{123}{}{Just thought I'd say hello. I'll be leaving on my quest soon.}</div>
+				<div>{124}{}{May the spirits of our ancestors protect you, Chosen One. I wish you well on your journey.}</div>
+			</code>
 			<p>Every piece of text related to Klint. As you can see lines <code class="codeinline">121</code> and <code class="codeinline">123</code> are located inside this message file. So, when dialog jumps to <code class="codeinline">Node006;</code> and lines <code class="codeinline">121</code> and <code class="codeinline">123</code> are requested, 
 				the engine looks inside <code class="codeinline">ACKLINT.MSG</code> finds and returns the necessary text lines.</p>
 			<p>You might have noticed that line <code class="codeinline">100</code>, <code class="codeinline">101</code> and <code class="codeinline">102</code> contain descriptive text. They are used by the procedures <code class="codeinline">look_at_p_proc;</code> and <code class="codeinline">description_p_proc;</code>.</p>
-			<p>left: <code class="codeinline">look_at_p_proc;</code> right: <code class="codeinline">description_p_proc;</code></p>
+			<p>A: <code class="codeinline">look_at_p_proc;</code> B: <code class="codeinline">description_p_proc;</code></p>
 			<img src="images\Dialog\look_at_p_proc.png" alt="">
 			<img src="images\Dialog\description_p_proc.png" alt="">
 		<br>
+		<hr class="dottedline">
 
 		<h4>Message file basic framework</h4>
 			<p>The basic framework of every message file is this:</p>
@@ -1631,129 +1573,126 @@
 			<code>#MyComment</code>
 			<p>Everything behind the hashtag is interpreted as a comment.</p>
 			<p>I like my message files a bit more organized. Like this:</p>
-<li>
-<div class="codebigbox">
-<pre>
-	#############################################################
-	#  
-	#
-	#  Message File: ACKLINT.msg                               
-	#                                                          
-	#       Body Type:  Klint
-	#	Location: Arroyo - Temple entrance
-	#       Combat AI: AI_ARROYO_WARRIOR                                     
-	#       Weapons: Sharpened Spear                                       
-	#       HP: ?                                               
-	#       Skills to note: None                                
-	#                                                                                                             
-	#                                                           
-	#  Created: November 13, 1997                               
-	#                                                           
-	#  Updated: December 24, 1997  
-	#
-	#                                                
-	#############################################################
-
-
-	#############################################################
-	#  Used by look_at_p_proc and description_p_proc.
-	#############################################################
-	{100}{}{You see Klint, a fellow tribesman.}
-	{101}{}{You see Klint.}
-	{102}{}{You see a young man with bulging muscles and a very confident air about him.}
-	#############################################################
-
-
-	#############################################################
-	#  Used by Node001
-	#############################################################
-	#Reply
-	{103}{}{Good day to you, }
-	{104}{}{. You have not completed the trial of the Elder and may not pass.}
-
-	#NLowOption
-	{105}{}{Uh...}								#Invokes Node002
-
-	#NOption
-	{106}{}{I need to go back to the village.}				#Invokes Node003
-	{107}{}{I have some questions of you.}					#Invokes Node004
-	{108}{}{All right, I'm off to take the test.}				#Invokes Node999
-	#############################################################
-
-
-	#############################################################
-	#  Used by Node002
-	#############################################################
-	#Reply
-	{109}{}{(sigh) }
-	{110}{}{. You go temple. You take test. You not come back here until take test. Obey Elder. Go!}
-
-	#NLowOption
-	{111}{}{Me go.}								#Invokes Node999
-	#############################################################
-
-
-	#############################################################
-	#  Used by Node003
-	#############################################################
-	#Reply
-	{112}{}{Forgive me, }
-	{113}{}{, but I can not allow you to pass. If you wish to return to the village you may do so only by passing the trial set before you.}
-
-	#NOption
-	{114}{}{I see. I guess I'll be going then.}				#Invokes Node999
-	{115}{}{Can I ask you some questions then?}				#Invokes Node004
-	{116}{}{I could kick your ass and just walk out of here.}		#Invokes Node005
-	#############################################################
-
-
-	#############################################################
-	#  Used by Node004
-	#############################################################
-	#Reply
-	{117}{}{Forgive me, but I have no answers to your questions. Take the trial set before you by the Elder and prove yourself worthy to lead our people.}
-
-	#NOption
-	{118}{}{Very well.}							#Invokes Node999
-	#############################################################
-
-
-	#############################################################
-	#  Used by Node005
-	#############################################################
-	#Reply
-	{119}{}{Two people working together can move the obelisk that blocks the path. Alone, you would fail. I have no intention of helping you until you pass the trial of the Elder.}
-
-	#NOption
-	{120}{}{Uh-huh. I get the picture.}					#Invokes Node999
-	#############################################################
-
-
-	#############################################################
-	#  Used by Node006
-	#############################################################
-	#Reply
-	{121}{}{Greetings, Chosen One! It is good to see you. How may I serve you?}
-
-	#NLowOption
-	{122}{}{Me say hi. That all.}						#Invokes Node007
-
-	#NOption
-	{123}{}{Just thought I'd say hello. I'll be leaving on my quest soon.} 	#Invokes Node007
-	#############################################################
-
-
-	#############################################################
-	#  Used by Node007
-	#############################################################
-	#NMessage
-	{124}{}{May the spirits of our ancestors protect you, Chosen One. I wish you well on your journey.}
-	#############################################################	
-</pre>
-</div>
-</li>
+			<code>
+				<div>#############################################################</div>
+				<div>#</div>
+				<div>#</div>
+				<div># Message File: ACKLINT.msg</div>
+				<div>#</div>
+				<div># <div style="text-indent: 3.5em; display: inline-block">Body Type:  Klint</div></div>
+				<div># <div style="text-indent: 3.5em; display: inline-block">Location: Arroyo - Temple entrance</div></div>
+				<div># <div style="text-indent: 3.5em; display: inline-block">Combat AI: AI_ARROYO_WARRIOR</div></div>
+				<div># <div style="text-indent: 3.5em; display: inline-block">Weapons: Sharpened Spear</div></div>
+				<div># <div style="text-indent: 3.5em; display: inline-block">HP: ?</div></div>
+				<div># <div style="text-indent: 3.5em; display: inline-block">Skills to note: None</div></div>
+				<div>#</div>
+				<div>#</div>
+				<div># Created: November 13, 1997</div>
+				<div>#</div>
+				<div># Updated: December 24, 1997  </div>
+				<div>#</div>
+				<div>#</div>
+				<div>#############################################################</div>
+				<br>
+				<br>
+				<div>#############################################################</div>
+				<div># Used by look_at_p_proc and description_p_proc.</div>
+				<div>#############################################################</div>
+				<div>{100}{}{You see Klint, a fellow tribesman.}</div>
+				<div>{101}{}{You see Klint.}</div>
+				<div>{102}{}{You see a young man with bulging muscles and a very confident air about him.}</div>
+				<div>#############################################################</div>
+				<br>
+				<br>
+				<div>#############################################################</div>
+				<div># Used by Node001</div>
+				<div>#############################################################</div>
+				<div>#Reply</div>
+				<div>{103}{}{Good day to you, }</div>
+				<div>{104}{}{. You have not completed the trial of the Elder and may not pass.}</div>
+				#
+				<div>#NLowOption</div>
+				<div>{105}{}{Uh...}<div style="text-indent: 32.5em; display: inline-block;">#Invokes Node002</div></div>
+				#
+				<div>#NOption</div>
+				<div>{106}{}{I need to go back to the village.}<div style="text-indent: 17em; display: inline-block;">#Invokes Node003</div></div>
+				<div>{107}{}{I have some questions of you.}<div style="text-indent: 19.2em; display: inline-block;">#Invokes Node004</div></div>
+				<div>{108}{}{All right, I'm off to take the test.}<div style="text-indent: 15.4em; display: inline-block;">#Invokes Node999</div></div>
+				<div>#############################################################</div>
+				<br>
+				<br>
+				<div>#############################################################</div>
+				<div># Used by Node002</div>
+				<div>#############################################################</div>
+				<div>#Reply</div>
+				<div>{109}{}{(sigh) }</div>
+				<div>{110}{}{. You go temple. You take test. You not come back here until take test. Obey Elder. Go!}</div>
+				#
+				<div>#NLowOption</div>
+				<div>{111}{}{Me go.}<div style="text-indent: 32em; display: inline-block;">#Invokes Node999</div></div>
+				<div>#############################################################</div>
+				<br>
+				<br>
+				<div>#############################################################</div>
+				<div># Used by Node003</div>
+				<div>#############################################################</div>
+				<div>#Reply</div>
+				<div>{112}{}{Forgive me, }</div>
+				<div>{113}{}{, but I can not allow you to pass. If you wish to return to the village you may do so only by passing the trial set before you.}</div>
+				#
+				<div>#NOption</div>
+				<div>{114}{}{I see. I guess I'll be going then.}<div style="text-indent: 16em; display: inline-block;">#Invokes Node999</div></div>
+				<div>{115}{}{Can I ask you some questions then?}<div style="text-indent: 16em; display: inline-block;">#Invokes Node004</div></div>
+				<div>{116}{}{I could kick your ass and just walk out of here.}<div style="text-indent: 8.2em; display: inline-block;">#Invokes Node005</div></div>
+				<div>#############################################################</div>
+				<br>
+				<br>
+				<div>#############################################################</div>
+				<div># Used by Node004</div>
+				<div>#############################################################</div>
+				<div>#Reply</div>
+				<div>{117}{}{Forgive me, but I have no answers to your questions. Take the trial set before you by the Elder and prove yourself worthy to lead our people.}</div>
+				#
+				<div>#NOption</div>
+				<div>{118}{}{Very well.}<div style="text-indent: 29.2em; display: inline-block;">#Invokes Node999</div></div>
+				<div>#############################################################</div>
+				<br>
+				<br>
+				<div>#############################################################</div>
+				<div>#  Used by Node005</div>
+				<div>#############################################################</div>
+				<div>#Reply</div>
+				<div>{119}{}{Two people working together can move the obelisk that blocks the path. Alone, you would fail. I have no intention of helping you until you pass the trial of the Elder.}</div>
+				#
+				<div>#NOption</div>
+				<div>{120}{}{Uh-huh. I get the picture.}<div style="text-indent: 20.4em; display: inline-block;">#Invokes Node999</div></div>
+				<div>#############################################################</div>
+				<br>
+				<br>
+				<div>#############################################################</div>
+				<div>#  Used by Node006</div>
+				<div>#############################################################</div>
+				<div>#Reply</div>
+				<div>{121}{}{Greetings, Chosen One! It is good to see you. How may I serve you?}</div>
+				#
+				<div>#NLowOption</div>
+				<div>{122}{}{Me say hi. That all.}<div style="text-indent: 24em; display: inline-block;">#Invokes Node007</div></div>
+				#
+				<div>#NOption</div>
+				<div>{123}{}{Just thought I'd say hello. I'll be leaving on my quest soon.}<div style="text-indent: 1em; display: inline-block;">#Invokes Node007</div></div>
+				<div>#############################################################</div>
+				<br>
+				<br>
+				<div>#############################################################</div>
+				<div>#  Used by Node007</div>
+				<div>#############################################################</div>
+				<div>#NMessage</div>
+				<div>{124}{}{May the spirits of our ancestors protect you, Chosen One. I wish you well on your journey.}</div>
+				<div>#############################################################</div>
+			</code>
 			<p>But you can organize your message files as you like.</p>
-			<h5>Notice</h5>    
+			<hr class="dottedline">
+			<h5>Note</h5>
 			<p>* Message files do always have the suffix <code class="codeinline">.MSG</code>. For example <code class="codeinline">ACKLINT.MSG</code>.</p>
 	<hr>
 
