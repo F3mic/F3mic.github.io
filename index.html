@@ -1394,7 +1394,7 @@
 			<div><span>#define SCRIPT_TEST5            (7)     // Test5.int       ; Used to Test Scripts</span></div>
 			<div><span>#define SCRIPT_ACWARIOR         (8)     // ACWarior.int    ; Generic Warrior in Arroyo</span></div>
 			<div><span>#define SCRIPT_ACVILLGR         (9)     // ACVillgr.int    ; Generic Villager of Arroyo</span></div>
-		<div><span>[...]</span>	</div>
+			<div><span>[...]</span>	</div>
 		</code>
 		<p>What the heck is this?! You might ask. This is <code class="codeinline">SCRIPTS.H</code> or a itsy bitsy tiny part of it (I shorted it because of reasons). Ok, let's take a look at the framework of this file.</p>
 		<p><code class="codeinline">#define SCRIPT_</code> looks familiar. So there needs to be something like <code class="codeinline">#define SCRIPT_ASWELL</code> inside <code class="codeinline">SCRIPTS.H</code>. Let's seek for it.</p>
@@ -1698,84 +1698,72 @@
 
 	<div id="pipboy"><h3>Add quest to pipboy</h3></div>
 		<h4>What do you need</h4>
-<li>
-<div class="codebigbox">
-<pre>
-	E:\Fallout2\data\data\VAULT13.GAM
-
-	E:\Fallout2\data\data\QUEST.TXT
-
-	E:\Fallout2\data\text\english\Game\QUESTS.MSG
-</pre>
-</div>
-</li>
+		<code>
+			<div>E:\Fallout2\data\data\VAULT13.GAM</div>
+			<div>E:\Fallout2\data\data\QUEST.TXT</div>
+			<div>E:\Fallout2\data\text\english\Game\QUESTS.MSG</div>
+		</code>
 		<p>Lets take a look at the internal of these files.</p>
+	<hr class="dottedline">
+
 		<h4>VAULT13.GAM</h4>
-<li>
-<div class="codebigbox">
-<pre>
-	GAME_GLOBAL_VARS:
-	//GLOBAL                                                NUMBER
+			<code>
+				<div>GAME_GLOBAL_VARS:</div>
+				<div>//GLOBAL<div style="text-indent: 27em; display: inline-block;">NUMBER</div></div>
+				<br>
+				<div>GVAR_PLAYER_REPUTATION                  :=0;    //      (0)</div>
+				<div>GVAR_CHILDKILLER_REPUTATION             :=0;    //      (1)</div>
+				<div>GVAR_CHAMPION_REPUTATION                :=0;    //      (2)</div>
+				<div>GVAR_BERSERKER_REPUTATION               :=0;    //      (3)</div>
+				<div>GVAR_BAD_MONSTER                        :=0;    //      (4)</div>
+				<div>GVAR_GOOD_MONSTER                       :=0;    //      (5)</div>
+				<div>GVAR_PLAYER_MARRIED                     :=0;    //      (6)</div>
+				<div>GVAR_ENEMY_ARROYO                       :=0;    //      (7)</div>
+				<div>GVAR_KNOWLEDGE_HEALING_POWDER           :=0;    //      (8)</div>
+				<div>GVAR_KILL_EVIL_PLANTS                   :=0;    //      (9)</div>
+			</code>
+			<p>This file contains every <code class="codeinline">GVAR</code> defined.</p>
+			<p><code class="codeinline">GVAR_x</code> is the GVARs name as you already know.</p>
+			<p><code class="codeinline">:=0</code>; assigns a starting value to the <code class="codeinline">GVAR</code>. In this case <code class="codeinline">0</code>.</p>
+			<p><code class="codeinline">(0)</code> is the placeholder for the <code class="codeinline">GVARs</code> name as you already know.</p>
+		<hr class="dottedline">
 
-	GVAR_PLAYER_REPUTATION                  :=0;    //      (0)
-	GVAR_CHILDKILLER_REPUTATION             :=0;    //      (1)
-	GVAR_CHAMPION_REPUTATION                :=0;    //      (2)
-	GVAR_BERSERKER_REPUTATION               :=0;    //      (3)
-	GVAR_BAD_MONSTER                        :=0;    //      (4)
-	GVAR_GOOD_MONSTER                       :=0;    //      (5)
-	GVAR_PLAYER_MARRIED                     :=0;    //      (6)
-	GVAR_ENEMY_ARROYO                       :=0;    //      (7)
-	GVAR_KNOWLEDGE_HEALING_POWDER           :=0;    //      (8)
-	GVAR_KILL_EVIL_PLANTS                   :=0;    //      (9)
-</pre>
-</div>
-</li>
-		<p>This file contains every <code class="codeinline">GVAR</code> defined.</p>
-		<p><code class="codeinline">GVAR_x</code> is the GVARs name as you already know.</p>
-		<p><code class="codeinline">:=0</code>; assigns a starting value to the <code class="codeinline">GVAR</code>. In this case <code class="codeinline">0</code>.</p>
-		<p><code class="codeinline">(0)</code> is the placeholder for the <code class="codeinline">GVARs</code> name as you already know.</p>
 		<h4>QUEST.TXT</h4>
-<li>
-<div class="codebigbox">
-<pre>
-	#####
-	# Arroyo Quests
-	#####
+			<code>
+				<div>#####</div>
+				<div># Arroyo Quests</div>
+				<div>#####</div>
+				<br>
+				<div># Kill the Evil Plants</div>
+				<div># Arroyo, GVAR_KILL_EVIL_PLANTS, Quest_Accepted, Quest_Completed</div>
+				<div>1500, 100, 9, 2, 6</div>
+				<div>[...]</div>
+			</code>
+			<p>Here are all the quests with their conditions.</p>
+			<p>Everything after <code class="codeinline">#</code> is a comment.</p>
+			<p>The <code class="codeinline">1500</code> retrieves the place name from the <code class="codeinline">MAP.MSG</code>. So in this example it stands for the desert.</p>
+			<p>The <code class="codeinline">100</code> refers to the <code class="codeinline">QUESTS.MSG</code>. There you will find the names of the quests.</p>
+			<p>The <code class="codeinline">9</code> refers to the global variable from the <code class="codeinline">VAULT13.GAM</code>.</p>
+			<p><code class="codeinline">2</code> is the minimum value that the global variable must contain to be displayed in Pipboy.</p>
+			<p><code class="codeinline">6</code> is the minimum value that the global variable must contain in order to be displayed as done in Pipboy.</p>
+		<hr class="dottedline">
 
-	# Kill the Evil Plants
-	# Arroyo, GVAR_KILL_EVIL_PLANTS, Quest_Accepted, Quest_Completed
-	1500, 100, 9, 2, 6
-	[...]
-</pre>
-</div>
-</li>
-		<p>Here are all the quests with their conditions.</p>
-		<p>Everything after <code class="codeinline">#</code> is a comment.</p>
-		<p>The <code class="codeinline">1500</code> retrieves the place name from the <code class="codeinline">MAP.MSG</code>. So in this example it stands for the desert.</p>
-		<p>The <code class="codeinline">100</code> refers to the <code class="codeinline">QUESTS.MSG</code>. There you will find the names of the quests.</p>
-		<p>The <code class="codeinline">9</code> refers to the global variable from the <code class="codeinline">VAULT13.GAM</code>.</p>
-		<p><code class="codeinline">2</code> is the minimum value that the global variable must contain to be displayed in Pipboy.</p>
-		<p><code class="codeinline">6</code> is the minimum value that the global variable must contain in order to be displayed as done in Pipboy.</p>
 		<h4>QUESTS.MSG</h4>
-<li>
-<div class="codebigbox">
-<pre>
-	#
-	# Arroyo Quests
-	#
-	{100}{}{Kill the evil plants that infest Hakunin's garden.}
-	{110}{}{Obtain flint to have Mynoc sharpen your spear.}
-	{120}{}{Rescue Nagor's dog, Smoke, from the wilds.}
-	{130}{}{Retrieve the GECK for Arroyo.}
-	{140}{}{Find Vic the Trader.}
-	[...]
-</pre>
-</div>
-</li>
-		<p>This file contains every quest description.</p>
-		<p>Everything after <code class="codeinline">#</code> is a comment.</p>
-		<p><code class="codeinline">100</code> is the quests linenumber.</p>
-		<p>The text behind is the quests description.</p>
+			<code>
+				<div>#</div>
+				<div># Arroyo Quests</div>
+				<div>#</div>
+				<div>{100}{}{Kill the evil plants that infest Hakunin's garden.}</div>
+				<div>{110}{}{Obtain flint to have Mynoc sharpen your spear.}</div>
+				<div>{120}{}{Rescue Nagor's dog, Smoke, from the wilds.}</div>
+				<div>{130}{}{Retrieve the GECK for Arroyo.}</div>
+				<div>{140}{}{Find Vic the Trader.}</div>
+				<div>[...]</div>
+			</code>
+			<p>This file contains every quest description.</p>
+			<p>Everything after <code class="codeinline">#</code> is a comment.</p>
+			<p><code class="codeinline">100</code> is the quests linenumber.</p>
+			<p>The text behind is the quests description.</p>
 	<hr>
 
 	<div id="MakeTrader"><h3>Make trader</h3></div>
@@ -1792,334 +1780,304 @@
 			<p>To use this box, you must put the following line in the map script after the procedure list at the start: </p>
 			<code>export variable generic_temp_box;</code>
 			<p>Each trader will also need a variable for their store box such as these listed in the Den's map script for the various traders. </p>
-<li>
-<div class="codebigbox">
-<pre>
-	export variable den_flick_box_obj;
-	export variable den_smitty_box_obj;
-	export variable den_mom_box_obj;
-	export variable den_metzger_box_obj;
-	export variable den_tubby_box_obj;
-</pre>
-</div>
-</li>
+			<code>
+				<div>export variable den_flick_box_obj;</div>
+				<div>export variable den_smitty_box_obj;</div>
+				<div>export variable den_mom_box_obj;</div>
+				<div>export variable den_metzger_box_obj;</div>
+				<div>export variable den_tubby_box_obj;</div>
+			</code>
 			<p>For the sake of this tutorial we'll be using Tubby in the den as our example. </p>	
 			<p>In the traders script you need to import the variables for the temporary box and the store boxes. Add the following lines after the <code class="codeinline">#defines</code> but before the <code class="codeinline">procedures</code>. </p>
-<li>
-<div class="codebigbox">
-<pre>
-	import variable den_tubby_box_obj;
-	import variable generic_temp_box;
-</pre>
-</div>
-</li>
+			<code>
+				<div>import variable den_tubby_box_obj;</div>
+				<div>import variable generic_temp_box;</div>	
+			</code>
 			<p>This brings in pointers to the temporary box and Tubby's store box to this script. </p>
 			<p>To actually swap the contents of the traders inventory with the store inventory, you use the following <code class="codeinline">2</code> lines (modified with the right variable name for the traders box of course).</p>
-<li>
-<div class="codebigbox">
-<pre>
-	move_obj_inven_to_obj(self_obj,generic_temp_box);
-	move_obj_inven_to_obj(den_tubby_box_obj,self_obj);
-</pre>
-</div>
-</li>
+			<code>
+				<div>move_obj_inven_to_obj(self_obj,generic_temp_box);</div>
+				<div>move_obj_inven_to_obj(den_tubby_box_obj,self_obj);</div>
+			</code>
 			<p>This (in order) moves the traders personal inventory to the temporary box, and then moves the store box inventory to the trader. 
 				This is usually initiated as a conversation node, but can be done as soon as you talk to him before the nodes start! 
 				Next, once trading is complete and you say goodbye, the contents are swapped back by reversing the sequence like so:</p>
-<li>
-<div class="codebigbox">
-<pre>
-	move_obj_inven_to_obj(self_obj,den_tubby_box_obj);
-	move_obj_inven_to_obj(generic_temp_box,self_obj);
-</pre>
-</div>
-</li>
+			<code>
+				<div>move_obj_inven_to_obj(self_obj,den_tubby_box_obj);</div>
+				<div>move_obj_inven_to_obj(generic_temp_box,self_obj);</div>
+			</code>
 			<p>This (in order) moves Tubbys inventory (which is his store inventory at this point) back to the stores box, and the contents of the temp box (Tubbys personal inventory) back to Tubby. </p>
 			<p>Swapping back is usually done as part of the exit nodes of a conversation (there may be more than one exit node such as "Thanks, bye", 
 				where you walk away a happy customer, and "Screw you, you ripped me off" for example where he would end the conversation and start combat.) </p>
 			<p>This deals with the traders script and it would work at that, but the stores stock would be limited to whatever you put in the store box and/or sold to the trader and once depleted would not re-stock. 
 				For this you need a script on the store box to replenish the stock over time. </p>
+		<hr class="dashedline">
 
 		<div id="StoreRestock"><h4>Store restock</h4></div>
-			<p>Here is Tubbys store box for example on re-stocking over time: </p>
-<li>
-<div class="codebigbox">
-<pre>
-	/* Include Files */
-	#include "..\headers\define.h"
-
-	#define NAME                    SCRIPT_DITUBBOX
-
-	#include "..\headers\command.h"
-
-	#define LVAR_RESTOCK_TIME                       (0)
-
-	import variable den_tubby_box_obj;
-
-	procedure start;
-	procedure map_enter_p_proc;
-
-	procedure start begin
-	end
-
-	procedure map_enter_p_proc begin
-		if (is_loading_game == false) then begin
-			if (local_var(LVAR_RESTOCK_TIME) < game_time) then begin
-				item_caps_adjust(self_obj, random(151, 161) - self_caps);
-				check_restock_item(PID_JET, 5, 10, 100)
-				check_restock_item(PID_PSYCHO, 0, 2, 100)
-				check_restock_item(PID_BUFFOUT, 0, 1, 100)
-				check_restock_item(PID_10MM_PISTOL, 1, 2, 100)
-				check_restock_item(PID_10MM_JHP, 2, 4, 100)
-				check_restock_item(PID_10MM_AP, 0, 2, 100)
-				check_restock_item(PID_BRASS_KNUCKLES, 1, 1, 100)
-				check_restock_item(PID_LEATHER_JACKET, 1, 1, 100)
-				check_restock_item(PID_STIMPAK, 2, 5, 100)
-				check_restock_item(PID_10MM_SMG, 0, 1, 100)
-				check_restock_item(PID_DESERT_EAGLE, 1, 2, 100)
-				check_restock_item(PID_SLEDGEHAMMER, 0, 1, 100)
-				check_restock_item(PID_RADAWAY, 0, 3, 100)
-				set_local_var(LVAR_RESTOCK_TIME, (random(1, 2) * ONE_GAME_DAY) + game_time);
-			end
-		end
-	end
-</pre>
-</div>
-</li>
+			<p>Here is Tubbys store box for example on re-stocking over time:</p>
+			<code>
+				<div>/* Include Files */</div>
+				<div>#include "..\headers\define.h"</div>
+				<br>
+				<span>#define</span> NAME<div style="text-indent: 9.4em; display: inline-block;">SCRIPT_DITUBBOX</div>
+				<br>
+				<br>
+				<div>#include "..\headers\command.h"</div>
+				<br>
+				<span>#define</span> LVAR_RESTOCK_TIME<div style="text-indent: 9.4em; display: inline-block;">(0)</div>
+				<br>
+				<br>
+				<div>import variable den_tubby_box_obj;</div>
+				<br>
+				<div>procedure start;</div>
+				<div>procedure map_enter_p_proc;</div>
+				<br>
+				<div>procedure start begin</div>
+				<div>end</div>
+				<br>
+				<div>procedure map_enter_p_proc begin</div>
+				<div style="text-indent: 4.5em;">if (is_loading_game == false) then begin</div>
+				<div style="text-indent: 9em;">if (local_var(LVAR_RESTOCK_TIME) < game_time) then begin</div>
+				<div style="text-indent: 13.5em;">item_caps_adjust(self_obj, random(151, 161) - self_caps);</div>
+				<div style="text-indent: 13.5em;">check_restock_item(PID_JET, 5, 10, 100)</div>
+				<div style="text-indent: 13.5em;">check_restock_item(PID_PSYCHO, 0, 2, 100)</div>
+				<div style="text-indent: 13.5em;">check_restock_item(PID_BUFFOUT, 0, 1, 100)</div>
+				<div style="text-indent: 13.5em;">check_restock_item(PID_10MM_PISTOL, 1, 2, 100)</div>
+				<div style="text-indent: 13.5em;">check_restock_item(PID_10MM_JHP, 2, 4, 100)</div>
+				<div style="text-indent: 13.5em;">check_restock_item(PID_10MM_AP, 0, 2, 100)</div>
+				<div style="text-indent: 13.5em;">check_restock_item(PID_BRASS_KNUCKLES, 1, 1, 100)</div>
+				<div style="text-indent: 13.5em;">check_restock_item(PID_LEATHER_JACKET, 1, 1, 100)</div>
+				<div style="text-indent: 13.5em;">check_restock_item(PID_STIMPAK, 2, 5, 100)</div>
+				<div style="text-indent: 13.5em;">check_restock_item(PID_10MM_SMG, 0, 1, 100)</div>
+				<div style="text-indent: 13.5em;">check_restock_item(PID_DESERT_EAGLE, 1, 2, 100)</div>
+				<div style="text-indent: 13.5em;">check_restock_item(PID_SLEDGEHAMMER, 0, 1, 100)</div>
+				<div style="text-indent: 13.5em;">check_restock_item(PID_RADAWAY, 0, 3, 100)</div>
+				<div style="text-indent: 13.5em;">set_local_var(LVAR_RESTOCK_TIME, (random(1, 2) * ONE_GAME_DAY) + game_time);</div>
+				<div style="text-indent: 9em;">end</div>
+				<div style="text-indent: 4.5em;">end</div>
+				<div>end</div>
+			</code>
 		<br>
 			<p>The <code class="codeinline">map_enter_p_proc;</code> gets called every time you enter the map.</p>
-<code>procedure map_enter_p_proc begin</code>
+			<code>procedure map_enter_p_proc begin</code>
 		<br>
 			<p>It's been checked if you're loading a savefile. If yes skip entire procedure. If no proceed with next step.</p>
-<code>if (is_loading_game == false) then begin</code>
+			<code>if (is_loading_game == false) then begin</code>
 		<br>
 			<p>It's been checked if the local variable <code class="codeinline">LVAR_RESTOCK_TIME</code> is smaller than the game time. In this case <code class="codeinline">LVAR_RESTOCK_TIME = 0</code>. Proceed with next step.</p>
-<code>if (local_var(LVAR_RESTOCK_TIME) < game_time) then begin</code>
+			<code>if (local_var(LVAR_RESTOCK_TIME) < game_time) then begin</code>
 		<br>
 			<p>A random amount of caps will be added to the store box(between <code class="codeinline">151</code> and <code class="codeinline">161</code> inclusive). The chosen random amount of caps will be subtracted from the already contained caps inside the store box.</p>
-<code>item_caps_adjust(self_obj, random(151, 161) - self_caps);</code>
+			<code>item_caps_adjust(self_obj, random(151, 161) - self_caps);</code>
 		<br>
 			<p>Different items will be added to the store box. E.g. <code class="codeinline">PID_JET</code> is the proto ID for Jet (the drug); <code class="codeinline">5</code> is minimum amount; <code class="codeinline">10</code> maxmimum amount and <code class="codeinline">100</code> is the percentage probability of the item to restock.</p>
-<li>
-<div class="codebigbox">
-<pre>
-	check_restock_item(PID_JET, 5, 10, 100)
-	check_restock_item(PID_PSYCHO, 0, 2, 100)
-	check_restock_item(PID_BUFFOUT, 0, 1, 100)
-	check_restock_item(PID_10MM_PISTOL, 1, 2, 100)
-	check_restock_item(PID_10MM_JHP, 2, 4, 100)
-	check_restock_item(PID_10MM_AP, 0, 2, 100)
-	check_restock_item(PID_BRASS_KNUCKLES, 1, 1, 100)
-	check_restock_item(PID_LEATHER_JACKET, 1, 1, 100)
-	check_restock_item(PID_STIMPAK, 2, 5, 100)
-	check_restock_item(PID_10MM_SMG, 0, 1, 100)
-	check_restock_item(PID_DESERT_EAGLE, 1, 2, 100)
-	check_restock_item(PID_SLEDGEHAMMER, 0, 1, 100)
-	check_restock_item(PID_RADAWAY, 0, 3, 100)
-</pre>
-</div>
-</li>
+			<code>
+				<div>check_restock_item(PID_JET, 5, 10, 100)</div>
+				<div>check_restock_item(PID_PSYCHO, 0, 2, 100)</div>
+				<div>check_restock_item(PID_BUFFOUT, 0, 1, 100)</div>
+				<div>check_restock_item(PID_10MM_PISTOL, 1, 2, 100)</div>
+				<div>check_restock_item(PID_10MM_JHP, 2, 4, 100)</div>
+				<div>check_restock_item(PID_10MM_AP, 0, 2, 100)</div>
+				<div>check_restock_item(PID_BRASS_KNUCKLES, 1, 1, 100)</div>
+				<div>check_restock_item(PID_LEATHER_JACKET, 1, 1, 100)</div>
+				<div>check_restock_item(PID_STIMPAK, 2, 5, 100)</div>
+				<div>check_restock_item(PID_10MM_SMG, 0, 1, 100)</div>
+				<div>check_restock_item(PID_DESERT_EAGLE, 1, 2, 100)</div>
+				<div>check_restock_item(PID_SLEDGEHAMMER, 0, 1, 100)</div>
+				<div>check_restock_item(PID_RADAWAY, 0, 3, 100)</div>
+			</code>
 		<br>
-			<p>After it has finished restocking, it sets the local variable <code class="codeinline">LVAR_RESTOCK_TIME</code>. A random number between <code class="codeinline">1</code> and <code class="codeinline">2</code> inclusive is taken. It multiplies the random number with one game day
-				and adds the result with the elapsed game time.</p>
-<li>
-<div class="codebigbox">
-<pre>
-	set_local_var(LVAR_RESTOCK_TIME, (random(1, 2) * ONE_GAME_DAY) + game_time);
-
-	ONE_GAME_SECOND             (10)			// 10 ticks = 1 second
-	ONE_GAME_MINUTE             (60*ONE_GAME_SECOND)
-	ONE_GAME_HOUR               (60*ONE_GAME_MINUTE)
-	ONE_GAME_DAY                (24*ONE_GAME_HOUR)
-	ONE_GAME_WEEK               (7*ONE_GAME_DAY)
-	ONE_GAME_MONTH              (30*ONE_GAME_DAY)
-</pre>
-</div>
-</li>
+			<p>After it has finished restocking, it sets the local variable <code class="codeinline">LVAR_RESTOCK_TIME</code>. A random number between <code class="codeinline">1</code> and <code class="codeinline">2</code> inclusive is taken. It multiplies the random number with one game day and adds the result with the elapsed game time.</p>
+			<code>
+				<div>set_local_var(LVAR_RESTOCK_TIME, (random(1, 2) * ONE_GAME_DAY) + game_time);</div>
+				<br>
+				<div>ONE_GAME_SECOND<div style="text-indent: 8em; display: inline-block;">(10)</div><div style="text-indent: 12em; display: inline-block;">// 10 ticks = 1 second</div></div>
+				<div>ONE_GAME_MINUTE<div style="text-indent: 8em; display: inline-block;">(60*ONE_GAME_SECOND)</div></div>
+				<div>ONE_GAME_HOUR<div style="text-indent: 9.1em; display: inline-block;">(60*ONE_GAME_MINUTE)</div></div>
+				<div>ONE_GAME_DAY<div style="text-indent: 9.6em; display: inline-block;">(24*ONE_GAME_HOUR)</div></div>
+				<div>ONE_GAME_WEEK <div style="text-indent: 8.5em; display: inline-block;">(7*ONE_GAME_DAY)</div></div>
+				<div>ONE_GAME_MONTH<div style="text-indent: 8.5em; display: inline-block;">(30*ONE_GAME_DAY)</div></div>
+			</code>
 			<p>This makes it re-stock every time you come back if it's been more than <code class="codeinline">1</code> or <code class="codeinline">2</code> days (depending on the random roll).</p>
-			<h5>Notice</h5>
+			<hr class="dottedline">
+			<h5>Note</h5>
 			<p>The critter you want to be a trader must have the proto flag <code class="codeinline">Barter = YES</code> otherwise you will face bugs.</p>
 			<p>If you want to test your trading scripts you must test them inside game. The <code class="codeinline">F8</code> mode won't execute the inventory swap.</p>	
-<hr>
-<hr>
+	<hr>
+	<hr>
 
-<div id="complex"><h2>Scripting (Complex)</h2></div>
+	<div id="complex"><h2>Scripting (Complex)</h2></div>
 		<h3>Fix the well for Feargus - Arroyo</h3>
 			<img src="images\Scripting (Complex)\FO2_Arroyo_Feargus.jpg" alt="FO2 Arroyo Feargus">
-			<p>At the center of the Arroyo village there is a well, and Feargus, the Chosen One's nephew, is standing next to it, 
-				whining because it is broken. Simply Repair the well. Even with a negative Repair skill, it can still be fixed.</p>
+			<p>At the center of the Arroyo village there is a well, and Feargus, the Chosen One's nephew, is standing next to it, whining because it is broken. Simply Repair the well. Even with a negative Repair skill, it can still be fixed.</p>
 			<p>This procedure is executed when the player uses the repair skill on the well. After using the skill, a message appears, and the player is rewarded with experience points.</p>
-<li>
-<div class="codebigbox">
-<pre>
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span>
-		<span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>)) <span class="dyestatement">then begin</span>
-			<span class="dyefunction">script_overrides</span>;
-			<span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));
-			<span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL);
-			<span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,</span><span class="dyedefine">1</span>);
-			<span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,</span><span class="dyedefine">1</span>);
-		<span class="dyestatement">end</span>
-	<span class="dyestatement">end</span>
-</pre>
-</div>
-</li>
-			<h4>How does this work in detail? Lets break it down.</h4> 
-				<p>The procedures <code class="codeinline">use_skill_on_p_proc;</code> is called.</p>
-<li>
-<div class="codebigbox">
-<pre>
-	<span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span>
-	<span class="dyestatement">end</span>
-</pre>
-</div>
-</li>
-				<p>The first function <code class="codeinline">action_being_used</code> checks if the repair skill, written as <code class="codeinline">SKILL_REPAIR</code>, is used on the well. 
-					The second one <code class="codeinline">local_var</code> checks if the local variable <code class="codeinline">LVAR_Gave_Xp</code> is equal <code class="codeinline">0</code>. 
-					If both conditions match the following code is executed, else the procedure ends without anything been done.</p>
-				<code><span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>)) <span class="dyestatement">then begin</span></code>
-				<p>For certain procedures in the game there are default functions that are called when nothing is written inside these procedures. 
-					To prevent these default functions to happen when something is indeed written inside the procedures the function <code class="codeinline">script_overrides</code> is used.</p>
-				<code><span class="dyefunction">script_overrides</span>;</code>
-				<p>Show message line <code class="codeinline">1005</code> of file <code class="codeinline">GENERIC.msg</code>.</p>
-				<p>The function <code class="codeinline">display_msg</code> invokes the functionality to display a message. The function <code class="codeinline">message_str</code> has two arguments in this case. 
-					<code class="codeinline">SCRIPT_GENERIC</code> is the message file (<code class="codeinline">.msg</code>) that contains all lines of text that should be used for generic purposes. 
-					This file is actually named <code class="codeinline">GENERIC.msg</code> and is located at <code class="codeinline">\text\english\dialog\GENERIC.msg</code>. <code class="codeinline">100</code> and <code class="codeinline">101</code> are the lines which are contained inside the file <code class="codeinline">GENERIC.msg</code>.</p>
-				<code><span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));</code>
-				<p>Inside <code class="codeinline">EXPPOINT.H</code> you’ll find the definition of the macro <code class="codeinline">give_xp(x)</code>.</p>
-<li>
-<div class="codebigbox">
-<pre>
-	<span class="dyedefine">#define</span> <span class="dyedevelopermacro"">give_xp</span>(x)    <span class="dyefunction">give_exp_points</span>(x);
-	<span class="indent278px" class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">100</span>)+x+<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">101</span>))
-</pre>
-</div>
-</li>
-				<p>You can also define the amount of given exp points in the file <code class="codeinline">EXPPOINT.H</code>. In this example it’s <code class="codeinline">EXP_FIX_WELL</code>. <code class="codeinline">100</code> means <code class="codeinline">100</code> exp points given.</p>
-				<code><span class="dyedefine">#define</span> EXP_FIX_WELL &emsp; &emsp; &emsp; (<span class="dyedefine">100</span>)</code>
-				<p>As you can see in the file <code class="codeinline">ASWELL.SSL</code> the macro <code class="codeinline">give_xp</code> is used with the defined argument <code class="codeinline">EXP_FIX_WELL</code>. 
-					So, if you want to change the amount of exp points given. You just can change the defined argument in the file <code class="codeinline">EXPPOINT.H</code>.</p>
+			<code>
+				<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span></div>
+				<div style="text-indent: 4.5em;"><span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>)) <span class="dyestatement">then begin</span></div>
+				<div style="text-indent: 9em;"><span class="dyefunction">script_overrides</span>;</div>
+				<div style="text-indent: 9em;"><span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));</div>
+				<div style="text-indent: 9em;"><span class="dyedevelopermacro">give_xp</span>(EXP_FIX_WELL);</div>
+				<div style="text-indent: 9em;"><span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,</span><span class="dyedefine">1</span>);</div>
+				<div style="text-indent: 9em;"><span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,</span><span class="dyedefine">1</span>);</div>
+				<div style="text-indent: 4.5em;"><span class="dyestatement">end</span></div>
+				<div><span class="dyestatement">end</span></div>
+			</code>
+		<br>
+		<hr class="dottedline">
+		<h4>How does this work in detail? Lets break it down.</h4> 
+			<p>The procedures <code class="codeinline">use_skill_on_p_proc;</code> is called.</p>
+			<code>
+				<div><span class="dyestatement">procedure</span> <span class="dyeprocedure">use_skill_on_p_proc</span> <span class="dyestatement">begin</span></div>
+				<div><span class="dyestatement">end</span></div>
+			</code>
+			<br>
+			<p>The first function <code class="codeinline">action_being_used</code> checks if the repair skill, written as <code class="codeinline">SKILL_REPAIR</code>, is used on the well. The second one <code class="codeinline">local_var</code> checks if the local variable <code class="codeinline">LVAR_Gave_Xp</code> is equal <code class="codeinline">0</code>. If both conditions match the following code is executed, else the procedure ends without anything been done.</p>
+			<code><span class="dyestatement">if</span> ((<span class="dyefunction">action_being_used</span> <span class="dyeoperator">==</span> <span class="dyehardcoded">SKILL_REPAIR</span>) <span class="dyestatement">and</span> (<span class="dyefunction">local_var</span>(LVAR_Gave_Xp) <span class="dyeoperator">==</span> <span class="dyedefine">0</span>)) <span class="dyestatement">then begin</span></code>
+			<br>
+			<p>For certain procedures in the game there are default functions that are called when nothing is written inside these procedures. To prevent these default functions to happen when something is indeed written inside the procedures the function <code class="codeinline">script_overrides</code> is used.</p>
+			<code><span class="dyefunction">script_overrides</span>;</code>
+			<br>
+			<p>Show message line <code class="codeinline">1005</code> of file <code class="codeinline">GENERIC.msg</code>.</p>
+			<p>The function <code class="codeinline">display_msg</code> invokes the functionality to display a message. The function <code class="codeinline">message_str</code> has two arguments in this case. 
+			<code class="codeinline">SCRIPT_GENERIC</code> is the message file (<code class="codeinline">.msg</code>) that contains all lines of text that should be used for generic purposes. This file is actually named <code class="codeinline">GENERIC.msg</code> and is located at <code class="codeinline">\text\english\dialog\GENERIC.msg</code>. <code class="codeinline">100</code> and <code class="codeinline">101</code> are the lines which are contained inside the file <code class="codeinline">GENERIC.msg</code>.</p>
+			<code><span class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">1005</span>));</code>
+			<br>
+			<p>Inside <code class="codeinline">EXPPOINT.H</code> you’ll find the definition of the macro <code class="codeinline">give_xp(x)</code>.</p>
+			<code>
+				<div><span class="dyedefine">#define</span> <span class="dyedevelopermacro"">give_xp</span>(x)    <span class="dyefunction">give_exp_points</span>(x);</div>
+				<div><span class="indent278px" class="dyefunction">display_msg</span>(<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">100</span>)+x+<span class="dyefunction">message_str</span>(SCRIPT_GENERIC,<span class="dyedefine">101</span>))</div>
+			</code>
+			<br>
+			<p>You can also define the amount of given exp points in the file <code class="codeinline">EXPPOINT.H</code>. In this example it’s <code class="codeinline">EXP_FIX_WELL</code>. <code class="codeinline">100</code> means <code class="codeinline">100</code> exp points given.</p>
+			<code><span class="dyedefine">#define</span> EXP_FIX_WELL &emsp; &emsp; &emsp; (<span class="dyedefine">100</span>)</code>
+			<br>
+			<p>As you can see in the file <code class="codeinline">ASWELL.SSL</code> the macro <code class="codeinline">give_xp</code> is used with the defined argument <code class="codeinline">EXP_FIX_WELL</code>. 
+				So, if you want to change the amount of exp points given. You just can change the defined argument in the file <code class="codeinline">EXPPOINT.H</code>.</p>
+			<br>
 				<p>This <code class="codeinline">give_xp(x)</code> gives a certain amount of experience points to the player and displays a message to the player so he is informed how many exp points he received.</p>
-				<code><span class="dyedevelopermacro"">give_xp</span>(EXP_FIX_WELL);</code>
-				<p>The function <code class="codeinline">set_map_var</code> sets the map variable <code class="codeinline">MVAR_Fixed_Well</code> to <code class="codeinline">1</code>. The game remembers that the well has been fixed even if you change the map. 
-					So, it’s not possible to trick the game and invoking this quest again.</p>
-				<code><span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,</span><span class="dyedefine">1</span>);</code>
-				<p>The map variable <code class="codeinline">MVAR_Fixed_Well</code> is located in the <code class="codeinline">ARVILLAG.H</code> file inside the header folder.</p>
-				<code><span class="dyedefine">#define</span> MVAR_Fixed_Well</span> &emsp; &emsp; (<span class="dyedefine">4</span>)</code>
-				<p>The <code class="codeinline">set_local_var</code> function sets the local variable <code class="codeinline">LVAR_Gave_Xp</code> to <code class="codeinline">1</code>.
-					So, if the player tries to invoke the procedure <code class="codeinline">use_skill_on_p_proc</code> again on the well, nothing happens.</p>
-<code><span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,</span><span class="dyedefine">1</span>);</code>
-<br>
-<hr>
-
+			<code><span class="dyedevelopermacro"">give_xp</span>(EXP_FIX_WELL);</code>
+			<br>
+			<p>The function <code class="codeinline">set_map_var</code> sets the map variable <code class="codeinline">MVAR_Fixed_Well</code> to <code class="codeinline">1</code>. The game remembers that the well has been fixed even if you change the map. 
+				So, it’s not possible to trick the game and invoking this quest again.</p>
+			<code><span class="dyefunction">set_map_var</span>(MVAR_Fixed_Well,</span><span class="dyedefine">1</span>);</code>
+			<br>
+			<p>The map variable <code class="codeinline">MVAR_Fixed_Well</code> is located in the <code class="codeinline">ARVILLAG.H</code> file inside the header folder.</p>
+			<code><span class="dyedefine">#define</span> MVAR_Fixed_Well</span> &emsp; &emsp; (<span class="dyedefine">4</span>)</code>
+			<br>
+			<p>The <code class="codeinline">set_local_var</code> function sets the local variable <code class="codeinline">LVAR_Gave_Xp</code> to <code class="codeinline">1</code>.
+				So, if the player tries to invoke the procedure <code class="codeinline">use_skill_on_p_proc</code> again on the well, nothing happens.</p>
+			<code><span class="dyefunction">set_local_var</span>(LVAR_Gave_Xp,</span><span class="dyedefine">1</span>);</code>
+		<br>
+		<hr>
 		<h3>Critters walk around</h3>
-		<img src="" alt="">
-		<p>You've probably seen critters of different kind walking around in random directions. Well based on a Brahmin in Arroyo I'll explain how this works.</p>
-		<p>Inside ACBRAHMN.SSL on line 51 to 61 you'll find these code snippets.</p>
-<li>
-<div class="codebigbox">
-<pre>
-	procedure timed_event_p_proc begin
-		if (((critter_state(self_obj) bwand DAM_KNOCKED_DOWN) == FALSE)
-			and (not(combat_is_initialized))) then begin
-			reg_anim_clear(self_obj);
-			reg_anim_begin();
-				animate_move_to_tile(tile_num_in_direction(tile_num(self_obj),random(0,5),3));
-			reg_anim_end();
-		end
-		add_timer_event(self_obj,game_ticks(random(3,5)),1);
-	end
-</pre>
-</div>
-</li>
-		<br>
-		<p>And on line 125 to 130 this.</p>
-<li>
-<div class="codebigbox">
-<pre>
-	procedure map_enter_p_proc begin
-		[...]
-		add_timer_event(self_obj,game_ticks(random(1,5)),1);
-	end
-</pre>
-</div>
-</li>
-		<br>
-		<p>So when the player enters the map the following procedure will be executed.</p>
-<code>procedure map_enter_p_proc</code>
-		<p>And with it the following function.</p>
-<code>add_timer_event(self_obj,game_ticks(random(1,5)),1);</code>
-		<p>add_timer_event adds a timed event to the script queue. That means if add_timer_event is called it'll execute code inside the procedure timed_event_p_proc.</p>
-		<p>In this case add_timer_event will be executed on self_obj (brahmin) every 1 to 5 (every number in between included) seconds.</p>
-		<p>Now it jumps into the procedure timed_event_p_proc and continues code execution here.</p>
-<li>
-<div class="codebigbox">
-<pre>
-	if (((critter_state(self_obj) bwand DAM_KNOCKED_DOWN) == FALSE)
-	and (not(combat_is_initialized))) then begin
-</pre>
-</div>
-</li>
-		<p>The first line looks if the critters is knocked down. The second line looks if the critter is inside a combat situation.</p>
-		<p>Let's assume the brahmin isn't knocked down and no combat is initialized. Then the following is executed.</p>
-<li>
-<div class="codebigbox">
-<pre>
-		reg_anim_clear(self_obj);
-		reg_anim_begin();
-			animate_move_to_tile(tile_num_in_direction(tile_num(self_obj),random(0,5),3));
-		reg_anim_end();
-	end
-</pre>
-</div>
-</li>
-		<p>First line clears all momentarily executed animations of the brahmin.</p>
-		<p>The second line initiates the beginning of an animation.</p> 
-		<p>The third line does the actual animation. It says that an animation to a tile should be executed to a random direction beginning at 0 going to 5 (remember the directions inside the BIS mapper?) 
-			and a distance of 3.</p>
-		<p>And the fourth line terminates the execution of the animation.</p>
-		<p>Next line is known from before. The add_timer_event. Now it'll be executed not every 1 to 5 seconds, instead it will be executed every 3 to 5 (4 included)
-			seconds and repeats the code inside timed_event_p_proc.</p>
-		<p>Now assume the Brahming is knocked down or inside a fight, the animation won't be executed and the code jumps directly to the add_timer_event inside timed_event_p_proc.</p>
+			<p>You've probably seen critters of different kind walking around in random directions. Well based on a Brahmin in Arroyo I'll explain how this works.</p>
+			<p>Inside ACBRAHMN.SSL on line 51 to 61 you'll find these code snippets.</p>
+			<code>
+				<div>procedure timed_event_p_proc begin</div>
+				<div style="text-indent: 4.5em;">if (((critter_state(self_obj) bwand DAM_KNOCKED_DOWN) == FALSE)</div>
+				<div style="text-indent: 9em;">and (not(combat_is_initialized))) then begin</div>
+				<div style="text-indent: 9em;">reg_anim_clear(self_obj);</div>
+				<div style="text-indent: 9em;">reg_anim_begin();</div>
+				<div style="text-indent: 13.5em;">animate_move_to_tile(tile_num_in_direction(tile_num(self_obj),random(0,5),3));</div>
+				<div style="text-indent: 9em;">reg_anim_end();</div>
+				<div style="text-indent: 4.5em;">end</div>
+				<div style="text-indent: 4.5em;">add_timer_event(self_obj,game_ticks(random(3,5)),1);</div>
+				<div>end</div>
+			</code>
+			<br>
+			<p>And on line 125 to 130 this.</p>
+			<code>
+				<div>procedure map_enter_p_proc begin</div>
+				<div style="text-indent: 4.5em;">[...]</div>
+				<div style="text-indent: 4.5em;">add_timer_event(self_obj,game_ticks(random(1,5)),1);</div>
+				<div>end</div>
+			</code>
+			<br>
+			<p>So when the player enters the map the following procedure will be executed.</p>
+			<code>procedure map_enter_p_proc</code>
+			<br>
+			<p>And with it the following function.</p>
+			<code>add_timer_event(self_obj,game_ticks(random(1,5)),1);</code>
+			<br>
+			<p>add_timer_event adds a timed event to the script queue. That means if add_timer_event is called it'll execute code inside the procedure timed_event_p_proc.</p>
+			<p>In this case add_timer_event will be executed on self_obj (brahmin) every 1 to 5 (every number in between included) seconds.</p>
+			<p>Now it jumps into the procedure timed_event_p_proc and continues code execution here.</p>
+			<code>
+				<div>if (((critter_state(self_obj) bwand DAM_KNOCKED_DOWN) == FALSE)</div>
+				<div>and (not(combat_is_initialized))) then begin</div>
+			</code>
+			<br>
+			<p>The first line looks if the critters is knocked down. The second line looks if the critter is inside a combat situation.</p>
+			<p>Let's assume the brahmin isn't knocked down and no combat is initialized. Then the following is executed.</p>
+			<code>
+				<div style="text-indent: 4.5em;">reg_anim_clear(self_obj);</div>
+				<div style="text-indent: 4.5em;">reg_anim_begin();</div>
+				<div style="text-indent: 9em;">animate_move_to_tile(tile_num_in_direction(tile_num(self_obj),random(0,5),3));</div>
+				<div style="text-indent: 4.5em;">reg_anim_end();</div>
+				<div>end</div>
+			</code>
+			<p>First line clears all momentarily executed animations of the brahmin.</p>
+			<p>The second line initiates the beginning of an animation.</p> 
+			<p>The third line does the actual animation. It says that an animation to a tile should be executed to a random direction beginning at 0 going to 5 (remember the directions inside the BIS mapper?) 
+				and a distance of 3.</p>
+			<p>And the fourth line terminates the execution of the animation.</p>
+			<p>Next line is known from before. The add_timer_event. Now it'll be executed not every 1 to 5 seconds, instead it will be executed every 3 to 5 (4 included)
+				seconds and repeats the code inside timed_event_p_proc.</p>
+			<p>Now assume the Brahming is knocked down or inside a fight, the animation won't be executed and the code jumps directly to the add_timer_event inside timed_event_p_proc.</p>
+	<hr>
+	<hr>
 
-<br>
-<hr>
-<hr>
-
-<div id="Make_DAT_file"><h2>Make your own DAT-file</h2></div>
+	<div id="Make_DAT_file"><h2>Make your own DAT-file</h2></div>
 		<p>If you're finished with creating the files and directories you need for your mod, you can bundle them into one single file, the DAT-file.</p>
 		<p>To do this we open the DATExplorer2.exe</p>
 		<p>Hit "New" and a dropdown menu will appear. Choose "DAT: Fallout 2".</p>
 		<img src="images\Make_DAT_file\2022-11-11 21_48_16-Unbenannt - Paint.png" alt="">
+		<br>
+		<br>
 		<p>A new window will appear that asks you in which directory to save the new DAT-file. Choose a location.</p>
 		<img src="images\Make_DAT_file\2022-11-11 21_53_40-Speichern unter.png" alt="">
+		<br>
+		<br>
 		<p>Insert a name for your new DAT-file. Call it whatever you want and hit "Save".</p>
 		<img src="images\Make_DAT_file\2022-11-11 21_51_34-Speichern unter.png" alt="">
 		<p>A new DAT-file with the given name will appear in the chosen directory and inside DATExplorer2.</p>
 		<img src="images\Make_DAT_file\2022-11-11 21_53_58-DAT Explorer II - v1.1.0.0 - by Mr.Stalin.png" alt="">
+		<br>
+		<br>
 		<p>Mark all directories you want to be part of the new DAT-file and drag and drop them on empty space anywhere on the right side inside DATExplorer2.</p>
 		<img src="images\Make_DAT_file\2022-11-11 21_54_38-Q-Dir 11.13.png" alt="">
+		<br>
+		<br>
 		<p>After the upload is complete, you'll see your directories building a directory-hierachy under your newly created DAT-file.</p>
 		<img src="images\Make_DAT_file\2022-11-11 21_55_35-DAT Explorer II - v1.1.0.0 - by Mr.Stalin.png" alt="">
+		<br>
+		<br>
 		<p>When you're finished with filling your DAT-file, hit "Save" and confirm with "yes".</p>
 		<img src="images\Make_DAT_file\2022-11-11 21_57_26-DAT Explorer II - v1.1.0.0 - by Mr.Stalin.png" alt="">
+		<br>
+		<br>
 		<p>A banner will appear in the middle of the DATExplorer2 window, saying: "Wait for saving the DAT file...".</p>
 		<img src="images\Make_DAT_file\2022-11-11 21_57_45-.png" alt="">
+		<br>
+		<br>
 		<p>On the bottom of the application a progress bar will appear showing what file is being packed.</p>	
 		<img src="images\Make_DAT_file\2022-11-11 21_58_20-DAT Explorer II - v1.1.0.0 - by Mr.Stalin.png" alt="">
 		<p>After the message is disappeared you can check if your DAT-file has been created corretly by simply unpacking it again.</p>
-<br>
-<hr>
+	<hr>
 
-<div id="Make_Installer"><h2>Make your own installer</h2></div>
+	<div id="Make_Installer"><h2>Make your own installer</h2></div>
 		<p>Now it's the time you've got everything that makes a mod. But to make life easier for everyone who wants to play your mod, 
 			you simply can create an installer that handels almost everything.</p>
 		<p>Let's start by creating a .zip file by marking all the files you want to by inside your mod-folder, right-click and zip it.</p>
 		<img src="images\Make_Installer\2022-11-16 21_31_43-Unbenannt - Paint.png" alt="">
 		<img src="images\Make_Installer\2022-11-16 21_32_45-Q-Dir 11.13.png" alt="">
+		<br>
+		<br>
 		<p>Download and install the application called NSIS. You can get it <a href="https://nsis.sourceforge.io/Download">here</a>.</p>
 		<p>Execute the app and hit "Installer based on .ZIP file".</p>
 		<img src="images\Make_Installer\2022-11-16 21_34_22-Q-Dir 11.13.png" alt="">
+		<br>
+		<br>
 		<p>Under "Source ZIP file" hit "Open..." and choose the .zip-file of your mod.</p>
 		<img src="images\Make_Installer\2022-11-16 21_34_56-Zip2Exe 0.38.png" alt="">
 		<p>After you've loaded the .zip-file you'll see near "Extracted" the total amount of the conatained files inside the .zip-file and the size.</p>
@@ -2131,262 +2089,244 @@
 		<p>"Output EXE File" is where your installer will be located after generating it and the name of the installer.</p>
 		<p>And last but not least "Compression". Default settings are ok.</p>
 		<p>After you're done, hit "Generate".</p>
+		<br>
 		<p>A new window appears and shows the generation process.</p>
 		<img src="images\Make_Installer\2022-11-16 21_35_36-Zip2Exe 0.38.png" alt="">
+		<br>
+		<br>
 		<p>The process takes a while.</p>
 		<img src="images\Make_Installer\2022-11-16 21_38_44-Zip2Exe 0.38.png" alt="">
 		<p>The process is done. You can close the window now.</p>
+		<br>
 		<p>Your installer is created. You can use and distribute it now.</p>
 		<img src="images\Make_Installer\2022-11-17 19_59_55-Window.png" alt="">
-<br>
-<hr>
-
-<div id="sFall"><h2>Scripting (sFall) (Optional)</h2></div>
-	<a href="https://sfall.bgforge.net/">sFall scripting guide</a>
-<br>
-<br>
-<hr>
-
-<div id="art"><h2>Art (Optional)</h2></div>
-<br>
-
-	<div id="talkhead"><h3>Talking Heads</h3></div>
 	<br>
+	<hr>
 
-		<h4>Preparations</h4>
-			<p>Make sure you have these programs:</p>
-<li>
-<div class="codebigbox">
-<pre>
-	♥Adobe Photoshop or Gimp (preferably the former),
-	♥Fallout Frame Animator,
-	♥SFall Script Editor.
-</pre>
-</div>
-</li>
+	<div id="sFall"><h2>Scripting (sFall) (Optional)</h2></div>
+		<a href="https://sfall.bgforge.net/">sFall scripting guide</a>
+	<br>
+	<br>
+	<hr>
+
+	<div id="art"><h2>Art (Optional)</h2></div>
+		<div id="talkhead"><h3>Talking Heads</h3></div>
+			<h4>Preparations</h4>
+				<p>Make sure you have these programs:</p>
+				<code>
+					<div>♥Adobe Photoshop or Gimp (preferably the former),</div>
+					<div>♥Fallout Frame Animator,</div>
+					<div>♥SFall Script Editor.</div>
+				</code>
+	<br>
+	<hr class="dottedline">
+	<h4>Animation Basics</h4>
+		<p>Every talking head has 3 moods:</p>
+		<code>
+			<div>♥Bad,</div>
+			<div>♥Neutral and</div>
+			<div>♥Good.</div>
+		</code>
+		<p>Each one of them must have at least 1 idle animation (most vanilla heads have 3) and 1 speaking animation otherwise the game won't function properly. If you downloaded the Vic images, you'll notice that there's a folder for each mood with 3 idle/fidget and speaking animations each.</p>
+		<p>The folder structure can look like this:</p>
+		<code>
+			<div>Bad</div>
+			<div>|</div>
+			<div>|->Fidget1</div>
+			<div style="text-indent: 4.5em;">|->1.png</div>
+			<div style="text-indent: 4.5em;">|->2.png</div>
+			<div>|</div>
+			<div>|->Fidget2</div>
+			<div style="text-indent: 4.5em;">|->1.png</div>
+			<div style="text-indent: 4.5em;">|->2.png</div>
+			<div style="text-indent: 4.5em;">|->3.png</div>
+			<div style="text-indent: 4.5em;">|->4.png</div>
+			<div style="text-indent: 4.5em;">|->5.png</div>
+			<div style="text-indent: 4.5em;">|->6.png</div>
+			<div style="text-indent: 4.5em;">|->7.png</div>
+			<div style="text-indent: 4.5em;">|->8.png</div>
+			<div>|</div>
+			<div>|->Fidget3</div>
+			<div style="text-indent: 4.5em;">|->1.png</div>
+			<div style="text-indent: 4.5em;">|->2.png</div>
+			<div style="text-indent: 4.5em;">|->3.png</div>
+			<div style="text-indent: 4.5em;">|->4.png</div>
+			<div style="text-indent: 4.5em;">|->5.png</div>
+			<div style="text-indent: 4.5em;">|->6.png</div>
+			<div style="text-indent: 4.5em;">|->7.png</div>
+			<div>|</div>
+			<div>|->Talk</div>
+			<div style="text-indent: 4.5em;">|->1.png</div>
+			<div style="text-indent: 4.5em;">|->2.png</div>
+			<div style="text-indent: 4.5em;">|->3.png</div>
+			<div style="text-indent: 4.5em;">|->4.png</div>
+			<div style="text-indent: 4.5em;">|->5.png</div>
+			<div style="text-indent: 4.5em;">|->6.png</div>
+			<div style="text-indent: 4.5em;">|->7.png</div>
+			<div style="text-indent: 4.5em;">|->8.png</div>
+			<div style="text-indent: 4.5em;">|->9.png</div>
+			<br>
+			<div>Good</div>
+			<div>|</div>
+			<div>|->Fidget1</div>
+			<div style="text-indent: 4.5em;">|->1.png</div>
+			<div style="text-indent: 4.5em;">|->2.png</div>
+			<div style="text-indent: 4.5em;">|->3.png</div>
+			<div style="text-indent: 4.5em;">|->4.png</div>
+			<div>|</div>
+			<div>|->Fidget2</div>
+			<div style="text-indent: 4.5em;">|->1.png</div>
+			<div style="text-indent: 4.5em;">|->2.png</div>
+			<div style="text-indent: 4.5em;">|->3.png</div>
+			<div style="text-indent: 4.5em;">|->4.png</div>
+			<div style="text-indent: 4.5em;">|->5.png</div>
+			<div style="text-indent: 4.5em;">|->6.png</div>
+			<div style="text-indent: 4.5em;">|->7.png</div>
+			<div style="text-indent: 4.5em;">|->8.png</div>
+			<div style="text-indent: 4.5em;">|->9.png</div>
+			<div>|</div>
+			<div>|->Fidget3</div>
+			<div style="text-indent: 4.5em;">|->1.png</div>
+			<div style="text-indent: 4.5em;">|->2.png</div>
+			<div style="text-indent: 4.5em;">|->3.png</div>
+			<div style="text-indent: 4.5em;">|->4.png</div>
+			<div style="text-indent: 4.5em;">|->5.png</div>
+			<div style="text-indent: 4.5em;">|->6.png</div>
+			<div style="text-indent: 4.5em;">|->7.png</div>
+			<div>|</div>
+			<div>|->Talk</div>
+			<div style="text-indent: 4.5em;">|->1.png</div>
+			<div style="text-indent: 4.5em;">|->2.png</div>
+			<div style="text-indent: 4.5em;">|->3.png</div>
+			<div style="text-indent: 4.5em;">|->4.png</div>
+			<div style="text-indent: 4.5em;">|->5.png</div>
+			<div style="text-indent: 4.5em;">|->6.png</div>
+			<div style="text-indent: 4.5em;">|->7.png</div>
+			<div style="text-indent: 4.5em;">|->8.png</div>
+			<div style="text-indent: 4.5em;">|->9.png</div>
+			<br>
+			<div>Neutral</div>
+			<div>|</div>
+			<div>|->Fidget1</div>
+			<div style="text-indent: 4.5em;">|->1.png</div>
+			<div style="text-indent: 4.5em;">|->2.png</div>
+			<div style="text-indent: 4.5em;">|->3.png</div>
+			<div style="text-indent: 4.5em;">|->4.png</div>
+			<div>|</div>
+			<div>|->Fidget2</div>
+			<div style="text-indent: 4.5em;">|->1.png</div>
+			<div style="text-indent: 4.5em;">|->2.png</div>
+			<div style="text-indent: 4.5em;">|->3.png</div>
+			<div style="text-indent: 4.5em;">|->4.png</div>
+			<div style="text-indent: 4.5em;">|->5.png</div>
+			<div style="text-indent: 4.5em;">|->6.png</div>
+			<div style="text-indent: 4.5em;">|->7.png</div>
+			<div style="text-indent: 4.5em;">|->8.png</div>
+			<div style="text-indent: 4.5em;">|->9.png</div>
+			<div style="text-indent: 4.5em;">|->10.png</div>
+			<div style="text-indent: 4.5em;">|->11.png</div>
+			<div style="text-indent: 4.5em;">|->12.png</div>
+			<div style="text-indent: 4.5em;">|->13.png</div>
+			<div style="text-indent: 4.5em;">|->14.png</div>
+			<div style="text-indent: 4.5em;">|->15.png</div>
+			<div>|</div>
+			<div>|->Fidget3</div>
+			<div style="text-indent: 4.5em;">|->1.png</div>
+			<div style="text-indent: 4.5em;">|->2.png</div>
+			<div style="text-indent: 4.5em;">|->3.png</div>
+			<div style="text-indent: 4.5em;">|->4.png</div>
+			<div style="text-indent: 4.5em;">|->5.png</div>
+			<div style="text-indent: 4.5em;">|->6.png</div>
+			<div style="text-indent: 4.5em;">|->7.png</div>
+			<div style="text-indent: 4.5em;">|->8.png</div>
+			<div>|</div>
+			<div>|->Talk</div>
+			<div style="text-indent: 4.5em;">|->1.png</div>
+			<div style="text-indent: 4.5em;">|->2.png</div>
+			<div style="text-indent: 4.5em;">|->3.png</div>
+			<div style="text-indent: 4.5em;">|->4.png</div>
+			<div style="text-indent: 4.5em;">|->5.png</div>
+			<div style="text-indent: 4.5em;">|->6.png</div>
+			<div style="text-indent: 4.5em;">|->7.png</div>
+			<div style="text-indent: 4.5em;">|->8.png</div>
+			<div style="text-indent: 4.5em;">|->9.png</div>
+			<div>|</div>
+			<div>|->Transitions</div>
+			<div style="text-indent: 4.5em;">|</div>
+			<div style="text-indent: 4.5em;">|->Neutral-Bad</div>
+			<div style="text-indent: 9em;">|->1.png</div>
+			<div style="text-indent: 9em;">|->2.png</div>
+			<div style="text-indent: 9em;">|->3.png</div>
+			<div style="text-indent: 9em;">|->4.png</div>
+			<div style="text-indent: 9em;">|->5.png</div>
+			<div style="text-indent: 4.5em;">|</div>
+			<div style="text-indent: 4.5em;">|->Neutral-Good</div>
+			<div style="text-indent: 9em;">|->1.png</div>
+			<div style="text-indent: 9em;">|->2.png</div>
+			<div style="text-indent: 9em;">|->3.png</div>
+			<div style="text-indent: 9em;">|->4.png</div>
+			<div style="text-indent: 9em;">|->5.png</div>
+		</code>
+	<br>
+	<hr class="dottedline">
+	<h4>Converting images to proper format</h4>
+		<p>First off open your first series of images (in this case the folder "Neutral\Fidget1").</p>
+		<img src="images\TalkingHeads\Photoshop picture 1.png" alt="Photoshop picture 1.">
 		<br>
-
-		<h4>Animation Basics</h4>
-			<p>Every talking head has 3 moods:</p>
-<li>
-<div class="codebigbox">
-<pre>
-	♥Bad,
-	♥Neutral and
-	♥Good.
-</pre>
-</div>
-</li>
-			<p>Each one of them must have at least 1 idle animation (most vanilla heads have 3) and 1 speaking animation otherwise the game won't function properly. 
-				If you downloaded the Vic images, you'll notice that there's a folder for each mood with 3 idle/fidget and speaking animations each.</p>
-			<p>The folder structure can look like this:</p>
-<li>
-<div class="codebigbox">
-<pre>
-	Bad
-	|
-	|->Fidget1
-		|->1.png
-		|->2.png 
-	|
-	|->Fidget2
-		|->1.png
-		|->2.png
-		|->3.png
-		|->4.png   
-		|->5.png
-		|->6.png   
-		|->7.png
-		|->8.png  
-	|
-	|->Fidget3
-		|->1.png
-		|->2.png
-		|->3.png
-		|->4.png   
-		|->5.png
-		|->6.png   
-		|->7.png
-	|
-	|->Talk
-		|->1.png
-		|->2.png
-		|->3.png
-		|->4.png   
-		|->5.png
-		|->6.png   
-		|->7.png
-		|->8.png
-		|->9.png
-
-	Good
-	|
-	|->Fidget1
-		|->1.png
-		|->2.png  
-		|->3.png
-		|->4.png
-	|
-	|->Fidget2
-		|->1.png
-		|->2.png
-		|->3.png
-		|->4.png   
-		|->5.png
-		|->6.png   
-		|->7.png
-		|->8.png  
-		|->9.png
-	|
-	|->Fidget3
-		|->1.png
-		|->2.png
-		|->3.png
-		|->4.png   
-		|->5.png
-		|->6.png   
-		|->7.png
-	|
-	|->Talk
-		|->1.png
-		|->2.png
-		|->3.png
-		|->4.png   
-		|->5.png
-		|->6.png   
-		|->7.png
-		|->8.png
-		|->9.png
-
-	Neutral
-	|
-	|->Fidget1
-		|->1.png
-		|->2.png  
-		|->3.png
-		|->4.png
-	|
-	|->Fidget2
-		|->1.png
-		|->2.png
-		|->3.png
-		|->4.png   
-		|->5.png
-		|->6.png   
-		|->7.png
-		|->8.png  
-		|->9.png
-		|->10.png   
-		|->11.png
-		|->12.png   
-		|->13.png
-		|->14.png  
-		|->15.png
-	|
-	|->Fidget3
-		|->1.png
-		|->2.png
-		|->3.png
-		|->4.png   
-		|->5.png
-		|->6.png   
-		|->7.png
-		|->8.png
-	|
-	|->Talk
-		|->1.png
-		|->2.png
-		|->3.png
-		|->4.png   
-		|->5.png
-		|->6.png   
-		|->7.png
-		|->8.png
-		|->9.png
-	|
-	|->Transitions
-		|->Neutral - Bad
-			|->1.png
-			|->2.png
-			|->3.png
-			|->4.png   
-			|->5.png
-		|
-		|->Neutral - Good
-			|->1.png
-			|->2.png
-			|->3.png
-			|->4.png   
-			|->5.png
-</pre>
-</div>
-</li>
-			<br>
-
-		<h4>Converting images to proper format</h4>
-			<p>First off open your first series of images (in this case the folder "Neutral\Fidget1").</p>
-			<img src="images\TalkingHeads\Photoshop picture 1.png" alt="Photoshop picture 1.">
-			<br>
-			<br>
-			<p>Select all layers and change the image size to 356 x 200.</p>
-			<img src="images\TalkingHeads\Photoshop picture 2.png" alt="Photoshop picture 2.">
-			<br>
-			<br>
-			<p>Go to Image -> Mode -> Indexed Color and select Custom Palette.</p>
-			<img src="images\TalkingHeads\Photoshop picture 3.png" alt="Photoshop picture 3.">
-			<br>
-			<br>
-			<p>Open the Fallout Frame Animator folder and select the Fallout.act file (I've also uploaded the palette in this message).</p>
-			<img src="images\TalkingHeads\Photoshop picture 4.png" alt="Photoshop picture 4.">
-			<br>
-			<br>
-			<p>Save the image as an 8bit BMP this is the image format the Fallout 2 engine uses.</p>
-			<p>Do the same process for all the images.</p>
-			<br>
-			<h5>Tips</h5>
-			<p>* Make sure you use a uniform color as the background for your images (the transparent part of PNG images turn white which is ideal) as the program to create FRMs (which we will see in the next step) 
-				will cut the background color, for this reason try not have that same one on the character of the program will cut sections of the it that uses the same color.</p>    
-			<p>* Use shortcut keys to make the workflow faster on Photoshop you can go to Edit -> Keyboard Shortcuts to make your own.</p>    
-			<p>* You don't have to use Photoshop, Gimp is a good free alternative. </p>    
 		<br>
-
+		<p>Select all layers and change the image size to 356 x 200.</p>
+		<img src="images\TalkingHeads\Photoshop picture 2.png" alt="Photoshop picture 2.">
+		<br>
+		<br>
+		<p>Go to Image -> Mode -> Indexed Color and select Custom Palette.</p>
+		<img src="images\TalkingHeads\Photoshop picture 3.png" alt="Photoshop picture 3.">
+		<br>
+		<br>
+		<p>Open the Fallout Frame Animator folder and select the Fallout.act file (I've also uploaded the palette in this message).</p>
+		<img src="images\TalkingHeads\Photoshop picture 4.png" alt="Photoshop picture 4.">
+		<br>
+		<br>
+		<p>Save the image as an 8bit BMP this is the image format the Fallout 2 engine uses.</p>
+		<p>Do the same process for all the images.</p>
+		<hr class="dottedline">
+		<h5>Note</h5>
+		<p>* Make sure you use a uniform color as the background for your images (the transparent part of PNG images turn white which is ideal) as the program to create FRMs (which we will see in the next step) 
+			will cut the background color, for this reason try not have that same one on the character of the program will cut sections of the it that uses the same color.</p>    
+		<p>* Use shortcut keys to make the workflow faster on Photoshop you can go to Edit -> Keyboard Shortcuts to make your own.</p>    
+		<p>* You don't have to use Photoshop, Gimp is a good free alternative. </p>    
+		<hr class="dottedline">
 		<h4>How the animations work</h4>
 			<p>Before creating our animation files (FRMs) I'll try to explain how the talking head animations work.</p>
-			<p>Every talking head file (.frm) has main name that must be 5 letters or less, for this tutorial we will use the word "Vic".
-				You then add the relevant suffix to the name for each animation, they are as follows:</p>
-<li>
-<div class="codebigbox">
-<pre>
-	B = Bad mood
-	G = Good Mood
-	N = Neutral Mood
-	f1 = Fidget 1 (Character blinking)
-	f2 = Fidget 2 (Character nodding)
-	f3 = Fidget 3 (Character shaking head)
-	(B,G,N)P = Character talking.
-	BN,NB,GN,NG = Mood transition from (B,G,N) to (B,G,N)
-</pre>
-</div>
-</li>
+			<p>Every talking head file (.frm) has main name that must be 5 letters or less, for this tutorial we will use the word "Vic". You then add the relevant suffix to the name for each animation, they are as follows:</p>
+			<code>
+				<div>B = Bad mood</div>
+				<div>G = Good Mood</div>
+				<div>N = Neutral Mood</div>
+				<div>f1 = Fidget 1 (Character blinking)</div>
+				<div>f2 = Fidget 2 (Character nodding)</div>
+				<div>f3 = Fidget 3 (Character shaking head)</div>
+				<div>(B,G,N)P = Character talking.</div>
+				<div>BN,NB,GN,NG = Mood transition from (B,G,N) to (B,G,N)</div>
+			</code>
 		<br>
-
-			<h5>Examples</h5>
-				<p>If you want to create an animation for Vic where he is blinking and in a neutral mood you must name it:</p>
-<code>VicNf1</code>
-				<p>Vic (the characters name) + N (the mood he is in) + f1 (Fidget 1).</p>
+		<hr class="dottedline">
+		<h5>Examples</h5>
+			<p>If you want to create an animation for Vic where he is blinking and in a neutral mood you must name it:</p>
+			<code>VicNf1</code>
+			<p>Vic (the characters name) + N (the mood he is in) + f1 (Fidget 1).</p>
 			<br>
-				<p>If you want to create an animation where Vic is speaking in a bad mood you must name it:</p>
-<code>VicBP</code>
-				<p>Vic (the character name) + B (the mood he is in) + P (Talk).</p>
+			<p>If you want to create an animation where Vic is speaking in a bad mood you must name it:</p>
+			<code>VicBP</code>
+			<p>Vic (the character name) + B (the mood he is in) + P (Talk).</p>
 			<br>
-				<p>If you want to an animation where Vic transitions from good to neutral mood you must name it:</p>
-<code>VicGN</code>
-				<p>Vic (the character name) + GN ( Good to Neutral).</p>
-				<p>Hopefully this isn't too confusing.</p>
-			<br>
-
+			<p>If you want to an animation where Vic transitions from good to neutral mood you must name it:</p>
+			<code>VicGN</code>
+			<p>Vic (the character name) + GN ( Good to Neutral).</p>
+			<p>Hopefully this isn't too confusing.</p>
+		<br>
+		<hr class="dottedline">
 			<p>I'll show you what each animation looks like.</p>
-			<p>Neutral mood:</p>
+			<h5>Neutral mood:</h5>
 			<p>Nf1 (Neutral Fidget 1).</p>
 			<img src="images\TalkingHeads\nf1.gif" alt="Vic neutral fidget 1.">
 			<p>Nf2 (Neutral Fidget 2).</p>
@@ -2397,8 +2337,8 @@
 			<img src="images\TalkingHeads\np.gif" alt="Vic neutral talk.">
 		<br>
 		<br>
-		<br>
-			<p>Bad mood:</p>
+		<hr class="dottedline">
+			<h5>Bad mood:</h5>
 			<p>Bf1 (Bad Fidget 1).</p>
 			<img src="images\TalkingHeads\bf1.gif" alt="Vic bad fidget 1.">
 			<p>Bf2 (Bad Fidget 2).</p>
@@ -2409,8 +2349,8 @@
 			<img src="images\TalkingHeads\bp.gif" alt="Vic bad talk.">
 		<br>
 		<br>
-		<br>
-			<p>Good mood:</p>
+		<hr class="dottedline">
+			<h5>Good mood:</h5>
 			<p>Gf1 (Good Fidget 1).</p>
 			<img src="images\TalkingHeads\gf1.gif" alt="Vic good fidget 1.">
 			<p>Gf2 (Good Fidget 2).</p>
@@ -2421,8 +2361,8 @@
 			<img src="images\TalkingHeads\gp.gif" alt="Vic good talk.">
 		<br>
 		<br>
-		<br>
-			<p>Mood Transitions:</p>
+		<hr class="dottedline">
+			<h5>Mood Transitions:</h5>
 			<p>NB (Neutral to Bad)</p>
 			<img src="images\TalkingHeads\nb.gif" alt="NB (Neutral to Bad).">
 			<p>BN (Bad to Neutral).</p>
@@ -2433,8 +2373,7 @@
 			<img src="images\TalkingHeads\gn.gif" alt="GN (Good to Neutral).">
 		<br>
 		<br>
-		<br>
-
+		<hr class="dottedline">
 		<h4>Creating FRMs</h4>
 			<p>After converting our images to 8bit BMPs we can open the Fallout Frame Animator Program and click Add Frames (Ctrl + A).</p>
 			<img src="images\TalkingHeads\Creating FRMs 1.png" alt="">
@@ -2453,78 +2392,68 @@
 			<br>
 			<br>
 			<p>Create all the remaining FRMs, this is what the complete set will look like:</p>
-<li>
-<div class="codebigbox">
-<pre>
-	VicBf1.frm
-	VicBf2.frm
-	VicBf3.frm
-	VicBN.frm
-	VicBP.frm
-	VicGf1.frm
-	VicGf2.frm
-	VicGf3.frm
-	VicGN.frm
-	VicGP.frm
-	VicNB.frm
-	VicNf1.frm
-	VicNf2.frm
-	VicNf3.frm
-	VicNG.frm
-	VicNP.frm 
-</pre>
-</div>
-</li>
+			<code>
+				<div>VicBf1.frm</div>
+				<div>VicBf2.frm</div>
+				<div>VicBf3.frm</div>
+				<div>VicBN.frm</div>
+				<div>VicBP.frm</div>
+				<div>VicGf1.frm</div>
+				<div>VicGf2.frm</div>
+				<div>VicGf3.frm</div>
+				<div>VicGN.frm</div>
+				<div>VicGP.frm</div>
+				<div>VicNB.frm</div>
+				<div>VicNf1.frm</div>
+				<div>VicNf2.frm</div>
+				<div>VicNf3.frm</div>
+				<div>VicNG.frm</div>
+				<div>VicNP.frm </div>
+			</code>
 		<br>
-		
+		<hr class="dottedline">
 		<h4>Talking Animations</h4>
 			<p>All talking animations (NP,GP,BP) must have 9 frames, each one representing a different viseme (the shape the mouth makes when saying a letter).</p>
 			<img src="images\TalkingHeads\Creating FRMs 5.png" alt="">
+			<br>
+			<br>
 			<p>I'm not 100% sure of the exact order but I think it is:</p>
-<li>
-<div class="codebigbox">
-<pre>
-	1 - Closed (In between frame)
-	2 - A
-	3 - E
-	4 - I
-	5 - F
-	6 - L
-	7 - M
-	8 - O
-	9 - U
-</pre>
-</div>
-</li>
+			<code>
+				<div>1 - Closed (In between frame)</div>
+				<div>2 - A</div>
+				<div>3 - E</div>
+				<div>4 - I</div>
+				<div>5 - F</div>
+				<div>6 - L</div>
+				<div>7 - M</div>
+				<div>8 - O</div>
+				<div>9 - U</div>
+			</code>
 		<br>
-
-			<h5>Animation Tips</h5>
-				<p>* The bare minimum amount of animations for a Talking Head to be functional is this:</p>
-<li>
-<div class="codebigbox">
-<pre>
-	[name]Nf1,
-	[name]NP,
-	[name]NG,
-	[name]NB,
-	[name]Bf1,
-	[name]BN,
-	[name]BP
-	[name]Gf1
-	[name]GN
-	[name]GP
-</pre>
-</div>
-</li>
-				<p>* If use want to make a static image as a Talking Head instead of an animated one, simply make a FRM of each animation (mentioned in the previous tip) with that single image. </p>
-				<p>* Try to make the animations loop so in game the Heads will look fluid, make sure the last frame links to the first one.</p>
-				<p>* The first frame of Nf1,Bf1 and Gf1 (specially Nf1) is arguably the most important as the Head freezes on it before randomly choosing one of the Fidgets (f1,f2,f3), so make sure it looks cool! </p>
+		<hr class="dottedline">
+		<h5>Animation Tips</h5>
+			<p>* The bare minimum amount of animations for a Talking Head to be functional is this:</p>
+			<code>
+				<div>[name]Nf1,</div>
+				<div>[name]NP,</div>
+				<div>[name]NG,</div>
+				<div>[name]NB,</div>
+				<div>[name]Bf1,</div>
+				<div>[name]BN,</div>
+				<div>[name]BP</div>
+				<div>[name]Gf1</div>
+				<div>[name]GN</div>
+				<div>[name]GP</div>
+			</code>
+			<p>* If use want to make a static image as a Talking Head instead of an animated one, simply make a FRM of each animation (mentioned in the previous tip) with that single image. </p>
+			<p>* Try to make the animations loop so in game the Heads will look fluid, make sure the last frame links to the first one.</p>
+			<p>* The first frame of Nf1,Bf1 and Gf1 (specially Nf1) is arguably the most important as the Head freezes on it before randomly choosing one of the Fidgets (f1,f2,f3), so make sure it looks cool! </p>
 		<br>
-
+		<hr class="dottedline">
 		<h4>Adding our head into the game</h4>
 			<p>For this section we will need the Sfall Script editor and "Dat Explorer" by Dims.</p>
 		<br>
-
+		<hr class="dottedline">
 		<h4>Creating a Patch</h3>
 			<p>Go into your main Fallout 2 directory and create a folder called "patch001.dat" 
 				(if you already have a "patch001" folder or .dat file name it "patch002"), open it and create two new folder named "art" and "scripts" respectively.</p>
@@ -2563,7 +2492,7 @@
 				To open Fallout 2 script files (.int) you can use various programs, to most common is Sfall Script Editor.</p>
 			<p>Find the line starting with "start_gdialog" (use CTRL + F to find code with ease).
 				If it has no talking head assigned to it, it will look like this (the first number will be different):</p>
-<code>start_gdialog(1364, self_obj, 4, -1, -1);</code>
+			<code>start_gdialog(1364, self_obj, 4, -1, -1);</code>
 			<p>* The first number (1364) represent's the characters script number, you don't need to change that.
 			<br>
 			* "self_obj" makes it so that the code is referring to the object it's assigned to, you also don't need to change this.
@@ -2583,13 +2512,15 @@
 				* "backgrnd.lst" is very similar as it lists all the backgrounds in the game.
 			<br>
 			&nbsp;	For example "junktown.frm" is in the 8th row so, since we also start counting from 0, it's background number is "7".</p>
+			<br>
 			<p>Using both "head.lst" and "backgrnd.lst" as a reference change the "start_gdialog" line as follows:</p>
-<code>start_gdialog(1364, self_obj, 4, [talking head number], [background number]);</code>
+			<code>start_gdialog(1364, self_obj, 4, [talking head number], [background number]);</code>
 			<p>* The [talking head number] for the one we are adding would be it's number in "head.lst", for example if you modified the vanilla list the number would likely be "13".
 			<br>
 			* You can choose anything you want as a background, for example use "3" if you want The Hub backdrop.</p>
+			<br>
 			<p>Using these examples the code would look like this:</p>
-<code>start_gdialog(1364, self_obj, 4, 13, 3);</code>
+			<code>start_gdialog(1364, self_obj, 4, 13, 3);</code>
 			<p>* There may be more than one "start_gdialog" line so make sure you change all of them.</p>
 			<br>
 			<p>Compile the script and you are done!</p>
@@ -3137,6 +3068,7 @@
 		<p><a href="https://falloutmods.fandom.com/wiki/Floors_and_walls">Floors and walls (Author: ColJack)</a></p>
 		<p><a href="https://falloutmods.fandom.com/wiki/Adding_maps">Adding maps (Author: ColJack)</a></p>
 		<p><a href="https://falloutmods.fandom.com/wiki/Ladders_and_stairs">Ladders and stairs (Author: ColJack)</a></p>
-</div>
+		<br>
+	</div>
 </body>
 </html>
