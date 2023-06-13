@@ -1,6 +1,5 @@
 html {
 	scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 header {
@@ -16,6 +15,10 @@ body {
 }
 
 /*********************************************************************************************************************/
+
+p {
+  line-height: 1.6;
+}
 
 li {
   list-style-type: none;
