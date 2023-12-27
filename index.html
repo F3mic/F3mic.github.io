@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fallout2 Modding Guide</title>
+    <title>Fallout 2 Modding Guide</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,7 +15,7 @@
 			<li><a href="index.html#intro">Introduction</a></li>
 			<li><a href="index.html#prep">Preparations</a></li>
 			<ol>
-				<li><a href="index.html#Fallout2_Installation">Installation - Fallout2</a></li>
+				<li><a href="index.html#Fallout2_Installation">Installation - Fallout 2</a></li>
 				<li><a href="index.html#Fallout2_.dat_files">File handling - .dat files</a></li>
 				<li><a href="index.html#Tools_Data_Exploring">Tools - .dat Extractor</a></li>
 				<li><a href="index.html#Extracting_.dat_files">Extracting - .dat files</a></li>
@@ -91,9 +91,6 @@
 			<li><a href="index.html#art">Art (Optional)</a></li>
 			<ol>
 				<li><a href="index.html#talkhead">Talking Heads</a></li>
-			<!--<li><a href="index.html#tiles">Make new tiles</a></li>
-				<li><a href="index.html#walls">Make new walls</a></li>
-				<li><a href="index.html#fot">FOT Critters In FO2</a></li>-->
 			</ol>
 			<li><a href="index.html#addendum">Addendum</a></li>
 			<li><a href="index.html#source">Sources</a></li>
@@ -102,13 +99,14 @@
 
 	<div class="item-main">
 		<header>
-			<h1>Fallout2 Modding Guide</h1>
+			<h1>Fallout 2 modding guide</h1>
 			<br>
 			<p>Written by Femic et al.</p>
+			<h1 style="color: red;"><b>This guide is still work in progress!</b></h1>
 			<img src="images\Header\Please_stand_by_Fallout.jpg" alt="Please stand by">
 			<p><em>Shot a child in the face after he pickpocketed me. Turned the whole town hostile. Ran away to New Reno. Became a Pornstar.
 			<br>
-			Fallout2 in a nutshell.
+			Fallout 2 in a nutshell.
 			<br>		
 			11/10</em></p>--Rat Prik (Steam review)
 		</header>
@@ -129,13 +127,13 @@
 	<hr>
 			
 	<div id="prep"><h2>Preparations</h2></div>
-		<div id="Fallout2_Installation"><h3>Installation - Fallout2</h3></div>
+		<div id="Fallout2_Installation"><h3>Installation - Fallout 2</h3></div>
 			<p>I think I don't need to explain how to install Fallout 2. If you don't know how to install it, just ask someone of the community. It doesn't matter where you bought Fallout 2 you can just use any version for modding. However, I'd recommend to have an English Fallout 2 installation.</p> 
 			<p>So please go on and do a freshly installation of Fallout 2 in English.</p>
-			<p>My fresh installation of Fallout2 looks like this...</p>
+			<p>My fresh installation of Fallout 2 looks like this...</p>
 			<code>C:\Program Files (x86)\GOG Galaxy\Games\Fallout2</code>
 			<p>After the installation is done, create a copy of the FO2 folder and paste it somewhere else.</p>
-			<p>My backup of Fallout2 looks like this...</p>
+			<p>My backup of Fallout 2 looks like this...</p>
 			<code>E:\Fallout2</code>
 			<p>Now that we have a backup of our newly installed FO2 we can happily mod our backuped FO2 installation without being afraid of breaking something. And if we break something we can steal if from our original FO2 installation :P</p>
 		<hr>
@@ -193,7 +191,7 @@
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/vCPc1gxPtKk?start=438" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		<hr class="dottedline">
 		<h5>Note</h5>
-		<p>Why the extracted files go into <code class="codeinline">...\Fallout2\data</code> instead of the Fallout2 root directory?</p>
+		<p>Why the extracted files go into <code class="codeinline">...\Fallout2\data</code> instead of the Fallout 2 root directory?</p>
 		<p>The engine is actually built to read the data files from <code class="codeinline">...\Fallout2\data</code> first (Well, that's how fallout2.cfg sets it by default...) and failing that, will read the <code class="codeinline">...\Fallout2\</code> root directory.</p>
 		<p>Of course, this causes problems since you put the extracted files in <code class="codeinline">...\Fallout2\data</code>, Fallout2 likes to delete most if not all the files inside <code class="codeinline">...\Fallout2\data\proto</code>, so you need to make them read-only. Yet if you want to be able to edit them, they should NOT be read-only... Quite a pain in the ass huh?</p>
 		<p>There hasn't been found any clever workarounds...The danger in putting the extracted files in the root instead of in <code class="codeinline">...\Fallout2\data</code> is that I think the original .dat files would actually have priority over them. While the extracted files in <code class="codeinline">...\Fallout2\data</code> have priority over the .dat files.</p>
@@ -213,7 +211,7 @@
 		<p>Mine looks like this...</p>
 		<pre><code>E:\dev\Tools\BIS mapper patched (+complementary ressources)</code></pre>
 		<img src="images\Preparations\ToolsScripting\2022-04-21 08_08_31-BIS mapper patched (+complementary ressources).png" alt="">
-		<p>Inside the BIS Mappers folder you'll find decompiled (human readable) scripts from Fallout2. </p>
+		<p>Inside the BIS Mappers folder you'll find decompiled (human readable) scripts from Fallout 2. </p>
 		<code>E:\dev\Tools\BIS mapper patched (+complementary ressources)\BIS mapper\scripts</code>
 		<p>Copy everything inside the <code class="codeinline">scripts</code> folder to the <code class="codeinline">data</code> folder you created and pasted recently into the FO2 backup directory.</p>
 		<pre><code>E:\Fallout2\data\decompiled</code></pre>
@@ -293,7 +291,7 @@
 	<hr>
 
 	<div id="mapping"><h2>Mapping</h2></div>
-		<p>In this chapter we will learn what mapping for Fallout2 actually is and how it works.</p>
+		<p>In this chapter we will learn what mapping for Fallout 2 actually is and how it works.</p>
 		<div id="BIS_Mapper_explained"><h3>BIS Mapper explained</h3></div>
 			<p>The BIS mapper is the primary tool you will use for mapping. It has everything you need. Lets dive into it.</p>
 			<div id="BIS_GUI"><h4>Graphical interface</h4></div>
@@ -550,7 +548,7 @@
 			<p>Bookmarks deserve a special entry: they are saved right beside the map in the same name as the maps but with the <code class="codeinline">.cfg</code> extention when you save your game. When loading the map it will automatically load the bookmarks. If none exist, the mapper will keep the current bookmark set in memory for any new map and use it.This means that if you edited a map and are rather happy with your bookmarks, you can first load that map to read the bookmarks and then load the map you wish to edit. If the bookmarks aren't working then it's most probably because you've already toyed with the map and the <code class="codeinline">.cfg</code> already exists and is thus read (with no bookmarks set); as such you should probably delete it's <code class="codeinline">.cfg</code> file to import your favorite bookmarks.</p>
 			<hr class="dottedline">
 			<h5>Recording mode</h5>
-			<p>In the games main menu hit <code class="codeinline">Ctrl-R</code>. This will ask you to load a map and then select a name (for the recording). You've now started a recording and to exit you'll need to hit <code class="codeinline">Ctrl-R</code> again. Once recorded, Fallout2 will play the recording every other time instead of the main movie. If there's more then one recording it'll iterate through each of them (as well as the main movie). You can also use this trick to load the map you wish and play it in the real game by saving the game, quitting the recording and loading your recently saved game.</p>
+			<p>In the games main menu hit <code class="codeinline">Ctrl-R</code>. This will ask you to load a map and then select a name (for the recording). You've now started a recording and to exit you'll need to hit <code class="codeinline">Ctrl-R</code> again. Once recorded, Fallout 2 will play the recording every other time instead of the main movie. If there's more then one recording it'll iterate through each of them (as well as the main movie). You can also use this trick to load the map you wish and play it in the real game by saving the game, quitting the recording and loading your recently saved game.</p>
 			<hr class="dottedline">
 			<h5>Debug Mode</h5>
 			<p>The mapper, like the game, can be run in debug mode. Unlike the game, the mapper doesn't need to be hacked to access it. All you need is to set the <code class="codeinline">DEBUGACTIVE</code> environment variable to <code class="codeinline">GNW</code> (For a debug right on the screen) or <code class="codeinline">LOG</code> to create the file <code class="codeinline">debug.log</code> in your Fallout2 directory.</p>
