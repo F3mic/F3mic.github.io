@@ -1699,6 +1699,62 @@
 			<hr class="dottedline">
 			<h5>Note</h5>
 			<p>* Message files do always have the suffix <code class="codeinline">.MSG</code>. For example <code class="codeinline">ACKLINT.MSG</code>.</p>
+		<hr class="dottedline">
+		<h4>Float message aka floater</h4>	
+			<p>You've probably already seen messages hovering over the heads of critters while playing Fallout classic.</p>
+			<p>Like this one:</p>
+			<img src="images/Dialog/floater.jpg" alt="">
+			<p>Thats called float message or floater.</p>
+			<p>Floaters are easy to implenet as ssl code. They are mostly used as macros.</p>
+			<p>You probably often see something like this:</p>
+			<code>floater(random(102,107));</code> 
+			<p>or</p>
+			<code>floater_rand(x,y)</code>
+			<p>If you break these macros further down you will end up here.</p>
+			<code>#define floater(x) &emsp; &emsp; &emsp; &emsp; float_msg(self_obj, message_str(NAME,x), FLOAT_COLOR_NORMAL)</code>
+			<br>
+			<code class="codeinline">float_msg</code> is the original form of the floater, which cannot be broken down any further. Because it's a function.
+			<br>
+			<br>
+			<code class="codeinline">FLOAT_COLOR_NORMAL</code> is the color of the floater as the name suggests. The colors are defined at <code class="codeinline">command.h</code><p>and they look like this:</p>
+			<code>
+				<span>#define FLOAT_COLOR_NORMAL</span><div style="text-indent: 9em; display: inline-block">FLOAT_MSG_YELLOW</div>
+				<br>
+				<span>#define FLOAT_COLOR_SICK</span><div style="text-indent: 10em; display: inline-block">FLOAT_MSG_GREEN</div>
+				<br>
+				<span>#define FLOAT_COLOR_BAD</span><div style="text-indent: 10.6em; display: inline-block">FLOAT_MSG_RED</div>
+				<br>
+				<span>#define FLOAT_COLOR_GOOD </span><div style="text-indent: 9.5em; display: inline-block">FLOAT_MSG_WHITE</div>
+				<br>
+				<span>#define FLOAT_COLOR_SFX </span><div style="text-indent: 10em; display: inline-block">FLOAT_MSG_LIGHT_GREY</div>
+				<br>
+				<span>#define FLOAT_COLOR_SAD </span><div style="text-indent: 10em; display: inline-block">FLOAT_MSG_GREY</div>
+				<br>
+				<span>#define FLOAT_COLOR_AFRAID</span><div style="text-indent: 9em; display: inline-block">FLOAT_MSG_LIGHT_RED</div>
+				<br>
+				<span>#define FLOAT_COLOR_PAIN </span><div style="text-indent: 9.5em; display: inline-block">FLOAT_MSG_LIGHT_GREY</div>
+				<br>
+				<span>#define FLOAT_COLOR_HIGH </span><div style="text-indent: 9.5em; display: inline-block">FLOAT_MSG_PURPLE</div>
+				<br>
+				<span>#define FLOAT_COLOR_WHISPER</span><div style="text-indent: 8.4em; display: inline-block">FLOAT_MSG_GREY</div>
+			</code>
+			<p>The colors are again hardcoded in <code class="codeinline">DEFINE.H.</code></p>
+			<code>
+				<div>#define FLOAT_MSG_NORMAL &emsp; &emsp; (0)</div>
+				<div>#define FLOAT_MSG_BLACK &emsp; &emsp; (1)</div>
+				<div>#define FLOAT_MSG_RED &emsp; &emsp; (2)</div>
+				<div>#define FLOAT_MSG_GREEN &emsp; &emsp; (3)</div>
+				<div>#define FLOAT_MSG_BLUE &emsp; &emsp; (4)</div>
+				<div>#define FLOAT_MSG_PURPLE &emsp; &emsp; (5)</div>
+				<div>#define FLOAT_MSG_NEAR_WHITE &emsp; &emsp; (6)</div>
+				<div>#define FLOAT_MSG_LIGHT_RED &emsp; &emsp; (7)</div>
+				<div>#define FLOAT_MSG_YELLOW &emsp; &emsp; (8)</div>
+				<div>#define FLOAT_MSG_WHITE &emsp; &emsp; (9)</div>
+				<div>#define FLOAT_MSG_GREY &emsp; &emsp; &emsp; &emsp;(10)</div>
+				<div>#define FLOAT_MSG_DARK_GREY &emsp; &emsp; &emsp;(11)</div>
+				<div>#define FLOAT_MSG_LIGHT_GREY &emsp; &emsp; (12)</div>
+			</code>
+	<br>
 	<hr>
 
 	<div id="pipboy"><h3>Add quest to pipboy</h3></div>
