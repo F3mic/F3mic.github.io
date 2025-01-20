@@ -25,19 +25,19 @@ li {
 }
 
 ol {
-	counter-reset: item;
+	counter-reset: list-item;
 	list-style-type: none;
-	padding-inline-start: .5rem; 
+	padding-inline-start: .5rem;
 }
 
 ol li::before {
 	counter-increment: item;
-	content: counters(item, ".") ". ";
+	content: counters(list-item, ".") ". ";
 }
 
 .item-sidebar {
 	font-size: .75rem;
-	position: absolute;
+	position: fixed;
 	inset-inline-start: 0;
 	inset-block-start: 0;
 	transform: translatex(-100%);
@@ -52,23 +52,18 @@ ol li::before {
 @media only screen and (min-width: 70rem) {
 	
 	.item-sidebar {
-		transform: translatex(0);
-		padding-block-start: 16px;
+    transform: translatex(0);
 	}	
 
-	.item-sidebar {
-		position:fixed;
-		width: min(23%, 19rem);
-	}
-	
 	.item-main {
 		padding-inline-start: calc(5% + 15rem);
 		padding-inline-end: 1.5rem;
 	} 
+
 }
 
 .dashedline {
-  border-style:dashed;
+  border-style: dashed;
 }
 
 .dottedline {
