@@ -44,7 +44,7 @@ ol li::before {
 }
 
 .item-main {
-	font-size: 110%;
+	font-size: 100%;
 	hyphens: auto;
 	text-align: justify;
 }
@@ -53,11 +53,28 @@ ol li::before {
 	
 	.item-sidebar {
     transform: translatex(0);
+    max-height: 100%;
+    width: calc(3% + 15rem);;
+    overflow-y: auto;
 	}	
 
+  .item-sidebar::-webkit-scrollbar {
+    width: 5px;               /* width of the entire scrollbar */
+  }
+  
+  .item-sidebar::-webkit-scrollbar-track {
+    background: black;        /* color of the tracking area */
+  }
+  
+  .item-sidebar::-webkit-scrollbar-thumb {
+    background-color: grey;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+  }
+  
 	.item-main {
 		padding-inline-start: calc(5% + 15rem);
 		padding-inline-end: 1.5rem;
+    overflow-x: hidden;
 	} 
 
 }
