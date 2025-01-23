@@ -19,15 +19,15 @@ body {
 p {
   line-height: 1.6;
 }
-
+/*
 li {
   list-style-type: none;
 }
-
+*/
 ol {
 	counter-reset: list-item;
 	list-style-type: none;
-	padding-inline-start: .5rem;
+	padding-inline-start: 0.5rem;
 }
 
 ol li::before {
@@ -54,8 +54,9 @@ ol li::before {
 	.item-sidebar {
     transform: translatex(0);
     max-height: 100%;
-    width: calc(3% + 15rem);;
+    width: calc(3% + 15rem);
     overflow-y: auto;
+    overflow-x: hidden;
 	}	
 
   .item-sidebar::-webkit-scrollbar {
