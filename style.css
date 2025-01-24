@@ -19,20 +19,34 @@ body {
 p {
   line-height: 1.6;
 }
-/*
-li {
-  list-style-type: none;
-}
-*/
+
 ol {
-	counter-reset: list-item;
+	counter-reset: item;
 	list-style-type: none;
 	padding-inline-start: 0.5rem;
 }
 
+.intro-item::before {
+  counter-set: item 1;
+  position: relative;
+  right: 0.1em;
+}
+
+ol > li {
+  padding-left: 1em;
+}
+
 ol li::before {
 	counter-increment: item;
-	content: counters(list-item, ".") ". ";
+	content: counters(item, ".") ". ";
+}
+
+details > summary {
+  cursor:pointer; 
+}
+
+details > summary > li {
+  display: inline;
 }
 
 .item-sidebar {
@@ -76,7 +90,7 @@ ol li::before {
 		padding-inline-start: calc(5% + 15rem);
 		padding-inline-end: 1.5rem;
     overflow-x: hidden;
-	} 
+	}
 
 }
 
